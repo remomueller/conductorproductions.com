@@ -4,7 +4,7 @@
     <div id="other-videos" class="row">
       <% videos.each_with_index do |(image_thumbnail, video_link), i| %>
       <div class="col-xs-6 col-sm-4 <%= "hidden-xs" if i == 8 %>" style="padding-bottom:20px">
-        <%= image_tag image_thumbnail, style: 'width:100%', class: 'video-thumbnail', data: { object: 'launch-video', video_src: video_link } %>
+        <%= image_tag image_thumbnail, style: 'width:100%', class: 'video-thumbnail', data: { object: 'launch-video', video_src: video_link }, alt: '' %>
       </div>
       <% end %>
     </div>
