@@ -53,7 +53,9 @@
 
     <div class="col-sm-6">
 
-      <%= image_tag 'contact/google-map.png', style: 'margin:40px 0px', class: 'img-responsive' %>
+      <%= link_to 'https://www.google.com/maps/place/142+Berkeley+St,+Boston,+MA+02116/@42.3503902,-71.0704113,15z/data=!4m2!3m1!1s0x89e37a736a5166b9:0xf95bcd7f12163512' do %>
+        <%= image_tag 'contact/google-map.png', style: 'margin:40px 0px', class: 'img-responsive' %>
+      <% end %>
       <div class="well">
         <p>
           <%= mail_to 'reels@conductorproductions.com', 'reels@conductorproductions.com' %>

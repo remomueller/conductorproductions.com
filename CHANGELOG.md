@@ -7,6 +7,13 @@
 - **DRTV Page Added**
   - Contains 9 video thumbnails with vimeo links
 
+- **News Page Added**
+  - Contains graphics and "No News Is Good News"
+
+- **Contact Page Added**
+  - Contains an embedded email form
+  - Contains address and a google maps link
+
 - **General Changes**
   - Updated favicon to .ico based on `CON_FB_160x160_R1_2.png`
   - Updated font family to `directors_cut_proregular` and `directors_cut_probold`
