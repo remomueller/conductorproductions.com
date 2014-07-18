@@ -1,0 +1,27 @@
+<%= render partial: 'header' %>
+
+<div class="container">
+  <div class="page-header">
+    <h1>Our Work</h1>
+    <p>
+      We are a full-service production agency delivering TV and web content that is on brand and on budget. We find the fun in projects and emphasize a collaborative, transparent creative process.
+    </p>
+  </div>
+</div>
+
+<% videos = [
+  ["videos/work/work1-thumb.png", "//player.vimeo.com/video/98734405?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
+  ["videos/work/work2-thumb.png", "//player.vimeo.com/video/98734405?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
+  ["videos/work/work3-thumb.png", "//player.vimeo.com/video/98734405?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
+  ["videos/work/work4-thumb.png", "//player.vimeo.com/video/98734405?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
+  ["videos/work/work5-thumb.png", "//player.vimeo.com/video/98734405?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
+  ["videos/work/work6-thumb.png", "//player.vimeo.com/video/98734405?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
+  ["videos/work/work7-thumb.png", "//player.vimeo.com/video/98734405?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
+  ["videos/work/work8-thumb.png", "//player.vimeo.com/video/98734405?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
+  ["videos/work/work9-thumb.png", "//player.vimeo.com/video/98734405?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
+  ] %>
+<%= render partial: 'welcome/video_grid', locals: { videos: videos } %>
+
+
+
+<%= render partial: 'footer' %>

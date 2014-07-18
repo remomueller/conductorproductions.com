@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Conductor Productions">
+    <meta name="author" content="">
+
+    <% development_mode = true %>
+
+    <% if development_mode %>
+      <%= favicon_link_tag %>
+    <% else %>
+      <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/vnd.microsoft.icon">
+      <link rel="icon" href="/assets/images/favicon.ico" type="image/vnd.microsoft.icon">
+    <% end %>
+
+    <title>Conductor Productions</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="http://conductorproductions.tumblr.com/api/read/json"></script>
+
+    <% if development_mode %>
+      <style type="text/css">
+        @font-face {
+          font-family: 'directors_cut_proregular';
+          src: url('/edge/www.conductorproductions.com/assets/DirectorsCutPro-webfont.eot');
+          src: url('/edge/www.conductorproductions.com/assets/DirectorsCutPro-webfont.eot?#iefix') format('embedded-opentype'),
+               url('/edge/www.conductorproductions.com/assets/DirectorsCutPro-webfont.woff') format('woff'),
+               url('/edge/www.conductorproductions.com/assets/DirectorsCutPro-webfont.ttf') format('truetype'),
+               url('/edge/www.conductorproductions.com/assets/DirectorsCutPro-webfont.svg#directors_cut_proregular') format('svg');
+          font-weight: normal;
+          font-style: normal;
+        }
+        @font-face {
+          font-family: 'directors_cut_probold';
+          src: url('/edge/www.conductorproductions.com/assets/DirectorsCutPro-Bold-webfont.eot');
+          src: url('/edge/www.conductorproductions.com/assets/DirectorsCutPro-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+               url('/edge/www.conductorproductions.com/assets/DirectorsCutPro-Bold-webfont.woff') format('woff'),
+               url('/edge/www.conductorproductions.com/assets/DirectorsCutPro-Bold-webfont.ttf') format('truetype'),
+               url('/edge/www.conductorproductions.com/assets/DirectorsCutPro-Bold-webfont.svg#directors_cut_probold') format('svg');
+          font-weight: normal;
+          font-style: normal;
+        }
+      </style>
+    <% else %>
+      <style type="text/css">
+        @font-face {
+          font-family: 'directors_cut_proregular';
+          src: url('/assets/fonts/DirectorsCutPro-webfont.eot');
+          src: url('/assets/fonts/DirectorsCutPro-webfont.eot?#iefix') format('embedded-opentype'),
+               url('/assets/fonts/DirectorsCutPro-webfont.woff') format('woff'),
+               url('/assets/fonts/DirectorsCutPro-webfont.ttf') format('truetype'),
+               url('/assets/fonts/DirectorsCutPro-webfont.svg#directors_cut_proregular') format('svg');
+          font-weight: normal;
+          font-style: normal;
+        }
+        @font-face {
+          font-family: 'directors_cut_probold';
+          src: url('/assets/fonts/DirectorsCutPro-Bold-webfont.eot');
+          src: url('/assets/fonts/DirectorsCutPro-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+               url('/assets/fonts/DirectorsCutPro-Bold-webfont.woff') format('woff'),
+               url('/assets/fonts/DirectorsCutPro-Bold-webfont.ttf') format('truetype'),
+               url('/assets/fonts/DirectorsCutPro-Bold-webfont.svg#directors_cut_probold') format('svg');
+          font-weight: normal;
+          font-style: normal;
+        }
+      </style>
+    <% end %>
+
+    <% if development_mode %>
+      <%= javascript_include_tag "application" %> <%# , "data-turbolinks-track" => true %>
+      <%= stylesheet_link_tag "application", media: "all" %> <%# , "data-turbolinks-track" => true %>
+    <% else %>
+    <% end %>
+
+    <style type="text/css">
+      .center {
+        text-align: center;
+      }
+      body, input, button, select, textarea, .navbar-search .search-query {
+        font-family: 'directors_cut_proregular', serif;
+      }
+      html {
+        position: relative;
+        min-height: 100%;
+      }
+      body {
+        margin-bottom: 60px;
+      }
+      .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+      }
+      .company-logo h1, .company-logo .h1 {
+        font-family: 'directors_cut_probold';
+        font-size: 24px;
+        line-height: 38px;
+      }
+      @media screen and (min-width: 768px) {
+        .company-logo h1, .company-logo .h1 { font-size: 30px; }
+      }
+      <% triangle_size = 40 %>
+      .triangle-left {
+        width: 0px;
+        height: 0px;
+        top: -20px;
+        left:-<%= triangle_size %>px;
+        border-top: <%= triangle_size %>px solid transparent;
+        border-bottom: <%= triangle_size %>px solid transparent;
+        border-right: <%= triangle_size %>px solid black;
+        position: absolute;
+      }
+      <% triangle_small_size = 20 %>
+      .triangle-right {
+        width: 0px;
+        height: 0px;
+        top: 0px;
+        left:-<%= 2*triangle_size - triangle_small_size %>px;
+        border-top: <%= triangle_small_size %>px solid transparent;
+        border-bottom: <%= triangle_small_size %>px solid transparent;
+        border-left: <%= triangle_small_size %>px solid #000;
+        position: absolute;
+      }
+      .triangle-right-white {
+        width: 0px;
+        height: 0px;
+        top: 0px;
+        left:-<%= 2*triangle_size - triangle_small_size + 1 %>px;
+        border-top: <%= triangle_small_size %>px solid transparent;
+        border-bottom: <%= triangle_small_size %>px solid transparent;
+        border-left: <%= triangle_small_size %>px solid #fff;
+        position: absolute;
+      }
+      .transparent-box {
+        position: absolute;
+        background-color: transparent;
+        width: <%= 800 - triangle_size - triangle_small_size %>px;
+        height: <%= triangle_size %>px;
+        top: 0px;
+        left: -800px;
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+      }
+      .box-left {
+        position: absolute;
+        top:-20px;
+        left:0px;
+        background-color: #000;
+        width: 446px;
+        margin-right: -446px;
+        height:80px;
+        z-index: -1;
+      }
+
+      .menu-links {
+        font-size: 0.8em;
+      }
+      @media screen and (min-width: 768px) {
+        .menu-links { font-size: 1em; }
+      }
+      .menu-links a.active {
+        text-decoration: underline;
+      }
+
+      <% video_border_margin = '75px'  %>
+
+      .video-container {
+        position:relative;
+        width:100%;
+        margin: <%= video_border_margin %> 0
+      }
+
+      .flip-tab-right {
+        position: absolute;
+        right:0px;
+        top: 82px;
+        width:47px;
+        height:127px;
+        background-image: url('assets/splash2/work-tab.png');
+        background-repeat:no-repeat;
+        color: #fff;
+      }
+
+      .flip-tab-right div {
+        bottom: 54px;
+        right: -2px;
+        position: absolute;
+        transform:rotate(-90deg);
+        -ms-transform:rotate(-90deg); /* IE 9 */
+        -webkit-transform:rotate(-90deg); /* Opera, Chrome, and Safari */
+      }
+
+      .video-frame-with-float {
+        position: absolute;
+        z-index:-1;
+        right:0;
+        top: 0;
+        overflow:hidden;
+        height:230px;
+        width: 245px;
+        background-color:gray;
+      }
+
+      .video-frame-lower-right-float {
+        /*float:left;*/
+        position: absolute;
+        width: 245px;
+        height: 230px;
+        margin-right:-70px;
+        margin-bottom:-80px;
+        top: 0;
+        background-image: url('assets/splash2/video-frame-lower-right.png');
+      }
+
+      .video-frame {
+        position:absolute;
+        width: 245px;
+        height:230px;
+        background-repeat:no-repeat;
+        z-index:-1;
+      }
+
+      .video-frame-upper-left {
+        top:-<%= video_border_margin %>;
+        left:-80px;
+        background-image: url('assets/splash2/video-frame-upper-left.png');
+      }
+
+      .video-frame-lower-left {
+        width:258px;
+        /*width:171px;*/
+        height:192px;
+        bottom:-<%= video_border_margin %>;
+        left:0px;
+        background-image: url('assets/splash2/video-frame-lower-left-short.png');
+      }
+
+      .video-frame-lower-right {
+        bottom:-<%= video_border_margin %>;
+        right:-80px;
+        background-image: url('assets/splash2/video-frame-lower-right.png');
+      }
+
+      @media screen and (min-width: 518px) {
+        .video-frame-upper-left {
+          left:0px;
+        }
+        .video-frame-lower-right {
+          right:0px;
+        }
+      }
+
+      @media screen and (min-width: 690px) {
+        .video-frame-lower-left {
+          background-image: url('assets/splash2/video-frame-lower-left.png');
+        }
+      }
+
+      @media screen and (min-width: 768px) {
+        .video-frame-upper-left {
+          left:-70px;
+        }
+        .video-frame-lower-right {
+          right:-70px;
+        }
+        .flip-tab-right {
+          right: -27px;
+        }
+      }
+
+      @media screen and (min-width: 992px) {
+        .flip-tab-right {
+          right: 0px;
+        }
+      }
+
+      @media screen and (min-width: 1010px) {
+        .video-frame-upper-left {
+          left:0px;
+        }
+        .video-frame-lower-right {
+          right:0px;
+        }
+      }
+
+      .social-links {
+        font-size: 1.4em;
+      }
+
+      @media screen and (min-width: 768px) {
+        .social-links {
+          font-size: 2em;
+        }
+      }
+
+
+      #shade {
+      /*  transition: opacity .25s ease-in-out;
+        -moz-transition: opacity .25s ease-in-out;
+        -webkit-transition: opacity .25s ease-in-out;*/
+
+        opacity: 0.4;
+        filter: alpha(opacity=40);
+
+        position:absolute;
+        left:0%;
+        top:0%;
+        z-index:90;
+        width:100%;
+        height:100%;
+        background-color:black;
+        display:none;
+      }
+
+      .video-thumbnail {
+        cursor: pointer;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div id="shade"></div>
+    <%= yield %>
+  </body>
+</html>

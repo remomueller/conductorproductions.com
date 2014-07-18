@@ -1,0 +1,27 @@
+<%= render partial: 'header' %>
+
+<div class="container">
+  <div class="page-header">
+    <h1>DRTV</h1>
+    <p>
+      Conductor has a solid history of successful direct response campaigns. From products to lead generation, we provide the resources and marketing expertise to take ideas from script to screen.
+    </p>
+  </div>
+</div>
+
+<% videos = [
+  ["videos/drtv/drtv1-thumb.png", "//player.vimeo.com/video/98734405?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
+  ["videos/drtv/drtv2-thumb.png", "//player.vimeo.com/video/98734405?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
+  ["videos/drtv/drtv3-thumb.png", "//player.vimeo.com/video/98734405?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
+  ["videos/drtv/drtv4-thumb.png", "//player.vimeo.com/video/98734405?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
+  ["videos/drtv/drtv5-thumb.png", "//player.vimeo.com/video/98734405?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
+  ["videos/drtv/drtv6-thumb.png", "//player.vimeo.com/video/98734405?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
+  ["videos/drtv/drtv7-thumb.png", "//player.vimeo.com/video/98734405?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
+  ["videos/drtv/drtv8-thumb.png", "//player.vimeo.com/video/98734405?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
+  ["videos/drtv/drtv9-thumb.png", "//player.vimeo.com/video/98734405?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
+  ] %>
+<%= render partial: 'welcome/video_grid', locals: { videos: videos } %>
+
+
+
+<%= render partial: 'footer' %>

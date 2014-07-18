@@ -1,0 +1,18 @@
+<div style="background-color:#000;z-index:100">
+  <div class="container">
+    <div style="position:relative;padding-top:20px;padding-bottom:20px">
+    <div id="other-videos" class="row">
+      <% videos.each_with_index do |(image_thumbnail, video_link), i| %>
+      <div class="col-xs-6 col-sm-4 <%= "hidden-xs" if i == 8 %>" style="padding-bottom:20px">
+        <%= image_tag image_thumbnail, style: 'width:100%', class: 'video-thumbnail', data: { object: 'launch-video', video_src: video_link } %>
+      </div>
+      <% end %>
+    </div>
+    <div id="video-frame" style="width:100%;display:none;">
+      <div class="embed-responsive embed-responsive-16by9" style="z-index:100">
+        <iframe class="embed-responsive-item" src="" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>

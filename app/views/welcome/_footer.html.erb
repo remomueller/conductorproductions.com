@@ -1,0 +1,26 @@
+  <div class="spacer">&nbsp;</div>
+
+<div class="footer">
+  <div class="container social-links">
+
+    <div class="pull-left">
+      <%= link_to 'https://www.facebook.com/ConductorCreative', style: 'text-decoration:none;color:#333' do %>
+        <i class="fa fa-facebook"></i>
+      <% end %>
+      <%= link_to 'https://twitter.com/conductorprod', style: 'text-decoration:none;color:#333' do %>
+        <i class="fa fa-twitter"></i>
+      <% end %>
+      <%= link_to 'http://www.linkedin.com/pub/noah-lydiard/3/b5b/749', style: 'text-decoration:none;color:#333' do %>
+        <i class="fa fa-linkedin"></i>
+      <% end %>
+      <%= link_to 'http://conductorproductions.tumblr.com', style: 'text-decoration:none;color:#333' do %>
+        <i class="fa fa-tumblr"></i>
+      <% end %>
+    </div>
+
+    <div class="pull-right">&copy; Conductor <%= Date.today.year %></div>
+  </div>
+  <div class="container visible-xs visible-sm center" style="margin-top:10px">
+    <div style="font-size:0.8em"><%= render partial: 'products' %></div>
+  </div>
+</div>
