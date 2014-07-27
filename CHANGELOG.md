@@ -6,6 +6,7 @@
   - Added diagonal line to separate headers and text on full screen view
   - Added white triangle cutouts on full screen view for videos container
   - Darkened background opacity when playing videos
+  - Added link to contact form from DRTV page
 
 - **News Page Added**
   - Contains graphics and "No News Is Good News"
