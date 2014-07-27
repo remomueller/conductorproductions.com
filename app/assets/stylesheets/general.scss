@@ -107,10 +107,10 @@ $triangle_small_size: 20px;
 .transparent-box {
   position: absolute;
   background-color: transparent;
-  width: 800 - $triangle_size - $triangle_small_size;
+  width: 1600 - $triangle_size - $triangle_small_size;
   height: $triangle_size;
   top: 0px;
-  left: -800px;
+  left: -1600px;
   border-top: 1px solid #000;
   border-bottom: 1px solid #000;
 }

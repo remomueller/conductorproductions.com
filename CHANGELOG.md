@@ -19,6 +19,7 @@
   - Updated font family to `directors_cut_proregular` and `directors_cut_probold`
   - Updated social media links
   - The mobile view of the header logo now matches the full screen view
+  - The logo lines to the left of the logo now extend past the edge of the screen on full screen view
 
 ## 0.1.0 (May 12, 2014)
 
