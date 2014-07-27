@@ -59,15 +59,35 @@ $triangle_size: 80px;
 .white-triangle-right {
   width: 0px;
   height: 0px;
-  bottom: -53px;
+  top: -53px;
   right:-147px;
   border-top: $triangle_size solid transparent;
   border-bottom: $triangle_size solid transparent;
   border-left: $triangle_size solid #fff;
   position: absolute;
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.white-border-left {
+  position: absolute;
+  width: 1600px;
+  margin-left: -1735px;
+  height: 100%;
+  bottom: 0px;
+  left: 0px;
+  background-color: #fff;
+}
+
+.white-border-right {
+  position: absolute;
+  width: 1600px;
+  margin-right: -1735px;
+  height: 100%;
+  bottom: 0px;
+  right: 0px;
+  background-color: #fff;
 }
