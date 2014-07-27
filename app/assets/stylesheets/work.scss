@@ -4,7 +4,7 @@
 
 .work-diagonal-line, .drtv-diagonal-line {
   position: absolute;
-  top: -10px;
+  top: 0px;
   width: 60px;
   height: 60px;
   border-bottom: 1px solid #333;
@@ -16,25 +16,26 @@
 }
 
 .work-diagonal-line {
-  left:120px;
+  left:270px;
 }
 
 .drtv-diagonal-line {
-  left:60px;
+  left:120px;
 }
 
 .work-diagonal-line-text, .drtv-diagonal-line-text {
   position:absolute;
   margin-bottom:50px;
   font-size:14px;
+  margin-top: -11px;
 }
 
 .work-diagonal-line-text {
-  margin-left:180px;
+  margin-left:347px;
 }
 
 .drtv-diagonal-line-text {
-  margin-left:120px;
+  margin-left:200px;
 }
 
 $triangle_size: 80px;

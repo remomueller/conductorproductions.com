@@ -137,7 +137,8 @@ $triangle_small_size: 20px;
 
 .menu-links {
   font-size: 0.8em;
-  padding:7px;
+  padding:7px 7px 7px 0px;
+  margin-left: -4px;
   position:relative;
 }
 .menu-links a {
@@ -147,6 +148,8 @@ $triangle_small_size: 20px;
 
 @media screen and (min-width: 768px) {
   .menu-links {
+    padding-left: 7px;
+    margin-left: 0px;
     font-size: 1em;
     background-color:#000;
     color:#fff;
