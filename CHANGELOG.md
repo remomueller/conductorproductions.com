@@ -5,6 +5,7 @@
   - Contains 9 video thumbnails with vimeo links
   - Added diagonal line to separate headers and text on full screen view
   - Added white triangle cutouts on full screen view for videos container
+  - Darkened background opacity when playing videos
 
 - **News Page Added**
   - Contains graphics and "No News Is Good News"
