@@ -1,13 +1,13 @@
 <% links = [['HOME', 'index_v2.html'], ['WORK','work.html'], ['DRTV', 'drtv.html'], ['NEWS', 'news.html'], ['CONTACT', 'contact.html']] %>
 
 
-<div class="menu-links" style="background-color:#000;color:#fff;padding:7px;position:relative">
+<div class="menu-links">
   <div class="triangle-right hidden-xs"></div>
   <div class="triangle-right-white hidden-xs"></div>
   <div class="transparent-box hidden-xs"></div>
   <div class="triangle-left hidden-xs"></div>
   <div class="box-left hidden-xs"></div>
   <%= links.collect do |link, path| %>
-    <% link_to link, path, style: 'color:#fff;padding:0px 4px', class: "#{'active' if params[:action] == link.downcase or (link == 'HOME' and params[:action] == 'index')}" %>
+    <% link_to link, path, class: "#{'active' if params[:action] == link.downcase or (link == 'HOME' and params[:action] == 'index')}" %>
   <% end.join(' | ').html_safe %>
 </div>

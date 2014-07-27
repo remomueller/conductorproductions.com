@@ -18,6 +18,7 @@
   - Updated favicon to .ico based on `CON_FB_160x160_R1_2.png`
   - Updated font family to `directors_cut_proregular` and `directors_cut_probold`
   - Updated social media links
+  - The mobile view of the header logo now matches the full screen view
 
 ## 0.1.0 (May 12, 2014)
 
