@@ -36,3 +36,37 @@
 .drtv-diagonal-line-text {
   margin-left:120px;
 }
+
+$triangle_size: 80px;
+
+.white-triangle-left {
+  width: 0px;
+  height: 0px;
+  bottom: -53px;
+  left:-147px;
+  border-top: $triangle_size solid transparent;
+  border-bottom: $triangle_size solid transparent;
+  border-right: $triangle_size solid #fff;
+  position: absolute;
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.white-triangle-right {
+  width: 0px;
+  height: 0px;
+  bottom: -53px;
+  right:-147px;
+  border-top: $triangle_size solid transparent;
+  border-bottom: $triangle_size solid transparent;
+  border-left: $triangle_size solid #fff;
+  position: absolute;
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
