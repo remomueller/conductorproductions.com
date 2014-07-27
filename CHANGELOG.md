@@ -21,6 +21,7 @@
   - The mobile view of the header logo now matches the full screen view
   - The logo lines to the left of the logo now extend past the edge of the screen on full screen view
   - The product links, "Commercials | Branded Content | Direct Response", now link to the appropriate pages
+  - The product links no longer break across lines within the link itself on mobile views
   - The footer social links and copyright and name now match the size of the menu bar links
 
 ## 0.1.0 (May 12, 2014)
