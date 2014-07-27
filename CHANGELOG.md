@@ -1,11 +1,9 @@
 ## 0.2.0
 
 ### Enhancements
-- **Work Page Added**
+- **Work and DRTV Page Added**
   - Contains 9 video thumbnails with vimeo links
-
-- **DRTV Page Added**
-  - Contains 9 video thumbnails with vimeo links
+  - Added diagonal line to separate headers and text on full screen view
 
 - **News Page Added**
   - Contains graphics and "No News Is Good News"

@@ -1,3 +1,38 @@
 .video-thumbnail {
   cursor: pointer;
 }
+
+.work-diagonal-line, .drtv-diagonal-line {
+  position: absolute;
+  top: -10px;
+  width: 60px;
+  height: 60px;
+  border-bottom: 1px solid #333;
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.work-diagonal-line {
+  left:120px;
+}
+
+.drtv-diagonal-line {
+  left:60px;
+}
+
+.work-diagonal-line-text, .drtv-diagonal-line-text {
+  position:absolute;
+  margin-bottom:50px;
+  font-size:14px;
+}
+
+.work-diagonal-line-text {
+  margin-left:180px;
+}
+
+.drtv-diagonal-line-text {
+  margin-left:120px;
+}

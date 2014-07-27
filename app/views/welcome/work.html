@@ -1,10 +1,20 @@
 <%= render partial: 'header' %>
 
+<% work_text = "We are a full-service production agency delivering TV and web content that is on brand and on budget. We find the fun in projects and emphasize a collaborative, transparent creative process." %>
+
 <div class="container">
-  <div class="page-header">
-    <h1>Our Work</h1>
+  <div class="page-header" style="border:0px">
+    <h1 style="position:relative;">
+      Our Work
+      <div class="visible-lg work-diagonal-line"></div>
+      <div class="visible-lg work-diagonal-line-text">
+        <%= work_text %>
+      </div>
+    </h1>
+  </div>
+  <div class="hidden-lg">
     <p>
-      We are a full-service production agency delivering TV and web content that is on brand and on budget. We find the fun in projects and emphasize a collaborative, transparent creative process.
+      <%= work_text %>
     </p>
   </div>
 </div>

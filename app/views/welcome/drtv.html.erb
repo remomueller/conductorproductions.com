@@ -1,10 +1,20 @@
 <%= render partial: 'header' %>
 
+<% drtv_text = "Conductor has a solid history of successful direct response campaigns. From products to lead generation, we provide the resources and marketing expertise to take ideas from script to screen." %>
+
 <div class="container">
-  <div class="page-header">
-    <h1>DRTV</h1>
+  <div class="page-header" style="border:0px">
+    <h1 style="position:relative;">
+      DRTV
+      <div class="visible-lg drtv-diagonal-line"></div>
+      <div class="visible-lg drtv-diagonal-line-text">
+        <%= drtv_text %>
+      </div>
+    </h1>
+  </div>
+  <div class="hidden-lg">
     <p>
-      Conductor has a solid history of successful direct response campaigns. From products to lead generation, we provide the resources and marketing expertise to take ideas from script to screen.
+      <%= drtv_text %>
     </p>
   </div>
 </div>
