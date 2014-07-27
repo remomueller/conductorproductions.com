@@ -13,7 +13,7 @@
 
 - **Contact Page Added**
   - Contains an embedded email form
-  - Contains address and a google maps link
+  - Contains address and an embedded google maps frame
 
 - **General Changes**
   - Updated favicon to .ico based on `CON_FB_160x160_R1_2.png`

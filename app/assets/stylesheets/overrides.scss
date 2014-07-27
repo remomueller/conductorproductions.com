@@ -1,0 +1,18 @@
+$primary-action: #94a545;
+$primary-action-border: #737520;
+
+
+$primary-action-hover: #63732A;
+$primary-action-hover-border: #4D4F14;
+
+.btn-primary {
+  color: #fff;
+  background-color: $primary-action;
+  border-color: $primary-action-border;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: $primary-action-hover;
+  border-color: $primary-action-hover-border;
+}

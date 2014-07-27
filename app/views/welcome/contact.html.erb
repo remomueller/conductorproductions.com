@@ -8,64 +8,48 @@
       </div>
       <form class="form-horizontal" role="form" method="POST" action="cgi-bin/email.cgi">
         <div class="form-group">
-          <%= label_tag :name, nil, class: 'col-sm-2 control-label' %>
-          <div class="col-sm-10">
+          <% if false %><%= label_tag :name, nil, class: 'col-sm-2 control-label' %><% end %>
+          <div class="col-sm-12">
             <%= text_field_tag :name, '', class: 'form-control', placeholder: 'Name' %>
           </div>
         </div>
         <div class="form-group">
-          <%= label_tag :company, nil, class: 'col-sm-2 control-label' %>
-          <div class="col-sm-10">
-            <%= text_field_tag :company, '', class: 'form-control', placeholder: 'Company' %>
+          <% if false %><%= label_tag :email, nil, class: 'col-sm-2 control-label' %><% end %>
+          <div class="col-sm-12">
+            <%= email_field_tag :email, '', class: 'form-control', placeholder: 'Email' %>
           </div>
         </div>
+        <%= hidden_field_tag :subject, 'Contact Form Submission Conductor Productions Website' %>
         <div class="form-group">
-          <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-          <div class="col-sm-10">
-            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-          </div>
-        </div>
-        <div class="form-group">
-          <%= label_tag :telephone, nil, class: 'col-sm-2 control-label' %>
-          <div class="col-sm-10">
-            <%= text_field_tag :telephone, '', class: 'form-control', placeholder: 'Telephone' %>
-          </div>
-        </div>
-        <div class="form-group">
-          <%= label_tag :subject, nil, class: 'col-sm-2 control-label' %>
-          <div class="col-sm-10">
-            <%= text_field_tag :subject, '', class: 'form-control', placeholder: 'Subject' %>
-          </div>
-        </div>
-        <div class="form-group">
-          <%= label_tag :body, nil, class: 'col-sm-2 control-label' %>
-          <div class="col-sm-10">
+          <% if false %><%= label_tag :body, nil, class: 'col-sm-2 control-label' %><% end %>
+          <div class="col-sm-12">
             <%= text_area_tag :body, '', class: 'form-control', placeholder: 'Body', rows: 10 %>
           </div>
         </div>
         <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">Send Message</button>
+          <div class="col-sm-12">
+            <button type="submit" class="btn btn-primary">Send Message</button>
           </div>
         </div>
       </form>
     </div>
 
     <div class="col-sm-6">
-
-      <%= link_to 'https://www.google.com/maps/place/142+Berkeley+St,+Boston,+MA+02116/@42.3503902,-71.0704113,15z/data=!4m2!3m1!1s0x89e37a736a5166b9:0xf95bcd7f12163512' do %>
-        <%= image_tag 'contact/google-map.png', style: 'margin:40px 0px', class: 'img-responsive' %>
-      <% end %>
-      <div class="well">
-        <p>
-          <%= mail_to 'reels@conductorproductions.com', 'reels@conductorproductions.com' %>
-        </p>
-        <p>
-          142 Berkeley Street<br>
-          Boston, MA 02116<br>
-          617-262-1400<br>
-        </p>
+      <div class="embed-responsive embed-responsive-4by3" style="margin: 40px 0px">
+        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11794.523952567648!2d-71.0704113!3d42.3503902!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e37a736a5166b9%3A0xf95bcd7f12163512!2s142+Berkeley+St%2C+Boston%2C+MA+02116!5e0!3m2!1sen!2sus!4v1406491005093"></iframe>
       </div>
+      <% if false %>
+        <div class="well">
+          <p>
+            <%= mail_to 'reels@conductorproductions.com', 'reels@conductorproductions.com' %>
+          </p>
+          <p>
+            142 Berkeley Street<br>
+            Boston, MA 02116<br>
+            617-262-1400<br>
+          </p>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
