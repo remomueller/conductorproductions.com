@@ -7,6 +7,7 @@
   - Added white triangle cutouts on full screen view for videos container
   - Darkened background opacity when playing videos
   - Added link to contact form from DRTV page
+  - Videos automatically close when they finish
 
 - **News Page Added**
   - Contains graphics and "No News Is Good News"

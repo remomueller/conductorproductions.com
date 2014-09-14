@@ -2,6 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+@onFinish = (id) ->
+  $("#shade").click()
+
 $(document)
   .on('click', 'body, #shade', () ->
     $("#shade").fadeOut()
@@ -14,6 +17,13 @@ $(document)
     $("#video-frame").show()
     url = $(this).data('video-src') || ""
     $("#video-frame iframe").attr('src', url)
+
+    iframe = $("#video-frame iframe")[0]
+    player = $f(iframe)
+    player.addEvent('ready', () ->
+      player.addEvent('finish', onFinish)
+    )
+
     $("#other-videos").hide()
     false
   )
