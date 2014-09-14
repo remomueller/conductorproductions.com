@@ -1,3 +1,9 @@
+<% if params[:action] == 'drtv' %>
+  <% products = [['DIRECT RESPONSE', 'drtv.html'], ['COMMERCIALS', 'work.html'], ['BRANDED CONTENT', 'work.html']]%>
+<% else %>
+  <% products = [['COMMERCIALS', 'work.html'], ['BRANDED CONTENT', 'work.html'], ['DIRECT RESPONSE', 'drtv.html']]%>
+<% end %>
+
 <div class="product-links">
-  <%= link_to 'COMMERCIALS', 'work.html' %> | <%= link_to 'BRANDED CONTENT', 'work.html' %> | <%= link_to 'DIRECT RESPONSE', 'drtv.html' %>
+  <%= products.collect{|name, link| link_to(name, link) }.join(' | ').html_safe %>
 </div>
