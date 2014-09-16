@@ -20,11 +20,12 @@
 
 $(document)
   .ready(globalReady)
-  .on('click', 'body, #shade', () ->
+  .on('click touchstart', '#shade', () ->
     $("#shade").fadeOut()
     $("#other-videos").show()
     $("#video-frame").hide()
     $("#video-frame iframe").attr('src', "")
+    false
   )
   .on('click', "[data-object~='launch-video']",()->
     $("#shade").fadeIn()
