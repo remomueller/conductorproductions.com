@@ -4,7 +4,7 @@
   <div class="center video-container" style="">
     <div class="video-frame video-frame-upper-left"></div>
 
-    <% if true %>
+    <% if false %>
       <div class="visible-xs">
         <iframe src="//player.vimeo.com/video/111656554?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff" width="290" height="163" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="margin: 0 auto;"></iframe>
       </div>
@@ -14,8 +14,10 @@
       </div>
     <% else %>
       <%# This is the new bootstrap 3.2.0 responsive video %>
-      <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="//player.vimeo.com/video/111656554?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      <div class="home-video">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="//player.vimeo.com/video/111656554?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
       </div>
     <% end  %>
 
