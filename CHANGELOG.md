@@ -1,3 +1,15 @@
+## 0.2.1
+
+- **Home Page**
+  - Updated video link
+  - Updated main text on home page
+
+- **DRTV Page**
+  - Added six additional videos and reshuffled order
+
+- **Work Page**
+  - Added three additional videos and reshuffled order
+
 ## 0.2.0
 
 ### Enhancements
