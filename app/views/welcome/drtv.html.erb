@@ -19,28 +19,38 @@
   </div>
 </div>
 
+<% folder = "videos/drtv" %>
+
+<%# ["#{folder}/drtv-inheritance-thumb.png", "110153644"], %>
+
 <% videos = [
-  ["videos/drtv/drtv16-thumb.png", "//player.vimeo.com/video/111740592?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/drtv/drtv1-thumb.png", "//player.vimeo.com/video/48365590?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/drtv/drtv2-thumb.png", "//player.vimeo.com/video/48810429?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/drtv/drtv17-thumb.png", "//player.vimeo.com/video/111016727?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/drtv/drtv5-thumb.png", "//player.vimeo.com/video/67747842?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/drtv/drtv21-thumb.png", "//player.vimeo.com/video/111673757?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/drtv/drtv3-thumb.png", "//player.vimeo.com/video/105769409?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/drtv/drtv4-thumb.png", "//player.vimeo.com/video/79689795?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/drtv/drtv19-thumb.png", "//player.vimeo.com/video/110153644?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/drtv/drtv20-thumb.png", "//player.vimeo.com/video/107081935?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/drtv/drtv7-thumb.png", "//player.vimeo.com/video/105769619?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/drtv/drtv18-thumb.png", "//player.vimeo.com/video/111016628?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/drtv/drtv10-thumb.png", "//player.vimeo.com/video/69038520?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/drtv/drtv6-thumb.png", "//player.vimeo.com/video/59517089?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/drtv/drtv9-thumb.png", "//player.vimeo.com/video/48027830?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/drtv/drtv8-thumb.png", "//player.vimeo.com/video/105769620?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/drtv/drtv11-thumb.png", "//player.vimeo.com/video/79677873?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/drtv/drtv12-thumb.png", "//player.vimeo.com/video/48010358?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/drtv/drtv13-thumb.png", "//player.vimeo.com/video/48026187?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/drtv/drtv14-thumb.png", "//player.vimeo.com/video/61356596?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/drtv/drtv15-thumb.png", "//player.vimeo.com/video/106220311?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"]
+  ["#{folder}/drtv-brother-thumb.png", "111740592"],
+  ["#{folder}/drtv-1800flowers-thumb.png", "48365590"],
+  ["#{folder}/drtv-dragon-thumb.png", "48810429"],
+  ["#{folder}/drtv-dreamers-thumb.png", "124955189"],
+  ["#{folder}/drtv-popup-lantern-thumb.png", "124955187"],
+  ["#{folder}/drtv-hookits-thumb.png", "124955184"],
+  ["#{folder}/drtv-goji-host-thumb.png", "111016727"],
+  ["#{folder}/drtv-citizens-disability-thumb.png", "67747842"],
+  ["#{folder}/drtv-flexshopper-test-thumb.png", "111673757"],
+  ["#{folder}/drtv-tiger-home-inspection-2-thumb.png", "124955183"],
+  ["#{folder}/drtv-slendertone-thumb.png", "119589132"],
+  ["#{folder}/drtv-mae-thumb.png", "125151198"],
+  ["#{folder}/drtv-mobile-help-thumb.png", "105769409"],
+  ["#{folder}/drtv-education-connection-thumb.png", "79689795"],
+  ["#{folder}/drtv-hammerhead-thumb.png", "125151197"],
+  ["#{folder}/drtv-flexshopper-host-thumb.png", "107081935"],
+  ["#{folder}/drtv-safe-step-thumb.png", "105769619"],
+  ["#{folder}/drtv-goji-test-thumb.png", "111016628"],
+  ["#{folder}/drtv-tboost-thumb.png", "69038520"],
+  ["#{folder}/drtv-lawyers-dot-com-thumb.png", "59517089"],
+  ["#{folder}/drtv-magic-tap-thumb.png", "48027830"],
+  ["#{folder}/drtv-tx180-thumb.png", "105769620"],
+  ["#{folder}/drtv-amp-booster-thumb.png", "79677873"],
+  ["#{folder}/drtv-knife-saver-thumb.png", "48010358"],
+  ["#{folder}/drtv-paw-power-thumb.png", "48026187"],
+  ["#{folder}/drtv-lasaii-thumb.png", "61356596"],
+  ["#{folder}/drtv-united-law-thumb.png", "106220311"]
   ] %>
 <%= render partial: 'welcome/video_grid', locals: { videos: videos } %>
 

@@ -6,6 +6,7 @@
   - Added 12 new videos to work page
 - **DRTV Page**
   - Updated copy text and increased font size
+  - Added 7 new videos to DRTV page
 - **News Page**
   - Removed from the website for the time being
 - **General Changes**
