@@ -9,6 +9,7 @@
   - Removed from the website for the time being
 - **General Changes**
   - Updated year in footer to automatically get current year
+  - Added Google Analytics
 - **Gem Changes**
   - Updated to rails 4.2.1
   - Updated to pg 0.18.1
