@@ -1,5 +1,9 @@
 ## 0.3.0
 
+### Enhancements
+- **Gem Changes**
+  - Use of Ruby 2.2.2 is now recommended
+
 ## 0.2.1
 
 - **Home Page**
