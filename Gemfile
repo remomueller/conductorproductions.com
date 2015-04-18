@@ -1,31 +1,24 @@
 source 'https://rubygems.org'
 
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.4'
+gem 'rails',                '4.2.1'
 
 # Use postgresql as the database for Active Record
-gem 'pg'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'pg',                   '0.18.1'
 
+# Rails Defaults
+gem 'coffee-rails',         '~> 4.1.0'
+gem 'sass-rails',           '~> 5.0'
+gem 'uglifier',             '>= 1.3.0'
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'jbuilder',             '~> 2.0'
+gem 'jquery-rails',         '~> 4.0.3'
 gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
 
 
 # Testing
 group :test do
   # Pretty printed test output
   gem 'minitest'
-  gem 'minitest-reporters', '~> 1.0.4'
-  gem 'simplecov',          '~> 0.8.2',           require: false
+  gem 'minitest-reporters'
+  gem 'simplecov',          '~> 0.9.1',           require: false
 end
