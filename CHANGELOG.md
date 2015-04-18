@@ -1,16 +1,14 @@
 ## 0.3.0
 
 # Enhancements
-
 - **Work Page**
   - Updated copy text and increased font size
-
 - **DRTV Page**
   - Updated copy text and increased font size
-
 - **News Page**
   - Removed from the website for the time being
-
+- **General Changes**
+  - Updated year in footer to automatically get current year
 - **Gem Changes**
   - Updated to rails 4.2.1
   - Updated to pg 0.18.1

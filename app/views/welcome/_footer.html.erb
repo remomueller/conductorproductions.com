@@ -23,7 +23,7 @@
       <% end %>
     </div>
 
-    <div class="pull-right conductor-logo-footer">&copy; CONDUCTOR <%= Date.today.year %></div>
+    <div class="pull-right conductor-logo-footer">&copy; CONDUCTOR <span id="current-year"><%= Date.today.year %></span></div>
   </div>
   <div class="container visible-xs visible-sm center" style="margin-top:10px;">
     <div style="font-size:0.8em"><%= render partial: 'products' %></div>

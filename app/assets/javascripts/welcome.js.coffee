@@ -5,6 +5,10 @@
 @onFinish = (id) ->
   $("#shade").click()
 
+@setYear = () ->
+  year = new Date().getFullYear()
+  $("#current-year").html(year)
+
 @globalReady = () ->
   d = new Date()
   season = switch (d.getMonth + 1)
@@ -17,6 +21,7 @@
     else
       'fall'
   $("#season-container").html(season)
+  setYear()
 
 $(document)
   .ready(globalReady)
