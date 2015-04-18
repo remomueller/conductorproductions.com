@@ -1,6 +1,10 @@
 ## 0.3.0
 
-### Enhancements
+# Enhancements
+
+- **News Page**
+  - Removed from the website for the time being
+
 - **Gem Changes**
   - Updated to rails 4.2.1
   - Updated to pg 0.18.1
