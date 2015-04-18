@@ -3,10 +3,10 @@
 # Enhancements
 
 - **Work Page**
-  - Updated copy text
+  - Updated copy text and increased font size
 
 - **DRTV Page**
-  - Updated copy text
+  - Updated copy text and increased font size
 
 - **News Page**
   - Removed from the website for the time being
