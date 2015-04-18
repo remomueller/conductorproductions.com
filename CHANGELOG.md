@@ -2,6 +2,12 @@
 
 # Enhancements
 
+- **Work Page**
+  - Updated copy text
+
+- **DRTV Page**
+  - Updated copy text
+
 - **News Page**
   - Removed from the website for the time being
 
