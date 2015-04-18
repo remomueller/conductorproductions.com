@@ -19,19 +19,30 @@
   </div>
 </div>
 
+<% folder = "videos/work" %>
+
 <% videos = [
-  ["videos/work/work10-thumb.png", "//player.vimeo.com/video/111656553?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/work/work11-thumb.png", "//player.vimeo.com/video/107934478?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/work/work2-thumb.png", "//player.vimeo.com/video/105791712?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/work/work5-thumb.png", "//player.vimeo.com/video/105769621?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/work/work1-thumb.png", "//player.vimeo.com/video/105769141?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/work/work4-thumb.png", "//player.vimeo.com/video/48365590?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/work/work3-thumb.png", "//player.vimeo.com/video/101955253?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/work/work6-thumb.png", "//player.vimeo.com/video/48369656?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/work/work7-thumb.png", "//player.vimeo.com/video/50614258?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/work/work8-thumb.png", "//player.vimeo.com/video/79689801?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/work/work9-thumb.png", "//player.vimeo.com/video/48446906?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"],
-  ["videos/work/work12-thumb.png", "//player.vimeo.com/video/47943063?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"]
+  ["#{folder}/work-netflix-thumb.png", "124955438"],
+  ["#{folder}/work-nike-thumb.png", "124955437"],
+  ["#{folder}/work-reebok-thumb.png", "98734404"],
+  ["#{folder}/work-putnam-car-thumb.png", "124955436"],
+  ["#{folder}/work-putnam-ligety-thumb.png", "117310971"],
+  ["#{folder}/work-putnam-steele-thumb.png", "124955190"],
+  ["#{folder}/work-toyota-chcs-thumb.png", "125048207"],
+  ["#{folder}/work-tiger-home-inspection-thumb.png", "124955183"],
+  ["#{folder}/work-putnam-beach-thumb.png", "124955435"],
+  ["#{folder}/work-brother-thumb.png", "111656553"],
+  ["#{folder}/work-toyota-5state-thumb.png", "107934478"],
+  ["#{folder}/work-falcon-thumb.png", "105791712"],
+  ["#{folder}/work-toyota-tacoma-thumb.png", "105769621"],
+  ["#{folder}/work-baymen-thumb.png", "105769141"],
+  ["#{folder}/work-1800flowers-thumb.png", "48365590"],
+  ["#{folder}/work-party-lite-thumb.png", "101955253"],
+  ["#{folder}/work-rockport-thumb.png", "125082260"],
+  ["#{folder}/work-irobot-thumb.png", "50614258"],
+  ["#{folder}/work-summer-infant-thumb.png", "79689801"],
+  ["#{folder}/work-home-goods-thumb.png", "48446906"],
+  ["#{folder}/work-toyota-facebook-thumb.png", "47943063"]
   ] %>
 <%= render partial: 'welcome/video_grid', locals: { videos: videos } %>
 

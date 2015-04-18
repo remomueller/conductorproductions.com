@@ -1,11 +1,15 @@
+<% vimeo_url = "//player.vimeo.com/video/" %>
+<% common_settings = "?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff" %>
+
 <div style="background-color:#000;z-index:100">
   <div class="container" style="position:relative">
     <div style="position:relative;padding-top:20px;padding-bottom:20px">
     <div id="other-videos" class="row">
-      <% videos.each_with_index do |(image_thumbnail, video_link), i| %>
-      <div class="col-xs-6 col-sm-4 <%= "hidden-xs" if i == videos.count - 1 and (i % 2) == 0 %>" style="padding-bottom:20px">
-        <%= image_tag image_thumbnail, style: 'width:100%', class: 'video-thumbnail', data: { object: 'launch-video', video_src: video_link }, alt: '' %>
-      </div>
+      <% videos.each_with_index do |(image_thumbnail, video_id), i| %>
+        <% video_link = "#{vimeo_url}#{video_id}#{common_settings}" %>
+        <div class="col-xs-6 col-sm-4 <%= "hidden-xs" if i == videos.count - 1 and (i % 2) == 0 %>" style="padding-bottom:20px">
+          <%= image_tag image_thumbnail, style: 'width:100%', class: 'video-thumbnail', data: { object: 'launch-video', video_src: video_link }, alt: '' %>
+        </div>
       <% end %>
     </div>
     <div id="video-frame" style="width:100%;display:none;">
