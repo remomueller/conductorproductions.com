@@ -5,6 +5,9 @@ gem 'rails',                '4.2.1'
 # Use postgresql as the database for Active Record
 gem 'pg',                   '0.18.1'
 
+# Gems used by project
+gem 'haml'
+
 # Rails Defaults
 gem 'coffee-rails',         '~> 4.1.0'
 gem 'sass-rails',           '~> 5.0'

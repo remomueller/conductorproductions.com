@@ -15,6 +15,7 @@
 - **Gem Changes**
   - Updated to rails 4.2.1
   - Updated to pg 0.18.1
+  - Using haml now for views
   - Use of Ruby 2.2.2 is now recommended
 
 ## 0.2.1
