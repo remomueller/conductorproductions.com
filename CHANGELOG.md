@@ -1,6 +1,8 @@
 ## 0.3.0
 
 # Enhancements
+- **Home Page**
+  - Added carousel of four videos to home page
 - **Work Page**
   - Updated copy text and increased font size
   - Added 12 new videos to work page

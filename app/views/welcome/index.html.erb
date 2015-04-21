@@ -1,25 +1,18 @@
 <%= render partial: 'header' %>
 
 <div class="container">
-  <div class="center video-container" style="">
+  <div class="center video-container">
     <div class="video-frame video-frame-upper-left"></div>
 
-    <% if false %>
-      <div class="visible-xs">
-        <iframe src="//player.vimeo.com/video/111656554?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff" width="290" height="163" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="margin: 0 auto;"></iframe>
-      </div>
-
-      <div class="hidden-xs">
-        <iframe src="//player.vimeo.com/video/111656554?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff" width="699" height="393" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-      </div>
-    <% else %>
-      <%# This is the new bootstrap 3.2.0 responsive video %>
       <div class="home-video">
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="//player.vimeo.com/video/111656554?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-        </div>
+        <% if true %>
+          <%= render partial: 'welcome/carousel' %>
+        <% else %>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="//player.vimeo.com/video/111656554?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </div>
+        <% end %>
       </div>
-    <% end  %>
 
     <% if false %>
     <div class="video-frame video-frame-lower-left">
@@ -38,15 +31,7 @@
       </div>
     </div>
 
-    <% if true %>
     <div class="video-frame video-frame-lower-right"></div>
-    <% else %>
-      <div class="video-frame-with-float">
-        <div style="position:relative">
-          <div class="video-frame-lower-right-float"></div>
-        </div>
-      </div>
-    <% end %>
 
   </div>
 

@@ -22,6 +22,7 @@
       'fall'
   $("#season-container").html(season)
   setYear()
+  # carouselReady()
 
 $(document)
   .ready(globalReady)

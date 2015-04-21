@@ -1,0 +1,19 @@
+#carousel-videos.carousel
+  %ol.carousel-indicators
+    %li.active{ data: { target: "#carousel-videos", slide: { to: "0" } } }
+    %li{ data: { target: "#carousel-videos", slide: { to: "1" } } }
+    %li{ data: { target: "#carousel-videos", slide: { to: "2" } } }
+    %li{ data: { target: "#carousel-videos", slide: { to: "3" } } }
+  .carousel-inner{role: "listbox"}
+    .item.active
+      .embed-responsive.embed-responsive-16by9
+        %iframe.embed-responsive-item{ src: "//player.vimeo.com/video/111656554?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
+    .item
+      .embed-responsive.embed-responsive-16by9
+        %iframe.embed-responsive-item{ src: "//player.vimeo.com/video/124955435?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=0&amp;color=ffffff", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
+    .item
+      .embed-responsive.embed-responsive-16by9
+        %iframe.embed-responsive-item{ src: "//player.vimeo.com/video/124955438?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=0&amp;color=ffffff", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
+    .item
+      .embed-responsive.embed-responsive-16by9
+        %iframe.embed-responsive-item{ src: "//player.vimeo.com/video/105791712?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=0&amp;color=ffffff", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
