@@ -18,10 +18,11 @@
 # Remove
 /config/database.yml
 
-
+/public/assets/*
 /public/cache/*
 /public/stylesheets/cache/*
 /public/javascripts/cache/*
+/public/20*
 
 # Other Files
 
