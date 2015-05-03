@@ -1,19 +1,17 @@
+- vimeo_url = "//player.vimeo.com/video/"
+- common_settings = "?api=1&title=0&byline=0&portrait=0&color=ffffff&autoplay=1"
+
+- home_page_videos = [{ id: '111656554' }, { id: '124955435' }, { id: '124955438' }, { id: '105791712' }]
+
+#home-iframe.embed-responsive.embed-responsive-16by9
+  %iframe{ src: '', webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
+
+
 #carousel-videos.carousel
   %ol.carousel-indicators
-    %li.active{ data: { target: "#carousel-videos", slide: { to: "0" } } }
-    %li{ data: { target: "#carousel-videos", slide: { to: "1" } } }
-    %li{ data: { target: "#carousel-videos", slide: { to: "2" } } }
-    %li{ data: { target: "#carousel-videos", slide: { to: "3" } } }
-  .carousel-inner{role: "listbox"}
-    .item.active
-      .embed-responsive.embed-responsive-16by9
-        %iframe.embed-responsive-item{ src: "//player.vimeo.com/video/111656554?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
-    .item
-      .embed-responsive.embed-responsive-16by9
-        %iframe.embed-responsive-item{ src: "//player.vimeo.com/video/124955435?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=0&amp;color=ffffff", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
-    .item
-      .embed-responsive.embed-responsive-16by9
-        %iframe.embed-responsive-item{ src: "//player.vimeo.com/video/124955438?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=0&amp;color=ffffff", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
-    .item
-      .embed-responsive.embed-responsive-16by9
-        %iframe.embed-responsive-item{ src: "//player.vimeo.com/video/105791712?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=0&amp;color=ffffff", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
+    - home_page_videos.each_with_index do |video, index|
+      %li{ class: "#{'active' if index == 0}", data: { target: "#carousel-videos", slide: { to: index } } }
+  .carousel-inner{ role: "listbox" }
+    - home_page_videos.each_with_index do |video, index|
+      - video_src = "#{vimeo_url}#{video[:id]}#{common_settings}"
+      .item{ class: "#{'active' if index == 0}", data: { object: 'carousel-video', video_src: video_src } }
