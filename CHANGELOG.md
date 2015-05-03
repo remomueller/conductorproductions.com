@@ -21,6 +21,7 @@
   - Updated to pg 0.18.1
   - Using haml now for views
   - Use of Ruby 2.2.2 is now recommended
+  - Updated to simplecov 0.10.0
 
 ## 0.2.1
 
