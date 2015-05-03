@@ -1,4 +1,4 @@
-## 0.3.1
+## 0.3.1 (May 3, 2015)
 
 ### Enhancements
 - **Home Page**
