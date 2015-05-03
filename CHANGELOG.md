@@ -1,10 +1,12 @@
 ## 0.3.1
 
-
+### Enhancements
+- **Home Page**
+  - Added fifth video to home page
 
 ## 0.3.0 (May 3, 2015)
 
-# Enhancements
+### Enhancements
 - **Home Page**
   - Added carousel of four videos to home page
   - Improved text width on smaller devices for text below video carousel
