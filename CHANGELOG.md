@@ -3,6 +3,7 @@
 # Enhancements
 - **Home Page**
   - Added carousel of four videos to home page
+  - Improved text width on smaller devices for text below video carousel
 - **Work Page**
   - Updated copy text and increased font size
   - Added 12 new videos to work page

@@ -389,3 +389,15 @@ $video_border_margin: 75px;
 .video-thumbnail {
   cursor: pointer;
 }
+
+.home-intro-text {
+  text-align:center;
+  margin:20px 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .home-intro-text {
+    text-align:center;
+    margin:20px 80px;
+  }
+}
