@@ -2,7 +2,7 @@
   <div class="company-logo">
     <div class="hidden-xs">
       <div class="pull-right">
-        <%= render partial: 'links' %>
+        <%= render 'welcome/links' %>
       </div>
       <h1 class="hidden-xs">CONDUCTOR</h1>
     </div>
@@ -19,10 +19,10 @@
     </div>
 
 
-    <div class="hidden-xs hidden-sm" style="font-size: 0.9em;"><%= render partial: 'products' %></div>
+    <div class="hidden-xs hidden-sm" style="font-size: 0.9em;"><%= render 'welcome/products' %></div>
   </div>
 
   <div class="visible-xs">
-    <%= render partial: 'links' %>
+    <%= render 'welcome/links' %>
   </div>
 </div>

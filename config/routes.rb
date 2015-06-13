@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   get '/index_v2' => 'welcome#index'
   get '/index_v1' => 'welcome#index_v1'
 
+  scope module: 'application' do
+    get :version
+  end
+
   root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,6 +1,8 @@
 ## 0.4.0
 
 ### Enhancements
+- **General Changes**
+  - Added a version page
 - **Gem Changes**
   - Added figaro centralized configuration
   - Updated to pg 0.18.2
