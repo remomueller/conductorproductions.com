@@ -16,6 +16,7 @@
 /tmp
 
 # Remove
+/config/application.yml
 /config/database.yml
 
 /public/assets/*

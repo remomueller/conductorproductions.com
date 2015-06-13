@@ -1,5 +1,9 @@
 ## 0.4.0
 
+### Enhancements
+- **Gem Changes**
+  - Added figaro centralized configuration
+
 ## 0.3.1 (May 3, 2015)
 
 ### Enhancements

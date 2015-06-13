@@ -7,6 +7,7 @@ gem 'pg',                   '0.18.1'
 
 # Gems used by project
 gem 'haml'
+gem 'figaro',               '~> 1.1.1'
 
 # Rails Defaults
 gem 'coffee-rails',         '~> 4.1.0'
