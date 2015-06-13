@@ -3,6 +3,7 @@
 ### Enhancements
 - **Gem Changes**
   - Added figaro centralized configuration
+  - Updated to pg 0.18.2
 
 ## 0.3.1 (May 3, 2015)
 
