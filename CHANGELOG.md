@@ -4,6 +4,7 @@
 - **General Changes**
   - Added a version page
   - Updated font location for better asset management using Rails
+  - Enable Google Analytics in production only
 - **Gem Changes**
   - Added figaro centralized configuration
   - Updated to pg 0.18.2

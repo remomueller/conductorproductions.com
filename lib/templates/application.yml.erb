@@ -11,3 +11,5 @@ smtp_password:        "<%= print "Enter SMTP Password [password]: "; s = gets.ch
 
 devise_pepper:        "<%= SecureRandom.hex(64) %>"
 website_secret:       "<%= SecureRandom.hex(64) %>"
+
+google_analytics_id:  "<%= print "Google Analytics ID: "; gets.chomp %>"
