@@ -1,7 +1,7 @@
-@import 'overrides';
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
 
-// @import "bootstrap-sprockets";
-// @import "bootstrap";
+@import 'overrides';
 
 @import 'carousel';
 @import 'fonts';

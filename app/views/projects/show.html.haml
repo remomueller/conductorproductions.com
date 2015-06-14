@@ -1,0 +1,19 @@
+%p
+  %strong Title
+  = @project.name
+
+%p
+  %strong URL Slug
+  = @project.slug
+
+%p
+  %strong Logo
+  = @project.logo
+
+%p
+  %strong Owner
+  = @project.user.name if @project.user
+
+= link_to 'Edit', edit_project_path(@project)
+|
+= link_to 'Back', projects_path

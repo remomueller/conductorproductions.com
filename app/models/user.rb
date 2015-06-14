@@ -13,4 +13,10 @@ class User < ActiveRecord::Base
   # Model Relationships
   has_many :projects, -> { where deleted: false }
 
+  # User Methods
+
+  def name
+    "#{first_name} #{last_name}"
+  end
+
 end

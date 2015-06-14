@@ -1,0 +1,24 @@
+%h1 Listing Projects
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th Title
+      %th URL Slug
+      %th Logo
+      %th Owner
+      %th{ colspan: "2" }
+
+  %tbody
+    - @projects.each do |project|
+      %tr
+        %td= link_to project.name, project
+        %td= project.slug
+        %td= project.logo
+        %td= project.user.name if project.user
+        %td= link_to 'Edit', edit_project_path(project)
+        %td= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Project', new_project_path

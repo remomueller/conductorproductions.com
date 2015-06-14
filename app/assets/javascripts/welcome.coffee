@@ -25,7 +25,6 @@
   homeReady()
 
 $(document)
-  .ready(globalReady)
   .on('click touchstart', '#shade', () ->
     $("#shade").fadeOut()
     $("#other-videos").show()

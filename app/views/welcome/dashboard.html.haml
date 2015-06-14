@@ -1,3 +1,5 @@
 %h1 Dashboard
 
-= link_to 'Logout', destroy_user_session_path
+
+- if current_user.system_admin?
+  = link_to 'Go To Projects', projects_path, class: 'btn btn-lg btn-primary'
