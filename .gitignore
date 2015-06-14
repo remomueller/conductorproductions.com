@@ -39,7 +39,6 @@
 .DS_Store
 
 # Specific Conductor Productions Ignore Folders
-/app/assets/fonts/
 /app/assets/layers/
 /app/assets/images/videos/drtv/*.jpg
 /app/assets/images/videos/work/*.jpg
