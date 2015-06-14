@@ -5,6 +5,12 @@ class WelcomeControllerTest < ActionController::TestCase
   #   assert true
   # end
 
+  test "should get dashboard for logged in user" do
+    login(users(:collaborator))
+    get :dashboard
+    assert_response :success
+  end
+
   test "should get index" do
     get :index
     assert_response :success

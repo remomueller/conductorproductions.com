@@ -1,5 +1,7 @@
 class WelcomeController < ApplicationController
 
+  before_action :authenticate_user!, only: [ :dashboard ]
+
   def index
     # render layout: 'conductor-application-v2'
   end
@@ -14,6 +16,10 @@ class WelcomeController < ApplicationController
 
   def index_v1
     render layout: 'conductor-application-v1'
+  end
+
+  def dashboard
+
   end
 
 end

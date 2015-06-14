@@ -1,6 +1,12 @@
 ## 0.4.0
 
 ### Enhancements
+- **Administrative Changes**
+  - Users can now register and sign in to the website
+  - System admin role has been added
+- **Project Changes**
+  - System admins can create and edit projects
+  - Projects can have a name, slug, and logo
 - **General Changes**
   - Added a version page
   - Updated font location for better asset management using Rails
