@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'directors_cut_proregular';
+  src: asset-url('directorscut/DirectorsCutPro-webfont.eot');
+  src: asset-url('directorscut/DirectorsCutPro-webfont.eot?#iefix') format('embedded-opentype'),
+       asset-url('directorscut/DirectorsCutPro-webfont.woff') format('woff'),
+       asset-url('directorscut/DirectorsCutPro-webfont.ttf') format('truetype'),
+       asset-url('directorscut/DirectorsCutPro-webfont.svg#directors_cut_proregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'directors_cut_probold';
+  src: asset-url('directorscut/DirectorsCutPro-Bold-webfont.eot');
+  src: asset-url('directorscut/DirectorsCutPro-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+       asset-url('directorscut/DirectorsCutPro-Bold-webfont.woff') format('woff'),
+       asset-url('directorscut/DirectorsCutPro-Bold-webfont.ttf') format('truetype'),
+       asset-url('directorscut/DirectorsCutPro-Bold-webfont.svg#directors_cut_probold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
