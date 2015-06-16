@@ -13,6 +13,7 @@
   - Enable Google Analytics in production only
 - **Gem Changes**
   - Added figaro centralized configuration
+  - Updated to rails 4.2.2
   - Updated to pg 0.18.2
 
 ## 0.3.1 (May 3, 2015)
