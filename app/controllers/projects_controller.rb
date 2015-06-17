@@ -73,6 +73,8 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name, :slug, :logo)
+      params[:project] ||= { blank: '1' }
+      params[:project][:password_plain] = params[:project][:password] unless params[:project][:password].blank?
+      params.require(:project).permit(:name, :number, :slug, :logo, :client_name, :username, :password, :password_plain)
     end
 end

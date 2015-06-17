@@ -15,4 +15,13 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, alert: "You do not have sufficient privileges to access that page." unless current_user.system_admin?
   end
 
+  def current_client
+    @current_client ||= Project.find(session[:project_id]) if session[:project_id]
+  end
+  helper_method :current_client
+
+  def authenticate_client!
+    redirect_to client_login_path unless current_client
+  end
+
 end

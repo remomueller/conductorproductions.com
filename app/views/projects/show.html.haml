@@ -11,6 +11,15 @@
   = @project.logo
 
 %p
+  %strong Client Username
+  = @project.username
+
+%p
+  %strong Client Password
+  %span{ style: 'cursor:pointer', data: { object: 'click-to-view', content: @project.password_plain } }
+    = '*' * @project.password_plain.to_s.size if @project.password_plain.present?
+
+%p
   %strong Owner
   = @project.user.name if @project.user
 

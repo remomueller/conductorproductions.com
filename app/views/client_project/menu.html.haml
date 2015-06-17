@@ -1,0 +1,32 @@
+= render 'client_project/header'
+
+
+%h2= @project.client_name
+
+.pull-right
+  = image_tag 'agency-logo.png'
+
+%h1
+  = @project.name
+  |
+  = @project.number
+
+%ul.project-menu.menu-large
+  %li.active
+    CREATIVE
+    %ul
+      %li Treatment
+      %li Concepts
+      %li= link_to 'Script', client_project_script_path
+      %li Boards
+      %li Reference Materials
+  %li
+    = link_to 'Timeline', client_project_timeline_path
+  %li
+    Production
+    %ul
+      %li= link_to 'Casting', client_project_casting_path
+      %li Locations
+      %li Production Elements
+  %li
+    Editorial

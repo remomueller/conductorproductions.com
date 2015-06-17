@@ -10,13 +10,29 @@
           %li= message
 
   .field
-    = f.label :name, 'Title'
+    = f.label :name, 'Project Name'
     %br
     = f.text_field :name
+  .field
+    = f.label :number, 'Project Number'
+    %br
+    = f.text_field :number
   .field
     = f.label :slug, 'URL Slug'
     %br
     = f.text_field :slug
+  .field
+    = f.label :client_name, 'Client Name'
+    %br
+    = f.text_field :client_name
+  .field
+    = f.label :username, 'Client Username'
+    %br
+    = f.text_field :username
+  .field
+    = f.label :password, 'Client Password'
+    %br
+    = f.text_field :password, value: @project.password_plain
   - if false
     .field
       = f.label :logo

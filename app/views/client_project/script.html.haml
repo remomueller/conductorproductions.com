@@ -1,0 +1,17 @@
+= render 'client_project/header'
+
+.row
+  .col-sm-9
+    %div{ style: "background-color:black;color:white;padding-bottom:20px;padding-top:10px" }
+      %h1
+        =@project.name
+      %p
+        &laquo; Updated Script &raquo;
+
+      %div{ style: 'margin:0px 20px;background-color:white;color:black;height:500px' }
+        Script...
+
+  .col-sm-3
+    = render 'client_project/side_menu'
+
+

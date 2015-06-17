@@ -26,9 +26,10 @@
 
   %body
     #shade
-    .container
-      = link_to 'Dashboard', dashboard_path, class: 'btn btn-lg btn-primary'
-      = link_to 'Logout', destroy_user_session_path, class: 'btn btn-lg btn-danger pull-right'
+    - if false
+      .container
+        = link_to 'Dashboard', dashboard_path, class: 'btn btn-lg btn-primary'
+        = link_to 'Logout', destroy_user_session_path, class: 'btn btn-lg btn-danger pull-right'
     .container
       %p#notice= notice
     .container

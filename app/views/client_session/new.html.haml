@@ -1,0 +1,14 @@
+%h1 CLIENT LOG-IN
+
+.row
+  .col-sm-6.col-md-4
+    = form_tag client_login_path, method: :post, class: 'form-vertical' do
+      .form-group
+        = label_tag "client[username]", 'Username', class: 'control-label'
+        = text_field_tag "client[username]", nil, class: 'form-control'
+
+      .form-group
+        = label "client[password]", 'Password', class: 'control-label'
+        = password_field_tag "client[password]", nil, class: 'form-control', autocomplete: "off"
+
+      = submit_tag "SUBMIT", class: 'btn btn-default'

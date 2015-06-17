@@ -1,0 +1,5 @@
+.row{ style: 'padding-bottom:10px' }
+  .col-xs-12
+    = link_to 'Logout', client_logout_path, class: 'pull-right btn btn-default btn-xs'
+
+    = link_to 'Back to Menu', client_project_menu_path, class: 'btn btn-default btn-xs' unless current_page?(client_project_menu_path) or current_page?(client_project_root_path)

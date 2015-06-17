@@ -6,11 +6,25 @@
   - System admin role has been added
 - **Project Changes**
   - System admins can create and edit projects
-  - Projects can have a name, slug, and logo
+  - Projects can have:
+    - Project Name
+    - Project Number
+    - Project Logo
+    - URL Slug
+    - Client Name
+    - Client Username
+    - Client Password
 - **General Changes**
   - Added a version page
   - Updated font location for better asset management using Rails
   - Enable Google Analytics in production only
+- **Client Changes**
+  - Clients can now login to a project
+  - Clients can view the following pages:
+    - Project Main Menu
+    - Creative / Script
+    - Timeline
+    - Production / Casting
 - **Gem Changes**
   - Added figaro centralized configuration
   - Updated to rails 4.2.2

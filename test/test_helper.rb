@@ -19,6 +19,10 @@ class ActionController::TestCase
     @request.env["devise.mapping"] = Devise.mappings[resource]
     sign_in(resource.class.name.downcase.to_sym, resource)
   end
+
+  def login_client(resource)
+    session[:project_id] = resource.id
+  end
 end
 
 class ActionDispatch::IntegrationTest

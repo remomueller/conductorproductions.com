@@ -3,13 +3,21 @@
 one:
   name: Project One
   slug: project-one
+  number: 1234
+  client_name: Client Name
+  username: Client
+  password_plain: Password
   # logo: MyString
   user: system_admin
   deleted: false
 
 two:
   name: Project Two
+  number: 1234567
   slug: project-two
+  client_name:
+  username: Client2
+  password_plain: Password2
   # logo: MyString
   user: system_admin
   deleted: false
