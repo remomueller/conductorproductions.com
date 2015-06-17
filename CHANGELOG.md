@@ -25,6 +25,8 @@
     - Creative / Script
     - Timeline
     - Production / Casting
+- **Email Changes**
+  - Updated password reset and unlock emails to use the correct website URL
 - **Gem Changes**
   - Added figaro centralized configuration
   - Updated to rails 4.2.2
