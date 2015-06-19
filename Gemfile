@@ -11,6 +11,7 @@ gem 'haml'
 gem 'figaro',               '~> 1.1.1'
 gem 'bootstrap-sass',       '~> 3.3.4'
 gem 'bcrypt',               '~> 3.1.10'
+gem 'font-awesome-rails'
 
 # Rails Defaults
 gem 'coffee-rails',         '~> 4.1.0'

@@ -1,5 +1,34 @@
-.row{ style: 'padding-bottom:10px' }
-  .col-xs-12
-    = link_to 'Logout', client_logout_path, class: 'pull-right btn btn-default btn-xs'
+.container
+  .company-logo
+    .hidden-xs
+      .pull-right
+        .menu-links
+          .triangle-right
+          .triangle-right-white
+          .transparent-box
+          .triangle-left
+          .box-left
+          = link_to 'Logout', client_logout_path
 
-    = link_to 'Back to Menu', client_project_menu_path, class: 'btn btn-default btn-xs' unless current_page?(client_project_menu_path) or current_page?(client_project_root_path)
+      %h1.hidden-xs
+
+
+    .visible-xs{ style: "position:relative" }
+      .triangle-right-xs
+      .triangle-right-white-xs
+      .transparent-box-xs
+      .triangle-left-xs
+      - if true
+        .triangle-left-white-xs
+
+      %h1
+        &nbsp;
+        =# link_to @project.client_name, client_project_root_path(@project)
+
+.container
+  %h2.pull-left
+    = link_to @project.client_name, client_project_root_path(@project)
+  .visible-xs
+    .menu-links
+      .pull-right
+        = link_to 'Logout', client_logout_path

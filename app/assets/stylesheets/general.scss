@@ -43,7 +43,7 @@ $triangle_size: 40px;
   left:-$triangle_size;
   border-top: $triangle_size solid transparent;
   border-bottom: $triangle_size solid transparent;
-  border-right: $triangle_size solid black;
+  border-right: $triangle_size solid $logo-color;
   position: absolute;
 }
 $container-padding: 15px;
@@ -54,7 +54,7 @@ $container-padding: 15px;
   right:0px - $container-padding;
   border-top: $triangle_size solid transparent;
   border-bottom: $triangle_size solid transparent;
-  border-right: $triangle_size solid black;
+  border-right: $triangle_size solid $logo-color;
   position: absolute;
 }
 .triangle-left-white-xs {
@@ -64,7 +64,7 @@ $container-padding: 15px;
   right:-1px - $container-padding;
   border-top: $triangle_size solid transparent;
   border-bottom: $triangle_size solid transparent;
-  border-right: $triangle_size solid #fff;
+  border-right: $triangle_size solid $body-bg;
   position: absolute;
 }
 $triangle_small_size: 20px;
@@ -75,7 +75,7 @@ $triangle_small_size: 20px;
   left: -(2 * $triangle_size - $triangle_small_size);
   border-top: $triangle_small_size solid transparent;
   border-bottom: $triangle_small_size solid transparent;
-  border-left: $triangle_small_size solid #000;
+  border-left: $triangle_small_size solid $logo-color;
   position: absolute;
 }
 .triangle-right-xs {
@@ -85,7 +85,7 @@ $triangle_small_size: 20px;
   right: $triangle_size - $container-padding;
   border-top: $triangle_small_size solid transparent;
   border-bottom: $triangle_small_size solid transparent;
-  border-left: $triangle_small_size solid #000;
+  border-left: $triangle_small_size solid $logo-color;
   position: absolute;
 }
 .triangle-right-white {
@@ -95,7 +95,7 @@ $triangle_small_size: 20px;
   left:-(2 * $triangle_size - $triangle_small_size + 1);
   border-top: $triangle_small_size solid transparent;
   border-bottom: $triangle_small_size solid transparent;
-  border-left: $triangle_small_size solid #fff;
+  border-left: $triangle_small_size solid $body-bg;
   position: absolute;
 }
 .triangle-right-white-xs {
@@ -105,7 +105,7 @@ $triangle_small_size: 20px;
   right:($triangle_size + 1 - $container-padding);
   border-top: $triangle_small_size solid transparent;
   border-bottom: $triangle_small_size solid transparent;
-  border-left: $triangle_small_size solid #fff;
+  border-left: $triangle_small_size solid $body-bg;
   position: absolute;
 }
 .transparent-box {
@@ -115,8 +115,8 @@ $triangle_small_size: 20px;
   height: $triangle_size;
   top: 0px;
   left: -1600px;
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
+  border-top: 1px solid $logo-color;
+  border-bottom: 1px solid $logo-color;
 }
 .transparent-box-xs {
   position: absolute;
@@ -125,14 +125,14 @@ $triangle_small_size: 20px;
   top: 0px;
   right: $triangle_size + $triangle_small_size - $container-padding;
   width: 100%;
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
+  border-top: 1px solid $logo-color;
+  border-bottom: 1px solid $logo-color;
 }
 .box-left {
   position: absolute;
   top:-20px;
   left:0px;
-  background-color: #000;
+  background-color: $logo-color;
   width: 1600px;
   margin-right: -1600px;
   height:80px;
@@ -146,7 +146,7 @@ $triangle_small_size: 20px;
   position:relative;
 }
 .menu-links a {
-  color:#000;
+  color:$logo-color;
   padding:0px 4px;
 }
 
@@ -155,11 +155,11 @@ $triangle_small_size: 20px;
     padding-left: 7px;
     margin-left: 0px;
     font-size: 1em;
-    background-color:#000;
-    color:#fff;
+    background-color:$logo-color;
+    color:$body-bg;
   }
   .menu-links a {
-    color:#fff;
+    color:$body-bg;
   }
 }
 
@@ -194,7 +194,7 @@ $triangle_small_size: 20px;
 }
 
 .product-links a {
-  color: #333;
+  color: $text-color;
   cursor: pointer;
   text-decoration: none;
   white-space: nowrap;
@@ -216,7 +216,7 @@ $video_border_margin: 75px;
   height:127px;
   background-image: url('splash2/work-tab.png');
   background-repeat:no-repeat;
-  color: #fff;
+  color: $body-bg;
 }
 
 .flip-tab-right div {
@@ -382,7 +382,7 @@ $video_border_margin: 75px;
   z-index:90;
   width:100%;
   height:100%;
-  background-color:black;
+  background-color:$logo-color;
   display:none;
 }
 

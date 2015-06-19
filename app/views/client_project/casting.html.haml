@@ -1,26 +1,15 @@
-= render 'client_project/header'
-
-.row
-  .col-sm-9
-    %div{ style: "background-color:black;color:white;padding-bottom:20px;padding-top:10px" }
-      %h1
-        =@project.name
-      %p
-        &laquo; Casting Options &raquo;
+%div{ style: "padding-bottom:20px;" }
+  %h1
+    =@project.name
+  %p
+    &laquo; Casting Options &raquo;
 
 
-      - (1..5).each do
-        .row
-          - (1..4).each do
-            .col-sm-6.col-md-3
-              %div{ style: 'margin:20px;' }
-                %div{ style: 'background-color:white;height:50px' }
-                %div{ style: 'background-color:gray;' }
-                  Role Name
-
-
-
-  .col-sm-3
-    = render 'client_project/side_menu'
-
-
+  - (1..5).each do
+    .row
+      - (1..4).each do
+        .col-sm-6.col-md-3
+          %div{ style: 'margin:20px;' }
+            %div{ style: 'background-color:white;height:50px' }
+            %div{ style: 'background-color:gray;' }
+              Role Name

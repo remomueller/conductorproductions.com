@@ -1,8 +1,3 @@
-= render 'client_project/header'
-
-
-%h2= @project.client_name
-
 .pull-right
   = image_tag 'agency-logo.png'
 
@@ -11,22 +6,53 @@
   |
   = @project.number
 
-%ul.project-menu.menu-large
-  %li.active
+.project-menu-plain
+  .project-menu-main-header{ data: { object: 'toggle-target', target: '#creative-menu' }}
+    .menu-triangle-left
     CREATIVE
-    %ul
-      %li Treatment
-      %li Concepts
-      %li= link_to 'Script', client_project_script_path
-      %li Boards
-      %li Reference Materials
-  %li
+  .project-menu-sub#creative-menu
+    .project-menu-sub-header
+      .menu-triangle-left-sub
+      .menu-triangle-left-sub-white
+      Treatment
+    .project-menu-sub-header
+      .menu-triangle-left-sub
+      .menu-triangle-left-sub-white
+      Concepts
+    .project-menu-sub-header
+      .menu-triangle-left-sub
+      .menu-triangle-left-sub-white
+      = link_to 'Script', client_project_script_path
+    .project-menu-sub-header
+      .menu-triangle-left-sub
+      .menu-triangle-left-sub-white
+      Boards
+    .project-menu-sub-header
+      .menu-triangle-left-sub
+      .menu-triangle-left-sub-white
+      Reference Materials
+
+  .project-menu-main-header
+    .menu-triangle-left
     = link_to 'Timeline', client_project_timeline_path
-  %li
-    Production
-    %ul
-      %li= link_to 'Casting', client_project_casting_path
-      %li Locations
-      %li Production Elements
-  %li
-    Editorial
+
+  .project-menu-main-header{ data: { object: 'toggle-target', target: '#production-menu' }}
+    .menu-triangle-left
+    PRODUCTION
+  .project-menu-sub#production-menu
+    .project-menu-sub-header
+      .menu-triangle-left-sub
+      .menu-triangle-left-sub-white
+      = link_to 'Casting', client_project_casting_path
+    .project-menu-sub-header
+      .menu-triangle-left-sub
+      .menu-triangle-left-sub-white
+      Locations
+    .project-menu-sub-header
+      .menu-triangle-left-sub
+      .menu-triangle-left-sub-white
+      Production Elements
+
+  .project-menu-main-header
+    .menu-triangle-left
+    EDITORIAL

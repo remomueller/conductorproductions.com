@@ -1,4 +1,4 @@
-<% links = [['HOME', 'index.html'], ['WORK','work.html'], ['DRTV', 'drtv.html'], ['CONTACT', 'contact.html']] %>
+<% links = [['HOME', root_path], ['WORK', work_path], ['DRTV', drtv_path], ['CLIENT', (current_client ? client_project_root_path(current_client) : client_login_path)], ['CONTACT', contact_path]] %>
 
 
 <div class="menu-links">

@@ -1,10 +1,2 @@
-@import 'bootstrap-sprockets';
-@import 'bootstrap';
-
-@import 'overrides';
-
-@import 'carousel';
-@import 'fonts';
-@import 'general';
-@import 'work';
-@import 'projects';
+@import 'themes/variables';
+@import 'tree';

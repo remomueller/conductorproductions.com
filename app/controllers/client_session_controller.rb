@@ -2,7 +2,7 @@ class ClientSessionController < ApplicationController
 
   # Show the client login page
   def new
-
+    @invert = true
   end
 
   # Attempt to login the client

@@ -1,0 +1,30 @@
+.spacer
+  &nbsp;
+
+.footer
+  .container.social-links
+
+    .pull-left
+      = link_to 'https://www.facebook.com/ConductorCreative', class: 'plain-link' do
+        %i.fa.fa-facebook
+      &nbsp;
+      = link_to 'https://twitter.com/conductorprod', class: 'plain-link' do
+        %i.fa.fa-twitter
+      &nbsp;
+      = link_to 'http://www.linkedin.com/pub/noah-lydiard/3/b5b/749', class: 'plain-link' do
+        %i.fa.fa-linkedin
+      - if false
+        &nbsp;
+        = link_to 'http://conductorproductions.tumblr.com', class: 'plain-link' do
+          %i.fa.fa-tumblr
+
+    .pull-right.conductor-logo-footer
+      - if current_client and params[:controller] == 'client_project'
+        = link_to '#', class: 'plain-link' do
+          SEND US FILES | up to 10gb
+      - else
+        &copy; CONDUCTOR
+        %span#current-year= Date.today.year
+  .container.visible-xs.visible-sm.center{ style: "margin-top:10px;" }
+    %div{ style: "font-size:0.8em" }
+      = render 'welcome/products'
