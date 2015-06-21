@@ -1,5 +1,8 @@
 class Project < ActiveRecord::Base
 
+  # Uploaders
+  mount_uploader :logo, ImageUploader
+
   # Triggers
   after_create :create_default_categories
 
@@ -26,6 +29,7 @@ class Project < ActiveRecord::Base
   # Model Relationships
   belongs_to :user
   has_many :categories, -> { where(deleted: false).order(:position) }
+  has_many :documents, -> { where(deleted: false).order(:archived, document_uploaded_at: :desc) }
 
   def to_param
     slug.blank? ? id : slug

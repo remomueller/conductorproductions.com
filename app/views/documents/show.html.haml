@@ -1,0 +1,38 @@
+%h1
+  = link_to @project.name, @project
+  &middot;
+  = link_to 'Documents', project_documents_path(@project)
+
+%h2
+  = @document.name
+
+= link_to 'Edit Document', edit_project_document_path(@project, @document), class: 'btn btn-xs btn-default'
+= link_to 'Delete Document', [@project, @document], method: :delete, class: 'btn btn-xs btn-danger', data: { confirm: "Are you sure you want to delete Document #{@document.name}?" }
+
+%dl.dl-horizontal
+  %dt
+    %strong Category
+  %dd= link_to @document.category.name, [@project, @document.category] if @document.category
+
+  %dt
+    %strong Creator
+  %dd= @document.user.name if @document.user
+
+  %dt
+    %strong Document
+  %dd
+    = @document.name
+    - if @document.document.size > 0
+      = link_to 'Download', download_project_document_path(@project, @document), class: 'btn btn-xs btn-default'
+
+  %dt
+    %strong File Size
+  %dd= number_to_human_size @document.document.size
+
+  %dt
+    %strong Uploaded At
+  %dd= @document.document_uploaded_at.strftime("%b %-d, %Y at %-I:%M %p") if @document.document_uploaded_at
+
+  %dt
+    %strong Archived
+  %dd= @document.archived

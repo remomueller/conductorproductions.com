@@ -1,0 +1,32 @@
+= form_for [@project, @document], html: { class: 'form-horizontal', multipart: true } do |f|
+  - if @document.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@document.errors.count, "error")
+        prohibited this document from being saved:
+
+      %ul
+        - @document.errors.full_messages.each do |message|
+          %li= message
+
+  .form-group
+    = f.label :category_id, nil, class: 'col-md-2 control-label'
+    .col-md-10
+      = f.select :category_id, [['--Select a Category--', nil]] + @project.categories.pluck(:name, :id), {}, class: 'form-control'
+
+  .form-group
+    = f.label :document, 'Document (PDF, DOC, DOCX)', class: 'col-md-2 control-label'
+    .col-md-10
+      = f.file_field :document, class: 'form-control'
+      = f.hidden_field :document_cache
+
+  .form-group
+    = f.label :archived, nil, class: 'col-md-2 control-label'
+    .col-md-10
+      .checkbox
+        %label
+          = f.check_box :archived
+
+  .form-group
+    .col-md-10.col-md-offset-2
+      = f.submit nil, class: 'btn btn-primary'

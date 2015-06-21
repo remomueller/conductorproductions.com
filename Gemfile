@@ -12,6 +12,7 @@ gem 'figaro',               '~> 1.1.1'
 gem 'bootstrap-sass',       '~> 3.3.4'
 gem 'bcrypt',               '~> 3.1.10'
 gem 'font-awesome-rails'
+gem 'carrierwave',          '~> 0.10.0'
 
 # Rails Defaults
 gem 'coffee-rails',         '~> 4.1.0'

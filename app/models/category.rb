@@ -13,6 +13,7 @@ class Category < ActiveRecord::Base
   belongs_to :user
 
   # Category Methods
+  has_many :documents, -> { where(deleted: false).order(:archived) }
 
   def to_param
     slug.blank? ? id : slug
@@ -20,6 +21,10 @@ class Category < ActiveRecord::Base
 
   def self.find_by_param(input)
     self.where("categories.slug = ? or categories.id = ?", input.to_s, input.to_i).first
+  end
+
+  def pdf_documents
+    self.documents.where("documents.document LIKE '%.pdf'")
   end
 
 end

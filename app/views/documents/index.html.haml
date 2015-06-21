@@ -1,0 +1,36 @@
+%h1
+  = link_to @project.name, @project
+  &middot;
+  Documents
+
+= link_to 'New Document', new_project_document_path(@project), class: 'btn btn-xs btn-default'
+
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th Category
+      %th Document
+      %th Uploaded At
+      %th Creator
+      %th Archived
+      %th{ colspan: "2" }
+
+  %tbody
+    - if @documents.count == 0
+      %tr
+        %td{ colspan: "6" }
+          .center.text-muted
+            No documents currently exist for this project. You may
+            = link_to 'upload a new documents', new_project_document_path(@project)
+            for this project.
+    - else
+      - @documents.each do |document|
+        %tr
+          %td= document.category.name if document.category
+          %td= link_to document.name, [@project, document]
+          %td= document.document_uploaded_at.strftime("%b %-d, %Y at %-I:%M %p") if document.document_uploaded_at
+          %td= document.user.name if document.user
+          %td= document.archived
+          %td= link_to 'Edit', edit_project_document_path(@project, document)
+          %td= link_to 'Destroy', [@project, document], method: :delete, data: { confirm: "Are you sure you want to delete Document #{document.name}?" }

@@ -1,8 +1,11 @@
 
 %h1
-  =@project.name
+  = link_to 'Projects', projects_path
+  &middot;
+  = @project.name
   = link_to 'Edit Project', edit_project_path(@project), class: 'btn btn-xs btn-default'
   = link_to 'View Categories', project_categories_path(@project), class: 'btn btn-xs btn-default'
+  = link_to 'View Documents', project_documents_path(@project), class: 'btn btn-xs btn-default'
 
 %dl.dl-horizontal
   %dt
@@ -21,11 +24,6 @@
     = @project.slug
 
   %dt
-    %strong Logo
-  %dd
-    = @project.logo
-
-  %dt
     %strong Client Username
   %dd
     = @project.username
@@ -41,6 +39,16 @@
   %dd
     = @project.user.name if @project.user
 
-= link_to 'Edit', edit_project_path(@project)
-|
-= link_to 'Back', projects_path
+  - if @project.logo.size > 0
+    %dt
+      %strong Logo
+    %dd
+      = @project.logo_identifier
+
+    %dt
+      %strong Logo Size
+    %dd= number_to_human_size @project.logo.size
+
+- if @project.logo.size > 0
+  .center{ style: 'width:100%' }
+    = image_tag logo_project_path(@project), class: 'img-responsive', style: 'display:inline-block'

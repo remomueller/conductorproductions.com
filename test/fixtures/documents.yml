@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project: one
+  category: one
+  user: system_admin
+  document: test_01.pdf
+  document_uploaded_at: 2015-06-21 12:22:19
+
+two:
+  project: one
+  category: one
+  user: system_admin
+  document: test_01.doc
+  document_uploaded_at: 2015-06-21 12:22:19

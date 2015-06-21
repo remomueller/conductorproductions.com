@@ -23,7 +23,6 @@
             = link_to 'create a new category', new_project_category_path(@project)
             for this project.
     - else
-
       - @categories.each do |category|
         %tr
           %td= category.position

@@ -17,8 +17,32 @@ class ClientProjectControllerTest < ActionController::TestCase
     assert_not_nil assigns(:project)
   end
 
-  test "should get client project script" do
-    get :script, id: projects(:one)
+  test "should get client project concepts category" do
+    get :category, id: projects(:one), category_id: 'concepts'
+    assert_response :success
+    assert_not_nil assigns(:project)
+  end
+
+  test "should get client project treatment category" do
+    get :category, id: projects(:one), category_id: 'treatment'
+    assert_response :success
+    assert_not_nil assigns(:project)
+  end
+
+  test "should get client project script category" do
+    get :category, id: projects(:one), category_id: 'script'
+    assert_response :success
+    assert_not_nil assigns(:project)
+  end
+
+  test "should get client project boards category" do
+    get :category, id: projects(:one), category_id: 'boards'
+    assert_response :success
+    assert_not_nil assigns(:project)
+  end
+
+  test "should get client project references category" do
+    get :category, id: projects(:one), category_id: 'references'
     assert_response :success
     assert_not_nil assigns(:project)
   end

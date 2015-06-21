@@ -11,30 +11,15 @@
     .menu-triangle-left
     CREATIVE
   .project-menu-sub#creative-menu
-    .project-menu-sub-header
-      .menu-triangle-left-sub
-      .menu-triangle-left-sub-white
-      Treatment
-    .project-menu-sub-header
-      .menu-triangle-left-sub
-      .menu-triangle-left-sub-white
-      Concepts
-    .project-menu-sub-header
-      .menu-triangle-left-sub
-      .menu-triangle-left-sub-white
-      = link_to 'Script', client_project_script_path
-    .project-menu-sub-header
-      .menu-triangle-left-sub
-      .menu-triangle-left-sub-white
-      Boards
-    .project-menu-sub-header
-      .menu-triangle-left-sub
-      .menu-triangle-left-sub-white
-      Reference Materials
+    - @project.categories.each do |category|
+      .project-menu-sub-header
+        .menu-triangle-left-sub
+        .menu-triangle-left-sub-white
+        = link_to category.name, client_project_category_path(@project, category)
 
   .project-menu-main-header
     .menu-triangle-left
-    = link_to 'TIMELINE', client_project_timeline_path
+    = link_to 'TIMELINE', client_project_timeline_path(@project)
 
   .project-menu-main-header{ data: { object: 'toggle-target', target: '#production-menu' }}
     .menu-triangle-left
@@ -43,7 +28,7 @@
     .project-menu-sub-header
       .menu-triangle-left-sub
       .menu-triangle-left-sub-white
-      = link_to 'Casting', client_project_casting_path
+      = link_to 'Casting', client_project_casting_path(@project)
     .project-menu-sub-header
       .menu-triangle-left-sub
       .menu-triangle-left-sub-white

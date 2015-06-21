@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   # Model Relationships
   has_many :projects, -> { where deleted: false }
   has_many :categories, -> { where deleted: false }
+  has_many :documents, -> { where deleted: false }
 
   # User Methods
 

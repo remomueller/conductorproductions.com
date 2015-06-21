@@ -1,0 +1,18 @@
+%div{ style: "padding-bottom:20px;" }
+  %h1
+    = @project.name
+  %p
+    &lt; Updated
+    = @category.name
+    &gt;
+
+  - if @document
+    - if @document.pdf?
+      %object{ data: client_project_download_document_path(@project, @document, inline: '1'), type: 'application/pdf', width: '100%', height: '1050px' }
+        alt :
+        = link_to @document.name, client_project_download_document_path(@project, @document), class: 'btn btn-xs btn-default'
+    - else
+      = link_to client_project_download_document_path(@project, @document), class: 'btn btn-default' do
+        %span.glyphicon.glyphicon-download
+        Download
+        = @document.name

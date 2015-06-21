@@ -1,8 +1,8 @@
 %h1
   = link_to @project.name, @project
   &middot;
-  = link_to 'Categories', project_categories_path(@project)
+  = link_to 'Documents', project_documents_path(@project)
   &middot;
-  New Category
+  New Document
 
 = render 'form'

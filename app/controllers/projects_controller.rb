@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
   before_action :check_system_admin #, only: [ :new, :create, :edit, :update, :destroy ]
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :set_project, only: [:show, :logo, :edit, :update, :destroy]
 
   layout 'application'
 
@@ -14,6 +14,10 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+  end
+
+  def logo
+    send_file File.join( CarrierWave::Uploader::Base.root, @project.logo.url )
   end
 
   # GET /projects/new
@@ -78,6 +82,6 @@ class ProjectsController < ApplicationController
     def project_params
       params[:project] ||= { blank: '1' }
       params[:project][:password_plain] = params[:project][:password] unless params[:project][:password].blank?
-      params.require(:project).permit(:name, :number, :slug, :logo, :client_name, :username, :password, :password_plain)
+      params.require(:project).permit(:name, :number, :slug, :logo, :logo_cache, :client_name, :username, :password, :password_plain)
     end
 end

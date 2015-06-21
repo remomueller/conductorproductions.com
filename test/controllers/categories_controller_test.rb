@@ -3,7 +3,7 @@ require 'test_helper'
 class CategoriesControllerTest < ActionController::TestCase
   setup do
     @project = projects(:one)
-    @category = categories(:one)
+    @category = categories(:concepts)
     login(users(:system_admin))
   end
 

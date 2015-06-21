@@ -2,11 +2,8 @@
   %li.active
     CREATIVE
     %ul
-      %li Treatment
-      %li Concepts
-      %li= link_to 'Script', client_project_script_path
-      %li Boards
-      %li Reference Materials
+      - @project.categories.each do |category|
+        %li= link_to category.name, client_project_category_path(@project, category)
   %li
     = link_to 'TIMELINE', client_project_timeline_path
   %li
@@ -17,3 +14,13 @@
       %li Production Elements
   %li
     EDITORIAL
+
+
+- if @category
+  %br
+  %br
+  %h4{ style: 'color:#333' } Archive
+
+  %div{ style: 'color:#333;word-wrap: break-word;' }
+    - @category.documents.where(archived: true).each do |document|
+      = link_to document.name, client_project_category_document_path(@project, @category, document)

@@ -1,0 +1,10 @@
+%h1
+  = link_to @project.name, @project
+  &middot;
+  = link_to 'Documents', project_documents_path(@project)
+  &middot;
+  Edit
+%h2
+  = link_to @document.name, [@project, @document]
+
+= render 'form'
