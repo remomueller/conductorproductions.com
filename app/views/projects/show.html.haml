@@ -1,27 +1,45 @@
-%p
-  %strong Title
-  = @project.name
 
-%p
-  %strong URL Slug
-  = @project.slug
+%h1
+  =@project.name
+  = link_to 'Edit Project', edit_project_path(@project), class: 'btn btn-xs btn-default'
+  = link_to 'View Categories', project_categories_path(@project), class: 'btn btn-xs btn-default'
 
-%p
-  %strong Logo
-  = @project.logo
+%dl.dl-horizontal
+  %dt
+    %strong Project Name
+  %dd
+    = @project.name
 
-%p
-  %strong Client Username
-  = @project.username
+  %dt
+    %strong Project Number
+  %dd
+    = @project.number
 
-%p
-  %strong Client Password
-  %span{ style: 'cursor:pointer', data: { object: 'click-to-view', content: @project.password_plain } }
-    = '*' * @project.password_plain.to_s.size if @project.password_plain.present?
+  %dt
+    %strong URL Slug
+  %dd
+    = @project.slug
 
-%p
-  %strong Owner
-  = @project.user.name if @project.user
+  %dt
+    %strong Logo
+  %dd
+    = @project.logo
+
+  %dt
+    %strong Client Username
+  %dd
+    = @project.username
+
+  %dt
+    %strong Client Password
+  %dd
+    %span{ style: 'cursor:pointer', data: { object: 'click-to-view', content: @project.password_plain } }
+      = '*' * @project.password_plain.to_s.size if @project.password_plain.present?
+
+  %dt
+    %strong Owner
+  %dd
+    = @project.user.name if @project.user
 
 = link_to 'Edit', edit_project_path(@project)
 |

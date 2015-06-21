@@ -24,4 +24,21 @@ class ApplicationController < ActionController::Base
     redirect_to client_login_path unless current_client
   end
 
+  # Use callbacks to share common setup or constraints between actions.
+  def set_project(id = :project_id)
+    @project = Project.current.find_by_param(params[id])
+  end
+
+  def redirect_without_project(path = root_path)
+    empty_response_or_root_path(path) unless @project
+  end
+
+  def empty_response_or_root_path(path = root_path)
+    respond_to do |format|
+      format.html { redirect_to path }
+      format.js { head :ok }
+      format.json { head :no_content }
+    end
+  end
+
 end

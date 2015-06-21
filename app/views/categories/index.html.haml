@@ -1,0 +1,34 @@
+%h1
+  = link_to @project.name, @project
+  &middot;
+  Categories
+
+= link_to 'New Category', new_project_category_path(@project), class: 'btn btn-xs btn-default'
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th Position
+      %th Name
+      %th Slug
+      %th Creator
+      %th{ colspan: "2" }
+
+  %tbody
+    - if @categories.count == 0
+      %tr
+        %td{ colspan: "6" }
+          .center.text-muted
+            No categories currently exist for this project. You may
+            = link_to 'create a new category', new_project_category_path(@project)
+            for this project.
+    - else
+
+      - @categories.each do |category|
+        %tr
+          %td= category.position
+          %td= link_to category.name, [@project, category]
+          %td= category.slug
+          %td= category.user.name if category.user
+          %td= link_to 'Edit', edit_project_category_path(@project, category)
+          %td= link_to 'Destroy', [@project, category], method: :delete, data: { confirm: "Are you sure you want to delete Category #{category.name}?" }

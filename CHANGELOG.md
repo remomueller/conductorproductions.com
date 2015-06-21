@@ -14,6 +14,7 @@
     - Client Name
     - Client Username
     - Client Password
+  - System admins can now create and edit project categories
 - **General Changes**
   - Added a version page
   - Updated font location for better asset management using Rails

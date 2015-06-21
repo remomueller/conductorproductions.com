@@ -4,6 +4,9 @@ Rails.application.routes.draw do
     member do
       get :menu
     end
+
+    resources :categories
+
   end
 
   scope module: 'welcome' do

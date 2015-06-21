@@ -1,5 +1,17 @@
 class Project < ActiveRecord::Base
 
+  # Triggers
+  after_create :create_default_categories
+
+  # Constants
+  DEFAULT_CATEGORIES = [
+    ["Concepts", "concepts"],
+    ["Treatment", "treatment"],
+    ["Script","script"],
+    ["Boards","boards"],
+    ["References","references"]
+  ]
+
   # Concerns
   include Deletable
 
@@ -13,6 +25,7 @@ class Project < ActiveRecord::Base
 
   # Model Relationships
   belongs_to :user
+  has_many :categories, -> { where(deleted: false).order(:position) }
 
   def to_param
     slug.blank? ? id : slug
@@ -21,5 +34,13 @@ class Project < ActiveRecord::Base
   def self.find_by_param(input)
     self.where("projects.slug = ? or projects.id = ?", input.to_s, input.to_i).first
   end
+
+  private
+
+    def create_default_categories
+      DEFAULT_CATEGORIES.each_with_index do |(name, slug), index|
+        self.categories.create(name: name, slug: slug, position: index+1, user_id: self.user_id)
+      end
+    end
 
 end

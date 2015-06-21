@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Concepts
+  slug: concepts
+  position: 1
+  project: one
+  user: system_admin
+
+two:
+  name: Treatment
+  slug: treatment
+  position: 2
+  project: one
+  user: system_admin

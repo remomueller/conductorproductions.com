@@ -1,0 +1,9 @@
+%h1
+  = link_to @project.name, @project
+  &middot;
+  = link_to 'Categories', project_categories_path(@project)
+  &middot;
+  New Category
+
+= render 'form'
+
