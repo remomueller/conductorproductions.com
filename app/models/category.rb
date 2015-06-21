@@ -5,7 +5,7 @@ class Category < ActiveRecord::Base
 
   # Model Validation
   validates_presence_of :name, :slug, :position, :project_id, :user_id
-  validates_uniqueness_of :slug, scope: [ :deleted ]
+  validates_uniqueness_of :slug, scope: [ :project_id, :deleted ]
   validates_format_of :slug, with: /\A[a-z][a-z0-9\-]*\Z/
 
   # Model Relationships
