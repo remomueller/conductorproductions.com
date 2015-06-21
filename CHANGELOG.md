@@ -26,6 +26,7 @@
     - Creative / Script
     - Timeline
     - Production / Casting
+  - Added Conductor WeTransfer link to footer
 - **Email Changes**
   - Updated password reset and unlock emails to use the correct website URL
 - **Gem Changes**

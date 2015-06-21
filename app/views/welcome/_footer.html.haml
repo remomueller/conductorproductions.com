@@ -20,7 +20,7 @@
 
     .pull-right.conductor-logo-footer
       - if current_client and params[:controller] == 'client_project'
-        = link_to '#', class: 'plain-link' do
+        = link_to 'https://conductor.wetransfer.com', class: 'plain-link' do
           SEND US FILES | up to 10gb
       - else
         &copy; CONDUCTOR
