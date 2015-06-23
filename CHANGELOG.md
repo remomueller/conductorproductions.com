@@ -9,7 +9,8 @@
   - Projects can have:
     - Project Name
     - Project Number
-    - Project Logo
+    - Project Agency Logo
+    - Project Client Logo
     - URL Slug
     - Client Name
     - Client Username

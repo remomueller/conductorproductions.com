@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   resources :projects do
     member do
       get :menu
-      get :logo
+      get :agency_logo
+      get :client_logo
     end
 
     resources :categories

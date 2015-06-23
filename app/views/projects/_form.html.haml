@@ -34,9 +34,14 @@
     .col-md-10
       = f.text_field :password, value: @project.password_plain, class: 'form-control'
   .form-group
-    = f.label :logo, class: 'col-md-2 control-label '
+    = f.label :agency_logo, class: 'col-md-2 control-label '
     .col-md-10
-      = f.file_field :logo, class: 'form-control'
-      = f.hidden_field :logo_cache
+      = f.file_field :agency_logo, class: 'form-control'
+      = f.hidden_field :agency_logo_cache
+  .form-group
+    = f.label :client_logo, class: 'col-md-2 control-label '
+    .col-md-10
+      = f.file_field :client_logo, class: 'form-control'
+      = f.hidden_field :client_logo_cache
   .actions
     = f.submit

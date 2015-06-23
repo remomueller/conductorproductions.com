@@ -5,7 +5,7 @@
     %tr
       %th Title
       %th URL Slug
-      %th Logo
+      %th Agency Logo
       %th Owner
       %th{ colspan: "2" }
 
@@ -14,7 +14,7 @@
       %tr
         %td= link_to project.name, project
         %td= project.slug
-        %td= project.logo
+        %td= project.agency_logo_identifier
         %td= project.user.name if project.user
         %td= link_to 'Edit', edit_project_path(project)
         %td= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }

@@ -39,16 +39,31 @@
   %dd
     = @project.user.name if @project.user
 
-  - if @project.logo.size > 0
+  - if @project.agency_logo.size > 0
     %dt
-      %strong Logo
+      %strong Agency Logo
     %dd
-      = @project.logo_identifier
+      = @project.agency_logo_identifier
 
     %dt
-      %strong Logo Size
-    %dd= number_to_human_size @project.logo.size
+      %strong Agency Logo Size
+    %dd= number_to_human_size @project.agency_logo.size
 
-- if @project.logo.size > 0
+  - if @project.client_logo.size > 0
+    %dt
+      %strong Client Logo
+    %dd
+      = @project.client_logo_identifier
+
+    %dt
+      %strong Client Logo Size
+    %dd= number_to_human_size @project.client_logo.size
+
+
+- if @project.agency_logo.size > 0
   .center{ style: 'width:100%' }
-    = image_tag logo_project_path(@project), class: 'img-responsive', style: 'display:inline-block'
+    = image_tag agency_logo_project_path(@project), class: 'img-responsive', style: 'display:inline-block'
+
+- if @project.client_logo.size > 0
+  .center{ style: 'width:100%' }
+    = image_tag client_logo_project_path(@project), class: 'img-responsive', style: 'display:inline-block'

@@ -1,7 +1,8 @@
 class Project < ActiveRecord::Base
 
   # Uploaders
-  mount_uploader :logo, ImageUploader
+  mount_uploader :agency_logo, ImageUploader
+  mount_uploader :client_logo, ImageUploader
 
   # Triggers
   after_create :create_default_categories
