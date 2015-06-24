@@ -26,8 +26,12 @@
         =# link_to @project.client_name, client_project_root_path(@project)
 
 .container
-  %h2.pull-left
-    = link_to @project.client_name, client_project_root_path(@project)
+  - unless current_page?(client_project_root_path(@project)) or current_page?(client_project_menu_path(@project))
+    %h2.pull-left
+      = link_to @project.client_name, client_project_root_path(@project)
+  - else
+    %h2.pull-left
+      &nbsp;
   .visible-xs
     .menu-links
       .pull-right

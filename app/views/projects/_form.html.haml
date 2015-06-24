@@ -1,13 +1,14 @@
 = form_for @project, html: { class: 'form-horizontal', multipart: true } do |f|
   - if @project.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@project.errors.count, "error")
-        prohibited this project from being saved:
-
-      %ul
-        - @project.errors.full_messages.each do |message|
-          %li= message
+    .panel.panel-danger
+      .panel-heading
+        %strong
+          = pluralize(@project.errors.count, "error")
+          prohibited this project from being saved:
+      .panel-body
+        %ul
+          - @project.errors.full_messages.each do |message|
+            %li= message
 
   .form-group
     = f.label :name, 'Project Name', class: 'col-md-2 control-label '
@@ -43,5 +44,7 @@
     .col-md-10
       = f.file_field :client_logo, class: 'form-control'
       = f.hidden_field :client_logo_cache
-  .actions
-    = f.submit
+  .form-group
+    .col-md-10.col-md-offset-2
+      = f.submit nil, class: 'btn btn-primary'
+      = link_to 'Cancel', @project.new_record? ? projects_path : @project, class: 'btn btn-default'

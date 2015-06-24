@@ -1,13 +1,14 @@
 = form_for [@project, @category], html: { class: 'form-horizontal' } do |f|
   - if @category.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@category.errors.count, "error")
-        prohibited this category from being saved:
-
-      %ul
-        - @category.errors.full_messages.each do |message|
-          %li= message
+    .panel.panel-danger
+      .panel-heading
+        %strong
+          = pluralize(@category.errors.count, "error")
+          prohibited this category from being saved:
+      .panel-body
+        %ul
+          - @category.errors.full_messages.each do |message|
+            %li= message
   .form-group
     = f.label :top_level, nil, class: 'col-md-2 control-label'
     .col-md-10

@@ -3,9 +3,10 @@
   = link_to 'Projects', projects_path
   &middot;
   = @project.name
-  = link_to 'Edit Project', edit_project_path(@project), class: 'btn btn-xs btn-default'
-  = link_to 'View Categories', project_categories_path(@project), class: 'btn btn-xs btn-default'
-  = link_to 'View Documents', project_documents_path(@project), class: 'btn btn-xs btn-default'
+
+= link_to 'Edit Project', edit_project_path(@project), class: 'btn btn-xs btn-default'
+= link_to 'View Categories', project_categories_path(@project), class: 'btn btn-xs btn-default'
+= link_to 'View Documents', project_documents_path(@project), class: 'btn btn-xs btn-default'
 
 %dl.dl-horizontal
   %dt
