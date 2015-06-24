@@ -39,11 +39,13 @@ Rails.application.routes.draw do
     get  "client/logout", action: 'destroy', as: :client_logout
   end
 
-  devise_for :users, path_names: { sign_up: 'join', sign_in: 'login' }, path: ""
+  devise_for :users, path_names: { sign_up: 'join', sign_in: 'login', sign_out: 'logout' }, path: ""
 
   scope module: 'client_project' do
     get ":id", action: 'root', as: :client_project_root
     get ":id/menu", action: 'menu', as: :client_project_menu
+    get ":id/agency_logo", action: 'agency_logo', as: :client_project_agency_logo
+    get ":id/client_logo", action: 'client_logo', as: :client_project_client_logo
     # get ":id/production/casting", action: 'casting', as: :client_project_casting
     # get ":id/timeline", action: 'timeline', as: :client_project_timeline
 

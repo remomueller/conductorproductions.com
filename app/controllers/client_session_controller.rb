@@ -15,6 +15,7 @@ class ClientSessionController < ApplicationController
       session[:project_id] = project.id
       redirect_to client_project_menu_path(project)
     else
+      flash[:alert] = 'Invalid username or password.'
       render :new
     end
   end

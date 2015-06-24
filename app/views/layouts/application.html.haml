@@ -37,6 +37,7 @@
       = render 'welcome/header'
 
     .container
+      %p#alert= alert
       %p#notice= notice
     .container
       - if params[:controller] == 'client_project'

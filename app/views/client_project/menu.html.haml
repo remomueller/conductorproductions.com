@@ -1,10 +1,12 @@
 .pull-right
-  = image_tag 'agency-logo.png'
+  - if @project.agency_logo.size > 0
+    = image_tag client_project_agency_logo_path(@project), class: 'img-responsive agency-logo'
 
 %h1
   = @project.name
-  |
-  = @project.number
+  - if current_user
+    |
+    = @project.number
 
 .project-menu-plain
   - Project::TOP_LEVELS.each do |top_level|

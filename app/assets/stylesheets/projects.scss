@@ -98,3 +98,13 @@ $triangle_small_size: 18px;
   border-right: $triangle_small_size solid $body-bg;
   position: absolute;
 }
+
+.agency-logo {
+  max-height: 65px;
+}
+
+@media screen and (min-width: $screen-sm-min) {
+  .agency-logo {
+    max-height: 80px;
+  }
+}
