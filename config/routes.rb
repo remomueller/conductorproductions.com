@@ -46,15 +46,11 @@ Rails.application.routes.draw do
     get ":id/menu", action: 'menu', as: :client_project_menu
     get ":id/agency_logo", action: 'agency_logo', as: :client_project_agency_logo
     get ":id/client_logo", action: 'client_logo', as: :client_project_client_logo
-    # get ":id/production/casting", action: 'casting', as: :client_project_casting
-    # get ":id/timeline", action: 'timeline', as: :client_project_timeline
 
     get ":id/documents/download/:document_id", action: 'download_document', as: :client_project_download_document
     get ":id/:top_level/:category_id", action: 'category', as: :client_project_category
     get ":id/:top_level/:category_id/:document_id", action: 'document', as: :client_project_category_document
     get ":id/:category_id", action: 'category'
-
-    # get ":id/casting", action: 'casting'
   end
 
   root 'welcome#index'
