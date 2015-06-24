@@ -71,6 +71,14 @@ class Project < ActiveRecord::Base
     self.where("projects.slug = ? or projects.id = ?", input.to_s, input.to_i).first
   end
 
+  def grouped_categories_for_select
+    groups = []
+    TOP_LEVELS.each do |top_level|
+      groups << [top_level, self.categories.where(top_level: top_level).pluck(:name, :id)]
+    end
+    groups
+  end
+
   private
 
     def create_default_categories
