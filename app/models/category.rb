@@ -4,7 +4,7 @@ class Category < ActiveRecord::Base
   include Deletable
 
   # Model Validation
-  validates_presence_of :name, :slug, :position, :project_id, :user_id
+  validates_presence_of :top_level, :name, :slug, :position, :project_id, :user_id
   validates_uniqueness_of :slug, scope: [ :project_id, :deleted ]
   validates_format_of :slug, with: /\A[a-z][a-z0-9\-]*\Z/
 

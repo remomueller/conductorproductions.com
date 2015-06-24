@@ -1,20 +1,11 @@
 %ul.project-menu
-  %li.active
-    CREATIVE
-    %ul
-      - @project.categories.each do |category|
-        %li= link_to category.name, client_project_category_path(@project, category)
-  %li
-    = link_to 'TIMELINE', client_project_timeline_path
-  %li
-    PRODUCTION
-    %ul
-      %li= link_to 'Casting', client_project_casting_path
-      %li Locations
-      %li Production Elements
-  %li
-    EDITORIAL
-
+  - Project::TOP_LEVELS.each do |top_level|
+    %li
+      = top_level
+      %ul
+        - @project.categories.where(top_level: top_level).each do |category|
+          - if category.documents.count > 0
+            %li= link_to category.name, client_project_category_path(@project, top_level: top_level.downcase, category_id: category)
 
 - if @category
   %br
@@ -23,4 +14,4 @@
 
   %div{ style: 'color:#333;word-wrap: break-word;' }
     - @category.documents.where(archived: true).each do |document|
-      = link_to document.name, client_project_category_document_path(@project, @category, document)
+      = link_to document.name, client_project_category_document_path(@project, top_level: @category.top_level.downcase, category_id: @category, document_id: document)

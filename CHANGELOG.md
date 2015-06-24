@@ -16,6 +16,7 @@
     - Client Username
     - Client Password
   - System admins can now create and edit project categories
+    - Categories are created under a top level menu item
   - System admins can now upload documents to categories
     - Documents can be archived
 - **General Changes**

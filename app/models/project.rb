@@ -9,12 +9,43 @@ class Project < ActiveRecord::Base
 
   # Constants
   DEFAULT_CATEGORIES = [
-    ["Concepts", "concepts"],
-    ["Treatment", "treatment"],
-    ["Script","script"],
-    ["Boards","boards"],
-    ["References","references"]
+    {
+      top_level: 'CREATIVE',
+      categories: [
+        ["Concepts", "concepts"],
+        ["Treatment", "treatment"],
+        ["Script", "script"],
+        ["Boards", "boards"],
+        ["References", "references"]
+      ]
+    },
+    {
+      top_level: 'TIMELINE',
+      categories: [
+        ["Production Calendar", "production-calendar"],
+        ["Agency Overview", "agency-overview"]
+      ]
+    },
+    {
+      top_level: 'PRODUCTION',
+      categories: [
+        ["Production Book", "production-book"],
+        ["Casting", "casting"],
+        ["Locations", "locations"],
+        ["Elements", "elements"]
+      ]
+    },
+    {
+      top_level: 'EDITORIAL',
+      categories: [
+        ["Music", "music"],
+        ["Rough Cuts", "rough-cuts"],
+        ["Final", "final"]
+      ]
+    },
   ]
+
+  TOP_LEVELS = DEFAULT_CATEGORIES.collect{|hash| hash[:top_level]}
 
   # Concerns
   include Deletable
@@ -29,7 +60,7 @@ class Project < ActiveRecord::Base
 
   # Model Relationships
   belongs_to :user
-  has_many :categories, -> { where(deleted: false).order(:position) }
+  has_many :categories, -> { where(deleted: false).order(:top_level, :position) }
   has_many :documents, -> { where(deleted: false).order(:archived, document_uploaded_at: :desc) }
 
   def to_param
@@ -43,8 +74,11 @@ class Project < ActiveRecord::Base
   private
 
     def create_default_categories
-      DEFAULT_CATEGORIES.each_with_index do |(name, slug), index|
-        self.categories.create(name: name, slug: slug, position: index+1, user_id: self.user_id)
+      DEFAULT_CATEGORIES.each do |hash|
+        top_level = hash[:top_level]
+        hash[:categories].each_with_index do |(name, slug), index|
+          self.categories.create(top_level: top_level, name: name, slug: slug, position: index+1, user_id: self.user_id)
+        end
       end
     end
 

@@ -8,7 +8,10 @@
       %ul
         - @category.errors.full_messages.each do |message|
           %li= message
-
+  .form-group
+    = f.label :top_level, nil, class: 'col-md-2 control-label'
+    .col-md-10
+      = f.select :top_level, [['--Select a Top Level--', nil]] + Project::DEFAULT_CATEGORIES.collect{|hash| [hash[:top_level],hash[:top_level]]}, {}, class: 'form-control'
   .form-group
     = f.label :name, nil, class: 'col-md-2 control-label'
     .col-md-10

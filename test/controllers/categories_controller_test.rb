@@ -20,7 +20,7 @@ class CategoriesControllerTest < ActionController::TestCase
 
   test "should create category" do
     assert_difference('Category.count') do
-      post :create, project_id: @project, category: { name: 'New Category', slug: 'new-category', position: 1 }
+      post :create, project_id: @project, category: { top_level: 'CREATIVE', name: 'New Category', slug: 'new-category', position: 1 }
     end
 
     assert_not_nil assigns(:category)
@@ -42,7 +42,7 @@ class CategoriesControllerTest < ActionController::TestCase
   end
 
   test "should update category" do
-    patch :update, project_id: @project, id: @category, category: { name: 'Updated Category', slug: 'updated-category', position: 1 }
+    patch :update, project_id: @project, id: @category, category: { top_level: 'CREATIVE', name: 'Updated Category', slug: 'updated-category', position: 1 }
     assert_redirected_to project_category_path(assigns(:project), assigns(:category))
   end
 

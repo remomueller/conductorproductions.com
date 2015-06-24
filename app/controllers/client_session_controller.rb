@@ -1,5 +1,7 @@
 class ClientSessionController < ApplicationController
 
+  before_action :invert,              only: [ :new, :create ]
+
   # Show the client login page
   def new
     @invert = true
@@ -22,5 +24,11 @@ class ClientSessionController < ApplicationController
     session[:project_id] = nil
     redirect_to client_login_path
   end
+
+  private
+
+    def invert
+      @invert = true
+    end
 
 end

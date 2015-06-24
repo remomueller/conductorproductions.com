@@ -7,37 +7,14 @@
   = @project.number
 
 .project-menu-plain
-  .project-menu-main-header{ data: { object: 'toggle-target', target: '#creative-menu' }}
-    .menu-triangle-left
-    CREATIVE
-  .project-menu-sub#creative-menu
-    - @project.categories.each do |category|
-      .project-menu-sub-header
-        .menu-triangle-left-sub
-        .menu-triangle-left-sub-white
-        = link_to category.name, client_project_category_path(@project, category)
-
-  .project-menu-main-header
-    .menu-triangle-left
-    = link_to 'TIMELINE', client_project_timeline_path(@project)
-
-  .project-menu-main-header{ data: { object: 'toggle-target', target: '#production-menu' }}
-    .menu-triangle-left
-    PRODUCTION
-  .project-menu-sub#production-menu
-    .project-menu-sub-header
-      .menu-triangle-left-sub
-      .menu-triangle-left-sub-white
-      = link_to 'Casting', client_project_casting_path(@project)
-    .project-menu-sub-header
-      .menu-triangle-left-sub
-      .menu-triangle-left-sub-white
-      Locations
-    .project-menu-sub-header
-      .menu-triangle-left-sub
-      .menu-triangle-left-sub-white
-      Production Elements
-
-  .project-menu-main-header
-    .menu-triangle-left
-    EDITORIAL
+  - Project::TOP_LEVELS.each do |top_level|
+    .project-menu-main-header{ data: { object: 'toggle-target', target: "##{top_level.downcase}-menu" } }
+      .menu-triangle-left
+      = top_level
+    .project-menu-sub{ id: "#{top_level.downcase}-menu" }
+      - @project.categories.where(top_level: top_level).each do |category|
+        - if category.documents.count > 0
+          .project-menu-sub-header
+            .menu-triangle-left-sub
+            .menu-triangle-left-sub-white
+            = link_to category.name, client_project_category_path(@project, top_level: top_level.downcase, category_id: category)

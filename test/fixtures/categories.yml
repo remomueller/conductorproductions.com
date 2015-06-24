@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 concepts:
+  top_level: CREATIVE
   name: Concepts
   slug: concepts
   position: 1
@@ -8,6 +9,7 @@ concepts:
   user: system_admin
 
 treatment:
+  top_level: CREATIVE
   name: Treatment
   slug: treatment
   position: 2
@@ -15,6 +17,7 @@ treatment:
   user: system_admin
 
 script:
+  top_level: CREATIVE
   name: Script
   slug: script
   position: 3
@@ -22,6 +25,7 @@ script:
   user: system_admin
 
 boards:
+  top_level: CREATIVE
   name: Boards
   slug: boards
   position: 4
@@ -29,6 +33,7 @@ boards:
   user: system_admin
 
 references:
+  top_level: CREATIVE
   name: References
   slug: references
   position: 5

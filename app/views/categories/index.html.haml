@@ -8,6 +8,7 @@
 %table.table.table-striped
   %thead
     %tr
+      %th Top Level
       %th Position
       %th Name
       %th Slug
@@ -17,7 +18,7 @@
   %tbody
     - if @categories.count == 0
       %tr
-        %td{ colspan: "6" }
+        %td{ colspan: "7" }
           .center.text-muted
             No categories currently exist for this project. You may
             = link_to 'create a new category', new_project_category_path(@project)
@@ -25,6 +26,7 @@
     - else
       - @categories.each do |category|
         %tr
+          %td= category.top_level
           %td= category.position
           %td= link_to category.name, [@project, category]
           %td= category.slug

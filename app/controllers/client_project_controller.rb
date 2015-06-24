@@ -1,7 +1,7 @@
 class ClientProjectController < ApplicationController
   before_action :authenticate_client!
   before_action :set_project
-  before_action :invert,              only: [ :timeline, :casting, :category, :document ]
+  before_action :invert,              only: [ :category, :document ]
 
   def root
     render 'menu'
