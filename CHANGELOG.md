@@ -23,6 +23,7 @@
   - Added a version page
   - Updated font location for better asset management using Rails
   - Enable Google Analytics in production only
+  - Updated contact page form to use new Rails mailer
 - **Client Changes**
   - Clients can now login to a project
   - Clients can view the following pages:

@@ -36,9 +36,7 @@
     - else
       = render 'welcome/header'
 
-    .container
-      %p#alert= alert
-      %p#notice= notice
+    = render 'layouts/flash_messages'
     .container
       - if params[:controller] == 'client_project'
         - if current_page?(client_project_root_path(@project)) or current_page?(client_project_menu_path(@project))

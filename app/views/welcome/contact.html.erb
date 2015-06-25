@@ -6,24 +6,27 @@
       <div class="page-header">
         <h3 style="margin-top: 30px;">Drop a line, say hi. We don't bite.</h3>
       </div>
-      <form class="form-horizontal" role="form" method="POST" action="cgi-bin/email.cgi">
+      <%= form_tag submit_contact_path, method: :post, class: 'form-horizontal' do %>
+        <% if params[:action] == 'submit_contact' and (params[:name].blank? or params[:email].blank? or params[:body].blank?) %>
+          <div class="alert alert-danger">Please fill in all fields.</div>
+        <% end %>
+
         <div class="form-group">
           <% if false %><%= label_tag :name, nil, class: 'col-sm-2 control-label' %><% end %>
           <div class="col-sm-12">
-            <%= text_field_tag :name, '', class: 'form-control', placeholder: 'Name' %>
+            <%= text_field_tag :name, params[:name], class: 'form-control', placeholder: 'Name' %>
           </div>
         </div>
         <div class="form-group">
           <% if false %><%= label_tag :email, nil, class: 'col-sm-2 control-label' %><% end %>
           <div class="col-sm-12">
-            <%= email_field_tag :email, '', class: 'form-control', placeholder: 'Email' %>
+            <%= email_field_tag :email, params[:email], class: 'form-control', placeholder: 'Email' %>
           </div>
         </div>
-        <%= hidden_field_tag :subject, 'Contact Form Submission Conductor Productions Website' %>
         <div class="form-group">
           <% if false %><%= label_tag :body, nil, class: 'col-sm-2 control-label' %><% end %>
           <div class="col-sm-12">
-            <%= text_area_tag :body, '', class: 'form-control', placeholder: 'Message', rows: 10 %>
+            <%= text_area_tag :body, params[:body], class: 'form-control', placeholder: 'Message', rows: 10 %>
           </div>
         </div>
         <div class="form-group">
@@ -32,7 +35,7 @@
             <span style="padding-left:15px">or give us a call at 617-262-1400.</span>
           </div>
         </div>
-      </form>
+      <% end %>
     </div>
 
     <div class="col-sm-6">

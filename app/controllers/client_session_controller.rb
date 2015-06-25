@@ -13,6 +13,8 @@ class ClientSessionController < ApplicationController
 
     if project && project.authenticate(params[:client][:password])
       session[:project_id] = project.id
+      flash[:alert] = nil
+      flash[:notice] = nil
       redirect_to client_project_menu_path(project)
     else
       flash[:alert] = 'Invalid username or password.'
