@@ -15,7 +15,7 @@
       = top_level
     .project-menu-sub{ id: "#{top_level.downcase}-menu" }
       - @project.categories.where(top_level: top_level).each do |category|
-        - if category.documents.count > 0
+        - if category.documents.count + category.embeds.count > 0
           .project-menu-sub-header
             .menu-triangle-left-sub
             .menu-triangle-left-sub-white

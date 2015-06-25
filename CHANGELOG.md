@@ -19,6 +19,8 @@
     - Categories are created under a top level menu item
   - System admins can now upload documents to categories
     - Documents can be archived
+  - System admins can now embed iframes in categories
+    - Embeds can be archived
 - **General Changes**
   - Added a version page
   - Updated font location for better asset management using Rails

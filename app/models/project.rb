@@ -62,6 +62,7 @@ class Project < ActiveRecord::Base
   belongs_to :user
   has_many :categories, -> { where(deleted: false).order(:top_level, :position) }
   has_many :documents, -> { where(deleted: false).order(:archived, document_uploaded_at: :desc) }
+  has_many :embeds, -> { where(deleted: false).order(:archived, created_at: :desc) }
 
   def to_param
     slug.blank? ? id : slug

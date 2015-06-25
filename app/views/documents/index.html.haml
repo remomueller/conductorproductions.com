@@ -22,7 +22,7 @@
         %td{ colspan: "6" }
           .center.text-muted
             No documents currently exist for this project. You may
-            = link_to 'upload a new documents', new_project_document_path(@project)
+            = link_to 'upload a new document', new_project_document_path(@project)
             for this project.
     - else
       - @documents.each do |document|

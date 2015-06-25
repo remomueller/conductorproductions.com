@@ -1,0 +1,34 @@
+%h1
+  = link_to @project.name, @project
+  &middot;
+  Embeds
+
+= link_to 'New Embed', new_project_embed_path(@project), class: 'btn btn-xs btn-default'
+
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th Category
+      %th Embed
+      %th Creator
+      %th Archived
+      %th{ colspan: "2" }
+
+  %tbody
+    - if @embeds.count == 0
+      %tr
+        %td{ colspan: "6" }
+          .center.text-muted
+            No embeds currently exist for this project. You may
+            = link_to 'add a new embed', new_project_embed_path(@project)
+            for this project.
+    - else
+      - @embeds.each do |embed|
+        %tr
+          %td= embed.category.name if embed.category
+          %td= link_to embed.name, [@project, embed]
+          %td= embed.user.name if embed.user
+          %td= embed.archived
+          %td= link_to 'Edit', edit_project_embed_path(@project, embed)
+          %td= link_to 'Destroy', [@project, embed], method: :delete, data: { confirm: "Are you sure you want to delete Embed #{embed.name}?" }

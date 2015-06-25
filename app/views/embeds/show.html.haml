@@ -1,0 +1,30 @@
+%h1
+  = link_to @project.name, @project
+  &middot;
+  = link_to 'Embeds', project_embeds_path(@project)
+
+%h2
+  = @embed.name
+
+= link_to 'Edit Embed', edit_project_embed_path(@project, @embed), class: 'btn btn-xs btn-default'
+= link_to 'Delete Embed', [@project, @embed], method: :delete, class: 'btn btn-xs btn-danger', data: { confirm: "Are you sure you want to delete Embed #{@embed.name}?" }
+
+%dl.dl-horizontal
+  %dt
+    %strong Category
+  %dd= link_to @embed.category.name, [@project, @embed.category] if @embed.category
+
+  %dt
+    %strong Creator
+  %dd= @embed.user.name if @embed.user
+
+  %dt
+    %strong Embed
+  %dd
+    = @embed.name
+    %pre
+      = @embed.embed_url
+
+  %dt
+    %strong Archived
+  %dd= @embed.archived

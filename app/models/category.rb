@@ -14,6 +14,7 @@ class Category < ActiveRecord::Base
 
   # Category Methods
   has_many :documents, -> { where(deleted: false).order(:archived) }
+  has_many :embeds, -> { where(deleted: false).order(:archived) }
 
   def to_param
     slug.blank? ? id : slug

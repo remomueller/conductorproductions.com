@@ -1,0 +1,34 @@
+= form_for [@project, @embed], html: { class: 'form-horizontal', multipart: true } do |f|
+  - if @embed.errors.any?
+    .panel.panel-danger
+      .panel-heading
+        %strong
+          = pluralize(@embed.errors.count, "error")
+          prohibited this embed from being saved:
+
+      .panel-body
+
+        %ul
+          - @embed.errors.full_messages.each do |message|
+            %li= message
+
+  .form-group
+    = f.label :category_id, nil, class: 'col-md-2 control-label'
+    .col-md-10
+      = f.select :category_id, grouped_options_for_select(@project.grouped_categories_for_select), {}, class: 'form-control'
+
+  .form-group
+    = f.label :embed_url, 'Embed URL', class: 'col-md-2 control-label'
+    .col-md-10
+      = f.text_area :embed_url, rows: 7, class: 'form-control'
+
+  .form-group
+    = f.label :archived, nil, class: 'col-md-2 control-label'
+    .col-md-10
+      .checkbox
+        %label
+          = f.check_box :archived
+
+  .form-group
+    .col-md-10.col-md-offset-2
+      = f.submit nil, class: 'btn btn-primary'

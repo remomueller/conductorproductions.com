@@ -4,10 +4,10 @@
       = top_level
       %ul
         - @project.categories.where(top_level: top_level).each do |category|
-          - if category.documents.count > 0
+          - if category.documents.count + category.embeds.count > 0
             %li= link_to category.name, client_project_category_path(@project, top_level: top_level.downcase, category_id: category)
 
-- if @category
+- if @category and @category.documents.where(archived: true).count > 0
   %br
   %br
   %h4{ style: 'color:#333' } Archive

@@ -1,10 +1,8 @@
 %div{ style: "padding-bottom:20px;" }
   %h1
     = @project.name
-  %p
-    &lt; Updated
+  %h2
     = @category.name
-    &gt;
 
   - if @document
     - if @document.pdf?
@@ -16,3 +14,6 @@
         %span.glyphicon.glyphicon-download
         Download
         = @document.name
+  - if @embed
+    .embed-responsive.embed-responsive-16by9
+      %iframe{ src: @embed.embed_url }

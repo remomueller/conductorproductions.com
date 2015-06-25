@@ -1,0 +1,8 @@
+%h1
+  = link_to @project.name, @project
+  &middot;
+  = link_to 'Embeds', project_embeds_path(@project)
+  &middot;
+  New Embed
+
+= render 'form'

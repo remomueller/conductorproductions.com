@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project: one
+  category: one
+  user: system_admin
+  embed_url: MyText
+  archived: false
+  deleted: false
+
+two:
+  project: one
+  category: one
+  user: system_admin
+  embed_url: MyText
+  archived: false
+  deleted: false

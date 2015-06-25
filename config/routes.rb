@@ -14,6 +14,8 @@ Rails.application.routes.draw do
         get :download
       end
     end
+
+    resources :embeds
   end
 
   scope module: 'welcome' do
