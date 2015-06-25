@@ -1,3 +1,9 @@
+- if @project.client_logo.size > 0
+  %div{ style: 'position:relative' }
+    %div{ style: 'position:absolute;top:-50px;left:40px' }
+      = image_tag client_project_client_logo_path(@project), class: 'img-responsive agency-logo'
+
+
 .pull-right
   - if @project.agency_logo.size > 0
     = image_tag client_project_agency_logo_path(@project), class: 'img-responsive agency-logo'
