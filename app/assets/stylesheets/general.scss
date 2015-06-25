@@ -46,6 +46,17 @@ $triangle_size: 40px;
   border-right: $triangle_size solid $logo-color;
   position: absolute;
 }
+.triangle-left-black-cover {
+  width: 0px;
+  height: 0px;
+  top: -20px;
+  left:-$triangle_size + 1px;
+  border-top: $triangle_size solid transparent;
+  border-bottom: $triangle_size solid transparent;
+  border-right: $triangle_size solid black;
+  position: absolute;
+}
+
 $container-padding: 15px;
 .triangle-left-xs {
   width: 0px;

@@ -1,0 +1,26 @@
+.container
+  .hidden-xs
+    .pull-right
+      .menu-links{ style: 'background-color: black;color: white !important'}
+        = link_to 'HOME', root_path, style: 'color: white'
+        |
+        = link_to 'WORK', work_path, style: 'color: white'
+        |
+        = link_to 'DRTV', drtv_path, style: 'color: white'
+        |
+        = link_to 'CLIENT', client_login_path, class: 'active', style: 'color: white'
+        |
+        = link_to 'CONTACT', contact_path, style: 'color: white'
+
+.container
+  .visible-xs
+    .menu-links
+      = link_to 'HOME', root_path
+      |
+      = link_to 'WORK', work_path
+      |
+      = link_to 'DRTV', drtv_path
+      |
+      = link_to 'CLIENT', client_login_path, class: 'active'
+      |
+      = link_to 'CONTACT', contact_path

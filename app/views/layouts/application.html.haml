@@ -33,6 +33,8 @@
 
     - if params[:controller] == 'client_project'
       = render 'client_project/header'
+    - elsif params[:controller] == 'client_session'
+      = render 'client_session/header'
     - else
       = render 'welcome/header'
 

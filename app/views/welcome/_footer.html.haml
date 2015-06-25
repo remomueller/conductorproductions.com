@@ -4,7 +4,7 @@
 .footer
   .container.social-links
 
-    - unless current_client and params[:controller] == 'client_project'
+    - unless current_client and params[:controller].in?(['client_project', 'client_session'])
       .pull-left
         = link_to 'https://www.facebook.com/ConductorCreative', class: 'plain-link' do
           %i.fa.fa-facebook
@@ -26,6 +26,8 @@
       - else
         &copy; CONDUCTOR
         %span#current-year= Date.today.year
-  .container.visible-xs.visible-sm.center{ style: "margin-top:10px;" }
-    %div{ style: "font-size:0.8em" }
-      = render 'welcome/products'
+
+  - unless current_client and params[:controller].in?(['client_project', 'client_session'])
+    .container.visible-xs.visible-sm.center{ style: "margin-top:10px;" }
+      %div{ style: "font-size:0.8em" }
+        = render 'welcome/products'
