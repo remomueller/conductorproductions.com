@@ -10,14 +10,14 @@
 // Layout: Application Login
 
 body.large-footer {
-  margin-bottom: $footer-login-height;
+  margin-bottom: $footer-login-height-xs;
 }
 
 .footer-login {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: $footer-login-height;
+  height: $footer-login-height-xs;
 }
 
 .footer-image-container {
@@ -28,25 +28,72 @@ body.large-footer {
 .client-login-image-left {
   position: absolute;
   // Width and Height: 15px x 527px
-  background-image: asset-url('client/client-login-left.png');
+  background-image: asset-url('client/client-login-left-xs.png');
   background-repeat: repeat-x;
+  // background-size: 100% 100%;
 
-  right: $footer-image-right-width;
-  top: -$footer-image-offset;
+  right: $footer-image-right-width-xs - 3px;
+  top: -$footer-image-offset-xs;
 
-  height: $footer-image-height;
+  height: $footer-image-height-xs;
   width: 100%;
 }
 
 .client-login-image-right {
   position: absolute;
   // Width and Height: 290px x 527px
-  background-image: asset-url('client/client-login-right.png');
+  background-image: asset-url('client/client-login-right-xs.png');
   background-repeat: none;
+  background-size: 100%;
 
   right: 0px;
-  top: -$footer-image-offset;
+  top: -$footer-image-offset-xs;
 
-  height: $footer-image-height;
-  width: $footer-image-right-width;
+  height: $footer-image-height-xs;
+  width: $footer-image-right-width-xs;
+}
+
+@media screen and (min-width: $screen-sm-min) {
+
+  body.large-footer {
+    margin-bottom: $footer-login-height;
+  }
+
+  .footer-login {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: $footer-login-height;
+  }
+
+  .footer-image-container {
+    position: relative;
+    z-index: -1;
+  }
+
+  .client-login-image-left {
+    position: absolute;
+    // Width and Height: 15px x 527px
+    background-image: asset-url('client/client-login-left.png');
+    background-repeat: repeat-x;
+
+    right: $footer-image-right-width;
+    top: -$footer-image-offset;
+
+    height: $footer-image-height;
+    width: 100%;
+  }
+
+  .client-login-image-right {
+    position: absolute;
+    // Width and Height: 290px x 527px
+    background-image: asset-url('client/client-login-right.png');
+    background-repeat: none;
+
+    right: 0px;
+    top: -$footer-image-offset;
+
+    height: $footer-image-height;
+    width: $footer-image-right-width;
+  }
 }
