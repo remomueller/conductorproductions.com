@@ -1,0 +1,52 @@
+// Layout: Application
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: $footer-height;
+}
+
+// Layout: Application Login
+
+body.large-footer {
+  margin-bottom: $footer-login-height;
+}
+
+.footer-login {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: $footer-login-height;
+}
+
+.footer-image-container {
+  position: relative;
+  z-index: -1;
+}
+
+.client-login-image-left {
+  position: absolute;
+  // Width and Height: 15px x 527px
+  background-image: asset-url('client/client-login-left.png');
+  background-repeat: repeat-x;
+
+  right: $footer-image-right-width;
+  top: -$footer-image-offset;
+
+  height: $footer-image-height;
+  width: 100%;
+}
+
+.client-login-image-right {
+  position: absolute;
+  // Width and Height: 290px x 527px
+  background-image: asset-url('client/client-login-right.png');
+  background-repeat: none;
+
+  right: 0px;
+  top: -$footer-image-offset;
+
+  height: $footer-image-height;
+  width: $footer-image-right-width;
+}

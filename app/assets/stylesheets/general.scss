@@ -1,3 +1,5 @@
+
+
 .center {
   text-align: center;
 }
@@ -9,7 +11,7 @@ html {
   min-height: 100%;
 }
 body {
-  margin-bottom: 60px;
+  margin-bottom: $footer-height;
 }
 html, body {
   overflow-x: hidden;
@@ -18,12 +20,6 @@ p {
   font-size: 15px;
 }
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-}
 .conductor-logo-footer {
   font-family: 'directors_cut_probold';
 }
@@ -225,7 +221,7 @@ $video_border_margin: 75px;
   top: 82px;
   width:47px;
   height:127px;
-  background-image: url('splash2/work-tab.png');
+  background-image: asset-url('splash2/work-tab.png');
   background-repeat:no-repeat;
   color: $body-bg;
 }
@@ -258,7 +254,7 @@ $video_border_margin: 75px;
   margin-right:-70px;
   margin-bottom:-80px;
   top: 0;
-  background-image: url('splash2/video-frame-lower-right.png');
+  background-image: asset-url('splash2/video-frame-lower-right.png');
 }
 
 .video-frame {
@@ -272,7 +268,7 @@ $video_border_margin: 75px;
 .video-frame-upper-left {
   top:-$video_border_margin;
   left:-80px;
-  background-image: url('splash2/video-frame-upper-left.png');
+  background-image: asset-url('splash2/video-frame-upper-left.png');
 }
 
 .video-frame-lower-left {
@@ -281,13 +277,13 @@ $video_border_margin: 75px;
   height:192px;
   bottom:-$video_border_margin;
   left:0px;
-  background-image: url('splash2/video-frame-lower-left-short.png');
+  background-image: asset-url('splash2/video-frame-lower-left-short.png');
 }
 
 .video-frame-lower-right {
   bottom:-$video_border_margin;
   right:-80px;
-  background-image: url('splash2/video-frame-lower-right.png');
+  background-image: asset-url('splash2/video-frame-lower-right.png');
 }
 
 @media screen and (min-width: 518px) {
@@ -301,7 +297,7 @@ $video_border_margin: 75px;
 
 @media screen and (min-width: 690px) {
   .video-frame-lower-left {
-    background-image: url('splash2/video-frame-lower-left.png');
+    background-image: asset-url('splash2/video-frame-lower-left.png');
   }
 }
 
@@ -349,14 +345,14 @@ $video_border_margin: 75px;
 .news-text .img-work-tab {
   width: 46px;
   height: 29px;
-  background-image: url('news/news-work-tab.png');
+  background-image: asset-url('news/news-work-tab.png');
   background-size: 100%;
   background-repeat: no-repeat;
 }
 .news-text .img-work-lines {
   width: 772px;
   height: 100px;
-  background-image: url('news/news-work-lines.png');
+  background-image: asset-url('news/news-work-lines.png');
   /*background-size: 100%;*/
   background-repeat: no-repeat;
 }

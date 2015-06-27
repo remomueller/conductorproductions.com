@@ -2,9 +2,11 @@ class ClientSessionController < ApplicationController
 
   before_action :invert,              only: [ :new, :create ]
 
+  layout 'application-login', only: [ :new, :create ]
+
   # Show the client login page
   def new
-    @invert = true
+    redirect_to current_client if current_client
   end
 
   # Attempt to login the client

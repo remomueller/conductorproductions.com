@@ -1,4 +1,4 @@
-.container
+.container{ style: 'padding-top:20px' }
   .hidden-xs
     .pull-right
       .menu-links{ style: 'background-color: black;color: white !important'}
@@ -8,19 +8,24 @@
         |
         = link_to 'DRTV', drtv_path, style: 'color: white'
         |
-        = link_to 'CLIENT', client_login_path, class: 'active', style: 'color: white'
-        |
         = link_to 'CONTACT', contact_path, style: 'color: white'
+        |
+        = link_to 'LOGIN', client_login_path, class: 'active', style: 'color: white'
+
+  -# This is to match the height of product-links
+  .hidden-xs
+    %div{ style: 'font-size: 0.9em;height: 18px' }
+      &nbsp;
 
 .container
   .visible-xs
-    .menu-links
+    .menu-links{ style: 'margin-top: 47px;' }
       = link_to 'HOME', root_path
       |
       = link_to 'WORK', work_path
       |
       = link_to 'DRTV', drtv_path
       |
-      = link_to 'CLIENT', client_login_path, class: 'active'
-      |
       = link_to 'CONTACT', contact_path
+      |
+      = link_to 'LOGIN', client_login_path, class: 'active'

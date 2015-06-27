@@ -2,19 +2,3 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.client-login-image-left {
-  margin-top: 69px;
-  background-repeat: repeat-x;
-  background-image: asset-url('client/client-login-left.png');
-  height: 100px;
-  width: 100%;
-  background-size: 100% 100%;
-}
-
-.client-login-image-right {
-  height: 207px;
-  background-repeat: none;
-  background-image: asset-url('client/client-login-right.png');
-  background-size: 100% 100%;
-}
-
