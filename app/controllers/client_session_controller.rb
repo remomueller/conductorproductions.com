@@ -6,7 +6,7 @@ class ClientSessionController < ApplicationController
 
   # Show the client login page
   def new
-    redirect_to current_client if current_client
+    redirect_to client_project_root_path(current_client) if current_client
   end
 
   # Attempt to login the client
