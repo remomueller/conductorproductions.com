@@ -7,7 +7,7 @@
   %iframe{ src: '', webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
 
 
-#carousel-videos.carousel
+#carousel-videos.carousel.slide
   %ol.carousel-indicators
     - home_page_videos.each_with_index do |video, index|
       %li{ class: "#{'active' if index == 0}", data: { target: "#carousel-videos", slide: { to: index } } }

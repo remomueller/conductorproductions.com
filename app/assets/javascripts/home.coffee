@@ -25,6 +25,6 @@
   loadActiveVideo()
 
 $(document)
-  .on('slid.bs.carousel', $('#carousel-videos'), (event) ->
+  .on('slid.bs.carousel', $('#carousel-videos'), () ->
     loadActiveVideo()
   )

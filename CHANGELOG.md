@@ -41,6 +41,9 @@
   - Updated to rails 4.2.2
   - Updated to pg 0.18.2
 
+### Bug Fix
+- Clicking the carousel indicators now correctly jumps to the selected video
+
 ## 0.3.1 (May 3, 2015)
 
 ### Enhancements
