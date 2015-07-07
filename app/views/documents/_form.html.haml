@@ -15,7 +15,7 @@
   .form-group
     = f.label :category_id, nil, class: 'col-md-2 control-label'
     .col-md-10
-      = f.select :category_id, grouped_options_for_select(@project.grouped_categories_for_select), {}, class: 'form-control'
+      = f.select :category_id, grouped_options_for_select(@project.grouped_categories_for_select, @document.category_id), {}, class: 'form-control'
 
   .form-group
     = f.label :document, 'Document (PDF, DOC, DOCX)', class: 'col-md-2 control-label'

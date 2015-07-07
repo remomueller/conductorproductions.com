@@ -43,6 +43,7 @@
 
 ### Bug Fix
 - Clicking the carousel indicators now correctly jumps to the selected video
+- Documents and embeds now correctly set category while editing and updating them
 
 ## 0.3.1 (May 3, 2015)
 
