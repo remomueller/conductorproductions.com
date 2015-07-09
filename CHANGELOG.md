@@ -38,7 +38,7 @@
   - Updated password reset and unlock emails to use the correct website URL
 - **Gem Changes**
   - Added figaro centralized configuration
-  - Updated to rails 4.2.2
+  - Updated to rails 4.2.3
   - Updated to pg 0.18.2
 
 ### Bug Fix
