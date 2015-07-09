@@ -25,11 +25,10 @@ Rails.application.routes.draw do
     get :drtv
     get :contact
     post :submit_contact
-    get :news
-    get :about
-    get :clients
-    get :index_v2
-    get :index_v1
+    # get :news
+    # get :about
+    # get :clients
+    # get :index_v1
   end
 
   scope module: 'application' do

@@ -1,12 +1,20 @@
 require 'test_helper'
 
 class WelcomeControllerTest < ActionController::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  setup do
+    @client = projects(:one)
+    @system_admin = users(:system_admin)
+    @collaborator = users(:collaborator)
+  end
 
-  test "should get dashboard for logged in user" do
-    login(users(:collaborator))
+  test "should get dashboard as collaborator" do
+    login(@collaborator)
+    get :dashboard
+    assert_response :success
+  end
+
+  test "should get dashboard as system admin" do
+    login(@collaborator)
     get :dashboard
     assert_response :success
   end
@@ -16,7 +24,43 @@ class WelcomeControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get index as client" do
+    login_client(@client)
+    get :index
+    assert_response :success
+  end
+
+  test "should get index as system admin" do
+    login(@system_admin)
+    get :index
+    assert_response :success
+  end
+
+  test "should get index as collaborator" do
+    login(@collaborator)
+    get :index
+    assert_response :success
+  end
+
   test "should get work" do
+    get :work
+    assert_response :success
+  end
+
+  test "should get work as client" do
+    login_client(@client)
+    get :work
+    assert_response :success
+  end
+
+  test "should get work as system admin" do
+    login(@system_admin)
+    get :work
+    assert_response :success
+  end
+
+  test "should get work as collaborator" do
+    login(@collaborator)
     get :work
     assert_response :success
   end
@@ -26,36 +70,71 @@ class WelcomeControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get drtv as client" do
+    login_client(@client)
+    get :drtv
+    assert_response :success
+  end
+
+  test "should get drtv as system admin" do
+    login(@system_admin)
+    get :drtv
+    assert_response :success
+  end
+
+  test "should get drtv as collaborator" do
+    login(@collaborator)
+    get :drtv
+    assert_response :success
+  end
+
   test "should get contact" do
     get :contact
     assert_response :success
   end
 
-  test "should get news" do
-    get :news
+  test "should get contact as client" do
+    login_client(@client)
+    get :contact
     assert_response :success
   end
 
-  test "should get clients" do
-    get :clients
+  test "should get contact as system admin" do
+    login(@system_admin)
+    get :contact
     assert_response :success
   end
 
-  test "should get about" do
-    get :about
+  test "should get contact as collaborator" do
+    login(@collaborator)
+    get :contact
     assert_response :success
   end
 
   # Older versions
 
-  test "should get index_v1" do
-    get :index_v1
-    assert_response :success
-  end
+  # test "should get about" do
+  #   get :about
+  #   assert_response :success
+  # end
 
-  test "should get index_v2" do
-    get :index_v1
-    assert_response :success
-  end
+  # test "should get clients" do
+  #   get :clients
+  #   assert_response :success
+  # end
 
+  # test "should get news" do
+  #   get :news
+  #   assert_response :success
+  # end
+
+  # test "should get index_v1" do
+  #   get :index_v1
+  #   assert_response :success
+  # end
+
+  # test "should get index_v2" do
+  #   get :index_v1
+  #   assert_response :success
+  # end
 end
