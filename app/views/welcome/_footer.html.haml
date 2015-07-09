@@ -25,7 +25,7 @@
           SEND US FILES | up to 10gb
       - else
         &copy; CONDUCTOR
-        %span#current-year= Date.today.year
+        = Date.today.year
 
   - unless current_client and params[:controller].in?(['client_project', 'client_session'])
     .container.visible-xs.visible-sm.center{ style: "margin-top:10px;" }

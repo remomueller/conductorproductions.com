@@ -1,7 +1,5 @@
-
 @ready = () ->
-  console.log 'Ready'
-  globalReady()
+  homeReady()
 
 $(document).ready(ready)
 $(document)
