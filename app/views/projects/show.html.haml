@@ -1,7 +1,6 @@
-
 %h1
   = link_to 'Projects', projects_path
-  &middot;
+  |
   = @project.name
 
 = link_to 'Edit Project', edit_project_path(@project), class: 'btn btn-xs btn-default'

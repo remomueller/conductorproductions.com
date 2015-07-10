@@ -5,6 +5,8 @@
   - Updated the internal client pages with cleaner layout
 - **General Changes**
   - Product links no longer use `.html` extension
+- **Administrative Changes**
+  - Replaced `&middot;` with `|` for consistency in navigation
 
 ## 0.4.0 (July 9, 2015)
 
