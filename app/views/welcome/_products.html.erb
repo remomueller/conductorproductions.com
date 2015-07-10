@@ -1,7 +1,7 @@
 <% if params[:action] == 'drtv' %>
-  <% products = [['DIRECT RESPONSE', 'drtv.html'], ['COMMERCIALS', 'work.html'], ['BRANDED CONTENT', 'work.html']]%>
+  <% products = [['DIRECT RESPONSE', drtv_path], ['COMMERCIALS', work_path], ['BRANDED CONTENT', work_path]]%>
 <% else %>
-  <% products = [['COMMERCIALS', 'work.html'], ['BRANDED CONTENT', 'work.html'], ['DIRECT RESPONSE', 'drtv.html']]%>
+  <% products = [['COMMERCIALS', work_path], ['BRANDED CONTENT', work_path], ['DIRECT RESPONSE', drtv_path]]%>
 <% end %>
 
 <div class="product-links">
