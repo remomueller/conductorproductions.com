@@ -25,12 +25,6 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
 
   %body
-    #shade
-    - if false
-      .container
-        = link_to 'Dashboard', dashboard_path, class: 'btn btn-lg btn-primary'
-        = link_to 'Logout', destroy_user_session_path, class: 'btn btn-lg btn-danger pull-right'
-
     - if params[:controller] == 'client_project'
       = render 'client_project/header'
     - elsif params[:controller] == 'client_session'
@@ -40,16 +34,6 @@
 
     = render 'layouts/flash_messages'
     .container
-      - if params[:controller] == 'client_project'
-        - if current_page?(client_project_root_path(@project)) or current_page?(client_project_menu_path(@project))
-          = yield
-        - else
-          .row
-            .col-sm-9
-              = yield
-            .col-sm-3.white-background{ style: 'height:800px;padding-top:20px' }
-              = render 'client_project/side_menu'
-      - else
-        = yield
+      = yield
 
     = render 'welcome/footer'
