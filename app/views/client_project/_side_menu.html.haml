@@ -1,3 +1,9 @@
+%div{ style: 'height: 138px' }
+  - if @project.client_logo.size > 0
+    = link_to client_project_root_path(@project), style: 'text-decoration:none;' do
+      %div{ style: 'padding-top: 20px' }
+        = image_tag client_project_client_logo_path(@project), class: 'img-responsive agency-logo'
+
 %ul.project-menu
   - Project::TOP_LEVELS.each do |top_level|
     %li

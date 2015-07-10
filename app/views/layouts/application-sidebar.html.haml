@@ -1,0 +1,36 @@
+!!!
+%html
+  %head
+    %meta{ charset: 'utf-8'}
+    %meta{ content: 'IE=Edge,chrome=1', http: {equiv: 'X-UA-Compatible'}}
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1.0'}
+    %meta{ name: "description", content: "Conductor Productions" }
+    %meta{ name: "author", content: "" }
+
+    %title Conductor Productions
+
+    = favicon_link_tag
+    = csrf_meta_tags
+
+    / HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    /[if lt IE 9]
+      %script{ src: "//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" }
+      %script{ src: "//oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js" }
+
+    - if false
+      %script{ src: "//f.vimeocdn.com/js/froogaloop2.min.js" }
+      %script{ type: "text/javascript", src: "http://conductorproductions.tumblr.com/api/read/json" }
+
+    = stylesheet_link_tag "#{@invert ? 'application-invert' : 'application'}", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+
+  %body{ style: 'margin-bottom: 0px'}
+    = render 'layouts/flash_messages'
+    .container-fluid
+      .row{ style: 'overflow: hidden;' }
+        .col-sm-9.col-md-9.col-lg-10{ style: 'margin-bottom: -99999px;padding-bottom: 99999px;' }
+          = yield
+        .col-sm-3.col-md-3.col-lg-2.white-background{ style: 'margin-bottom: -99999px;padding-bottom: 99999px;' }
+          %div.visible-xs{ style: 'height:20px;background-color:black;margin-left:-15px;margin-right:-15px;' }
+          %div.white-background
+            = render 'client_project/side_menu'

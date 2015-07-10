@@ -1,19 +1,19 @@
-%div{ style: "padding-bottom:20px;" }
-  %h1
-    = @project.name
-  %h2
-    = @category.name
+%h1
+  = link_to @project.name, client_project_root_path(@project), style: 'color: white; text-decoration:none;'
+%h2
+  = @category.name
 
-  - if @document
-    - if @document.pdf?
-      %object{ data: client_project_download_document_path(@project, @document, inline: '1'), type: 'application/pdf', width: '100%', height: '1050px' }
+- if @document
+  - if @document.pdf?
+    .embed-responsive{ style: 'padding-bottom: 106.25%;' }
+      %object{ data: client_project_download_document_path(@project, @document, inline: '1'), type: 'application/pdf' }
         alt :
         = link_to @document.name, client_project_download_document_path(@project, @document), class: 'btn btn-xs btn-default'
-    - else
-      = link_to client_project_download_document_path(@project, @document), class: 'btn btn-default' do
-        %span.glyphicon.glyphicon-download
-        Download
-        = @document.name
-  - if @embed
-    .embed-responsive.embed-responsive-16by9
-      %iframe{ src: @embed.embed_url }
+  - else
+    = link_to client_project_download_document_path(@project, @document), class: 'btn btn-default' do
+      %span.glyphicon.glyphicon-download
+      Download
+      = @document.name
+- if @embed
+  .embed-responsive.embed-responsive-16by9
+    %iframe{ src: @embed.embed_url }

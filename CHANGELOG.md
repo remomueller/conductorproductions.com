@@ -1,5 +1,9 @@
 ## 0.5.0
 
+### Enhancements
+- **Client Changes**
+  - Updated the internal client pages with cleaner layout
+
 ## 0.4.0 (July 9, 2015)
 
 ### Enhancements

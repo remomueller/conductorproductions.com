@@ -3,6 +3,8 @@ class ClientProjectController < ApplicationController
   before_action :set_project
   before_action :invert,              only: [ :category, :document ]
 
+  layout 'application-sidebar', only: [ :category, :document ]
+
   def root
     render 'menu'
   end
