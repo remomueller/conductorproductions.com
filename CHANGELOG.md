@@ -6,6 +6,7 @@
   - Client menu sidebar updated to match root menu design
 - **General Changes**
   - Product links no longer use `.html` extension
+  - Primary link and accent color changed to lighter blue
 - **Administrative Changes**
   - Replaced `&middot;` with `|` for consistency in navigation
 - **Security Changes**
