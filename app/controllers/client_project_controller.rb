@@ -15,7 +15,7 @@ class ClientProjectController < ApplicationController
   def category
     @category = @project.categories.find_by_param(params[:category_id])
     if @category
-      @document = @category.pdf_documents.where(archived: false).first
+      @document = @category.documents.where(archived: false).first
       @embed = @category.embeds.where(archived: false).first
     else
       redirect_to client_project_root_path(@project)
