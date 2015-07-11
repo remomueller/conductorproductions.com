@@ -7,6 +7,8 @@
   - Product links no longer use `.html` extension
 - **Administrative Changes**
   - Replaced `&middot;` with `|` for consistency in navigation
+- **Security Changes**
+   - Made cookies secure in production environment
 
 ## 0.4.0 (July 9, 2015)
 
