@@ -13,7 +13,7 @@
 - if @document
   - if @document.pdf?
     .embed-responsive{ style: 'padding-bottom: 106.25%;' }
-      %object{ data: client_project_download_document_path(@project, @document, inline: '1'), type: 'application/pdf' }
+      %object.white-background{ data: client_project_download_document_path(@project, @document, inline: '1'), type: 'application/pdf' }
         alt :
         = link_to @document.name, client_project_download_document_path(@project, @document), class: 'btn btn-xs btn-default'
   - elsif @document.image?
