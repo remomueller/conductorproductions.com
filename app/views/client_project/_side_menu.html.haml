@@ -7,10 +7,11 @@
   - Project::TOP_LEVELS.each do |top_level|
     - url = '#'
     - object = 'suppress-click'
-    - if category = @project.categories.where(top_level: top_level).first and (category.documents.count + category.embeds.count > 0)
-      - url = client_project_category_path(@project, top_level: top_level.downcase, category_id: category)
-      - object = nil
-
+    - @project.categories.where(top_level: top_level).each do |category|
+      - if category.documents.count + category.embeds.count > 0
+        - url = client_project_category_path(@project, top_level: top_level.downcase, category_id: category)
+        - object = nil
+        - break
     = link_to url, data: { object: object }, class: 'side-menu-header' do
       .side-menu-header-triangle
       = top_level
