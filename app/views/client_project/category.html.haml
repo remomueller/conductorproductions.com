@@ -8,7 +8,7 @@
     .pull-right
       = link_to client_project_download_document_path(@project, @document), class: 'btn btn-xs btn-default' do
         %span.glyphicon.glyphicon-download
-        = @document.name
+        %span.hidden-xs= @document.name
 
 - if @document
   - if @document.pdf?
