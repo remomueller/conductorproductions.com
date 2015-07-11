@@ -3,6 +3,7 @@
 ### Enhancements
 - **Client Changes**
   - Updated the internal client pages with cleaner layout
+  - Client menu sidebar updated to match root menu design
 - **General Changes**
   - Product links no longer use `.html` extension
 - **Administrative Changes**

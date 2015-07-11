@@ -1,17 +1,21 @@
-%div{ style: 'height: 138px' }
+%div{ style: 'height: 138px;padding-left:20px;padding-top: 20px' }
   - if @project.client_logo.size > 0
     = link_to client_project_root_path(@project), style: 'text-decoration:none;' do
-      %div{ style: 'padding-top: 20px' }
+      %div{ style: '' }
         = image_tag client_project_client_logo_path(@project), class: 'img-responsive agency-logo'
 
-%ul.project-menu
+.side-menu
   - Project::TOP_LEVELS.each do |top_level|
-    %li
+    = link_to '#', data: { object: 'suppress-click' }, class: 'side-menu-header' do
+      .side-menu-header-triangle
       = top_level
-      %ul
-        - @project.categories.where(top_level: top_level).each do |category|
-          - if category.documents.count + category.embeds.count > 0
-            %li= link_to category.name, client_project_category_path(@project, top_level: top_level.downcase, category_id: category)
+    .side-menu-sub-menu
+      - @project.categories.where(top_level: top_level).each do |category|
+        - if category.documents.count + category.embeds.count > 0
+          = link_to client_project_category_path(@project, top_level: top_level.downcase, category_id: category), class: 'side-menu-sub-header' do
+            .side-menu-triangle-left-sub
+            .side-menu-triangle-left-sub-white
+            = category.name
 
 - if @category and @category.documents.where(archived: true).count > 0
   %br

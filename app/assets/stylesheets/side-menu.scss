@@ -1,0 +1,75 @@
+.side-menu {
+  position: relative;
+  margin-left: 20px;
+}
+
+.side-menu-header {
+  position: relative;
+  font-size: 24px;
+  background-color: black;
+  color: white;
+  margin-top: 5px;
+  width: 100%;
+  display: inline-block;
+}
+
+.side-menu-header:hover, .side-menu-header:active, .side-menu-header:focus {
+  text-decoration: none;
+  font-style: italic;
+}
+
+$triangle_size: 17px;
+.side-menu-header-triangle {
+  width: 0px;
+  height: 0px;
+  top: 0px;
+  left:-$triangle_size;
+  border-top: $triangle_size solid transparent;
+  border-bottom: $triangle_size solid transparent;
+  border-right: $triangle_size solid black;
+  position: absolute;
+}
+
+.side-menu-sub-menu {
+  margin-bottom: 0px;
+  // display: none;
+}
+
+.side-menu-sub-header {
+  position: relative;
+  font-size: 14px;
+  background-color: white;
+  color: #333;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin-bottom: -1px;
+  width: 100%;
+  display: inline-block;
+}
+
+.side-menu-sub-header:hover, .side-menu-sub-header:active, .side-menu-sub-header:focus {
+  text-decoration: none;
+  font-style: italic;
+}
+
+$triangle_small_size: 11px;
+.side-menu-triangle-left-sub {
+  width: 0px;
+  height: 0px;
+  top: -1px;
+  left: -$triangle_small_size;
+  border-top: $triangle_small_size solid transparent;
+  border-bottom: $triangle_small_size solid transparent;
+  border-right: $triangle_small_size solid black;
+  position: absolute;
+}
+.side-menu-triangle-left-sub-white {
+  width: 0px;
+  height: 0px;
+  top: -1px;
+  left: -($triangle_small_size - 1);
+  border-top: $triangle_small_size solid transparent;
+  border-bottom: $triangle_small_size solid transparent;
+  border-right: $triangle_small_size solid white;
+  position: absolute;
+}
