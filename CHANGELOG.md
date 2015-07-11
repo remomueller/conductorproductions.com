@@ -4,6 +4,7 @@
 - **Client Changes**
   - Updated the internal client pages with cleaner layout
   - Client menu sidebar updated to match root menu design
+  - Small footer graphic on client login page has been fixed
 - **General Changes**
   - Product links no longer use `.html` extension
   - Primary link and accent color changed to lighter blue

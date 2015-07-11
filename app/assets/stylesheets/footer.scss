@@ -32,8 +32,8 @@ body.large-footer {
   background-repeat: repeat-x;
   // background-size: 100% 100%;
 
-  right: $footer-image-right-width-xs - 3px;
-  top: -$footer-image-offset-xs;
+  right: $footer-image-right-width-xs;
+  top: -$footer-image-offset-xs - 1px;
 
   height: $footer-image-height-xs;
   width: 100%;
