@@ -36,7 +36,7 @@ class ClientProjectController < ApplicationController
     @document = @project.documents.find_by_id(params[:document_id])
     if @document and @document.document.size > 0
       disposition = (params[:inline] == '1' ? 'inline' : 'attachment')
-      type = (@document.pdf? ? 'application/pdf' : 'application/octet-stream')
+      type = (@document.pdf? ? 'application/pdf' : (@document.image? ? 'image/png' : 'application/octet-stream' ))
       send_file File.join( CarrierWave::Uploader::Base.root, @document.document.url ), type: type, disposition: disposition
     else
       head :ok
