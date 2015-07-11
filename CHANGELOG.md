@@ -8,6 +8,8 @@
 - **General Changes**
   - Product links no longer use `.html` extension
   - Primary link and accent color changed to lighter blue
+- **Document Changes**
+  - Documents can be uploaded as PNGs as well
 - **Administrative Changes**
   - Replaced `&middot;` with `|` for consistency in navigation
 - **Security Changes**
