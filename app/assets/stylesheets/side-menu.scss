@@ -8,12 +8,15 @@
   font-size: 24px;
   background-color: black;
   color: white;
-  margin-top: 5px;
   width: 100%;
   display: inline-block;
 }
 
-.side-menu-header:hover, .side-menu-header:active, .side-menu-header:focus {
+.side-menu-logo {
+  max-height: 65px;
+}
+
+.side-menu-header:hover, .side-menu-header:active, .side-menu-header:focus, .side-menu-header.active {
   text-decoration: none;
   font-style: italic;
 }
@@ -31,8 +34,7 @@ $triangle_size: 17px;
 }
 
 .side-menu-sub-menu {
-  margin-bottom: 0px;
-  // display: none;
+  margin-bottom: 5px;
 }
 
 .side-menu-sub-header {
@@ -47,7 +49,7 @@ $triangle_size: 17px;
   display: inline-block;
 }
 
-.side-menu-sub-header:hover, .side-menu-sub-header:active, .side-menu-sub-header:focus {
+.side-menu-sub-header:hover, .side-menu-sub-header:active, .side-menu-sub-header:focus, .side-menu-sub-header.active {
   text-decoration: none;
   font-style: italic;
 }

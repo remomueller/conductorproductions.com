@@ -52,6 +52,11 @@ ul.project-menu > li {
   user-select: none;
 }
 
+.project-menu-main-header:hover, .project-menu-main-header:active, .project-menu-main-header:focus {
+  text-decoration: none;
+  font-style: italic;
+}
+
 .project-menu-sub {
   margin-bottom: 10px;
   display: none;
@@ -65,6 +70,11 @@ ul.project-menu > li {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   margin-bottom: -1px;
+}
+
+.project-menu-sub-header a:hover, .project-menu-sub-header a:active, .project-menu-sub-header a:focus {
+  text-decoration: none;
+  font-style: italic;
 }
 
 $triangle_size: 21px;
@@ -113,4 +123,14 @@ $triangle_small_size: 18px;
   .agency-logo {
     max-height: 80px;
   }
+}
+
+.project-link {
+  color: white;
+  white-space: nowrap;
+}
+
+.project-link:hover, .project-link:active, .project-link:focus {
+  text-decoration: none;
+  font-style: italic;
 }

@@ -29,8 +29,10 @@
     .container-fluid
       .row{ style: 'overflow: hidden;' }
         .col-sm-9.col-md-9.col-lg-10{ style: 'margin-bottom: -99999px;padding-bottom: 99999px;' }
-          = yield
+          %div{ style: 'min-height:1280px' }
+            = yield
         .col-sm-3.col-md-3.col-lg-2.white-background{ style: 'padding-right: 0px;margin-bottom: -99999px;padding-bottom: 99999px;' }
           %div.visible-xs{ style: 'height:20px;background-color:black;margin-left:-15px;margin-right:-15px;' }
           %div.white-background
             = render 'client_project/side_menu'
+          = render 'client_project/archive_menu'

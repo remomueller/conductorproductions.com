@@ -1,0 +1,24 @@
+.archive-menu {
+  color: black;
+  margin-top: 100px;
+
+  border-left: 2px solid black;
+  padding-left: 15px;
+  margin-left: 3px;
+
+  h4 {
+    color: black;
+    border-bottom: 3px double black;
+  }
+
+}
+
+.document-link {
+  color: black;
+  white-space: nowrap;
+}
+
+.document-link:hover, .document-link:active, .document-link:focus, .document-link.active {
+  text-decoration: none;
+  font-style: italic;
+}

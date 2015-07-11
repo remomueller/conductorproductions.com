@@ -24,4 +24,8 @@ class Document < ActiveRecord::Base
     self.document_identifier.last(4).to_s.downcase == '.pdf'
   end
 
+  def image?
+    self.document_identifier.last(4).to_s.downcase == '.png'
+  end
+
 end
