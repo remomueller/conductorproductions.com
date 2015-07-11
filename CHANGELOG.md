@@ -6,6 +6,7 @@
   - Client menu sidebar updated to match root menu design
   - Small footer graphic on client login page has been fixed
   - All latest and archived category documents and embeds are now listed in the archive menu in the sidebar
+  - Fixed location of logos and spacing of header on client root menu
 - **General Changes**
   - Product links no longer use `.html` extension
   - Primary link and accent color changed to lighter blue

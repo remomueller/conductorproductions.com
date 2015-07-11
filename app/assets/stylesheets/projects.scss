@@ -116,12 +116,21 @@ $triangle_small_size: 18px;
 }
 
 .agency-logo {
-  max-height: 65px;
+  max-height: 55px;
+}
+
+.agency-logo-container {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 @media screen and (min-width: $screen-sm-min) {
   .agency-logo {
-    max-height: 80px;
+    max-height: 55px;
+  }
+  .agency-logo-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 }
 

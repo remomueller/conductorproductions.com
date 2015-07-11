@@ -10,7 +10,6 @@ class ClientProjectController < ApplicationController
   end
 
   def menu
-
   end
 
   def category

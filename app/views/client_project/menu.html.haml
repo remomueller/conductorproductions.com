@@ -1,18 +1,9 @@
-- if @project.client_logo.size > 0
-  %div{ style: 'position:relative' }
-    %div{ style: 'position:absolute;top:-50px;left:40px' }
-      = image_tag client_project_client_logo_path(@project), class: 'img-responsive agency-logo'
-
-
-.pull-right
+.pull-right.agency-logo-container
   - if @project.agency_logo.size > 0
     = image_tag client_project_agency_logo_path(@project), class: 'img-responsive agency-logo'
 
-%h1
+%h1{ style: 'margin-top: 20px;margin-bottom:20px' }
   = @project.name
-  - if current_user
-    |
-    = @project.number
 
 .project-menu-plain
   - Project::TOP_LEVELS.each do |top_level|
@@ -26,3 +17,7 @@
             .menu-triangle-left-sub
             .menu-triangle-left-sub-white
             = link_to category.name, client_project_category_path(@project, top_level: top_level.downcase, category_id: category)
+
+- if @project.client_logo.size > 0
+  .center
+    = image_tag client_project_client_logo_path(@project), style: 'max-height: 150px;margin-top:20px'

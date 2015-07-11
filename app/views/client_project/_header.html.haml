@@ -1,4 +1,4 @@
-.container
+.container{ style: 'height: 80px;' }
   .company-logo
     .hidden-xs
       .pull-right
@@ -26,9 +26,7 @@
         =# link_to @project.client_name, client_project_root_path(@project)
 
 .container
-  %h2.pull-left
-    &nbsp;
   .visible-xs
     .menu-links
-      .pull-right
+      .pull-right{ style: 'margin-top: -54px;padding-right:40px;' }
         = link_to 'LOGOUT', client_logout_path
