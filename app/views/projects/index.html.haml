@@ -19,5 +19,5 @@
         %td= project.slug
         %td= project.agency_logo_identifier
         %td= project.user.name if project.user
-        %td= link_to 'Edit', edit_project_path(project)
+        %td= link_to 'Edit', edit_project_path(project) if project.editable_by?(current_user)
         %td= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } if project.deletable_by?(current_user)
