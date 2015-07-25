@@ -1,5 +1,6 @@
 @ready = () ->
   homeReady()
+  Turbolinks.enableProgressBar()
 
 $(document).ready(ready)
 $(document)
