@@ -20,5 +20,17 @@ collaborator:
 regular:
   first_name: Regular
   last_name: User
-  email: regular_user@example.com
+  email: regular@example.com
+  encrypted_password: ""
+
+editor_project_one:
+  first_name: Editor
+  last_name: User
+  email: editor@example.com
+  encrypted_password: ""
+
+viewer_project_one:
+  first_name: Viewer
+  last_name: User
+  email: viewer@example.com
   encrypted_password: ""

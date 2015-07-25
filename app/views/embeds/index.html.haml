@@ -3,8 +3,8 @@
   |
   Embeds
 
-= link_to 'New Embed', new_project_embed_path(@project), class: 'btn btn-xs btn-default'
-
+- if @project.editable_by?(current_user)
+  = link_to 'New Embed', new_project_embed_path(@project), class: 'btn btn-xs btn-default'
 
 %table.table.table-striped
   %thead
@@ -28,7 +28,8 @@
         %tr
           %td= embed.category.name if embed.category
           %td= link_to embed.name, [@project, embed]
-          %td= embed.user.name if embed.user
+          %td= link_to_if current_user.system_admin?, embed.user.name, embed.user if embed.user
           %td= embed.archived
-          %td= link_to 'Edit', edit_project_embed_path(@project, embed)
-          %td= link_to 'Destroy', [@project, embed], method: :delete, data: { confirm: "Are you sure you want to delete Embed #{embed.name}?" }
+          - if @project.editable_by?(current_user)
+            %td= link_to 'Edit', edit_project_embed_path(@project, embed)
+            %td= link_to 'Destroy', [@project, embed], method: :delete, data: { confirm: "Are you sure you want to delete Embed #{embed.name}?" }

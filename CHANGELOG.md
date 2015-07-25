@@ -15,6 +15,11 @@
 - **Administrative Changes**
   - Replaced `&middot;` with `|` for consistency in navigation
   - Administrators can edit and update user accounts
+- **Project Changes**
+  - Project Owners can invite users to edit or view projects
+  - Project Editors can edit the project, documents, embeds, categories
+    - Only Project Owners can delete projects
+  - Project Viewers can not make any changes, but can view project, documents, embeds, and categories
 - **Security Changes**
    - Made cookies secure in production environment
 

@@ -3,7 +3,8 @@
   |
   Categories
 
-= link_to 'New Category', new_project_category_path(@project), class: 'btn btn-xs btn-default'
+- if @project.editable_by?(current_user)
+  = link_to 'New Category', new_project_category_path(@project), class: 'btn btn-xs btn-default'
 
 %table.table.table-striped
   %thead
@@ -13,7 +14,8 @@
       %th Name
       %th Slug
       %th Creator
-      %th{ colspan: "2" }
+      - if @project.editable_by?(current_user)
+        %th{ colspan: "2" }
 
   %tbody
     - if @categories.count == 0
@@ -31,5 +33,6 @@
           %td= link_to category.name, [@project, category]
           %td= category.slug
           %td= category.user.name if category.user
-          %td= link_to 'Edit', edit_project_category_path(@project, category)
-          %td= link_to 'Destroy', [@project, category], method: :delete, data: { confirm: "Are you sure you want to delete Category #{category.name}?" }
+          - if @project.editable_by?(current_user)
+            %td= link_to 'Edit', edit_project_category_path(@project, category)
+            %td= link_to 'Destroy', [@project, category], method: :delete, data: { confirm: "Are you sure you want to delete Category #{category.name}?" }

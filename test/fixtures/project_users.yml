@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+pending_editor_invite:
+  project: one
+  # user:
+  editor: true
+  creator: system_admin
+  invite_token: pending_editor_invite
+  invite_email: collaborator@example.com
+
+pending_viewer_invite:
+  project: one
+  # user:
+  editor: true
+  creator: system_admin
+  invite_token: pending_viewer_invite
+  invite_email: collaborator@example.com
+
+accepted_editor_invite:
+  project: one
+  user: editor_project_one
+  editor: true
+  creator: system_admin
+  invite_token: accepted_editor_invite
+  invite_email: editor_project_one@example.com
+
+accepted_viewer_invite:
+  project: one
+  user: viewer_project_one
+  editor: false
+  creator: system_admin
+  invite_token: accepted_viewer_invite
+  invite_email: viewer_project_one@example.com

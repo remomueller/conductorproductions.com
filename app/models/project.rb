@@ -52,6 +52,9 @@ class Project < ActiveRecord::Base
 
   has_secure_password
 
+  # Named Scopes
+  scope :with_editor, lambda { |*args| where('projects.user_id = ? or projects.id in (select project_users.project_id from project_users where project_users.user_id = ? and project_users.editor IN (?))', args.first, args.first, args[1] ).references(:project_users) }
+
   # Model Validation
   validates_presence_of :name, :user_id
   validates_uniqueness_of :slug, scope: [ :deleted ], allow_blank: true
@@ -63,6 +66,10 @@ class Project < ActiveRecord::Base
   has_many :categories, -> { where(deleted: false).order(:top_level, :position) }
   has_many :documents, -> { where(deleted: false).order(:archived, document_uploaded_at: :desc) }
   has_many :embeds, -> { where(deleted: false).order(:archived, created_at: :desc) }
+  has_many :project_users
+  has_many :users, -> { where( deleted: false ).order( 'last_name, first_name' ) }, through: :project_users
+  has_many :editors, -> { where('project_users.editor = ? and users.deleted = ?', true, false) }, through: :project_users, source: :user
+  has_many :viewers, -> { where('project_users.editor = ? and users.deleted = ?', false, false) }, through: :project_users, source: :user
 
   def to_param
     slug.blank? ? id : slug
@@ -79,6 +86,19 @@ class Project < ActiveRecord::Base
     end
     groups
   end
+
+  # Project Owners and Project Editors
+  def editable_by?(current_user)
+    @editable_by ||= begin
+      current_user.all_projects.where(id: self.id).count == 1
+    end
+  end
+
+  # Project Owners
+  def deletable_by?(current_user)
+    current_user.projects.where( id: self.id ).count == 1
+  end
+
 
   private
 

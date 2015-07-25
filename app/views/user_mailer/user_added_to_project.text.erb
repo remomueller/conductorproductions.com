@@ -1,0 +1,14 @@
+Dear <%= @project_user.user.first_name %>,
+
+<%= @project_user.creator.name %> added you to Project <%= @project_user.project.name %> located here:
+
+    <%= "#{ENV['website_url']}/projects/#{@project_user.project.to_param}" %>
+
+<% if @project_user.editor? %>
+You may edit the project and add new documents, videos, and images to the project.<% else %>You may view the project.<% end %>
+
+Thank you!
+
+<%= ENV['website_name'] %> Mailer
+
+<%= @footer_txt %>

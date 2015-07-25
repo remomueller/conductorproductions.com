@@ -5,6 +5,8 @@ Rails.application.routes.draw do
       get :menu
       get :agency_logo
       get :client_logo
+      get :collaborators
+      post :invite_user
     end
 
     resources :categories
@@ -17,6 +19,17 @@ Rails.application.routes.draw do
 
     resources :embeds
   end
+
+  resources :project_users do
+    member do
+      post :resend
+    end
+    collection do
+      get :accept
+    end
+  end
+
+  get "invite/:invite_token" => "project_users#invite"
 
   scope module: 'welcome' do
     get :dashboard

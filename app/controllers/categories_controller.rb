@@ -1,8 +1,8 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
-  before_action :check_system_admin
 
-  before_action :set_project
+  before_action :set_viewable_project,      only: [:index, :show]
+  before_action :set_editable_project,      only: [:new, :create, :edit, :update, :destroy]
   before_action :redirect_without_project
 
   before_action :set_category, only: [:show, :edit, :update, :destroy]

@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  def after_sign_in_path_for(resource)
+    session[:previous_url] || dashboard_path
+  end
+
   protected
 
   def configure_permitted_parameters
@@ -24,9 +28,12 @@ class ApplicationController < ActionController::Base
     redirect_to client_login_path unless current_client
   end
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_project(id = :project_id)
-    @project = Project.current.find_by_param(params[id])
+  def set_editable_project(id = :project_id)
+    @project = current_user.all_projects.find_by_param(params[id])
+  end
+
+  def set_viewable_project(id = :project_id)
+    @project = current_user.all_viewable_projects.find_by_param(params[id])
   end
 
   def redirect_without_project(path = root_path)

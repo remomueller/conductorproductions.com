@@ -6,8 +6,9 @@
 %h2
   = @embed.name
 
-= link_to 'Edit Embed', edit_project_embed_path(@project, @embed), class: 'btn btn-xs btn-default'
-= link_to 'Delete Embed', [@project, @embed], method: :delete, class: 'btn btn-xs btn-danger', data: { confirm: "Are you sure you want to delete Embed #{@embed.name}?" }
+- if @project.editable_by?(current_user)
+  = link_to 'Edit Embed', edit_project_embed_path(@project, @embed), class: 'btn btn-xs btn-default'
+  = link_to 'Delete Embed', [@project, @embed], method: :delete, class: 'btn btn-xs btn-danger', data: { confirm: "Are you sure you want to delete Embed #{@embed.name}?" }
 
 %dl.dl-horizontal
   %dt

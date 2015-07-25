@@ -1,14 +1,38 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
-  before_action :check_system_admin #, only: [ :new, :create, :edit, :update, :destroy ]
-  before_action :set_project, only: [:show, :agency_logo, :client_logo, :edit, :update, :destroy]
+  before_action :check_system_admin,        only: [:new, :create]
+  before_action :set_deletable_project,     only: [:destroy]
+  before_action :set_editable_project,      only: [:invite_user, :edit, :update]
+  before_action :set_viewable_project,      only: [:collaborators, :show, :agency_logo, :client_logo]
+  before_action :redirect_without_project,  only: [:collaborators, :invite_user, :show, :agency_logo, :client_logo, :edit, :update, :destroy]
 
   layout 'application'
+
+  def collaborators
+  end
+
+  def invite_user
+    invite_email = params[:invite_email].to_s.strip
+    @user = current_user.associated_users.find_by_email(invite_email.split('[').last.to_s.split(']').first)
+
+    member_scope = @project.project_users
+
+    if @user
+      @member = member_scope.where(user_id: @user.id).first_or_create( creator_id: current_user.id )
+      @member.update( editor: (params[:editor] == '1') )
+    elsif not invite_email.blank?
+      @member = member_scope.where(invite_email: invite_email).first_or_create( creator_id: current_user.id )
+      @member.update( editor: (params[:editor] == '1') )
+      @member.generate_invite_token!
+    end
+
+    render 'projects/collaborators'
+  end
 
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.current
+    @projects = current_user.all_viewable_projects
   end
 
   # GET /projects/1
@@ -74,8 +98,16 @@ class ProjectsController < ApplicationController
   end
 
   private
-    def set_project
+    def set_editable_project
       super(:id)
+    end
+
+    def set_viewable_project
+      super(:id)
+    end
+
+    def set_deletable_project
+      @project = Project.where(user_id: current_user.id).find_by_param(params[:id])
     end
 
     def redirect_without_project

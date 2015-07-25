@@ -18,7 +18,11 @@ class WelcomeController < ApplicationController
   # end
 
   def dashboard
-    render layout: 'application'
+    if session[:invite_token].present?
+      redirect_to accept_project_users_path
+    else
+      render layout: 'application'
+    end
   end
 
 end
