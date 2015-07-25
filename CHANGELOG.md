@@ -14,6 +14,7 @@
   - Documents can be uploaded as PNGs as well
 - **Administrative Changes**
   - Replaced `&middot;` with `|` for consistency in navigation
+  - Administrators can edit and update user accounts
 - **Security Changes**
    - Made cookies secure in production environment
 

@@ -1,0 +1,30 @@
+= form_for @user, html: { class: 'form-horizontal', multipart: true } do |f|
+  - if @user.errors.any?
+    .panel.panel-danger
+      .panel-heading
+        %strong
+          = pluralize(@user.errors.count, "error")
+          prohibited this user from being saved:
+      .panel-body
+        %ul
+          - @user.errors.full_messages.each do |message|
+            %li= message
+
+  .form-group
+    = f.label :first_name, nil, class: 'col-md-2 control-label '
+    .col-md-10
+      = f.text_field :first_name, class: 'form-control'
+  .form-group
+    = f.label :last_name, nil, class: 'col-md-2 control-label '
+    .col-md-10
+      = f.text_field :last_name, class: 'form-control'
+  .form-group
+    = f.label :system_admin, nil, class: 'col-md-2 control-label'
+    .col-md-10
+      .checkbox
+        %label
+          = f.check_box :system_admin
+  .form-group
+    .col-md-10.col-md-offset-2
+      = f.submit nil, class: 'btn btn-primary'
+      = link_to 'Cancel', @user.new_record? ? users_path : @user, class: 'btn btn-default'

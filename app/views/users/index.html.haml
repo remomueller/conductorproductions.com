@@ -1,0 +1,16 @@
+%h1 Users
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th Name
+      %th System Admin
+      %th{ colspan: "2" }
+
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= link_to user.name, user
+        %td= user.system_admin?
+        %td= link_to 'Edit', edit_user_path(user)
+        %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }

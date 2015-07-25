@@ -14,7 +14,7 @@ class WelcomeControllerTest < ActionController::TestCase
   end
 
   test "should get dashboard as system admin" do
-    login(@collaborator)
+    login(@system_admin)
     get :dashboard
     assert_response :success
   end

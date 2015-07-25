@@ -43,6 +43,8 @@ Rails.application.routes.draw do
 
   devise_for :users, path_names: { sign_up: 'join', sign_in: 'login', sign_out: 'logout' }, path: ""
 
+  resources :users
+
   scope module: 'client_project' do
     get ":id", action: 'root', as: :client_project_root
     get ":id/menu", action: 'menu', as: :client_project_menu

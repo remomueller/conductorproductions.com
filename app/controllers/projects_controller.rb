@@ -68,7 +68,7 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     respond_to do |format|
-      format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
+      format.html { redirect_to projects_path, notice: 'Project was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -82,7 +82,6 @@ class ProjectsController < ApplicationController
       super(projects_path)
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
       params[:project] ||= { blank: '1' }
       params[:project][:password_plain] = params[:project][:password] unless params[:project][:password].blank?

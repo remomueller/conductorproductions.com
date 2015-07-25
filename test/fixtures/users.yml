@@ -16,3 +16,9 @@ collaborator:
   last_name: Orator
   email: collaborator@example.com
   encrypted_password: ""
+
+regular:
+  first_name: Regular
+  last_name: User
+  email: regular_user@example.com
+  encrypted_password: ""
