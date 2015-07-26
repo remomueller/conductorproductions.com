@@ -1,0 +1,39 @@
+= form_for [@project, @location], html: { class: 'form-horizontal', multipart: true } do |f|
+  - if @location.errors.any?
+    .panel.panel-danger
+      .panel-heading
+        %strong
+          = pluralize(@location.errors.count, "error")
+          prohibited this location from being saved:
+
+      .panel-body
+
+        %ul
+          - @location.errors.full_messages.each do |message|
+            %li= message
+
+  .form-group
+    = f.label :category_id, nil, class: 'col-md-2 control-label'
+    .col-md-10
+      = f.select :category_id, grouped_options_for_select(@project.grouped_categories_for_select, @location.category_id), {}, class: 'form-control'
+
+  .form-group
+    = f.label :name, nil, class: 'col-md-2 control-label'
+    .col-md-10
+      = f.text_field :name, class: 'form-control'
+
+  .form-group
+    = f.label :address, nil, class: 'col-md-2 control-label'
+    .col-md-10
+      = f.text_area :address, rows: 7, class: 'form-control'
+
+  .form-group
+    = f.label :archived, nil, class: 'col-md-2 control-label'
+    .col-md-10
+      .checkbox
+        %label
+          = f.check_box :archived
+
+  .form-group
+    .col-md-10.col-md-offset-2
+      = f.submit nil, class: 'btn btn-primary'

@@ -1,0 +1,8 @@
+%h1
+  = link_to @project.name, @project
+  |
+  = link_to 'Locations', project_locations_path(@project)
+  |
+  New Location
+
+= render 'form'

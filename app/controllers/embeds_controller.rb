@@ -78,7 +78,6 @@ class EmbedsController < ApplicationController
       empty_response_or_root_path(project_embeds_path(@project)) unless @embed
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def embed_params
       params.require(:embed).permit(:category_id, :embed_url, :archived)
     end

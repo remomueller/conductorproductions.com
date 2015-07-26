@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     end
 
     resources :embeds
+
+    resources :locations
   end
 
   resources :project_users do

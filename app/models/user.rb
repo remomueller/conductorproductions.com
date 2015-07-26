@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
   has_many :categories, -> { where deleted: false }
   has_many :documents, -> { where deleted: false }
   has_many :embeds, -> { where deleted: false }
+  has_many :locations, -> { where deleted: false }
 
   # User Methods
 

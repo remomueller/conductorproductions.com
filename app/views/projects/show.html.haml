@@ -8,6 +8,7 @@
 = link_to 'View Categories', project_categories_path(@project), class: 'btn btn-xs btn-default'
 = link_to 'View Documents', project_documents_path(@project), class: 'btn btn-xs btn-default'
 = link_to 'View Embeds', project_embeds_path(@project), class: 'btn btn-xs btn-default'
+= link_to 'View Locations', project_locations_path(@project), class: 'btn btn-xs btn-default'
 = link_to "#{@project.editable_by?(current_user) ? 'Add' : 'View'} Collaborators", collaborators_project_path(@project), class: 'btn btn-xs btn-default'
 
 %dl.dl-horizontal

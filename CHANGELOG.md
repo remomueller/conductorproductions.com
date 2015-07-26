@@ -12,6 +12,8 @@
   - Primary link and accent color changed to lighter blue
 - **Document Changes**
   - Documents can be uploaded as PNGs as well
+- **Location Changes**
+  - Locations can be added that have a name and an address
 - **Administrative Changes**
   - Replaced `&middot;` with `|` for consistency in navigation
   - Administrators can edit and update user accounts

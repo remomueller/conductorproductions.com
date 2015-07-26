@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project: one
+  category: one
+  user: system_admin
+  name: Location A
+  address: MyText
+  archived: false
+  deleted: false
+
+two:
+  project: one
+  category: one
+  user: system_admin
+  name: Location B
+  address: MyText
+  archived: false
+  deleted: false
