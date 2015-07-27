@@ -1,0 +1,2 @@
+module LocationPhotosHelper
+end

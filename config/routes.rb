@@ -19,7 +19,16 @@ Rails.application.routes.draw do
 
     resources :embeds
 
-    resources :locations
+    resources :locations do
+      member do
+        patch :upload_photos
+      end
+      resources :location_photos do
+        member do
+          get :download
+        end
+      end
+    end
   end
 
   resources :project_users do

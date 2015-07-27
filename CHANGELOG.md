@@ -14,6 +14,11 @@
   - Documents can be uploaded as PNGs as well
 - **Location Changes**
   - Locations can be added that have a name and an address
+  - Images can be uploaded to locations
+    - Images are stored in three sizes
+      - Full Images, Scaled to Fit 1024x1024
+      - Previews, Scaled to Fit 360x360
+      - Thumbnails, Centered to Fill 50x50
 - **Administrative Changes**
   - Replaced `&middot;` with `|` for consistency in navigation
   - Administrators can edit and update user accounts

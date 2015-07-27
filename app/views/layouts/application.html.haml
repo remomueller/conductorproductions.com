@@ -23,7 +23,7 @@
 
     = stylesheet_link_tag "#{@invert ? 'application-invert' : 'application'}", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
-
+    = javascript_tag "var root_url='#{request.script_name + '/'}';var auth_token='#{form_authenticity_token}';"
   %body
     - if params[:controller] == 'client_project'
       = render 'client_project/header'

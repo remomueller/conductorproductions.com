@@ -2,11 +2,17 @@ class LocationsController < ApplicationController
   before_action :authenticate_user!
 
   before_action :set_viewable_project,      only: [:index, :show]
-  before_action :set_editable_project,      only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_editable_project,      only: [:new, :create, :edit, :update, :destroy, :upload_photos]
   before_action :redirect_without_project
 
-  before_action :set_location,              only: [:show, :edit, :update, :destroy]
-  before_action :redirect_without_location, only: [:show, :edit, :update, :destroy]
+  before_action :set_location,              only: [:show, :edit, :update, :destroy, :upload_photos]
+  before_action :redirect_without_location, only: [:show, :edit, :update, :destroy, :upload_photos]
+
+  def upload_photos
+    params[:photos].each do |photo|
+      @location.location_photos.create(project_id: @project.id, user_id: current_user.id, photo: photo)
+    end
+  end
 
   # GET /locations
   # GET /locations.json

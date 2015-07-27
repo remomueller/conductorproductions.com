@@ -13,6 +13,7 @@ gem 'bootstrap-sass',       '~> 3.3.5'
 gem 'bcrypt',               '~> 3.1.10'
 gem 'font-awesome-rails'
 gem 'carrierwave',          '~> 0.10.0'
+gem 'mini_magick'
 
 # Rails Defaults
 gem 'coffee-rails',         '~> 4.1.0'

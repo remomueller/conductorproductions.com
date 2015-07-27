@@ -1,6 +1,7 @@
 @ready = () ->
   homeReady()
   Turbolinks.enableProgressBar()
+  fileDragReady()
 
 $(document).ready(ready)
 $(document)

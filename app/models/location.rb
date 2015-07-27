@@ -10,6 +10,7 @@ class Location < ActiveRecord::Base
   belongs_to :project
   belongs_to :user
   belongs_to :category
+  has_many :location_photos
 
   # Location Methods
 

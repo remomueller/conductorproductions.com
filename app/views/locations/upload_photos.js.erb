@@ -1,0 +1,2 @@
+$("#photo-count").html("<%= @location.location_photos.count %>")
+$("#location-photos").html("<%=j render 'location_photos/photos', location: @location %>");

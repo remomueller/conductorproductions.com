@@ -32,3 +32,15 @@
   %dt
     %strong Archived
   %dd= @location.archived
+
+%h2
+  Upload New Photos
+  = surround '(', ')' do
+    %span#photo-count= @location.location_photos.count
+  %small Drag images into box below to upload.
+
+
+#filedrag{ data: { object: 'dropfile', project: @project.to_param, location: @location.to_param } }
+
+#location-photos
+  = render 'location_photos/photos', location: @location
