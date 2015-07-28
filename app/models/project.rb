@@ -67,6 +67,7 @@ class Project < ActiveRecord::Base
   has_many :documents, -> { where(deleted: false).order(:archived, document_uploaded_at: :desc) }
   has_many :embeds, -> { where(deleted: false).order(:archived, created_at: :desc) }
   has_many :locations, -> { where(deleted: false).order(:archived, created_at: :desc) }
+  has_many :location_photos
   has_many :project_users
   has_many :users, -> { where( deleted: false ).order( 'last_name, first_name' ) }, through: :project_users
   has_many :editors, -> { where('project_users.editor = ? and users.deleted = ?', true, false) }, through: :project_users, source: :user

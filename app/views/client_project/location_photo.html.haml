@@ -1,0 +1,27 @@
+%h2
+  = link_to @project.name, client_project_root_path(@project), class: 'project-link'
+
+  %br
+  %small{ style: 'color:white' }
+    = link_to @location_photo.location.category.name, client_project_category_path(@project, top_level: @location_photo.location.category.top_level.downcase, category_id: @location_photo.location.category)
+    |
+    = link_to @location_photo.location.name, client_project_location_path(@project, @location_photo.location.category.top_level.downcase, @location_photo.location.category, @location_photo.location)
+    |
+    Photo
+    = @location_photo.number
+    of
+    = @location_photo.location.location_photos.count
+
+.pull-right{ style: 'margin-top: -35px' }
+  - if @previous_photo = @location_photo.previous_photo
+    = link_to 'Previous Photo', client_project_location_photo_path(@project, @location_photo.location.category.top_level.downcase, @location_photo.location.category, @location_photo.location, @previous_photo), class: 'btn btn-xs btn-default'
+  - else
+    %span.btn.btn-xs.btn-default.disabled Previous Photo
+
+  - if @next_photo = @location_photo.next_photo
+    = link_to 'Next Photo', client_project_location_photo_path(@project, @location_photo.location.category.top_level.downcase, @location_photo.location.category, @location_photo.location, @next_photo), class: 'btn btn-xs btn-default'
+  - else
+    %span.btn.btn-xs.btn-default.disabled Next Photo
+
+.center{ style: 'margin-top:20px;margin-bottom:20px' }
+  = image_tag client_project_download_location_photo_path(@project, @location_photo), style: 'max-width: 100%; height: auto;', class: 'white-background'

@@ -51,7 +51,7 @@ class LocationsControllerTest < ActionController::TestCase
   test "should create location as owner" do
     login(@system_admin)
     assert_difference('Location.count') do
-      post :create, project_id: @project, location: { category_id: @location.category_id, name: @location.name, address: @location.address, archived: @location.archived }
+      post :create, project_id: @project, location: { category_id: @location.category_id, name: 'New Location', slug: 'new-location', address: @location.address, archived: @location.archived }
     end
 
     assert_redirected_to project_location_path(assigns(:project), assigns(:location))
@@ -60,7 +60,7 @@ class LocationsControllerTest < ActionController::TestCase
   test "should create location as editor" do
     login(@editor_project_one)
     assert_difference('Location.count') do
-      post :create, project_id: @project, location: { category_id: @location.category_id, name: @location.name, address: @location.address, archived: @location.archived }
+      post :create, project_id: @project, location: { category_id: @location.category_id, name: 'New Location', slug: 'new-location', address: @location.address, archived: @location.archived }
     end
 
     assert_redirected_to project_location_path(assigns(:project), assigns(:location))
@@ -69,7 +69,7 @@ class LocationsControllerTest < ActionController::TestCase
   test "should not create location as viewer" do
     login(@viewer_project_one)
     assert_difference('Location.count', 0) do
-      post :create, project_id: @project, location: { category_id: @location.category_id, name: @location.name, address: @location.address, archived: @location.archived }
+      post :create, project_id: @project, location: { category_id: @location.category_id, name: 'New Location', slug: 'new-location', address: @location.address, archived: @location.archived }
     end
 
     assert_redirected_to root_path
@@ -113,19 +113,19 @@ class LocationsControllerTest < ActionController::TestCase
 
   test "should update location as owner" do
     login(@system_admin)
-    patch :update, project_id: @project, id: @location, location: { category_id: @location.category_id, name: @location.name, address: @location.address, archived: @location.archived }
+    patch :update, project_id: @project, id: @location, location: { category_id: @location.category_id, name: 'Updated Location', slug: 'updated-location', address: @location.address, archived: @location.archived }
     assert_redirected_to project_location_path(assigns(:project), assigns(:location))
   end
 
   test "should update location as editor" do
     login(@editor_project_one)
-    patch :update, project_id: @project, id: @location, location: { category_id: @location.category_id, name: @location.name, address: @location.address, archived: @location.archived }
+    patch :update, project_id: @project, id: @location, location: { category_id: @location.category_id, name: 'Updated Location', slug: 'updated-location', address: @location.address, archived: @location.archived }
     assert_redirected_to project_location_path(assigns(:project), assigns(:location))
   end
 
   test "should not update location as viewer" do
     login(@viewer_project_one)
-    patch :update, project_id: @project, id: @location, location: { category_id: @location.category_id, name: @location.name, address: @location.address, archived: @location.archived }
+    patch :update, project_id: @project, id: @location, location: { category_id: @location.category_id, name: 'Updated Location', slug: 'updated-location', address: @location.address, archived: @location.archived }
     assert_redirected_to root_path
   end
 

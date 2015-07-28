@@ -39,3 +39,11 @@ references:
   position: 5
   project: one
   user: system_admin
+
+locations:
+  top_level: PRODUCTION
+  name: Locations
+  slug: locations
+  position: 1
+  project: one
+  user: system_admin

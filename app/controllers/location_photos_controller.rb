@@ -84,7 +84,7 @@ class LocationPhotosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_location
-      @location = @project.locations.find_by_id(params[:location_id])
+      @location = @project.locations.find_by_param(params[:location_id])
     end
 
     def redirect_without_location

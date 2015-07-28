@@ -30,7 +30,7 @@ class ResizableImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :preview do
-    process resize_to_limit: [360, 360]
+    process resize_to_fill: [360, 360]
   end
 
   version :thumb do

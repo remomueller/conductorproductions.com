@@ -76,6 +76,9 @@ Rails.application.routes.draw do
     get ":id/client_logo", action: 'client_logo', as: :client_project_client_logo
 
     get ":id/documents/download/:document_id", action: 'download_document', as: :client_project_download_document
+    get ":id/photos/download/:location_photo_id", action: 'download_location_photo', as: :client_project_download_location_photo
+    get ":id/:top_level/:category_id/photos/:location_id", action: :location, as: :client_project_location
+    get ":id/:top_level/:category_id/photos/:location_id/:location_photo_id", action: :location_photo, as: :client_project_location_photo
     get ":id/:top_level/:category_id", action: 'category', as: :client_project_category
     get ":id/:top_level/:category_id/:document_id", action: 'document', as: :client_project_category_document
     get ":id/:category_id", action: 'category'

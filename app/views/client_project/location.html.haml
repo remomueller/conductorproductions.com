@@ -1,0 +1,15 @@
+%h2
+  = link_to @project.name, client_project_root_path(@project), class: 'project-link'
+
+  %br
+  %small{ style: 'color:white' }
+    = link_to @location.category.name, client_project_category_path(@project, top_level: @location.category.top_level.downcase, category_id: @location.category)
+    |
+    = @location.name
+
+- @location.location_photos.in_groups_of(3, false).each do |location_photo_row|
+  .row
+    - location_photo_row.each do |location_photo|
+      .col-xs-4{ style: "margin-bottom:35px" }
+        = link_to client_project_location_photo_path(@project, @location.category.top_level.downcase, @location.category, @location, location_photo), style: 'cursor: pointer' do
+          = image_tag( client_project_download_location_photo_path(@project, location_photo, size: 'preview'), class: 'img-responsive white-background' )

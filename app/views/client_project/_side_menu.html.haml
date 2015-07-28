@@ -8,7 +8,7 @@
     - url = '#'
     - object = 'suppress-click'
     - @project.categories.where(top_level: top_level).each do |category|
-      - if category.documents.count + category.embeds.count > 0
+      - if category.show_menu?
         - url = client_project_category_path(@project, top_level: top_level.downcase, category_id: category)
         - object = nil
         - break
@@ -17,7 +17,7 @@
       = top_level
     .side-menu-sub-menu
       - @project.categories.where(top_level: top_level).each do |category|
-        - if category.documents.count + category.embeds.count > 0
+        - if category.show_menu?
           = link_to client_project_category_path(@project, top_level: top_level.downcase, category_id: category), class: "side-menu-sub-header #{'active' if @category == category}" do
             .side-menu-triangle-left-sub
             .side-menu-triangle-left-sub-white

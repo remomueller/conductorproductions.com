@@ -2,18 +2,20 @@
 
 one:
   project: one
-  category: one
+  category: locations
   user: system_admin
   name: Location A
+  slug: location-a
   address: MyText
   archived: false
   deleted: false
 
 two:
   project: one
-  category: one
+  category: locations
   user: system_admin
   name: Location B
+  slug: location-b
   address: MyText
   archived: false
   deleted: false

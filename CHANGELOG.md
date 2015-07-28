@@ -7,13 +7,14 @@
   - Small footer graphic on client login page has been fixed
   - All latest and archived category documents and embeds are now listed in the archive menu in the sidebar
   - Fixed location of logos and spacing of header on client root menu
+  - Clients can browse through locations and location photos
 - **General Changes**
   - Product links no longer use `.html` extension
   - Primary link and accent color changed to lighter blue
 - **Document Changes**
   - Documents can be uploaded as PNGs as well
 - **Location Changes**
-  - Locations can be added that have a name and an address
+  - Locations can be added that have a name, URL slug, and an address
   - Images can be uploaded to locations
     - Images are stored in three sizes
       - Full Images, Scaled to Fit 1024x1024

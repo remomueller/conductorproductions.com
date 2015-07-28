@@ -23,6 +23,13 @@
       = f.text_field :name, class: 'form-control'
 
   .form-group
+    = f.label :slug, 'URL Slug', class: 'col-md-2 control-label'
+    .col-md-10
+      = f.text_field :slug, class: 'form-control'
+      .text-info
+        Please only use lowercase letters, numbers, and dashes.
+
+  .form-group
     = f.label :address, nil, class: 'col-md-2 control-label'
     .col-md-10
       = f.text_area :address, rows: 7, class: 'form-control'

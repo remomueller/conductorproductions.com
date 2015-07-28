@@ -10,6 +10,18 @@
         %span.glyphicon.glyphicon-download
         %span.hidden-xs= @document.name
 
+- if @locations
+  - @locations.in_groups_of(3, false).each do |location_group|
+    .row
+      - location_group.each do |location|
+        .col-sm-4
+          %h4
+            = link_to location.name, client_project_location_path(@project, location.category.top_level.downcase, location.category, location)
+            %small= pluralize location.location_photos.count, 'photo'
+          - location.location_photos.each do |location_photo|
+            = link_to client_project_location_photo_path(@project, location.category.top_level.downcase, location.category, location, location_photo) do
+              = image_tag( client_project_download_location_photo_path(@project, location_photo, size: 'thumb'), style: 'margin-bottom:5px;margin-right:5px', class: 'white-background' )
+
 - if @document
   - if @document.pdf?
     .embed-responsive{ style: 'padding-bottom: 106.25%;' }

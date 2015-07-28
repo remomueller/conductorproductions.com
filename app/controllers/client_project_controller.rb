@@ -1,9 +1,9 @@
 class ClientProjectController < ApplicationController
   before_action :authenticate_client!
   before_action :set_project
-  before_action :invert,              only: [ :category, :document ]
+  before_action :invert,              only: [ :category, :document, :location, :location_photo ]
 
-  layout 'application-sidebar', only: [ :category, :document ]
+  layout 'application-sidebar', only: [ :category, :document, :location, :location_photo ]
 
   def root
     render 'menu'
@@ -17,6 +17,7 @@ class ClientProjectController < ApplicationController
     if @category
       @document = @category.documents.where(archived: false).first
       @embed = @category.embeds.where(archived: false).first
+      @locations = @category.locations.where(archived: false)
     else
       redirect_to client_project_root_path(@project)
     end
@@ -38,6 +39,39 @@ class ClientProjectController < ApplicationController
       disposition = (params[:inline] == '1' ? 'inline' : 'attachment')
       type = (@document.pdf? ? 'application/pdf' : (@document.image? ? 'image/png' : 'application/octet-stream' ))
       send_file File.join( CarrierWave::Uploader::Base.root, @document.document.url ), type: type, disposition: disposition
+    else
+      head :ok
+    end
+  end
+
+  def location
+    @location = @project.locations.find_by_param(params[:location_id])
+    if @location
+      # render 'location'
+    else
+      redirect_to client_project_root_path(@project)
+    end
+  end
+
+  def location_photo
+    @location_photo = @project.location_photos.find_by_id(params[:location_photo_id])
+    if @location_photo
+      # render 'location_photo'
+    else
+      redirect_to client_project_root_path(@project)
+    end
+  end
+
+  def download_location_photo
+    @location_photo = @project.location_photos.find_by_id(params[:location_photo_id])
+    if @location_photo and @location_photo.photo.size > 0
+      if params[:size] == 'preview'
+        send_file File.join( CarrierWave::Uploader::Base.root, @location_photo.photo.preview.url )
+      elsif params[:size] == 'thumb'
+        send_file File.join( CarrierWave::Uploader::Base.root, @location_photo.photo.thumb.url )
+      else
+        send_file File.join( CarrierWave::Uploader::Base.root, @location_photo.photo.url )
+      end
     else
       head :ok
     end

@@ -15,6 +15,7 @@ class Category < ActiveRecord::Base
   # Category Methods
   has_many :documents, -> { where(deleted: false).order(:archived) }
   has_many :embeds, -> { where(deleted: false).order(:archived) }
+  has_many :locations, -> { where(deleted: false).order(:archived) }
 
   def to_param
     slug.blank? ? id : slug
@@ -26,6 +27,10 @@ class Category < ActiveRecord::Base
 
   def pdf_documents
     self.documents.where("documents.document LIKE '%.pdf'")
+  end
+
+  def show_menu?
+    self.documents.count + self.embeds.count + self.locations.count > 0
   end
 
 end
