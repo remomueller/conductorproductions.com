@@ -1,6 +1,7 @@
 class ClientProjectController < ApplicationController
   before_action :authenticate_client!
   before_action :set_project
+  before_action :redirect_without_project
   before_action :invert,              only: [ :category, :document, :location, :location_photo ]
 
   layout 'application-sidebar', only: [ :category, :document, :location, :location_photo ]
@@ -44,7 +45,7 @@ class ClientProjectController < ApplicationController
     end
   end
 
-  def location
+  def location_show
     @location = @project.locations.find_by_param(params[:location_id])
     if @location
       # render 'location'
@@ -89,6 +90,10 @@ class ClientProjectController < ApplicationController
 
     def set_project
       @project = current_client
+    end
+
+    def redirect_without_project
+      empty_response_or_root_path(client_login_path) unless @project
     end
 
     def invert
