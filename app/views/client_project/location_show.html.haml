@@ -7,6 +7,9 @@
     |
     = @location.name
 
+  %div{ style: 'margin-bottom: 20px' }
+    = simple_format @location.address
+
 - @location.location_photos.in_groups_of(3, false).each do |location_photo_row|
   .row
     - location_photo_row.each do |location_photo|
