@@ -3,9 +3,9 @@ class ClientProjectController < ApplicationController
   before_action :set_project
   before_action :set_project_for_current_user
   before_action :redirect_without_project
-  before_action :invert,              only: [ :category, :document, :location, :location_photo ]
+  before_action :invert,              only: [ :category, :document, :location_show, :location_photo ]
 
-  layout 'application-sidebar', only: [ :category, :document, :location, :location_photo ]
+  layout 'application-sidebar', only: [ :category, :document, :location_show, :location_photo ]
 
   def root
     render 'menu'
