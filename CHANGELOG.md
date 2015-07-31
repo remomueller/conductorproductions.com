@@ -28,6 +28,7 @@
   - Project Editors can edit the project, documents, embeds, categories
     - Only Project Owners can delete projects
   - Project Viewers can not make any changes, but can view project, documents, embeds, and categories
+  - Project Owners, Editors, and Viewers can preview the client version of the site
 - **Security Changes**
    - Made cookies secure in production environment
 

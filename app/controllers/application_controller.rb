@@ -28,6 +28,10 @@ class ApplicationController < ActionController::Base
     redirect_to client_login_path unless current_client
   end
 
+  def authenticate_client_or_current_user!
+    redirect_to client_login_path unless current_client or current_user
+  end
+
   def set_editable_project(id = :project_id)
     @project = current_user.all_projects.find_by_param(params[id])
   end

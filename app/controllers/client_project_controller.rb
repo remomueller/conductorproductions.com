@@ -1,6 +1,7 @@
 class ClientProjectController < ApplicationController
-  before_action :authenticate_client!
+  before_action :authenticate_client_or_current_user!
   before_action :set_project
+  before_action :set_project_for_current_user
   before_action :redirect_without_project
   before_action :invert,              only: [ :category, :document, :location, :location_photo ]
 
@@ -90,6 +91,12 @@ class ClientProjectController < ApplicationController
 
     def set_project
       @project = current_client
+    end
+
+    def set_project_for_current_user
+      unless @project
+        @project = current_user.all_viewable_projects.find_by_param(params[:id]) if current_user
+      end
     end
 
     def redirect_without_project
