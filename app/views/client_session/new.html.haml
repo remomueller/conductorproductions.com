@@ -12,3 +12,8 @@
         = password_field_tag "client[password]", nil, class: 'form-control', autocomplete: "off"
 
       = submit_tag "SUBMIT", class: 'btn btn-default'
+
+- if false
+  %span.pull-right
+    = link_to new_user_session_path, class: 'plain-link' do
+      ADMIN LOGIN &rarr;

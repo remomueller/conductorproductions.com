@@ -1,6 +1,11 @@
-%h1 Dashboard
+%h1
+  = succeed "'s" do
+    = current_user.first_name
+  Dashboard
 
 = link_to 'Go To Projects', projects_path, class: 'btn btn-lg btn-primary'
 
 - if current_user.system_admin?
   = link_to 'Go To Users', users_path, class: 'btn btn-lg btn-primary'
+
+= link_to 'Logout', destroy_user_session_path, class: 'btn btn-lg btn-danger pull-right'

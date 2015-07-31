@@ -11,6 +11,7 @@
 - **General Changes**
   - Product links no longer use `.html` extension
   - Primary link and accent color changed to lighter blue
+  - Improved menu navigation when logged in
 - **Document Changes**
   - Documents can be uploaded as PNGs as well
 - **Location Changes**
