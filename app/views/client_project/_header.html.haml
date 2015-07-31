@@ -8,7 +8,10 @@
           .transparent-box
           .triangle-left
           .box-left
-          = link_to 'LOGOUT', client_logout_path
+          - if current_user
+            = link_to current_user.first_name.upcase, dashboard_path
+          - else
+            = link_to 'LOGOUT', client_logout_path
 
       %h1.hidden-xs
 
@@ -29,4 +32,7 @@
   .visible-xs
     .menu-links
       .pull-right{ style: 'margin-top: -54px;padding-right:40px;' }
-        = link_to 'LOGOUT', client_logout_path
+        - if current_user
+          = link_to current_user.first_name.upcase, dashboard_path
+        - else
+          = link_to 'LOGOUT', client_logout_path

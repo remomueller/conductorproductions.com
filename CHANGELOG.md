@@ -21,6 +21,7 @@
       - Full Images, Scaled to Fit 1024x1024
       - Previews, Scaled to Fit 360x360
       - Thumbnails, Centered to Fill 50x50
+  - Locations are now listed as submenu items in the project menu
 - **Administrative Changes**
   - Replaced `&middot;` with `|` for consistency in navigation
   - Administrators can edit and update user accounts

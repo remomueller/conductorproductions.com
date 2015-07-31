@@ -49,7 +49,25 @@ $triangle_size: 17px;
   display: inline-block;
 }
 
+.side-menu-sub-sub-header {
+  position: relative;
+  font-size: 12px;
+  background-color: black;
+  color: white;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin-bottom: -1px;
+  width: 100%;
+  display: inline-block;
+  margin-left: 8px;
+}
+
 .side-menu-sub-header:hover, .side-menu-sub-header:active, .side-menu-sub-header:focus, .side-menu-sub-header.active {
+  text-decoration: none;
+  font-style: italic;
+}
+
+.side-menu-sub-sub-header:hover, .side-menu-sub-sub-header:active, .side-menu-sub-sub-header:focus, .side-menu-sub-sub-header.active {
   text-decoration: none;
   font-style: italic;
 }
@@ -73,5 +91,17 @@ $triangle_small_size: 11px;
   border-top: $triangle_small_size solid transparent;
   border-bottom: $triangle_small_size solid transparent;
   border-right: $triangle_small_size solid white;
+  position: absolute;
+}
+
+$triangle_small_size: 9px;
+.side-menu-triangle-left-sub-sub {
+  width: 0px;
+  height: 0px;
+  top: -1px;
+  left: -$triangle_small_size;
+  border-top: $triangle_small_size solid transparent;
+  border-bottom: $triangle_small_size solid transparent;
+  border-right: $triangle_small_size solid black;
   position: absolute;
 }

@@ -22,3 +22,8 @@
             .side-menu-triangle-left-sub
             .side-menu-triangle-left-sub-white
             = category.name
+          - if @category == category or (@location and @location.category == category)
+            - category.locations.where(archived: false).each do |location|
+              = link_to client_project_location_path(@project, category.top_level.downcase, category, location), class: "side-menu-sub-sub-header #{'active' if @location == location}" do
+                .side-menu-triangle-left-sub-sub
+                = location.name
