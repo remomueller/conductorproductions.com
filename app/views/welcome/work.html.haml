@@ -1,0 +1,18 @@
+= render 'header'
+
+- work_text = "If you're going to reach out, then stand-out. Seriously, the market is much too cluttered to waste your marketing dollars on a steaming pile of bad video. Do it right the first time. Call us."
+
+.container
+  .page-header{ style: "border:0px" }
+    %h1{ style: "position:relative;" }
+      OUR WORK
+      .visible-lg.work-diagonal-line
+      .visible-lg.work-diagonal-line-text
+        = work_text
+  .hidden-lg
+    %p
+      = work_text
+
+= render 'welcome/video_grid', page: 'work'
+
+= render 'footer'

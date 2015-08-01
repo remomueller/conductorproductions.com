@@ -1,0 +1,24 @@
+= render 'header'
+
+- drtv_text = "You have stuff to sell and we have the skills to sell it. Our DRTV geniuses create commercials that are scientifically proven to make people dial the phone or order online. But wait, there's more... Call 617-262-1400."
+
+.container
+  .page-header{ style: "border:0px" }
+    %h1{ style: "position:relative;" }
+      DRTV
+      .visible-lg.drtv-diagonal-line
+      .visible-lg.drtv-diagonal-line-text
+        = drtv_text
+  .hidden-lg
+    %p
+      = drtv_text
+
+= render 'welcome/video_grid', page: 'drtv'
+
+.container{ style: "text-align:center;margin-top:40px" }
+  %p
+    But wait - there's more! More samples
+    = succeed '.' do
+      = link_to 'available upon request', contact_path
+
+= render 'footer'

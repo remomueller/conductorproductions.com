@@ -1,12 +1,15 @@
 - vimeo_url = "//player.vimeo.com/video/"
 - common_settings = "?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"
 
+- videos = Video.current.where(page: page)
+
 %div{ style: "background-color:#000;z-index:100" }
   .container{ style: "position:relative" }
     %div{ style: "position:relative;padding-top:20px;padding-bottom:20px" }
       #other-videos.row
-        - videos.each_with_index do |(image_thumbnail, video_id), i|
-          - video_link = "#{vimeo_url}#{video_id}#{common_settings}"
+        - videos.each_with_index do |video, i|
+          - image_thumbnail = download_video_image_path(video, size: 'preview')
+          - video_link = "#{vimeo_url}#{video.vimeo_number}#{common_settings}"
           .col-xs-6.col-sm-4{ class: "#{'hidden-xs' if i == videos.count - 1 and (i % 2) == 0}", style: "padding-bottom:20px" }
             = image_tag image_thumbnail, style: 'width:100%', class: 'video-thumbnail', data: { object: 'launch-video', video_src: video_link }, alt: ''
       #video-frame{ style: "width:100%;display:none;" }
