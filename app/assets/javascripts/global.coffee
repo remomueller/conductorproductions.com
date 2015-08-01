@@ -1,5 +1,6 @@
 @ready = () ->
   homeReady()
+  videosReady()
   Turbolinks.enableProgressBar()
   fileDragReady()
 

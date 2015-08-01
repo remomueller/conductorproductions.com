@@ -1,7 +1,7 @@
 - vimeo_url = "//player.vimeo.com/video/"
 - common_settings = "?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"
 
-- videos = Video.current.where(page: page)
+- videos = Video.current.where(video_page: video_page).order(:position)
 
 %div{ style: "background-color:#000;z-index:100" }
   .container{ style: "position:relative" }

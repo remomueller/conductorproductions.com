@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :videos
+  resources :videos do
+    collection do
+      get "reorder/:video_page", action: 'reorder', as: :reorder
+      post :save_video_order
+    end
+  end
 
   resources :projects do
     member do

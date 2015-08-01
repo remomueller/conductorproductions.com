@@ -14,6 +14,8 @@ gem 'bcrypt',               '~> 3.1.10'
 gem 'font-awesome-rails'
 gem 'carrierwave',          '~> 0.10.0'
 gem 'mini_magick'
+gem 'jquery-ui-rails',      '~> 5.0.5'
+gem 'kaminari',             '~> 0.16.3'
 
 # Rails Defaults
 gem 'coffee-rails',         '~> 4.1.0'

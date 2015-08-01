@@ -1,0 +1,25 @@
+= render 'layouts/per_page', per_page: 20, object_count: @videos.total_count
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th Page
+      %th Position
+      %th Vimeo
+      %th Image
+      %th Archived
+
+  %tbody
+    - @videos.each do |video|
+      %tr
+        %td= video.video_page_string
+        %td= video.position
+        %td
+          = link_to video do
+            = video.vimeo_number
+            %br
+            = video.name
+        %td= image_tag download_video_image_path(video, size: 'thumb'), class: 'img-responsive', style: 'display:inline-block'
+        %td= video.archived
+
+.center= paginate @videos, theme: 'bootstrap'

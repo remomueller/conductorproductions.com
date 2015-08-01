@@ -1,3 +1,16 @@
+@videosReady = () ->
+  $('[data-object~="videos-sortable"]').sortable(
+    handle: ".handle"
+    axis: "y"
+    stop: () ->
+      sortable_order = $('[data-object~="videos-sortable"]').sortable('toArray', attribute: 'data-video-id')
+      params = {}
+      params.video_page = $(this).data('video-page')
+      params.video_ids = sortable_order
+      $.post(root_url + 'videos/save_video_order', params, null, "script")
+      true
+  )
+
 @onFinish = (id) ->
   $("#shade").click()
 

@@ -7,8 +7,23 @@ class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json
   def index
-    @videos = Video.current.order(:archived, :page, :position)
+    @videos = Video.current.order(:archived, :video_page, :position).page(params[:page]).per( 20 )
   end
+
+  def reorder
+    @video_page = params[:video_page]
+    @videos = Video.current.where(video_page: @video_page, archived: false).order(:position)
+  end
+
+  # POST /videos/save_video_order.js
+  def save_video_order
+    params[:video_ids].each_with_index do |video_id, index|
+      video = Video.current.where(video_page: params[:video_page]).find_by_id(video_id)
+      video.update position: index if video
+    end
+    render nothing: true
+  end
+
 
   # GET /videos/1
   # GET /videos/1.json
@@ -74,6 +89,6 @@ class VideosController < ApplicationController
     end
 
     def video_params
-      params.require(:video).permit(:page, :vimeo_number, :photo, :photo_cache, :position, :archived)
+      params.require(:video).permit(:video_page, :vimeo_number, :photo, :photo_cache, :position, :archived)
     end
 end

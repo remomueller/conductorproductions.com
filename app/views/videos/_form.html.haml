@@ -11,9 +11,9 @@
             %li= message
 
   .form-group
-    = f.label :page, nil, class: 'col-md-2 control-label'
+    = f.label :video_page, nil, class: 'col-md-2 control-label'
     .col-md-10
-      = f.select :page, [['--Select a Page--', nil]] + Video::PAGES, {}, class: 'form-control'
+      = f.select :video_page, [['--Select a Page--', nil]] + Video::PAGES, {}, class: 'form-control'
 
   .form-group
     = f.label :photo, nil, class: 'col-md-2 control-label'

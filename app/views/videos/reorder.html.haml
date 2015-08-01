@@ -1,0 +1,15 @@
+%h1
+  = link_to 'Videos', videos_path
+  |
+  Reorder
+  = @video_page.upcase
+  Videos
+
+%div{ data: { object: 'videos-sortable', video_page: @video_page } }
+  - @videos.each do |video|
+    .videos-box{ data: { video_id: video.id } }
+      %span.glyphicon.glyphicon-move
+
+      = video.name
+      - if video.photo.size > 0
+        .handle= image_tag download_video_image_path(video, size: 'thumb'), class: 'img-responsive', style: 'display:inline-block'
