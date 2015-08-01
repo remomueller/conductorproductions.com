@@ -1,4 +1,4 @@
-## 0.5.0
+## 0.5.0 (August 1, 2015)
 
 ### Enhancements
 - **Client Changes**
