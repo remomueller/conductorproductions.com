@@ -25,6 +25,7 @@
 - **Administrative Changes**
   - Replaced `&middot;` with `|` for consistency in navigation
   - Administrators can edit and update user accounts
+  - Administrators can add and remove videos from the WORK and DRTV pages
 - **Project Changes**
   - Project Owners can invite users to edit or view projects
   - Project Editors can edit the project, documents, embeds, categories

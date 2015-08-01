@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   validates_presence_of :first_name, :last_name
 
   # Model Relationships
+  has_many :videos, -> { where deleted: false }
   has_many :projects, -> { where deleted: false }
   has_many :categories, -> { where deleted: false }
   has_many :documents, -> { where deleted: false }

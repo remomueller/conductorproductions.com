@@ -25,4 +25,19 @@ class WelcomeController < ApplicationController
     end
   end
 
+  def download_video_image
+    @video = Video.current.find_by_id(params[:video_id])
+    if @video and @video.photo.size > 0
+      if params[:size] == 'preview'
+        send_file File.join( CarrierWave::Uploader::Base.root, @video.photo.preview.url )
+      elsif params[:size] == 'thumb'
+        send_file File.join( CarrierWave::Uploader::Base.root, @video.photo.thumb.url )
+      else
+        send_file File.join( CarrierWave::Uploader::Base.root, @video.photo.url )
+      end
+    else
+      head :ok
+    end
+  end
+
 end

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: system_admin
+  page: work
+  photo: rails.png
+  vimeo_number: 111656553
+  archived: false
+  deleted: false
+
+two:
+  user: system_admin
+  page: drtv
+  photo: rails.png
+  vimeo_number: 124955438
+  archived: false
+  deleted: false

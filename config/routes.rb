@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :videos
+
   resources :projects do
     member do
       get :menu
@@ -47,6 +49,7 @@ Rails.application.routes.draw do
     get :index
     get :work
     get :drtv
+    get "images/videos/:video_id", action: :download_video_image, as: :download_video_image
     get :contact
     post :submit_contact
     # get :news

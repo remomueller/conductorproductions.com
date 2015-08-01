@@ -1,0 +1,43 @@
+= form_for @video, html: { class: 'form-horizontal', multipart: true } do |f|
+  - if @video.errors.any?
+    .panel.panel-danger
+      .panel-heading
+        %strong
+          = pluralize(@video.errors.count, "error")
+          prohibited this video from being saved:
+      .panel-body
+        %ul
+          - @video.errors.full_messages.each do |message|
+            %li= message
+
+  .form-group
+    = f.label :page, nil, class: 'col-md-2 control-label'
+    .col-md-10
+      = f.select :page, [['--Select a Page--', nil]] + Video::PAGES, {}, class: 'form-control'
+
+  .form-group
+    = f.label :photo, nil, class: 'col-md-2 control-label'
+    .col-md-10
+      = f.file_field :photo, class: 'form-control'
+      = f.hidden_field :photo_cache
+
+  .form-group
+    = f.label :vimeo_number, nil, class: 'col-md-2 control-label'
+    .col-md-10
+      = f.text_field :vimeo_number, class: 'form-control'
+
+  .form-group
+    = f.label :position, nil, class: 'col-md-2 control-label'
+    .col-md-10
+      = f.text_field :position, class: 'form-control'
+
+  .form-group
+    = f.label :archived, nil, class: 'col-md-2 control-label'
+    .col-md-10
+      .checkbox
+        %label
+          = f.check_box :archived
+
+  .form-group
+    .col-md-10.col-md-offset-2
+      = f.submit nil, class: 'btn btn-primary'

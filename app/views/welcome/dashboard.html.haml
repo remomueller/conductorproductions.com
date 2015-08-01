@@ -7,5 +7,6 @@
 
 - if current_user.system_admin?
   = link_to 'Go To Users', users_path, class: 'btn btn-lg btn-primary'
+  = link_to 'Edit Work and DRTV Videos', videos_path, class: 'btn btn-lg btn-primary'
 
 = link_to 'Logout', destroy_user_session_path, class: 'btn btn-lg btn-danger pull-right'
