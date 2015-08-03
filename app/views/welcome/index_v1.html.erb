@@ -14,5 +14,5 @@
   <div style="position:absolute;width:830px;left:-8px;bottom:0px;height:56px;background-image: url('assets/splash/bot-contact.png');background-repeat:no-repeat"></div>
   <div style="position:absolute;width:407px;height:268px;right:-407px;background-image: url('assets/splash/bot-right.png');"></div>
   <%= link_to 'here', 'http://www.shotgunmediagroup.com', style: 'position:absolute;top:165px;font-size:20px;right:-355px;color:transparent' %>
-  <%= mail_to 'reels@conductorproductions.com', 'reels@conductorproductions.com', style: 'position:absolute;top:208px;font-size:20px;left:522px;color:transparent' %>
+  <%= mail_to ENV['contact_email'], ENV['contact_email'], style: 'position:absolute;top:208px;font-size:20px;left:522px;color:transparent' %>
 </div>

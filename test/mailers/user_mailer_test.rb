@@ -8,7 +8,7 @@ class UserMailerTest < ActionMailer::TestCase
     assert !ActionMailer::Base.deliveries.empty?
 
     # Test the body of the sent email contains what we expect it to
-    assert_equal ["reels@conductorproductions.com"], email.to
+    assert_equal [ENV['contact_email']], email.to
     assert_equal "Name - Website Message", email.subject
     assert_match(/Body of Message/, email.encoded)
   end

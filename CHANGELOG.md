@@ -1,5 +1,9 @@
 ## 0.5.1
 
+### Enhancements
+- **Email Changes**
+  - Contacts through the website now go to a new email address
+
 ## 0.5.0 (August 1, 2015)
 
 ### Enhancements
