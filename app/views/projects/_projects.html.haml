@@ -1,0 +1,23 @@
+= render 'layouts/per_page', per_page: 20, object_count: @projects.total_count
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th Number
+      %th Title
+      %th Client Username
+      %th Client Password
+      %th Quick Preview
+
+  %tbody
+    - @projects.each do |project|
+      %tr
+        %td= project.number
+        %td= link_to project.name, project
+        %td= project.username
+        %td
+          %span{ style: 'cursor:pointer', data: { object: 'click-to-view', content: project.password_plain } }
+            = '*' * project.password_plain.to_s.size if project.password_plain.present?
+        %td= link_to "#{ENV['website_url']}/#{project.slug}", client_project_root_path(project), target: '_blank'
+
+.center= paginate @projects, theme: 'bootstrap'

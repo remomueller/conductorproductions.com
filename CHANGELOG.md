@@ -1,6 +1,8 @@
 ## 0.5.1
 
 ### Enhancements
+- **Project Changes**
+  - Project owners and editors can now archive projects
 - **Email Changes**
   - Contacts through the website now go to a new email address
 

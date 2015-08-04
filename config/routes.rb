@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   end
 
   resources :projects do
+    collection do
+      get :archived
+    end
+
     member do
       get :menu
       get :agency_logo

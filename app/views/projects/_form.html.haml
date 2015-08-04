@@ -45,6 +45,12 @@
       = f.file_field :client_logo, class: 'form-control'
       = f.hidden_field :client_logo_cache
   .form-group
+    = f.label :archived, nil, class: 'col-md-2 control-label'
+    .col-md-10
+      .checkbox
+        %label
+          = f.check_box :archived
+  .form-group
     .col-md-10.col-md-offset-2
       = f.submit nil, class: 'btn btn-primary'
       = link_to 'Cancel', @project.new_record? ? projects_path : @project, class: 'btn btn-default'

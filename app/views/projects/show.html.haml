@@ -1,5 +1,8 @@
 %h1
   = link_to 'Projects', projects_path
+  - if @project.archived?
+    |
+    = link_to 'Archived', archived_projects_path
   |
   = @project.name
 

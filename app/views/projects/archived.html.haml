@@ -1,8 +1,9 @@
-%h1 Projects
+%h1
+  = link_to 'Projects', projects_path
+  |
+  Archived
 
 - if current_user.system_admin?
   = link_to 'New Project', new_project_path, class: 'btn btn-xs btn-default'
-
-= link_to 'Archived Projects', archived_projects_path, class: 'btn btn-xs btn-default'
 
 = render 'projects/projects'

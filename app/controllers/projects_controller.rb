@@ -32,7 +32,11 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = current_user.all_viewable_projects
+    @projects = current_user.all_viewable_projects.where(archived: false).page(params[:page]).per( 20 )
+  end
+
+  def archived
+    @projects = current_user.all_viewable_projects.where(archived: true).page(params[:page]).per( 20 )
   end
 
   # GET /projects/1
@@ -121,6 +125,7 @@ class ProjectsController < ApplicationController
         :name, :number, :slug,
         :agency_logo, :agency_logo_cache,
         :client_logo, :client_logo_cache,
-        :client_name, :username, :password, :password_plain)
+        :client_name, :username, :password, :password_plain,
+        :archived)
     end
 end

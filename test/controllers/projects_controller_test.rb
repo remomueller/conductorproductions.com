@@ -29,6 +29,27 @@ class ProjectsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:projects)
   end
 
+  test "should get archived as system admin" do
+    login(@system_admin)
+    get :archived
+    assert_response :success
+    assert_not_nil assigns(:projects)
+  end
+
+  test "should get archived as editor" do
+    login(@editor_project_one)
+    get :archived
+    assert_response :success
+    assert_not_nil assigns(:projects)
+  end
+
+  test "should get archived as viewer" do
+    login(@viewer_project_one)
+    get :archived
+    assert_response :success
+    assert_not_nil assigns(:projects)
+  end
+
   test "should get new as system admin" do
     login(@system_admin)
     get :new
