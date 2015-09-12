@@ -11,6 +11,7 @@ class ApplicationControllerTest < ActionController::TestCase
     version = JSON.parse(response.body)
     assert_equal WwwConductorproductionsCom::VERSION::STRING, version['version']['string']
     assert_equal WwwConductorproductionsCom::VERSION::MAJOR, version['version']['major']
+    assert_equal WwwConductorproductionsCom::VERSION::MINOR, version['version']['minor']
     assert_equal WwwConductorproductionsCom::VERSION::TINY, version['version']['tiny']
     assert_equal WwwConductorproductionsCom::VERSION::BUILD, version['version']['build']
     assert_response :success
