@@ -3,6 +3,7 @@ require 'test_helper'
 class VideosControllerTest < ActionController::TestCase
   setup do
     @video = videos(:work_one)
+    @video_drtv = videos(:drtv_one)
     @system_admin = users(:system_admin)
     @regular = users(:regular)
   end
@@ -121,13 +122,13 @@ class VideosControllerTest < ActionController::TestCase
 
   test "should update video as system admin" do
     login(@system_admin)
-    patch :update, id: @video, video: { video_page: @video.video_page, vimeo_number: @video.vimeo_number, photo: fixture_file_upload('../../test/support/projects/rails.png'), archived: @video.archived }
+    patch :update, id: @video_drtv, video: { video_page: @video_drtv.video_page, vimeo_number: @video_drtv.vimeo_number, photo: fixture_file_upload('../../test/support/projects/rails.png'), archived: @video_drtv.archived }
     assert_redirected_to video_path(assigns(:video))
   end
 
   test "should update video as regular user" do
     login(@regular)
-    patch :update, id: @video, video: { video_page: @video.video_page, vimeo_number: @video.vimeo_number, photo: fixture_file_upload('../../test/support/projects/rails.png'), archived: @video.archived }
+    patch :update, id: @video_drtv, video: { video_page: @video_drtv.video_page, vimeo_number: @video_drtv.vimeo_number, photo: fixture_file_upload('../../test/support/projects/rails.png'), archived: @video_drtv.archived }
     assert_redirected_to root_path
   end
 
