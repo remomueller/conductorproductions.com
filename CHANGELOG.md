@@ -14,6 +14,7 @@
   - Updated to rails 4.2.4
   - Updated to pg 0.18.3
   - Set minitest-reporters to use ~> 1.0.20
+  - Added simplecov configuration file
 
 ### Bug Fix
 - Deleted users are no longer able to log in
