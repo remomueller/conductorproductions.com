@@ -9,6 +9,7 @@
   - Use of Ruby 2.2.3 is now recommended
   - Updated to rails 4.2.4
   - Updated to pg 0.18.3
+  - Set minitest-reporters to use ~> 1.0.20
 
 ## 0.5.0 (August 1, 2015)
 
