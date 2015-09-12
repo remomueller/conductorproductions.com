@@ -13,6 +13,9 @@
   - Updated to pg 0.18.3
   - Set minitest-reporters to use ~> 1.0.20
 
+### Bug Fix
+- Deleted users are no longer able to log in
+
 ## 0.5.0 (August 1, 2015)
 
 ### Enhancements

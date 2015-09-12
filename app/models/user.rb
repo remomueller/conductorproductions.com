@@ -39,4 +39,9 @@ class User < ActiveRecord::Base
     User.current.with_project(self.all_projects.pluck(:id), [true, false])
   end
 
+  # Overriding Devise built-in active_for_authentication? method
+  def active_for_authentication?
+    super and not self.deleted?
+  end
+
 end

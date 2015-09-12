@@ -34,3 +34,10 @@ viewer_project_one:
   last_name: User
   email: viewer@example.com
   encrypted_password: ""
+
+deleted:
+  first_name: Deleted
+  last_name: User
+  email: deleted@example.com
+  encrypted_password: ""
+  deleted: true
