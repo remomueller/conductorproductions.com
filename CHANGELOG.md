@@ -5,6 +5,8 @@
   - Project owners and editors can now archive projects
 - **Email Changes**
   - Contacts through the website now go to a new email address
+- **Gem Changes**
+  - Use of Ruby 2.2.3 is now recommended
 
 ## 0.5.0 (August 1, 2015)
 
