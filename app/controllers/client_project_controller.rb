@@ -1,4 +1,5 @@
 class ClientProjectController < ApplicationController
+  before_action :store_location_in_session, except: [ :download_document, :download_location_photo, :agency_logo, :client_logo ]
   before_action :authenticate_client_or_current_user!
   before_action :set_project
   before_action :set_project_for_current_user
@@ -90,7 +91,7 @@ class ClientProjectController < ApplicationController
   private
 
     def set_project
-      @project = current_client
+      @project = Project.current.where(id: session[:project_ids]).find_by_param(params[:id])
     end
 
     def set_project_for_current_user
@@ -106,5 +107,4 @@ class ClientProjectController < ApplicationController
     def invert
       @invert = true
     end
-
 end

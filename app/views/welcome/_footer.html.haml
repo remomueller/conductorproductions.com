@@ -4,7 +4,7 @@
 .footer
   .container.social-links
 
-    - unless current_client and params[:controller].in?(['client_project', 'client_session'])
+    - unless current_client? and params[:controller].in?(['client_project', 'client_session'])
       .pull-left
         = link_to 'https://www.facebook.com/ConductorCreative', class: 'plain-link' do
           %i.fa.fa-facebook
@@ -20,14 +20,14 @@
             %i.fa.fa-tumblr
 
     .pull-right.conductor-logo-footer
-      - if current_client and params[:controller] == 'client_project'
+      - if current_client? and params[:controller] == 'client_project'
         = link_to 'https://conductor.wetransfer.com', class: 'plain-link', target: '_blank' do
           SEND US FILES | up to 10gb
       - else
         &copy; CONDUCTOR
         = Date.today.year
 
-  - unless current_client and params[:controller].in?(['client_project', 'client_session'])
+  - unless current_client? and params[:controller].in?(['client_project', 'client_session'])
     .container.visible-xs.visible-sm.center{ style: "margin-top:10px;" }
       %div{ style: "font-size:0.8em" }
         = render 'welcome/products'

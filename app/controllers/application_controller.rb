@@ -19,17 +19,28 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, alert: "You do not have sufficient privileges to access that page." unless current_user.system_admin?
   end
 
-  def current_client
-    @current_client ||= Project.find(session[:project_id]) if session[:project_id]
+  def project_ids
+    @project_ids
   end
-  helper_method :current_client
 
-  def authenticate_client!
-    redirect_to client_login_path unless current_client
+  def client_projects
+    @client_projects ||= begin
+      Project.current.where(id: session[:project_ids])
+    end
   end
+  helper_method :client_projects
+
+  def current_client?
+    client_projects.count > 0
+  end
+  helper_method :current_client?
+
+  # def authenticate_client!
+  #   redirect_to client_login_path unless current_client
+  # end
 
   def authenticate_client_or_current_user!
-    redirect_to client_login_path unless current_client or current_user
+    redirect_to client_login_path unless current_client? or current_user
   end
 
   def set_editable_project(id = :project_id)
@@ -49,6 +60,13 @@ class ApplicationController < ActionController::Base
       format.html { redirect_to path }
       format.js { head :ok }
       format.json { head :no_content }
+    end
+  end
+
+  def store_location_in_session
+    if !request.post? and !request.xhr?
+      session[:previous_client_url] = request.fullpath
+      session[:last_project_param] = params[:id]
     end
   end
 

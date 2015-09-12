@@ -26,4 +26,32 @@ class NavigationTest < ActionDispatch::IntegrationTest
     assert_redirected_to new_user_session_path
     assert_equal I18n.t('devise.failure.unauthenticated'), flash[:alert]
   end
+
+  test "friendly url forwarding after client login" do
+    get "/project-one/production/locations"
+    assert_redirected_to client_login_path
+
+    sign_in_as_client(projects(:one))
+    assert_equal '/project-one/production/locations', path
+  end
+
+  test "friendly url forwarding if already logged in client logs in to link for different project" do
+    sign_in_as_client(projects(:two))
+    assert_equal '/project-two/menu', path
+
+    get "/project-one/production/locations"
+    assert_redirected_to client_login_path
+
+    sign_in_as_client(projects(:one))
+    assert_equal "/project-one/production/locations", path
+  end
+
+  test "should ignore friendly url forwarding if client logs in to different project than the friendly forwaring url" do
+    get "/project-one/production/locations"
+    assert_redirected_to client_login_path
+
+    sign_in_as_client(projects(:two))
+    assert_equal '/project-two/menu', path
+  end
+
 end

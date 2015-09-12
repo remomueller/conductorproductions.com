@@ -1,4 +1,4 @@
-- links = [['HOME', root_path], ['WORK', work_path], ['DRTV', drtv_path], ['CONTACT', contact_path], [(current_client ? 'CLIENT' : 'LOGIN'), (current_client ? client_project_root_path(current_client) : client_login_path)]]
+- links = [['HOME', root_path], ['WORK', work_path], ['DRTV', drtv_path], ['CONTACT', contact_path], [(current_client? ? 'CLIENT' : 'LOGIN'), (current_client? ? client_project_root_path(client_projects.first) : client_login_path)]]
 
 
 .menu-links
@@ -17,7 +17,7 @@
   |
   - if current_user
     = link_to current_user.first_name.upcase, dashboard_path, class: "#{'active' if current_page?(dashboard_path)}"
-  - elsif current_client
-    = link_to 'CLIENT', client_project_root_path(current_client), class: "#{'active' if params[:controller] == 'client_project'}"
+  - elsif current_client?
+    = link_to 'CLIENT', client_project_root_path(client_projects.first), class: "#{'active' if params[:controller] == 'client_project'}"
   - else
     = link_to 'LOGIN', client_login_path, class: "#{'active' if current_page?(new_user_session_path)}"

@@ -1,6 +1,8 @@
 ## 0.5.1
 
 ### Enhancements
+- **Client Changes**
+  - Internal client URLs are now friendly forwarded
 - **Project Changes**
   - Project owners and editors can now archive projects
 - **Email Changes**

@@ -21,7 +21,8 @@ class ActionController::TestCase
   end
 
   def login_client(resource)
-    session[:project_id] = resource.id
+    session[:project_ids] ||= []
+    session[:project_ids] << resource.id
   end
 end
 
@@ -30,6 +31,11 @@ class ActionDispatch::IntegrationTest
     user.update password: password, password_confirmation: password
     post_via_redirect '/login', user: { email: user.email, password: password }
     user
+  end
+
+  def sign_in_as_client(project)
+    project.update password: project.password_plain, password_confirmation: project.password_plain
+    post_via_redirect '/client/login', client: { username: project.username, password: project.password_plain }
   end
 end
 
