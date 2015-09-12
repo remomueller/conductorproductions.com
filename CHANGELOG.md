@@ -5,6 +5,8 @@
   - Project owners and editors can now archive projects
 - **Email Changes**
   - Contacts through the website now go to a new email address
+- **General Changes**
+  - Added a JSON API for the site version
 - **Gem Changes**
   - Use of Ruby 2.2.3 is now recommended
   - Updated to rails 4.2.4
