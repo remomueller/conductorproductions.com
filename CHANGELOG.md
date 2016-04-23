@@ -13,6 +13,7 @@
   - Use of Ruby 2.2.3 is now recommended
   - Updated to rails 4.2.6
   - Updated to pg 0.18.4
+  - Updated to devise 4.0.0
   - Set minitest-reporters to use ~> 1.0.20
   - Added simplecov configuration file
 

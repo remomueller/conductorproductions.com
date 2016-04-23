@@ -6,7 +6,7 @@ gem 'rails',                '4.2.6'
 gem 'pg',                   '0.18.4'
 
 # Gems used by project
-gem 'devise',               '~> 3.5.1'
+gem 'devise',               '~> 4.0.0'
 gem 'haml'
 gem 'figaro',               '~> 1.1.1'
 gem 'bootstrap-sass',       '~> 3.3.5'
