@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails',                '4.2.4'
 
 # Use postgresql as the database for Active Record
-gem 'pg',                   '0.18.3'
+gem 'pg',                   '0.18.4'
 
 # Gems used by project
 gem 'devise',               '~> 3.5.1'

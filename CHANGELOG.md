@@ -12,7 +12,7 @@
 - **Gem Changes**
   - Use of Ruby 2.2.3 is now recommended
   - Updated to rails 4.2.4
-  - Updated to pg 0.18.3
+  - Updated to pg 0.18.4
   - Set minitest-reporters to use ~> 1.0.20
   - Added simplecov configuration file
 
