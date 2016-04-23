@@ -3,6 +3,7 @@
 ### Enhancements
 - **Client Changes**
   - Internal client URLs are now friendly forwarded
+  - Project submenus are now visible by default
 - **Project Changes**
   - Project owners and editors can now archive projects
 - **Email Changes**
