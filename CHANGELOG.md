@@ -21,6 +21,7 @@
 
 ### Bug Fix
 - Deleted users are no longer able to log in
+- Fixed an issue with duplicate scrollbars on some pages
 
 ## 0.5.0 (August 1, 2015)
 

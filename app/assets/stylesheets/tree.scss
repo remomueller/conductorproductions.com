@@ -1,4 +1,3 @@
-
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'font-awesome';
@@ -8,6 +7,9 @@
 // Variables
 
 @import 'variables';
+
+// Components
+@import 'components/all';
 
 // @import 'sizes';
 

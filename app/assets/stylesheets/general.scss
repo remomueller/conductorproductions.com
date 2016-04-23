@@ -6,16 +6,7 @@
 body, input, button, select, textarea, .navbar-search .search-query {
   font-family: 'directors_cut_proregular', serif;
 }
-html {
-  position: relative;
-  min-height: 100%;
-}
-body {
-  margin-bottom: $footer-height;
-}
-html, body {
-  overflow-x: hidden;
-}
+
 p {
   font-size: 15px;
 }
