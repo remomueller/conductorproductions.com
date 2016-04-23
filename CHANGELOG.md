@@ -10,7 +10,7 @@
 - **General Changes**
   - Added a JSON API for the site version
 - **Gem Changes**
-  - Use of Ruby 2.2.3 is now recommended
+  - Updated to Ruby 2.3.0
   - Updated to rails 4.2.6
   - Updated to pg 0.18.4
   - Updated to devise 4.0.0
