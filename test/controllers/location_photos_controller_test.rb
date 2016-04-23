@@ -87,7 +87,7 @@ class LocationPhotosControllerTest < ActionController::TestCase
   test "should destroy location photo as owner" do
     login(@system_admin)
     assert_difference('LocationPhoto.count', -1) do
-      delete :destroy, project_id: @project, location_id: @location, id: @location_photo
+      delete :destroy, project_id: @project, location_id: @location, id: location_photos(:three)
     end
 
     assert_redirected_to [assigns(:project), assigns(:location)]
@@ -96,7 +96,7 @@ class LocationPhotosControllerTest < ActionController::TestCase
   test "should destroy location photo as editor" do
     login(@editor_project_one)
     assert_difference('LocationPhoto.count', -1) do
-      delete :destroy, project_id: @project, location_id: @location, id: @location_photo
+      delete :destroy, project_id: @project, location_id: @location, id: location_photos(:three)
     end
 
     assert_redirected_to [assigns(:project), assigns(:location)]
@@ -105,7 +105,7 @@ class LocationPhotosControllerTest < ActionController::TestCase
   test "should not destroy location photo as viewer" do
     login(@viewer_project_one)
     assert_difference('LocationPhoto.count', 0) do
-      delete :destroy, project_id: @project, location_id: @location, id: @location_photo
+      delete :destroy, project_id: @project, location_id: @location, id: location_photos(:three)
     end
 
     assert_redirected_to root_path

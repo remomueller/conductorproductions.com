@@ -9,7 +9,7 @@ class ProjectUser < ActiveRecord::Base
   belongs_to :user
   belongs_to :creator, class_name: 'User', foreign_key: 'creator_id'
 
-  after_update :notify_user
+  after_commit :notify_user, on: :update
 
   def generate_invite_token!(invite_token = Digest::SHA1.hexdigest(Time.now.usec.to_s))
     self.update( invite_token: invite_token ) if self.respond_to?('invite_token') and self.invite_token.blank? and ProjectUser.where(invite_token: invite_token).count == 0

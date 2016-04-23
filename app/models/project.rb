@@ -5,7 +5,7 @@ class Project < ActiveRecord::Base
   mount_uploader :client_logo, ImageUploader
 
   # Triggers
-  after_create :create_default_categories
+  after_commit :create_default_categories, on: :create
 
   # Constants
   DEFAULT_CATEGORIES = [

@@ -11,3 +11,10 @@ two:
   location: one
   user: system_admin
   photo: rails.png
+
+# To test deletion
+three:
+  project: one
+  location: one
+  user: system_admin
+  # photo:
