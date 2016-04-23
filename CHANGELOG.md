@@ -1,4 +1,4 @@
-## 0.5.1
+## 0.5.1 (April 23, 2016)
 
 ### Enhancements
 - **Client Changes**
