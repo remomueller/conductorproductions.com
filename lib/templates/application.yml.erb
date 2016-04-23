@@ -3,6 +3,7 @@ website_name:         "<%= print "Enter Website Name: "; gets.chomp %>"
 support_email:        "<%= print "Enter support email address: "; ga = gets.chomp; ga %>"
 contact_email:        "<%= print "Enter contact form email address: "; ga = gets.chomp; ga %>"
 
+emails_enabled:       "true"
 smtp_address:         "<%= print "Enter SMTP Address [localhost]: "; s = gets.chomp; s == '' ? 'localhost' : s %>"
 smtp_port:            "<%= print "Enter SMTP Port [25]: "; s = gets.chomp; s == '' ? '25' : s %>"
 smtp_authentication:  "<%= print "Enter SMTP Authentication [plain]: "; s = gets.chomp; s == '' ? 'plain' : s %>"
