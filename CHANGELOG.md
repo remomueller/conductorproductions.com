@@ -17,7 +17,7 @@
   - Updated to devise 4.0.0
   - Updated to jquery-rails 4.1.1
   - Updated to carrierwave 0.11.0
-  - Set minitest-reporters to use ~> 1.0.20
+  - Removed minitest-reporters
   - Added simplecov configuration file
 
 ### Bug Fix

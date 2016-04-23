@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'simplecov'
 require 'minitest/pride'
 
@@ -16,7 +18,7 @@ class ActionController::TestCase
   include Devise::TestHelpers
 
   def login(resource)
-    @request.env["devise.mapping"] = Devise.mappings[resource]
+    @request.env['devise.mapping'] = Devise.mappings[resource]
     sign_in(resource.class.name.downcase.to_sym, resource)
   end
 
@@ -42,9 +44,7 @@ end
 module Rack
   module Test
     class UploadedFile
-      def tempfile
-        @tempfile
-      end
+      attr_reader :tempfile
     end
   end
 end
