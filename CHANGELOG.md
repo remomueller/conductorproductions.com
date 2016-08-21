@@ -9,6 +9,7 @@
 
 ### Refactoring
 - Removed unused references to tumblr API
+- Cleaned up routes file
 
 ## 0.5.1 (April 23, 2016)
 
