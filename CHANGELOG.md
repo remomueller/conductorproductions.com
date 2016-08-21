@@ -1,5 +1,9 @@
 ## 0.6.0
 
+### Enhancements
+- **Gem Changes**
+  - Updated to turbolinks 2.5.3
+
 ## 0.5.1 (April 23, 2016)
 
 ### Enhancements
