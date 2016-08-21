@@ -1,4 +1,4 @@
-@isNotInternetExplorer = () ->
+@isNotInternetExplorer = ->
   ua = window.navigator.userAgent
   msie = ua.indexOf("MSIE ")
   if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) # If Internet Explorer, return version number
@@ -7,7 +7,7 @@
   else # If another browser
     return true
 
-@fileDragReady = () ->
+@fileDragReady = ->
   if window.FormData != undefined and isNotInternetExplorer()
     $("#filedrag").show()
 
@@ -39,9 +39,9 @@ $(document)
       data: data         # The form with the file inputs.
       processData: false # Using FormData, no need to process data.
       contentType: false
-    ).done( () ->
+    ).done( ->
       console.log("Success: Files sent!")
-    ).fail( () ->
+    ).fail( ->
       console.log("An error occurred, the files couldn't be sent!")
     )
   )

@@ -8,7 +8,7 @@
   - Default categories for projects have been updated
   - Project usernames can no longer contain spaces
 - **Gem Changes**
-  - Updated to turbolinks 2.5.3
+  - Updated to turbolinks 5
 
 ### Refactoring
 - Removed unused references to tumblr API

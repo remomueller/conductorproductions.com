@@ -1,4 +1,4 @@
-@loadActiveVideo = () ->
+@loadActiveVideo = ->
   iframe_container = $(".item.active[data-object~='carousel-video']")
   iframe = $("#home-iframe iframe")
   iframe.attr('src', $(iframe_container).data('video-src'))
@@ -13,18 +13,18 @@
   else
     # console.log data
 
-@addListener = () ->
+@addListener = ->
   if (window.addEventListener)
     addEventListener("message", listener, false)
   else
     attachEvent("onmessage", listener)
 
-@homeReady = () ->
+@homeReady = ->
   $("#carousel-videos").carousel(interval: false)
   addListener()
   loadActiveVideo()
 
 $(document)
-  .on('slid.bs.carousel', $('#carousel-videos'), () ->
+  .on('slid.bs.carousel', $('#carousel-videos'), ->
     loadActiveVideo()
   )

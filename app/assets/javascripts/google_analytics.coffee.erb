@@ -14,16 +14,14 @@
   m.parentNode.insertBefore a, m
   return
 ) window, document, "script", "//www.google-analytics.com/analytics.js", "ga"
-ga "create", "<%= ENV["google_analytics_id"] %>", "auto"
+ga "create", "<%= ENV["google_analytics"] %>", "auto"
 ga "require", "displayfeatures"
-
 
 $(document).ready ->
   if typeof Turbolinks is 'undefined' or !Turbolinks.supported
     ga "send", 'pageview'
     return
 
-$(document).on "page:change", ->
+$(document).on "turbolinks:load", ->
   ga "send", "pageview", window.location.pathname
   return
-

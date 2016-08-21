@@ -46,7 +46,7 @@ class VideosControllerTest < ActionController::TestCase
 
   test 'should reorder videos as system admin' do
     login(@system_admin)
-    xhr :post, :save_video_order, video_page: 'work', video_ids: [videos(:work_two).to_param, videos(:work_one).to_param], format: 'js'
+    post :save_video_order, video_page: 'work', video_ids: [videos(:work_two).to_param, videos(:work_one).to_param], format: 'js'
     videos(:work_one).reload
     videos(:work_two).reload
     videos(:work_archived).reload
@@ -60,7 +60,7 @@ class VideosControllerTest < ActionController::TestCase
 
   test 'should reorder videos as regular user' do
     login(@regular)
-    xhr :post, :save_video_order, video_page: 'work', video_ids: [videos(:work_two).to_param, videos(:work_one).to_param], format: 'js'
+    post :save_video_order, video_page: 'work', video_ids: [videos(:work_two).to_param, videos(:work_one).to_param], format: 'js'
     videos(:work_one).reload
     videos(:work_two).reload
     videos(:work_archived).reload

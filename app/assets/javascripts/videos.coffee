@@ -1,4 +1,4 @@
-@videosReady = () ->
+@videosReady = ->
   $('[data-object~="videos-sortable"]').sortable(
     handle: ".handle"
     axis: "y"
@@ -15,14 +15,14 @@
   $("#shade").click()
 
 $(document)
-  .on('click touchstart', '#shade', () ->
+  .on('click touchstart', '#shade', ->
     $("#shade").fadeOut()
     $("#other-videos").show()
     $("#video-frame").hide()
     $("#video-frame iframe").attr('src', "")
     false
   )
-  .on('click', "[data-object~='launch-video']",()->
+  .on('click', "[data-object~='launch-video']", ->
     $("#shade").fadeIn()
     $("#video-frame").show()
     url = $(this).data('video-src') || ""
@@ -30,13 +30,13 @@ $(document)
 
     iframe = $("#video-frame iframe")[0]
     player = $f(iframe)
-    player.addEvent('ready', () ->
+    player.addEvent('ready', ->
       player.addEvent('finish', onFinish)
     )
 
     $("#other-videos").hide()
     false
   )
-  .on('click', "[data-object~='launch-video'], #video-frame",()->
+  .on('click', "[data-object~='launch-video'], #video-frame", ->
     false
   )
