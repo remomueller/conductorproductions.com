@@ -8,6 +8,7 @@
   - Default categories for projects have been updated
   - Project usernames can no longer contain spaces
 - **Gem Changes**
+  - Updated to Ruby 2.3.1
   - Updated to turbolinks 5
   - Updated to devise 4.2.0
 
