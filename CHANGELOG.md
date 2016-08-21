@@ -11,6 +11,7 @@
   - Updated to Ruby 2.3.1
   - Updated to turbolinks 5
   - Updated to devise 4.2.0
+  - Updated to simplecov 0.12.0
 
 ### Refactoring
 - Removed unused references to tumblr API
