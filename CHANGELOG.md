@@ -17,6 +17,8 @@
 ### Bug Fixes
 - Fixed a bug that prevented a project username from being reused if a deleted
   project had the same username
+- Fixed a bug that prevented videos from hiding correctly on Work and DRTV pages
+  when a video thumbnail was clicked
 
 ## 0.5.1 (April 23, 2016)
 
