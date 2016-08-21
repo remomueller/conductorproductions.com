@@ -1,14 +1,11 @@
-%p
-  Hello
-  = succeed '!' do
+%p{ style: p_style }
+  Dear
+  = succeed ',' do
     = @resource.first_name
 
-%p
+%p{ style: p_style }
   Your account has been locked due to an excessive number of unsuccessful sign
-  in attempts.
+  in attempts. Click the link below to unlock your account:
 
-%p
-  Click the link below to unlock your account:
-
-%p
-  = link_to 'Unlock my account', "#{ENV['website_url']}/unlock?unlock_token=#{@token}"
+%p{ style: center_style }
+  = link_to 'Unlock my account', "#{ENV['website_url']}/unlock?unlock_token=#{@token}", style: link_style

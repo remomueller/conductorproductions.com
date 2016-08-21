@@ -1,6 +1,8 @@
 ## 0.6.0
 
 ### Enhancements
+- **Email Changes**
+  - Updated styling of emails
 - **Project Changes**
   - Top level EDITORIAL has been replaced by REFERENCES
   - Default categories for projects have been updated
