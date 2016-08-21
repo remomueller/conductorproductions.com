@@ -15,6 +15,20 @@ class NavigationTest < ActionDispatch::IntegrationTest
     assert_equal I18n.t('devise.sessions.signed_in'), flash[:notice]
   end
 
+  test 'project viewers should be able to login' do
+    project = projects(:one)
+    project.update password: project.password_plain, password_confirmation: project.password_plain
+    post_via_redirect '/login', user: { email: project.username, password: project.password_plain }
+    assert_equal '/project-one/menu', path
+  end
+
+  test 'project viewers should stay on login page with incorrect password' do
+    project = projects(:one)
+    project.update password: project.password_plain, password_confirmation: project.password_plain
+    post_via_redirect '/login', user: { email: project.username, password: 'wrong' }
+    assert_equal '/login', path
+  end
+
   test 'deleted users should be not be allowed to login' do
     get '/dashboard'
     assert_redirected_to new_user_session_path

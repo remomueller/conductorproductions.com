@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def devise_login?
-    params[:controller] == 'devise/sessions' && params[:action] == 'create'
+    params[:controller] == 'sessions' && params[:action] == 'create'
   end
 
   def configure_permitted_parameters

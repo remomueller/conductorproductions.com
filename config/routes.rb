@@ -81,6 +81,7 @@ Rails.application.routes.draw do
   end
 
   devise_for :users,
+             controllers: { sessions: 'sessions' },
              path_names: {
                sign_up: 'join',
                sign_in: 'login',

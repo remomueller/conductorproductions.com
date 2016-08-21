@@ -7,6 +7,7 @@
   - Top level EDITORIAL has been replaced by REFERENCES
   - Default categories for projects have been updated
   - Project usernames can no longer contain spaces
+  - Admin and client logins have been combined
 - **Gem Changes**
   - Updated to Ruby 2.3.1
   - Updated to turbolinks 5

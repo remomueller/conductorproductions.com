@@ -93,21 +93,21 @@ class ClientProjectController < ApplicationController
 
   private
 
-    def set_project
-      @project = Project.current.where(id: session[:project_ids]).find_by_param(params[:id])
-    end
+  def set_project
+    @project = Project.current.where(id: session[:project_ids]).find_by_param(params[:id])
+  end
 
-    def set_project_for_current_user
-      unless @project
-        @project = current_user.all_viewable_projects.find_by_param(params[:id]) if current_user
-      end
+  def set_project_for_current_user
+    unless @project
+      @project = current_user.all_viewable_projects.find_by_param(params[:id]) if current_user
     end
+  end
 
-    def redirect_without_project
-      empty_response_or_root_path(client_login_path) unless @project
-    end
+  def redirect_without_project
+    empty_response_or_root_path(client_login_path) unless @project
+  end
 
-    def invert
-      @invert = true
-    end
+  def invert
+    @invert = true
+  end
 end
