@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
+# Tests to assure that locations can be created and modified.
 class LocationsControllerTest < ActionController::TestCase
   setup do
     @project = projects(:one)

@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Allows users to be managed.
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :check_system_admin

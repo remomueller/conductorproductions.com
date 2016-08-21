@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Allows documents to be added to categories.
 class DocumentsController < ApplicationController
   before_action :authenticate_user!
 

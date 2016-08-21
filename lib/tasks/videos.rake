@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :videos do
   desc "Populate Initial Videos on WORK and DRTV pages"
   task populate: :environment do

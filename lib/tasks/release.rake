@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 desc 'Create and rename assets'
 task release: :environment do
 

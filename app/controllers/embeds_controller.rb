@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Allows embeds to be added to categories.
 class EmbedsController < ApplicationController
   before_action :authenticate_user!
 

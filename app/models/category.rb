@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Provides folders for locations, embeds, and documents.
 class Category < ActiveRecord::Base
   # Concerns
   include Deletable

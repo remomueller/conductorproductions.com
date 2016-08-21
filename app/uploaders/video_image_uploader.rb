@@ -1,5 +1,6 @@
-# encoding: utf-8
+# frozen_string_literal: true
 
+# Allows images to be attached to videos.
 class VideoImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 

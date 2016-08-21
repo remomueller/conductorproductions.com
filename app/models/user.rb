@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Provides methods for users.
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, and :omniauthable
@@ -7,7 +10,7 @@ class User < ActiveRecord::Base
   # Concerns
   include Deletable
 
-  # Named Scopes
+  # Scopes
   scope :with_project, lambda { |*args| where("users.id in (select projects.user_id from projects where projects.id IN (?) and projects.deleted = ?) or users.id in (select project_users.user_id from project_users where project_users.project_id IN (?) and project_users.editor IN (?))", args.first, false, args.first, args[1] ) }
 
   # Model Validation

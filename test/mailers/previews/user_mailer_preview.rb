@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Allows emails to be viewed at /rails/mailers
+# Allows emails to be viewed at /rails/mailers.
 class UserMailerPreview < ActionMailer::Preview
   def contact
     UserMailer.contact('FirstName LastName', 'example@test.com', "This is my message\nOn two lines!")

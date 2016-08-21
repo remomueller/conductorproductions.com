@@ -1,7 +1,10 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
+# Embed unit tests.
 class EmbedTest < ActiveSupport::TestCase
-  # test "the truth" do
+  # test 'the truth' do
   #   assert true
   # end
 end

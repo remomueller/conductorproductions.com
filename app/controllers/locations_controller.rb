@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Allows creation of location galleries.
 class LocationsController < ApplicationController
   before_action :authenticate_user!
 

@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
+# Allows clients to login to view project.
 class ClientSessionController < ApplicationController
+  before_action :invert, only: [:new, :create]
 
-  before_action :invert,              only: [ :new, :create ]
-
-  layout 'application-login', only: [ :new, :create ]
+  layout 'application-login', only: [:new, :create]
 
   # Show the client login page
   def new
@@ -38,8 +40,7 @@ class ClientSessionController < ApplicationController
 
   private
 
-    def invert
-      @invert = true
-    end
-
+  def invert
+    @invert = true
+  end
 end

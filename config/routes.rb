@@ -80,7 +80,13 @@ Rails.application.routes.draw do
     get  'client/logout', action: 'destroy', as: :client_logout
   end
 
-  devise_for :users, path_names: { sign_up: 'join', sign_in: 'login', sign_out: 'logout' }, path: ''
+  devise_for :users,
+             path_names: {
+               sign_up: 'join',
+               sign_in: 'login',
+               sign_out: 'logout'
+             },
+             path: ''
 
   resources :users
 

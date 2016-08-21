@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Allows photos to be added to locations.
 class LocationPhotosController < ApplicationController
   before_action :authenticate_user!
 

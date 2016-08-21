@@ -1,12 +1,15 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
+# Tests to assure that version can be viewed.
 class ApplicationControllerTest < ActionController::TestCase
-  test "should get version" do
+  test 'should get version' do
     get :version
     assert_response :success
   end
 
-  test "should get version as json" do
+  test 'should get version as json' do
     get :version, format: 'json'
     version = JSON.parse(response.body)
     assert_equal WwwConductorproductionsCom::VERSION::STRING, version['version']['string']

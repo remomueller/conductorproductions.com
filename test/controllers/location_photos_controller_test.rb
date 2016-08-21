@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
+# Tests to assure that locations can have photos attached.
 class LocationPhotosControllerTest < ActionController::TestCase
   setup do
     @project = projects(:one)

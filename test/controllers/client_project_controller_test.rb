@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
+# Tests to assure clients can browse project.
 class ClientProjectControllerTest < ActionController::TestCase
   setup do
     @system_admin = users(:system_admin)

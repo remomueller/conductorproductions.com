@@ -1,10 +1,12 @@
-class Embed < ActiveRecord::Base
+# frozen_string_literal: true
 
+# Allows embeds to be added to categories.
+class Embed < ActiveRecord::Base
   # Concerns
   include Deletable
 
   # Model Validation
-  validates_presence_of :project_id, :user_id, :category_id, :embed_url
+  validates :project_id, :user_id, :category_id, :embed_url, presence: true
 
   # Model Relationships
   belongs_to :project
@@ -14,7 +16,6 @@ class Embed < ActiveRecord::Base
   # Embed Methods
 
   def name
-    "EMBED NAME"
+    'EMBED NAME'
   end
-
 end

@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Allows documents to be attached to categories.
 class Document < ActiveRecord::Base
 
   # Uploaders

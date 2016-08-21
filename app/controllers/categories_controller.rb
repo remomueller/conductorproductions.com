@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Allows categories to be created and modified.
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
 

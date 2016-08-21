@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
+# Tests to assure that categories can be created and modified.
 class CategoriesControllerTest < ActionController::TestCase
   setup do
     @project = projects(:one)

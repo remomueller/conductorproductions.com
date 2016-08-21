@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Allows clients to browse project.
 class ClientProjectController < ApplicationController
   before_action :store_location_in_session, except: [ :download_document, :download_location_photo, :agency_logo, :client_logo ]
   before_action :authenticate_client_or_current_user!

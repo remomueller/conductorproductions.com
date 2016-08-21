@@ -1,5 +1,6 @@
-# encoding: utf-8
+# frozen_string_literal: true
 
+# Allows images to be attached and resized.
 class ResizableImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 

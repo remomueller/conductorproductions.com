@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Allows videos to be added to DRTV and Work pages.
 class VideosController < ApplicationController
   before_action :authenticate_user!
   before_action :check_system_admin

@@ -59,7 +59,7 @@ class Project < ActiveRecord::Base
 
   has_secure_password
 
-  # Named Scopes
+  # Scopes
   scope :with_editor, -> (*args) { where('projects.user_id = ? or projects.id in (select project_users.project_id from project_users where project_users.user_id = ? and project_users.editor IN (?))', args.first, args.first, args[1]).references(:project_users) }
 
   # Model Validation

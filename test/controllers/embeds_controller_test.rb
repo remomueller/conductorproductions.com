@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
+# Tests to assure embeds can be created and modified.
 class EmbedsControllerTest < ActionController::TestCase
   setup do
     @project = projects(:one)

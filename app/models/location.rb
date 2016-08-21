@@ -1,12 +1,14 @@
-class Location < ActiveRecord::Base
+# frozen_string_literal: true
 
+# Allows locations to be added to categories.
+class Location < ActiveRecord::Base
   # Concerns
   include Deletable
 
   # Model Validation
-  validates_presence_of :project_id, :user_id, :category_id, :name
-  validates_uniqueness_of :slug, scope: [ :project_id, :deleted ]
-  validates_format_of :slug, with: /\A[a-z][a-z0-9\-]*\Z/
+  validates :project_id, :user_id, :category_id, :name, presence: true
+  validates :slug, uniqueness: { scope: [:project_id, :deleted] }
+  validates :slug, format: { with: /\A[a-z][a-z0-9\-]*\Z/ }
 
   # Model Relationships
   belongs_to :project
@@ -21,7 +23,6 @@ class Location < ActiveRecord::Base
   end
 
   def self.find_by_param(input)
-    self.where("locations.slug = ? or locations.id = ?", input.to_s, input.to_i).first
+    where("locations.slug = ? or locations.id = ?", input.to_s, input.to_i).first
   end
-
 end

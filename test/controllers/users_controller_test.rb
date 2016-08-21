@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
+# Tests to assure that user roles can be set.
 class UsersControllerTest < ActionController::TestCase
   setup do
     @user = users(:regular)

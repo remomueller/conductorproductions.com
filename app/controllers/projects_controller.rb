@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Allows projects to be created and updated.
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
   before_action :check_system_admin,        only: [:new, :create]
