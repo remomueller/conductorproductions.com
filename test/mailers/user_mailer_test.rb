@@ -1,38 +1,29 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
+# Tests to assure that emails are generated and sent.
 class UserMailerTest < ActionMailer::TestCase
-
-  test "contact email" do
-    # Send the email, then test that it got queued
-    email = UserMailer.contact("Name", "test@example.com", "Body of Message").deliver_now
-    assert !ActionMailer::Base.deliveries.empty?
-
-    # Test the body of the sent email contains what we expect it to
-    assert_equal [ENV['contact_email']], email.to
-    assert_equal "Name - Website Message", email.subject
-    assert_match(/Body of Message/, email.encoded)
+  test 'contact email' do
+    mail = UserMailer.contact('Name', 'test@example.com', 'Body of Message')
+    assert_equal [ENV['contact_email']], mail.to
+    assert_equal 'Name - Website Message', mail.subject
+    assert_match(/Body of Message/, mail.body.encoded)
   end
 
-  test "user added to project email" do
+  test 'user added to project email' do
     project_user = project_users(:accepted_viewer_invite)
-
-    email = UserMailer.user_added_to_project(project_user).deliver_now
-    assert !ActionMailer::Base.deliveries.empty?
-
-    assert_equal [project_user.user.email], email.to
-    assert_equal "#{project_user.creator.name} Allows You to View Project #{project_user.project.name}", email.subject
-    assert_match(/#{project_user.creator.name} added you to Project #{project_user.project.name}/, email.encoded)
+    mail = UserMailer.user_added_to_project(project_user)
+    assert_equal [project_user.user.email], mail.to
+    assert_equal "#{project_user.creator.name} Allows You to View #{project_user.project.name}", mail.subject
+    assert_match(/#{project_user.creator.name} added you to #{project_user.project.name}/, mail.body.encoded)
   end
 
-  test "user invited to project email" do
+  test 'user invited to project email' do
     project_user = project_users(:pending_editor_invite)
-
-    email = UserMailer.invite_user_to_project(project_user).deliver_now
-    assert !ActionMailer::Base.deliveries.empty?
-
-    assert_equal [project_user.invite_email], email.to
-    assert_equal "#{project_user.creator.name} Invites You to Edit Project #{project_user.project.name}", email.subject
-    assert_match(/#{project_user.creator.name} invited you to Project #{project_user.project.name}/, email.encoded)
+    mail = UserMailer.user_invited_to_project(project_user)
+    assert_equal [project_user.invite_email], mail.to
+    assert_equal "#{project_user.creator.name} Invites You to Edit #{project_user.project.name}", mail.subject
+    assert_match(/#{project_user.creator.name} invited you to #{project_user.project.name}/, mail.body.encoded)
   end
-
 end

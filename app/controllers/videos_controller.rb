@@ -21,7 +21,7 @@ class VideosController < ApplicationController
       video = Video.current.where(video_page: params[:video_page]).find_by_id(video_id)
       video.update position: index if video
     end
-    render nothing: true
+    head :ok
   end
 
 

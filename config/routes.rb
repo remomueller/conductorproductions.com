@@ -84,6 +84,11 @@ Rails.application.routes.draw do
 
   resources :users
 
+  if Rails.env.development?
+    get '/rails/mailers' => 'rails/mailers#index'
+    get '/rails/mailers/*path' => 'rails/mailers#preview'
+  end
+
   scope module: 'client_project' do
     get ':id', action: 'root', as: :client_project_root
     get ':id/menu', action: 'menu', as: :client_project_menu

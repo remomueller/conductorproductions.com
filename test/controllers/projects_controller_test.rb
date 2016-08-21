@@ -20,6 +20,32 @@ class ProjectsControllerTest < ActionController::TestCase
     }
   end
 
+  test 'should invite new user to project' do
+    login(@editor_project_one)
+    assert_difference('ProjectUser.count') do
+      post :invite_user,
+        id: @project, editor: '1',
+        invite_email: 'invite@example.com', format: 'js'
+    end
+    assert_not_nil assigns(:member)
+    assert_not_nil assigns(:member).invite_token
+    assert_template 'collaborators'
+    assert_response :success
+  end
+
+  test 'should add associated user to project' do
+    login(@system_admin)
+    assert_difference('ProjectUser.count') do
+      post :invite_user,
+        id: projects(:two), editor: '1',
+        invite_email: "#{users(:editor_project_one).name} [#{users(:editor_project_one).email}]", format: 'js'
+    end
+    assert_not_nil assigns(:project)
+    assert_not_nil assigns(:member)
+    assert_template 'collaborators'
+    assert_response :success
+  end
+
   test 'should get index as system admin' do
     login(@system_admin)
     get :index
