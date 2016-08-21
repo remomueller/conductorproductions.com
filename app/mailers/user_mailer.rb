@@ -3,6 +3,7 @@
 # Sends out application emails to users.
 class UserMailer < ApplicationMailer
   def contact(name, email, message)
+    setup_email
     subject = "#{name} - Website Message"
     @email_to = ENV['contact_email']
     @message = message
@@ -10,6 +11,7 @@ class UserMailer < ApplicationMailer
   end
 
   def user_added_to_project(project_user)
+    setup_email
     @project_user = project_user
     @email_to = project_user.user.email
     mail(to: project_user.user.email,
@@ -18,6 +20,7 @@ class UserMailer < ApplicationMailer
   end
 
   def user_invited_to_project(project_user)
+    setup_email
     @project_user = project_user
     @email_to = project_user.invite_email
     mail(to: project_user.invite_email,
