@@ -20,8 +20,13 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
-    keys = [:first_name, :last_name, :email, :password, :password_confirmation]
-    devise_parameter_sanitizer.permit(:sign_up, keys: keys)
+    devise_parameter_sanitizer.permit(
+      :sign_up,
+      keys: [
+        :first_name, :last_name, :email,
+        :password, :password_confirmation
+      ]
+    )
   end
 
   def check_system_admin

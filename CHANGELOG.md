@@ -9,6 +9,7 @@
   - Project usernames can no longer contain spaces
 - **Gem Changes**
   - Updated to turbolinks 5
+  - Updated to devise 4.2.0
 
 ### Refactoring
 - Removed unused references to tumblr API
