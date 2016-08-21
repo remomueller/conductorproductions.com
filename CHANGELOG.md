@@ -7,6 +7,9 @@
 - **Gem Changes**
   - Updated to turbolinks 2.5.3
 
+### Refactoring
+- Removed unused references to tumblr API
+
 ## 0.5.1 (April 23, 2016)
 
 ### Enhancements

@@ -1,0 +1,23 @@
+= render 'header'
+
+.container
+  .page-header{ style: 'border: 0;' }
+    %h1
+      NO NEWS IS
+      %br GOOD NEWS
+  .news-text{ style: 'position:relative' }
+    We're
+    %i crankin'
+    this
+    = succeed '.' do
+      %span#season-container season
+    %br
+    Check out our newest work&nbsp;&nbsp;
+    = link_to 'work.html', style: 'position:relative;color:white' do
+      .link-float-box-bottom
+        .img-work-lines
+      .link-float-box-bottom
+        .img-work-tab
+      .link-float-box-top here
+
+= render 'footer'
