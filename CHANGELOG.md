@@ -4,6 +4,7 @@
 - **Project Changes**
   - Top level EDITORIAL has been replaced by REFERENCES
   - Default categories for projects have been updated
+  - Project usernames can no longer contain spaces
 - **Gem Changes**
   - Updated to turbolinks 2.5.3
 

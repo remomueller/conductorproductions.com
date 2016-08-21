@@ -69,6 +69,7 @@ class Project < ActiveRecord::Base
             allow_nil: true,
             format: { with: /\A[a-z][a-z0-9\-]*\Z/ }
   validates :username, :number, uniqueness: true, allow_nil: true
+  validates :username, format: { with: /\A[a-zA-Z][a-zA-Z0-9]*\Z/ }, allow_nil: true
 
   # Model Relationships
   belongs_to :user
