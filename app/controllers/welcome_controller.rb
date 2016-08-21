@@ -11,7 +11,7 @@ class WelcomeController < ApplicationController
       UserMailer.contact(params[:name], params[:email], params[:body]).deliver_now if EMAILS_ENABLED
       redirect_to contact_path, notice: 'Thanks for getting in touch!'
     else
-      render 'contact'
+      render :contact
     end
   end
 

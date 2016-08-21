@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
@@ -17,13 +19,16 @@ module WwwConductorproductionsCom
     # config.time_zone = 'Central Time (US & Canada)'
     config.time_zone = 'Eastern Time (US & Canada)'
 
+    # Overwrite Rails errors to use Bootstrap CSS classes
+    config.action_view.field_error_proc = Proc.new do |html_tag, instance|
+      "<span class=\"has-error\">#{html_tag}</span>".html_safe
+    end
+
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-
-    config.action_view.field_error_proc = Proc.new { |html_tag, instance| "<span class=\"has-error\">#{html_tag}</span>".html_safe }
   end
 end
