@@ -11,6 +11,10 @@
 - Removed unused references to tumblr API
 - Cleaned up routes file
 
+### Bug Fixes
+- Fixed a bug that prevented a project username from being reused if a deleted
+  project had the same username
+
 ## 0.5.1 (April 23, 2016)
 
 ### Enhancements

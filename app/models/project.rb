@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Contains the structure and elements for a project.
 class Project < ActiveRecord::Base
   # Uploaders
@@ -62,9 +64,11 @@ class Project < ActiveRecord::Base
 
   # Model Validation
   validates :name, :user_id, presence: true
-  validates :slug, uniqueness: { scope: :deleted }, allow_blank: true
-  validates :slug, format: { with: /\A[a-z][a-z0-9\-]*\Z/ }, allow_blank: true
-  validates :username, :number, uniqueness: { scope: :deleted }, allow_blank: true
+  validates :slug,
+            uniqueness: true,
+            allow_nil: true,
+            format: { with: /\A[a-z][a-z0-9\-]*\Z/ }
+  validates :username, :number, uniqueness: true, allow_nil: true
 
   # Model Relationships
   belongs_to :user
@@ -104,6 +108,11 @@ class Project < ActiveRecord::Base
   # Project Owners
   def deletable_by?(current_user)
     current_user.projects.where(id: id).count == 1
+  end
+
+  def destroy
+    super
+    update slug: nil, username: nil, number: nil
   end
 
   private
