@@ -1,0 +1,21 @@
+.container
+  .company-logo
+    .hidden-xs
+      .pull-right
+        = render 'welcome/links'
+      %h1.hidden-xs CONDUCTOR
+
+    .visible-xs{ style: 'position: relative;' }
+      .triangle-right-xs
+      .triangle-right-white-xs
+      .transparent-box-xs
+      .triangle-left-xs
+      - if true
+        .triangle-left-white-xs
+
+      %h1 CONDUCTOR
+
+    .hidden-xs.hidden-sm{ style: 'font-size: 0.9em;' }
+      = render 'welcome/products'
+
+  .visible-xs= render 'welcome/links'

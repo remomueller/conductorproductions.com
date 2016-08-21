@@ -1,0 +1,36 @@
+= render 'header'
+
+.container
+  .row
+    .col-sm-6
+      .page-header
+        %h3{ style: 'margin-top: 30px;' } Drop a line, say hi. We don't bite.
+
+      = form_tag submit_contact_path, method: :post, class: 'form-horizontal' do
+        - if params[:action] == 'submit_contact' && (params[:name].blank? || params[:email].blank? || params[:body].blank?)
+          .alert.alert-danger Please fill in all fields.
+
+        .form-group
+          .col-sm-12
+            = text_field_tag :name, params[:name], class: 'form-control', placeholder: 'Name'
+
+        .form-group
+          .col-sm-12
+            = email_field_tag :email, params[:email], class: 'form-control', placeholder: 'Email'
+
+        .form-group
+          .col-sm-12
+            = text_area_tag :body, params[:body], class: 'form-control', placeholder: 'Message', rows: 10
+
+        .form-group
+          .col-sm-12
+            %button.btn.btn-primary{ type: 'submit' } Send Message
+            %span{ style: 'padding-left: 15px' } or give us a call at 617-262-1400.
+
+    .col-sm-6
+      .embed-responsive.embed-responsive-4by3{ style: 'margin: 75px 0 10px 0;' }
+        %iframe.embed-responsive-item{ src: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11794.523952567648!2d-71.0704113!3d42.3503902!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e37a736a5166b9%3A0xf95bcd7f12163512!2s142+Berkeley+St%2C+Boston%2C+MA+02116!5e0!3m2!1sen!2sus!4v1406491005093' }
+
+      .center 142 Berkeley Street, Floor 2, Boston, MA 02116
+
+= render 'footer'

@@ -11,6 +11,7 @@
 - Removed unused references to tumblr API
 - Cleaned up routes file
 - Cleaned up inviting and adding users to project
+- Updated all views to use haml
 
 ### Bug Fixes
 - Fixed a bug that prevented a project username from being reused if a deleted

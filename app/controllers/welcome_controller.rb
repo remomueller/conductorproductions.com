@@ -1,13 +1,12 @@
 class WelcomeController < ApplicationController
-
   before_action :authenticate_user!, only: [ :dashboard ]
 
   layout 'conductor-application-v2'
 
   def submit_contact
-    if params[:name].present? and params[:email].present? and params[:body].present?
+    if params[:name].present? && params[:email].present? && params[:body].present?
       UserMailer.contact(params[:name], params[:email], params[:body]).deliver_later if EMAILS_ENABLED
-      redirect_to contact_path, notice: "Thanks for getting in touch!"
+      redirect_to contact_path, notice: 'Thanks for getting in touch!'
     else
       render 'contact'
     end
@@ -27,17 +26,16 @@ class WelcomeController < ApplicationController
 
   def download_video_image
     @video = Video.current.find_by_id(params[:video_id])
-    if @video and @video.photo.size > 0
+    if @video && @video.photo.size > 0
       if params[:size] == 'preview'
-        send_file File.join( CarrierWave::Uploader::Base.root, @video.photo.preview.url )
+        send_file File.join(CarrierWave::Uploader::Base.root, @video.photo.preview.url)
       elsif params[:size] == 'thumb'
-        send_file File.join( CarrierWave::Uploader::Base.root, @video.photo.thumb.url )
+        send_file File.join(CarrierWave::Uploader::Base.root, @video.photo.thumb.url)
       else
-        send_file File.join( CarrierWave::Uploader::Base.root, @video.photo.url )
+        send_file File.join(CarrierWave::Uploader::Base.root, @video.photo.url)
       end
     else
       head :ok
     end
   end
-
 end

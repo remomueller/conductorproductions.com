@@ -1,0 +1,39 @@
+= render 'header'
+
+.container
+  .center.video-container
+    .video-frame.video-frame-upper-left
+
+    .home-video
+      - if true
+        = render 'welcome/carousel'
+      - else
+        .embed-responsive.embed-responsive-16by9
+          %iframe.embed-responsive-item{ src: '//player.vimeo.com/video/111656554?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff', webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
+
+    - if false
+      .video-frame.video-frame-lower-left
+        %div{ style: 'bottom: 5px;left: 10px;position: absolute;font-size: 0.8em;color: #fff;text-align: left' }
+          %a{ href: '#', style: 'color: #fff;' }
+            CONDUCTOR
+            %br
+            DIRECT
+
+    .flip-tab-right.hidden-xs
+      %div{ style: 'height: 21px;' }
+        = link_to 'WORK', 'work.html', style: 'color:#fff'
+
+    .video-frame.video-frame-lower-right
+
+
+  .home-intro-text
+    We're Conductor.
+    We're here for you.
+    We are a company of Filmmakers, TV and Commercial Directors and Producers.
+    We're crazy about creative and obsessed with production value.
+    We have a world-class mentality and (in our minds) we are already legendary.
+    Contact us.
+    Let us show you our secrets, who we are, how hard we work and how wide our reach is.
+    You'll be happy you did.
+
+= render 'footer'

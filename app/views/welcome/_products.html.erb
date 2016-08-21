@@ -1,9 +1,0 @@
-<% if params[:action] == 'drtv' %>
-  <% products = [['DIRECT RESPONSE', drtv_path], ['COMMERCIALS', work_path], ['BRANDED CONTENT', work_path]]%>
-<% else %>
-  <% products = [['COMMERCIALS', work_path], ['BRANDED CONTENT', work_path], ['DIRECT RESPONSE', drtv_path]]%>
-<% end %>
-
-<div class="product-links">
-  <%= products.collect{|name, link| link_to(name, link) }.join(' | ').html_safe %>
-</div>
