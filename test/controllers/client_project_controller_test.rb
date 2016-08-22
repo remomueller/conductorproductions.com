@@ -9,6 +9,7 @@ class ClientProjectControllerTest < ActionController::TestCase
     @editor_project_one = users(:editor_project_one)
     @viewer_project_one = users(:viewer_project_one)
     @client = projects(:one)
+    @client_two = projects(:two)
   end
 
   test 'should get client project root as client' do
@@ -139,6 +140,13 @@ class ClientProjectControllerTest < ActionController::TestCase
     get :category, params: { id: projects(:one), top_level: 'creative', category_id: 'references' }
     assert_response :success
     assert_not_nil assigns(:project)
+  end
+
+  test 'should get category and redirect to single location' do
+    login_client(@client_two)
+    get :category, params: { id: @client_two, top_level: 'production', category_id: categories(:locations_two) }
+    assert_not_nil assigns(:project)
+    assert_redirected_to client_project_location_path(@client_two, 'production', categories(:locations_two), locations(:single_location))
   end
 
   test 'should get client project location as client' do

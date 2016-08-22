@@ -47,3 +47,12 @@ locations:
   position: 1
   project: one
   user: system_admin
+
+# Project Two
+locations_two:
+  top_level: PRODUCTION
+  name: Locations
+  slug: locations-two
+  position: 1
+  project: two
+  user: system_admin

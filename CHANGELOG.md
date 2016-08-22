@@ -8,6 +8,8 @@
   - Default categories for projects have been updated
   - Project usernames can no longer contain spaces
   - Admin and client logins have been combined
+  - If a category has a single location, and no associated documents or embeds,
+    then the client is redirected to the single location gallery view
 - **Gem Changes**
   - Updated to Ruby 2.3.1
   - Updated to rails 5.0.0.1

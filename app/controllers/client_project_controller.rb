@@ -24,6 +24,9 @@ class ClientProjectController < ApplicationController
       @document = @category.documents.where(archived: false).first
       @embed = @category.embeds.where(archived: false).first
       @locations = @category.locations.where(archived: false)
+      if @document.nil? && @embed.nil? && @locations.count == 1
+        redirect_to client_project_location_path(@project, @category.top_level.downcase, @category, @locations.first)
+      end
     else
       redirect_to client_project_root_path(@project)
     end

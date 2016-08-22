@@ -19,3 +19,14 @@ two:
   address: MyText
   archived: false
   deleted: false
+
+# Project Two
+single_location:
+  project: two
+  category: locations_two
+  user: system_admin
+  name: Single Location
+  slug: single-location
+  address: 123 Lonely Location
+  archived: false
+  deleted: false
