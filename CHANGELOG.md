@@ -15,6 +15,7 @@
   - Updated to simplecov 0.12.0
   - Updated to kaminari 0.17.0
   - Updated to haml 4.0.7
+  - Updated to carrierwave 0.11.2
 
 ### Refactoring
 - Removed unused references to tumblr API
