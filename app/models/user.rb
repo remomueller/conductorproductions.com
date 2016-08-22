@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Provides methods for users.
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, and :omniauthable
   devise :database_authenticatable, :registerable, :timeoutable,
@@ -11,18 +11,18 @@ class User < ActiveRecord::Base
   include Deletable
 
   # Scopes
-  scope :with_project, lambda { |*args| where("users.id in (select projects.user_id from projects where projects.id IN (?) and projects.deleted = ?) or users.id in (select project_users.user_id from project_users where project_users.project_id IN (?) and project_users.editor IN (?))", args.first, false, args.first, args[1] ) }
+  scope :with_project, -> (*args) { where("users.id in (select projects.user_id from projects where projects.id IN (?) and projects.deleted = ?) or users.id in (select project_users.user_id from project_users where project_users.project_id IN (?) and project_users.editor IN (?))", args.first, false, args.first, args[1] ) }
 
   # Model Validation
-  validates_presence_of :first_name, :last_name
+  validates :first_name, :last_name, presence: true
 
   # Model Relationships
-  has_many :videos, -> { where deleted: false }
-  has_many :projects, -> { where deleted: false }
-  has_many :categories, -> { where deleted: false }
-  has_many :documents, -> { where deleted: false }
-  has_many :embeds, -> { where deleted: false }
-  has_many :locations, -> { where deleted: false }
+  has_many :videos, -> { current }
+  has_many :projects, -> { current }
+  has_many :categories, -> { current }
+  has_many :documents, -> { current }
+  has_many :embeds, -> { current }
+  has_many :locations, -> { current }
 
   # User Methods
 
@@ -31,20 +31,19 @@ class User < ActiveRecord::Base
   end
 
   def all_projects
-    Project.current.with_editor(self.id, true)
+    Project.current.with_editor(id, true)
   end
 
   def all_viewable_projects
-    Project.current.with_editor(self.id, [true, false])
+    Project.current.with_editor(id, [true, false])
   end
 
   def associated_users
-    User.current.with_project(self.all_projects.pluck(:id), [true, false])
+    User.current.with_project(all_projects.pluck(:id), [true, false])
   end
 
   # Overriding Devise built-in active_for_authentication? method
   def active_for_authentication?
-    super and not self.deleted?
+    super && !deleted?
   end
-
 end

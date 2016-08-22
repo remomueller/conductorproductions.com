@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Allows embeds to be added to categories.
-class Embed < ActiveRecord::Base
+class Embed < ApplicationRecord
   # Concerns
   include Deletable
 

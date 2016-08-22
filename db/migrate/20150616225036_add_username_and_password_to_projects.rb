@@ -1,4 +1,4 @@
-class AddUsernameAndPasswordToProjects < ActiveRecord::Migration
+class AddUsernameAndPasswordToProjects < ActiveRecord::Migration[4.2]
   def change
     add_column :projects, :username, :string
     add_column :projects, :password_plain, :string

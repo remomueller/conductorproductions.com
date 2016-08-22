@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'rails',                '4.2.6'
+gem 'rails',                '5.0.0.1'
 
 # Use postgresql as the database for Active Record
 gem 'pg',                   '0.18.4'
@@ -20,12 +20,12 @@ gem 'jquery-ui-rails',      '~> 5.0.5'
 gem 'kaminari',             '~> 0.17.0'
 
 # Rails Defaults
-gem 'coffee-rails',         '~> 4.1.0'
+gem 'coffee-rails',         '~> 4.2'
 gem 'sass-rails',           '~> 5.0'
 gem 'uglifier',             '>= 1.3.0'
 
-gem 'jbuilder',             '~> 2.0'
-gem 'jquery-rails',         '~> 4.1.1'
+gem 'jbuilder',             '~> 2.5'
+gem 'jquery-rails',         '~> 4.2.1'
 gem 'turbolinks',           '~> 5'
 
 # Testing
@@ -33,5 +33,5 @@ group :test do
   # Pretty printed test output
   gem 'minitest'
   gem 'simplecov',          '~> 0.12.0',           require: false
-  gem 'test_after_commit' # TODO: Remove in Rails 5
+  gem 'rails-controller-testing'
 end

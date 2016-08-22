@@ -10,6 +10,10 @@
   - Admin and client logins have been combined
 - **Gem Changes**
   - Updated to Ruby 2.3.1
+  - Updated to rails 5.0.0.1
+  - Updated to coffee-rails 4.2
+  - Updated to jbuilder 2.5
+  - Updated to jquery-rails 4.2.1
   - Updated to turbolinks 5
   - Updated to devise 4.2.0
   - Updated to simplecov 0.12.0

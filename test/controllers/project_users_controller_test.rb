@@ -11,14 +11,14 @@ class ProjectUsersControllerTest < ActionController::TestCase
   end
 
   test 'should resend project invitation' do
-    post :resend, id: @pending_editor_invite
+    post :resend, params: { id: @pending_editor_invite }
     assert_not_nil assigns(:project_user)
     assert_not_nil assigns(:project)
     assert_redirected_to collaborators_project_path(assigns(:project))
   end
 
   test 'should not resend project invitation with invalid id' do
-    post :resend, id: -1
+    post :resend, params: { id: -1 }
     assert_nil assigns(:project_user)
     assert_nil assigns(:project)
     assert_redirected_to root_path
@@ -63,7 +63,7 @@ class ProjectUsersControllerTest < ActionController::TestCase
 
   test 'should destroy project user' do
     assert_difference('ProjectUser.count', -1) do
-      delete :destroy, id: @accepted_viewer_invite, format: 'js'
+      delete :destroy, params: { id: @accepted_viewer_invite }, format: 'js'
     end
     assert_not_nil assigns(:project)
     assert_template 'projects/collaborators'
@@ -72,7 +72,7 @@ class ProjectUsersControllerTest < ActionController::TestCase
   test 'should allow viewer to remove self from project' do
     login(users(:viewer_project_one))
     assert_difference('ProjectUser.count', -1) do
-      delete :destroy, id: @accepted_viewer_invite, format: 'js'
+      delete :destroy, params: { id: @accepted_viewer_invite }, format: 'js'
     end
     assert_not_nil assigns(:project)
     assert_template 'projects/collaborators'
@@ -80,7 +80,7 @@ class ProjectUsersControllerTest < ActionController::TestCase
 
   test 'should not destroy project user with invalid id' do
     assert_difference('ProjectUser.count', 0) do
-      delete :destroy, id: -1, format: 'js'
+      delete :destroy, params: { id: -1 }, format: 'js'
     end
     assert_nil assigns(:project)
     assert_response :success

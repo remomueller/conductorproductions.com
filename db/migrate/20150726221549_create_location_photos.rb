@@ -1,4 +1,4 @@
-class CreateLocationPhotos < ActiveRecord::Migration
+class CreateLocationPhotos < ActiveRecord::Migration[4.2]
   def change
     create_table :location_photos do |t|
       t.integer :project_id

@@ -23,9 +23,10 @@ class ProjectsControllerTest < ActionController::TestCase
   test 'should invite new user to project' do
     login(@editor_project_one)
     assert_difference('ProjectUser.count') do
-      post :invite_user,
+      post :invite_user, params: {
         id: @project, editor: '1',
-        invite_email: 'invite@example.com', format: 'js'
+        invite_email: 'invite@example.com'
+      }, format: 'js'
     end
     assert_not_nil assigns(:member)
     assert_not_nil assigns(:member).invite_token
@@ -36,9 +37,10 @@ class ProjectsControllerTest < ActionController::TestCase
   test 'should add associated user to project' do
     login(@system_admin)
     assert_difference('ProjectUser.count') do
-      post :invite_user,
+      post :invite_user, params: {
         id: projects(:two), editor: '1',
-        invite_email: "#{users(:editor_project_one).name} [#{users(:editor_project_one).email}]", format: 'js'
+        invite_email: "#{users(:editor_project_one).name} [#{users(:editor_project_one).email}]"
+      }, format: 'js'
     end
     assert_not_nil assigns(:project)
     assert_not_nil assigns(:member)
@@ -109,7 +111,7 @@ class ProjectsControllerTest < ActionController::TestCase
   test 'should create project as system admin' do
     login(@system_admin)
     assert_difference('Project.count') do
-      post :create, project: project_params
+      post :create, params: { project: project_params }
     end
     assert_redirected_to project_path(assigns(:project))
   end
@@ -117,7 +119,7 @@ class ProjectsControllerTest < ActionController::TestCase
   test 'should not create project with existing username' do
     login(@system_admin)
     assert_difference('Project.count', 0) do
-      post :create, project: project_params.merge(username: 'Client')
+      post :create, params: { project: project_params.merge(username: 'Client') }
     end
     assert_template 'new'
     assert_response :success
@@ -126,7 +128,7 @@ class ProjectsControllerTest < ActionController::TestCase
   test 'should not create project as editor' do
     login(@editor_project_one)
     assert_difference('Project.count', 0) do
-      post :create, project: project_params
+      post :create, params: { project: project_params }
     end
     assert_redirected_to root_path
   end
@@ -134,56 +136,56 @@ class ProjectsControllerTest < ActionController::TestCase
   test 'should not create project as viewer' do
     login(@viewer_project_one)
     assert_difference('Project.count', 0) do
-      post :create, project: project_params
+      post :create, params: { project: project_params }
     end
     assert_redirected_to root_path
   end
 
   test 'should show project as owner' do
     login(@system_admin)
-    get :show, id: @project
+    get :show, params: { id: @project }
     assert_response :success
   end
 
   test 'should show project as editor' do
     login(@editor_project_one)
-    get :show, id: @project
+    get :show, params: { id: @project }
     assert_response :success
   end
 
   test 'should show project as viewer' do
     login(@viewer_project_one)
-    get :show, id: @project
+    get :show, params: { id: @project }
     assert_response :success
   end
 
   test 'should get edit as owner' do
     login(@system_admin)
-    get :edit, id: @project
+    get :edit, params: { id: @project }
     assert_response :success
   end
 
   test 'should get edit as editor' do
     login(@editor_project_one)
-    get :edit, id: @project
+    get :edit, params: { id: @project }
     assert_response :success
   end
 
   test 'should not get edit as viewer' do
     login(@viewer_project_one)
-    get :edit, id: @project
+    get :edit, params: { id: @project }
     assert_redirected_to projects_path
   end
 
   test 'should update project as owner' do
     login(@system_admin)
-    patch :update, id: @project, project: project_params.merge(name: 'Project Update', slug: 'project-update')
+    patch :update, params: { id: @project, project: project_params.merge(name: 'Project Update', slug: 'project-update') }
     assert_redirected_to project_path(assigns(:project))
   end
 
   test 'should not update project with blank name' do
     login(@system_admin)
-    patch :update, id: @project, project: project_params.merge(name: '')
+    patch :update, params: { id: @project, project: project_params.merge(name: '') }
     assert_not_nil assigns(:project)
     assert_equal ["can't be blank"], assigns(:project).errors[:name]
     assert_template 'edit'
@@ -192,20 +194,20 @@ class ProjectsControllerTest < ActionController::TestCase
 
   test 'should update project as editor' do
     login(@editor_project_one)
-    patch :update, id: @project, project: project_params.merge(name: 'Project Update', slug: 'project-update')
+    patch :update, params: { id: @project, project: project_params.merge(name: 'Project Update', slug: 'project-update') }
     assert_redirected_to project_path(assigns(:project))
   end
 
   test 'should not update project as viewer' do
     login(@viewer_project_one)
-    patch :update, id: @project, project: project_params.merge(name: 'Project Update', slug: 'project-update')
+    patch :update, params: { id: @project, project: project_params.merge(name: 'Project Update', slug: 'project-update') }
     assert_redirected_to projects_path
   end
 
   test 'should destroy project as system admin' do
     login(@system_admin)
     assert_difference('Project.current.count', -1) do
-      delete :destroy, id: @project
+      delete :destroy, params: { id: @project }
     end
     assert_redirected_to projects_path
   end
@@ -213,7 +215,7 @@ class ProjectsControllerTest < ActionController::TestCase
   test 'should not destroy project as editor' do
     login(@editor_project_one)
     assert_difference('Project.current.count', 0) do
-      delete :destroy, id: @project
+      delete :destroy, params: { id: @project }
     end
     assert_redirected_to projects_path
   end
@@ -221,7 +223,7 @@ class ProjectsControllerTest < ActionController::TestCase
   test 'should not destroy project as viewer' do
     login(@viewer_project_one)
     assert_difference('Project.current.count', 0) do
-      delete :destroy, id: @project
+      delete :destroy, params: { id: @project }
     end
     assert_redirected_to projects_path
   end

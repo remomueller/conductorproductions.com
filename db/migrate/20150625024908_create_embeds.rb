@@ -1,4 +1,4 @@
-class CreateEmbeds < ActiveRecord::Migration
+class CreateEmbeds < ActiveRecord::Migration[4.2]
   def change
     create_table :embeds do |t|
       t.integer :project_id

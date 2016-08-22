@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Provides folders for locations, embeds, and documents.
-class Category < ActiveRecord::Base
+class Category < ApplicationRecord
   # Concerns
   include Deletable
 
@@ -15,9 +15,9 @@ class Category < ActiveRecord::Base
   belongs_to :user
 
   # Category Methods
-  has_many :documents, -> { where(deleted: false).order(:archived) }
-  has_many :embeds, -> { where(deleted: false).order(:archived) }
-  has_many :locations, -> { where(deleted: false).order(:archived) }
+  has_many :documents, -> { current.order(:archived) }
+  has_many :embeds, -> { current.order(:archived) }
+  has_many :locations, -> { current.order(:archived) }
 
   def to_param
     slug.blank? ? id : slug

@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 # Allows documents to be attached to categories.
-class Document < ActiveRecord::Base
-
+class Document < ApplicationRecord
   # Uploaders
   mount_uploader :document, DocumentUploader
 
@@ -10,7 +9,7 @@ class Document < ActiveRecord::Base
   include Deletable
 
   # Model Validation
-  validates_presence_of :project_id, :user_id, :category_id, :document
+  validates :project_id, :user_id, :category_id, :document, presence: true
 
   # Model Relationships
   belongs_to :project
@@ -20,15 +19,14 @@ class Document < ActiveRecord::Base
   # Document Methods
 
   def name
-    self.document_identifier
+    document_identifier
   end
 
   def pdf?
-    self.document_identifier.last(4).to_s.downcase == '.pdf'
+    document_identifier.last(4).to_s.downcase == '.pdf'
   end
 
   def image?
-    self.document_identifier.last(4).to_s.downcase == '.png'
+    document_identifier.last(4).to_s.downcase == '.png'
   end
-
 end

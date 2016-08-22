@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Specifies videos that are added to Work or DRTV pages.
-class Video < ActiveRecord::Base
+class Video < ApplicationRecord
   # Uploaders
   mount_uploader :photo, VideoImageUploader
 

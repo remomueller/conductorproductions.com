@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Allows locations to be added to categories.
-class Location < ActiveRecord::Base
+class Location < ApplicationRecord
   # Concerns
   include Deletable
 

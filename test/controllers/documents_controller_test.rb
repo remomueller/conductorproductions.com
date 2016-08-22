@@ -13,190 +13,193 @@ class DocumentsControllerTest < ActionController::TestCase
     @viewer_project_one = users(:viewer_project_one)
   end
 
-  test "should get index as owner" do
+  def document_params
+    {
+      archived: @document.archived,
+      category_id: @document.category_id,
+      document: fixture_file_upload('../../test/support/documents/test_01.doc')
+    }
+  end
+
+  def document_two_params
+    {
+      archived: @document2.archived,
+      category_id: @document2.category_id,
+      document: fixture_file_upload('../../test/support/documents/test_01.doc')
+    }
+  end
+
+  test 'should get index as owner' do
     login(@system_admin)
-    get :index, project_id: @project
+    get :index, params: { project_id: @project }
     assert_response :success
     assert_not_nil assigns(:documents)
   end
 
-  test "should get index as editor" do
+  test 'should get index as editor' do
     login(@editor_project_one)
-    get :index, project_id: @project
+    get :index, params: { project_id: @project }
     assert_response :success
     assert_not_nil assigns(:documents)
   end
 
-  test "should get index as viewer" do
+  test 'should get index as viewer' do
     login(@viewer_project_one)
-    get :index, project_id: @project
+    get :index, params: { project_id: @project }
     assert_response :success
     assert_not_nil assigns(:documents)
   end
 
-  test "should get new as owner" do
+  test 'should get new as owner' do
     login(@system_admin)
-    get :new, project_id: @project
+    get :new, params: { project_id: @project }
     assert_response :success
   end
 
-  test "should get new as editor" do
+  test 'should get new as editor' do
     login(@editor_project_one)
-    get :new, project_id: @project
+    get :new, params: { project_id: @project }
     assert_response :success
   end
 
-  test "should not get new as viewer" do
+  test 'should not get new as viewer' do
     login(@viewer_project_one)
-    get :new, project_id: @project
+    get :new, params: { project_id: @project }
     assert_redirected_to root_path
   end
 
-  test "should create document as owner" do
+  test 'should create document as owner' do
     login(@system_admin)
     assert_difference('Document.count') do
-      post :create, project_id: @project, document: { archived: @document.archived, category_id: @document.category_id, document: fixture_file_upload('../../test/support/documents/test_01.doc') }
+      post :create, params: { project_id: @project, document: document_params }
     end
-
     assert_redirected_to project_document_path(assigns(:project), assigns(:document))
   end
 
-  test "should create document as editor" do
+  test 'should create document as editor' do
     login(@editor_project_one)
     assert_difference('Document.count') do
-      post :create, project_id: @project, document: { archived: @document.archived, category_id: @document.category_id, document: fixture_file_upload('../../test/support/documents/test_01.doc') }
+      post :create, params: { project_id: @project, document: document_params }
     end
-
     assert_redirected_to project_document_path(assigns(:project), assigns(:document))
   end
 
-  test "should not create document as viewer" do
+  test 'should not create document as viewer' do
     login(@viewer_project_one)
     assert_difference('Document.count', 0) do
-      post :create, project_id: @project, document: { archived: @document.archived, category_id: @document.category_id, document: fixture_file_upload('../../test/support/documents/test_01.doc') }
+      post :create, params: { project_id: @project, document: document_params }
     end
-
     assert_redirected_to root_path
   end
 
-  test "should show document as owner" do
+  test 'should show document as owner' do
     login(@system_admin)
-    get :show, project_id: @project, id: @document
+    get :show, params: { project_id: @project, id: @document }
     assert_response :success
   end
 
-  test "should show document as editor" do
+  test 'should show document as editor' do
     login(@editor_project_one)
-    get :show, project_id: @project, id: @document
+    get :show, params: { project_id: @project, id: @document }
     assert_response :success
   end
 
-  test "should show document as viewer" do
+  test 'should show document as viewer' do
     login(@viewer_project_one)
-    get :show, project_id: @project, id: @document
+    get :show, params: { project_id: @project, id: @document }
     assert_response :success
   end
 
-  test "should download document file as owner" do
+  test 'should download document file as owner' do
     login(@system_admin)
     assert_not_equal 0, @document.document.size
-    get :download, project_id: @project, id: @document
-
+    get :download, params: { project_id: @project, id: @document }
     assert_not_nil response
     assert_not_nil assigns(:project)
     assert_not_nil assigns(:document)
-
     assert_kind_of String, response.body
-    assert_equal File.binread( File.join(CarrierWave::Uploader::Base.root, assigns(:document).document.url) ), response.body
+    assert_equal File.binread(File.join(CarrierWave::Uploader::Base.root, assigns(:document).document.url)), response.body
   end
 
-  test "should download document file as editor" do
+  test 'should download document file as editor' do
     login(@editor_project_one)
     assert_not_equal 0, @document.document.size
-    get :download, project_id: @project, id: @document
-
+    get :download, params: { project_id: @project, id: @document }
     assert_not_nil response
     assert_not_nil assigns(:project)
     assert_not_nil assigns(:document)
-
     assert_kind_of String, response.body
-    assert_equal File.binread( File.join(CarrierWave::Uploader::Base.root, assigns(:document).document.url) ), response.body
+    assert_equal File.binread(File.join(CarrierWave::Uploader::Base.root, assigns(:document).document.url)), response.body
   end
 
-  test "should download document file as viewer" do
+  test 'should download document file as viewer' do
     login(@viewer_project_one)
     assert_not_equal 0, @document.document.size
-    get :download, project_id: @project, id: @document
-
+    get :download, params: { project_id: @project, id: @document }
     assert_not_nil response
     assert_not_nil assigns(:project)
     assert_not_nil assigns(:document)
-
     assert_kind_of String, response.body
-    assert_equal File.binread( File.join(CarrierWave::Uploader::Base.root, assigns(:document).document.url) ), response.body
+    assert_equal File.binread(File.join(CarrierWave::Uploader::Base.root, assigns(:document).document.url)), response.body
   end
 
-  test "should get edit as owner" do
+  test 'should get edit as owner' do
     login(@system_admin)
-    get :edit, project_id: @project, id: @document
+    get :edit, params: { project_id: @project, id: @document }
     assert_response :success
   end
 
-  test "should get edit as editor" do
+  test 'should get edit as editor' do
     login(@editor_project_one)
-    get :edit, project_id: @project, id: @document
+    get :edit, params: { project_id: @project, id: @document }
     assert_response :success
   end
 
-  test "should not get edit as viewer" do
+  test 'should not get edit as viewer' do
     login(@viewer_project_one)
-    get :edit, project_id: @project, id: @document
+    get :edit, params: { project_id: @project, id: @document }
     assert_redirected_to root_path
   end
 
-  test "should update document as owner" do
+  test 'should update document as owner' do
     login(@system_admin)
-    patch :update, project_id: @project, id: @document2, document: { archived: @document2.archived, category_id: @document2.category_id, document: fixture_file_upload('../../test/support/documents/test_01.doc') }
+    patch :update, params: { project_id: @project, id: @document2, document: document_two_params }
     assert_redirected_to project_document_path(assigns(:project), assigns(:document))
   end
 
-  test "should update document as editor" do
+  test 'should update document as editor' do
     login(@editor_project_one)
-    patch :update, project_id: @project, id: @document2, document: { archived: @document2.archived, category_id: @document2.category_id, document: fixture_file_upload('../../test/support/documents/test_01.doc') }
+    patch :update, params: { project_id: @project, id: @document2, document: document_two_params }
     assert_redirected_to project_document_path(assigns(:project), assigns(:document))
   end
 
-  test "should not update document as viewer" do
+  test 'should not update document as viewer' do
     login(@viewer_project_one)
-    patch :update, project_id: @project, id: @document2, document: { archived: @document2.archived, category_id: @document2.category_id, document: fixture_file_upload('../../test/support/documents/test_01.doc') }
+    patch :update, params: { project_id: @project, id: @document2, document: document_two_params }
     assert_redirected_to root_path
   end
 
-  test "should destroy document as owner" do
+  test 'should destroy document as owner' do
     login(@system_admin)
     assert_difference('Document.current.count', -1) do
-      delete :destroy, project_id: @project, id: @document
+      delete :destroy, params: { project_id: @project, id: @document }
     end
-
     assert_redirected_to project_documents_path(assigns(:project))
   end
 
-  test "should destroy document as editor" do
+  test 'should destroy document as editor' do
     login(@editor_project_one)
     assert_difference('Document.current.count', -1) do
-      delete :destroy, project_id: @project, id: @document
+      delete :destroy, params: { project_id: @project, id: @document }
     end
-
     assert_redirected_to project_documents_path(assigns(:project))
   end
 
-  test "should not destroy document as viewer" do
+  test 'should not destroy document as viewer' do
     login(@viewer_project_one)
     assert_difference('Document.current.count', 0) do
-      delete :destroy, project_id: @project, id: @document
+      delete :destroy, params: { project_id: @project, id: @document }
     end
-
     assert_redirected_to root_path
   end
-
 end

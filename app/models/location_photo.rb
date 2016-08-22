@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Allows photos to be added to locations.
-class LocationPhoto < ActiveRecord::Base
+class LocationPhoto < ApplicationRecord
   # Uploaders
   mount_uploader :photo, ResizableImageUploader
 
@@ -16,7 +16,9 @@ class LocationPhoto < ActiveRecord::Base
   # Location Photo Methods
 
   def number
-    location.location_photos.pluck(:id).index(id) + 1 rescue -1
+    location.location_photos.pluck(:id).index(id) + 1
+  rescue
+    -1
   end
 
   def next_photo

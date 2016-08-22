@@ -32,21 +32,21 @@ class VideosControllerTest < ActionController::TestCase
 
   test 'should get reorder as system admin' do
     login(@system_admin)
-    get :reorder, video_page: 'work'
+    get :reorder, params: { video_page: 'work' }
     assert_not_nil assigns(:videos)
     assert_response :success
   end
 
   test 'should get reorder as regular user' do
     login(@regular)
-    get :reorder, video_page: 'work'
+    get :reorder, params: { video_page: 'work' }
     assert_nil assigns(:videos)
     assert_redirected_to root_path
   end
 
   test 'should reorder videos as system admin' do
     login(@system_admin)
-    post :save_video_order, video_page: 'work', video_ids: [videos(:work_two).to_param, videos(:work_one).to_param], format: 'js'
+    post :save_video_order, params: { video_page: 'work', video_ids: [videos(:work_two).to_param, videos(:work_one).to_param] }, format: 'js'
     videos(:work_one).reload
     videos(:work_two).reload
     videos(:work_archived).reload
@@ -60,7 +60,7 @@ class VideosControllerTest < ActionController::TestCase
 
   test 'should reorder videos as regular user' do
     login(@regular)
-    post :save_video_order, video_page: 'work', video_ids: [videos(:work_two).to_param, videos(:work_one).to_param], format: 'js'
+    post :save_video_order, params: { video_page: 'work', video_ids: [videos(:work_two).to_param, videos(:work_one).to_param] }, format: 'js'
     videos(:work_one).reload
     videos(:work_two).reload
     videos(:work_archived).reload
@@ -101,7 +101,7 @@ class VideosControllerTest < ActionController::TestCase
   test 'should create video as system admin' do
     login(@system_admin)
     assert_difference('Video.count') do
-      post :create, video: video_params
+      post :create, params: { video: video_params }
     end
     assert_not_nil assigns(:video)
     assert_redirected_to video_path(assigns(:video))
@@ -110,64 +110,61 @@ class VideosControllerTest < ActionController::TestCase
   test 'should not create video as regular user' do
     login(@regular)
     assert_difference('Video.count', 0) do
-      post :create, video: video_params
+      post :create, params: { video: video_params }
     end
-
     assert_nil assigns(:video)
     assert_redirected_to root_path
   end
 
   test 'should show video as system admin' do
     login(@system_admin)
-    get :show, id: @video
+    get :show, params: { id: @video }
     assert_response :success
   end
 
   test 'should not show video as regular user' do
     login(@regular)
-    get :show, id: @video
+    get :show, params: { id: @video }
     assert_redirected_to root_path
   end
 
   test 'should get edit as system admin' do
     login(@system_admin)
-    get :edit, id: @video
+    get :edit, params: { id: @video }
     assert_response :success
   end
 
   test 'should not get edit as regular user' do
     login(@regular)
-    get :edit, id: @video
+    get :edit, params: { id: @video }
     assert_redirected_to root_path
   end
 
   test 'should update video as system admin' do
     login(@system_admin)
-    patch :update, id: @video_drtv, video: video_drtv_params
+    patch :update, params: { id: @video_drtv, video: video_drtv_params }
     assert_redirected_to video_path(assigns(:video))
   end
 
   test 'should not update video as regular user' do
     login(@regular)
-    patch :update, id: @video_drtv, video: video_drtv_params
+    patch :update, params: { id: @video_drtv, video: video_drtv_params }
     assert_redirected_to root_path
   end
 
   test 'should destroy video as system admin' do
     login(@system_admin)
     assert_difference('Video.current.count', -1) do
-      delete :destroy, id: @video
+      delete :destroy, params: { id: @video }
     end
-
     assert_redirected_to videos_path
   end
 
   test 'should destroy video as regular user' do
     login(@regular)
     assert_difference('Video.current.count', 0) do
-      delete :destroy, id: @video
+      delete :destroy, params: { id: @video }
     end
-
     assert_redirected_to root_path
   end
 end

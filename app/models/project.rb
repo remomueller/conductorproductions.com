@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Contains the structure and elements for a project.
-class Project < ActiveRecord::Base
+class Project < ApplicationRecord
   # Uploaders
   mount_uploader :agency_logo, ImageUploader
   mount_uploader :client_logo, ImageUploader
