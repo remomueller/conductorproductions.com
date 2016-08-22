@@ -17,7 +17,7 @@ gem 'font-awesome-rails'
 gem 'carrierwave',          '~> 0.11.0'
 gem 'mini_magick'
 gem 'jquery-ui-rails',      '~> 5.0.5'
-gem 'kaminari',             '~> 0.16.3'
+gem 'kaminari',             '~> 0.17.0'
 
 # Rails Defaults
 gem 'coffee-rails',         '~> 4.1.0'

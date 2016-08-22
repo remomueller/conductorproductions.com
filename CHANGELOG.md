@@ -13,6 +13,7 @@
   - Updated to turbolinks 5
   - Updated to devise 4.2.0
   - Updated to simplecov 0.12.0
+  - Updated to kaminari 0.17.0
 
 ### Refactoring
 - Removed unused references to tumblr API
