@@ -9,7 +9,7 @@ gem 'pg',                   '0.18.4'
 
 # Gems used by project
 gem 'devise',               '~> 4.2.0'
-gem 'haml'
+gem 'haml',                 '~> 4.0.7'
 gem 'figaro',               '~> 1.1.1'
 gem 'bootstrap-sass',       '~> 3.3.5'
 gem 'bcrypt',               '~> 3.1.10'
