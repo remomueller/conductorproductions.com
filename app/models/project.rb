@@ -29,6 +29,10 @@ class Project < ApplicationRecord
       ]
     },
     {
+      top_level: 'TALENT',
+      categories: []
+    },
+    {
       top_level: 'PRODUCTION',
       categories: [
         ['Production Book', 'production-book'],
