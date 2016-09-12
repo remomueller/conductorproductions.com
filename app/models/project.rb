@@ -18,7 +18,6 @@ class Project < ApplicationRecord
         ['Treatment', 'treatment'],
         ['Script', 'script'],
         ['Boards', 'boards'],
-        ['Styleframes', 'styleframes'],
         ['Animatic', 'animatic']
       ]
     },
@@ -37,8 +36,14 @@ class Project < ApplicationRecord
         ['Talent', 'talent'],
         ['Locations', 'locations'],
         ['Style Swipe', 'style-swipe'],
-        ['Set Design', 'set-design'],
-        ['Voiceover', 'voiceovers'],
+        ['Set Design', 'set-design']
+      ]
+    },
+    {
+      top_level: 'EDITORIAL',
+      categories: [
+        ['Styleframes', 'styleframes'],
+        ['Voiceover', 'voiceover'],
         ['Music', 'music']
       ]
     },
@@ -97,6 +102,10 @@ class Project < ApplicationRecord
       groups << [top_level, categories.where(top_level: top_level).pluck(:name, :id)]
     end
     groups
+  end
+
+  def visible_top_level_categories(top_level)
+    categories.where(top_level: top_level).select(&:show_menu?)
   end
 
   # Project Owners and Project Editors

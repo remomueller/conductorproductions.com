@@ -3,8 +3,10 @@
 ### Enhancements
 - **Email Changes**
   - Updated styling of emails
+- **Client Changes**
+  - Top level menu items are now hidden if they are empty
 - **Project Changes**
-  - Top level EDITORIAL has been replaced by REFERENCES
+  - Top level REFERENCES has been added
   - Default categories for projects have been updated
   - Project usernames can no longer contain spaces
   - Admin and client logins have been combined

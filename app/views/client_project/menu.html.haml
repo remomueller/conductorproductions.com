@@ -7,16 +7,17 @@
 
 .project-menu-plain
   - Project::TOP_LEVELS.each do |top_level|
+    - non_empty_categories = @project.visible_top_level_categories(top_level)
+    - next if non_empty_categories.blank?
     .project-menu-main-header{ data: { object: 'toggle-target', target: "##{top_level.downcase}-menu" } }
       .menu-triangle-left
       = top_level
     .project-menu-sub{ id: "#{top_level.downcase}-menu" }
-      - @project.categories.where(top_level: top_level).each do |category|
-        - if category.show_menu?
-          .project-menu-sub-header
-            .menu-triangle-left-sub
-            .menu-triangle-left-sub-white
-            = link_to category.name, client_project_category_path(@project, top_level: top_level.downcase, category_id: category)
+      - non_empty_categories.each do |category|
+        .project-menu-sub-header
+          .menu-triangle-left-sub
+          .menu-triangle-left-sub-white
+          = link_to category.name, client_project_category_path(@project, top_level: top_level.downcase, category_id: category)
 
 - if @project.client_logo.size > 0
   .center

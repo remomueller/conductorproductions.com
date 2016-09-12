@@ -5,13 +5,14 @@
 
 .side-menu
   - Project::TOP_LEVELS.each do |top_level|
+    - non_empty_categories = @project.visible_top_level_categories(top_level)
+    - next if non_empty_categories.blank?
     - url = '#'
     - object = 'suppress-click'
-    - @project.categories.where(top_level: top_level).each do |category|
-      - if category.show_menu?
-        - url = client_project_category_path(@project, top_level: top_level.downcase, category_id: category)
-        - object = nil
-        - break
+    - non_empty_categories.each do |category|
+      - url = client_project_category_path(@project, top_level: top_level.downcase, category_id: category)
+      - object = nil
+      - break
     = link_to url, data: { object: object }, class: 'side-menu-header' do
       .side-menu-header-triangle
       = top_level
