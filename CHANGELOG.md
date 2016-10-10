@@ -1,6 +1,8 @@
 ## 0.6.0
 
 ### Enhancements
+- **General Changes**
+  - Added new video to landing page
 - **Email Changes**
   - Updated styling of emails
 - **Client Changes**
