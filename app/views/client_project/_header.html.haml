@@ -1,4 +1,4 @@
-.container{ style: 'height: 80px;' }
+%div{ style: 'height: 80px;', class: (params[:controller] == 'client_project' && %w(root menu).include?(params[:action]) ? 'container-fluid' : 'container') }
   .company-logo
     .hidden-xs
       .pull-right
