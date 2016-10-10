@@ -7,6 +7,8 @@
   - Updated styling of emails
 - **Client Changes**
   - Top level menu items are now hidden if they are empty
+  - Subcategories no longer display in side menu if the containing gallery only
+    has one subcategory
 - **Project Changes**
   - Top level REFERENCES has been added
   - Default categories for projects have been updated
