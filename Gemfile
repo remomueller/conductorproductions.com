@@ -4,8 +4,8 @@ source 'https://rubygems.org'
 
 gem 'rails',                '5.0.0.1'
 
-# Use postgresql as the database for Active Record
-gem 'pg',                   '0.18.4'
+# Database Adapter
+gem 'pg',                   '0.19.0'
 
 # Gems used by project
 gem 'devise',               '~> 4.2.0'
