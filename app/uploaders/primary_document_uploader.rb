@@ -14,7 +14,7 @@ class PrimaryDocumentUploader < CarrierWave::Uploader::Base
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     project_param = (Rails.env.test? ? model.project.slug.to_s : model.project.id.to_s)
-    File.join('projects', project_param, model.class.to_s.underscore.pluralize, model.id.to_s)
+    File.join('projects', project_param, model.class.to_s.underscore.pluralize, model.id.to_s, 'primary')
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
