@@ -1,0 +1,10 @@
+%h1
+  = link_to @project.name, @project
+  |
+  = link_to 'Galleries', project_galleries_path(@project)
+  |
+  Edit
+%h2
+  = link_to @gallery.name, [@project, @gallery]
+
+= render 'form'

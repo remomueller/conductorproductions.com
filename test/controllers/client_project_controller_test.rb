@@ -142,135 +142,135 @@ class ClientProjectControllerTest < ActionController::TestCase
     assert_not_nil assigns(:project)
   end
 
-  test 'should get category and redirect to single location' do
+  test 'should get category and redirect to single gallery' do
     login_client(@client_two)
     get :category, params: { id: @client_two, top_level: 'production', category_id: categories(:locations_two) }
     assert_not_nil assigns(:project)
-    assert_redirected_to client_project_location_path(@client_two, 'production', categories(:locations_two), locations(:single_location))
+    assert_redirected_to client_project_gallery_path(@client_two, 'production', categories(:locations_two), galleries(:single_location))
   end
 
-  test 'should get client project location as client' do
+  test 'should get client project gallery as client' do
     login_client(@client)
-    get :location_show, params: { id: projects(:one), top_level: 'production', category_id: 'locations', location_id: locations(:one) }
+    get :gallery_show, params: { id: projects(:one), top_level: 'production', category_id: 'locations', gallery_id: galleries(:one) }
     assert_not_nil assigns(:project)
-    assert_not_nil assigns(:location)
+    assert_not_nil assigns(:gallery)
     assert_response :success
   end
 
-  test 'should get client project location as owner' do
+  test 'should get client project gallery as owner' do
     login(@system_admin)
-    get :location_show, params: { id: projects(:one), top_level: 'production', category_id: 'locations', location_id: locations(:one) }
+    get :gallery_show, params: { id: projects(:one), top_level: 'production', category_id: 'locations', gallery_id: galleries(:one) }
     assert_not_nil assigns(:project)
-    assert_not_nil assigns(:location)
+    assert_not_nil assigns(:gallery)
     assert_response :success
   end
 
-  test 'should get client project location as editor' do
+  test 'should get client project gallery as editor' do
     login(@editor_project_one)
-    get :location_show, params: { id: projects(:one), top_level: 'production', category_id: 'locations', location_id: locations(:one) }
+    get :gallery_show, params: { id: projects(:one), top_level: 'production', category_id: 'locations', gallery_id: galleries(:one) }
     assert_not_nil assigns(:project)
-    assert_not_nil assigns(:location)
+    assert_not_nil assigns(:gallery)
     assert_response :success
   end
 
-  test 'should get client project location as viewer' do
+  test 'should get client project gallery as viewer' do
     login(@viewer_project_one)
-    get :location_show, params: { id: projects(:one), top_level: 'production', category_id: 'locations', location_id: locations(:one) }
+    get :gallery_show, params: { id: projects(:one), top_level: 'production', category_id: 'locations', gallery_id: galleries(:one) }
     assert_not_nil assigns(:project)
-    assert_not_nil assigns(:location)
+    assert_not_nil assigns(:gallery)
     assert_response :success
   end
 
-  test 'should not get client project location as logged out user' do
-    get :location_show, params: { id: projects(:one), top_level: 'production', category_id: 'locations', location_id: locations(:one) }
+  test 'should not get client project gallery as logged out user' do
+    get :gallery_show, params: { id: projects(:one), top_level: 'production', category_id: 'locations', gallery_id: galleries(:one) }
     assert_nil assigns(:project)
-    assert_nil assigns(:location)
+    assert_nil assigns(:gallery)
     assert_redirected_to client_login_path
   end
 
-  test 'should get client project location photo as client' do
+  test 'should get client project gallery photo as client' do
     login_client(@client)
-    get :location_photo, params: { id: projects(:one), top_level: 'production', category_id: 'locations', location_id: locations(:one), location_photo_id: location_photos(:one) }
+    get :gallery_photo, params: { id: projects(:one), top_level: 'production', category_id: 'locations', gallery_id: galleries(:one), gallery_photo_id: gallery_photos(:one) }
     assert_not_nil assigns(:project)
-    assert_not_nil assigns(:location_photo)
+    assert_not_nil assigns(:gallery_photo)
     assert_response :success
   end
 
-  test 'should get client project location photo as owner' do
+  test 'should get client project gallery photo as owner' do
     login(@system_admin)
-    get :location_photo, params: { id: projects(:one), top_level: 'production', category_id: 'locations', location_id: locations(:one), location_photo_id: location_photos(:one) }
+    get :gallery_photo, params: { id: projects(:one), top_level: 'production', category_id: 'locations', gallery_id: galleries(:one), gallery_photo_id: gallery_photos(:one) }
     assert_not_nil assigns(:project)
-    assert_not_nil assigns(:location_photo)
+    assert_not_nil assigns(:gallery_photo)
     assert_response :success
   end
 
-  test 'should get client project location photo as editor' do
+  test 'should get client project gallery photo as editor' do
     login(@editor_project_one)
-    get :location_photo, params: { id: projects(:one), top_level: 'production', category_id: 'locations', location_id: locations(:one), location_photo_id: location_photos(:one) }
+    get :gallery_photo, params: { id: projects(:one), top_level: 'production', category_id: 'locations', gallery_id: galleries(:one), gallery_photo_id: gallery_photos(:one) }
     assert_not_nil assigns(:project)
-    assert_not_nil assigns(:location_photo)
+    assert_not_nil assigns(:gallery_photo)
     assert_response :success
   end
 
-  test 'should get client project location photo as viewer' do
+  test 'should get client project gallery photo as viewer' do
     login(@viewer_project_one)
-    get :location_photo, params: { id: projects(:one), top_level: 'production', category_id: 'locations', location_id: locations(:one), location_photo_id: location_photos(:one) }
+    get :gallery_photo, params: { id: projects(:one), top_level: 'production', category_id: 'locations', gallery_id: galleries(:one), gallery_photo_id: gallery_photos(:one) }
     assert_not_nil assigns(:project)
-    assert_not_nil assigns(:location_photo)
+    assert_not_nil assigns(:gallery_photo)
     assert_response :success
   end
 
-  test 'should not get client project location photo as logged out user' do
-    get :location_photo, params: { id: projects(:one), top_level: 'production', category_id: 'locations', location_id: locations(:one), location_photo_id: location_photos(:one) }
+  test 'should not get client project gallery photo as logged out user' do
+    get :gallery_photo, params: { id: projects(:one), top_level: 'production', category_id: 'locations', gallery_id: galleries(:one), gallery_photo_id: gallery_photos(:one) }
     assert_nil assigns(:project)
-    assert_nil assigns(:location_photo)
+    assert_nil assigns(:gallery_photo)
     assert_redirected_to client_login_path
   end
 
-  test 'should download client project location photo as client' do
+  test 'should download client project gallery photo as client' do
     login_client(@client)
-    get :download_location_photo, params: { id: projects(:one), location_photo_id: location_photos(:one) }
+    get :download_gallery_photo, params: { id: projects(:one), gallery_photo_id: gallery_photos(:one) }
     assert_not_nil assigns(:project)
-    assert_not_nil assigns(:location_photo)
+    assert_not_nil assigns(:gallery_photo)
     assert_kind_of String, response.body
-    assert_equal File.binread(File.join(CarrierWave::Uploader::Base.root, assigns(:location_photo).photo.url)), response.body
+    assert_equal File.binread(File.join(CarrierWave::Uploader::Base.root, assigns(:gallery_photo).photo.url)), response.body
     assert_response :success
   end
 
-  test 'should download client project location photo as owner' do
+  test 'should download client project gallery photo as owner' do
     login(@system_admin)
-    get :download_location_photo, params: { id: projects(:one), location_photo_id: location_photos(:one) }
+    get :download_gallery_photo, params: { id: projects(:one), gallery_photo_id: gallery_photos(:one) }
     assert_not_nil assigns(:project)
-    assert_not_nil assigns(:location_photo)
+    assert_not_nil assigns(:gallery_photo)
     assert_kind_of String, response.body
-    assert_equal File.binread(File.join(CarrierWave::Uploader::Base.root, assigns(:location_photo).photo.url)), response.body
+    assert_equal File.binread(File.join(CarrierWave::Uploader::Base.root, assigns(:gallery_photo).photo.url)), response.body
     assert_response :success
   end
 
-  test 'should download client project location photo as editor' do
+  test 'should download client project gallery photo as editor' do
     login(@editor_project_one)
-    get :download_location_photo, params: { id: projects(:one), location_photo_id: location_photos(:one) }
+    get :download_gallery_photo, params: { id: projects(:one), gallery_photo_id: gallery_photos(:one) }
     assert_not_nil assigns(:project)
-    assert_not_nil assigns(:location_photo)
+    assert_not_nil assigns(:gallery_photo)
     assert_kind_of String, response.body
-    assert_equal File.binread(File.join(CarrierWave::Uploader::Base.root, assigns(:location_photo).photo.url)), response.body
+    assert_equal File.binread(File.join(CarrierWave::Uploader::Base.root, assigns(:gallery_photo).photo.url)), response.body
     assert_response :success
   end
 
-  test 'should download client project location photo as viewer' do
+  test 'should download client project gallery photo as viewer' do
     login(@viewer_project_one)
-    get :download_location_photo, params: { id: projects(:one), location_photo_id: location_photos(:one) }
+    get :download_gallery_photo, params: { id: projects(:one), gallery_photo_id: gallery_photos(:one) }
     assert_not_nil assigns(:project)
-    assert_not_nil assigns(:location_photo)
+    assert_not_nil assigns(:gallery_photo)
     assert_kind_of String, response.body
-    assert_equal File.binread(File.join(CarrierWave::Uploader::Base.root, assigns(:location_photo).photo.url)), response.body
+    assert_equal File.binread(File.join(CarrierWave::Uploader::Base.root, assigns(:gallery_photo).photo.url)), response.body
     assert_response :success
   end
 
-  test 'should not download client project location photo as logged out user' do
-    get :download_location_photo, params: { id: projects(:one), location_photo_id: location_photos(:one) }
+  test 'should not download client project gallery photo as logged out user' do
+    get :download_gallery_photo, params: { id: projects(:one), gallery_photo_id: gallery_photos(:one) }
     assert_nil assigns(:project)
-    assert_nil assigns(:location_photo)
+    assert_nil assigns(:gallery_photo)
     assert_redirected_to client_login_path
   end
 end

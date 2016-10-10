@@ -23,10 +23,10 @@
             .side-menu-triangle-left-sub
             .side-menu-triangle-left-sub-white
             = category.name
-          - if @category == category || (@location && @location.category == category)
-            - unarchived_locations = category.locations.where(archived: false)
-            - if unarchived_locations.count > 1
-              - unarchived_locations.each do |location|
-                = link_to client_project_location_path(@project, category.top_level.downcase, category, location), class: "side-menu-sub-sub-header #{'active' if @location == location}" do
+          - if @category == category || (@gallery && @gallery.category == category)
+            - unarchived_galleries = category.galleries.where(archived: false)
+            - if unarchived_galleries.count > 1
+              - unarchived_galleries.each do |gallery|
+                = link_to client_project_gallery_path(@project, category.top_level.downcase, category, gallery), class: "side-menu-sub-sub-header #{'active' if @gallery == gallery}" do
                   .side-menu-triangle-left-sub-sub
-                  = location.name
+                  = gallery.name

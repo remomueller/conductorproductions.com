@@ -12,6 +12,8 @@
     has one subcategory
 - **Document Changes**
   - Documents can now upload a PDF and Word version side-by-side
+- **Gallery Changes**
+  - Locations have been renamed to galleries
 - **Project Changes**
   - Top level REFERENCES has been added
   - Default categories for projects have been updated

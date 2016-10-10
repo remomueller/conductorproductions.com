@@ -1,0 +1,46 @@
+%h1
+  = link_to @project.name, @project
+  |
+  = link_to 'Galleries', project_galleries_path(@project)
+
+%h2
+  = @gallery.name
+
+- if @project.editable_by?(current_user)
+  = link_to 'Edit Gallery', edit_project_gallery_path(@project, @gallery), class: 'btn btn-xs btn-default'
+  = link_to 'Delete Gallery', [@project, @gallery], method: :delete, class: 'btn btn-xs btn-danger', data: { confirm: "Are you sure you want to delete Gallery #{@gallery.name}?" }
+
+%dl.dl-horizontal
+  %dt
+    %strong Category
+  %dd= link_to @gallery.category.name, [@project, @gallery.category] if @gallery.category
+
+  %dt
+    %strong Creator
+  %dd= @gallery.user.name if @gallery.user
+
+  %dt
+    %strong Name
+  %dd
+    = @gallery.name
+
+  %dt
+    %strong Address
+  %dd
+    = simple_format @gallery.address
+
+  %dt
+    %strong Archived
+  %dd= @gallery.archived
+
+%h2
+  Upload New Photos
+  = surround '(', ')' do
+    %span#photo-count= @gallery.gallery_photos.count
+  %small Drag images into box below to upload.
+
+
+#filedrag{ data: { object: 'dropfile', project: @project.to_param, gallery: @gallery.to_param } }
+
+#gallery-photos
+  = render 'gallery_photos/photos', gallery: @gallery

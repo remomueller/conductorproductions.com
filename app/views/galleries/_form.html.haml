@@ -1,21 +1,21 @@
-= form_for [@project, @location], html: { class: 'form-horizontal', multipart: true } do |f|
-  - if @location.errors.any?
+= form_for [@project, @gallery], html: { class: 'form-horizontal', multipart: true } do |f|
+  - if @gallery.errors.any?
     .panel.panel-danger
       .panel-heading
         %strong
-          = pluralize(@location.errors.count, "error")
-          prohibited this location from being saved:
+          = pluralize(@gallery.errors.count, "error")
+          prohibited this gallery from being saved:
 
       .panel-body
 
         %ul
-          - @location.errors.full_messages.each do |message|
+          - @gallery.errors.full_messages.each do |message|
             %li= message
 
   .form-group
     = f.label :category_id, nil, class: 'col-md-2 control-label'
     .col-md-10
-      = f.select :category_id, grouped_options_for_select(@project.grouped_categories_for_select, @location.category_id), {}, class: 'form-control'
+      = f.select :category_id, grouped_options_for_select(@project.grouped_categories_for_select, @gallery.category_id), {}, class: 'form-control'
 
   .form-group
     = f.label :name, nil, class: 'col-md-2 control-label'

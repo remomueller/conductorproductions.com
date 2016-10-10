@@ -34,11 +34,11 @@ Rails.application.routes.draw do
 
     resources :embeds
 
-    resources :locations do
+    resources :galleries do
       member do
         patch :upload_photos
       end
-      resources :location_photos do
+      resources :gallery_photos do
         member do
           get :download
         end
@@ -105,9 +105,9 @@ Rails.application.routes.draw do
 
     get ':id/documents/download/:document_id', action: 'download_document', as: :client_project_download_document
     get ':id/documents/download_primary/:document_id', action: 'download_primary_document', as: :client_project_download_primary_document
-    get ':id/photos/download/:location_photo_id', action: 'download_location_photo', as: :client_project_download_location_photo
-    get ':id/:top_level/:category_id/photos/:location_id', action: :location_show, as: :client_project_location
-    get ':id/:top_level/:category_id/photos/:location_id/:location_photo_id', action: :location_photo, as: :client_project_location_photo
+    get ':id/photos/download/:gallery_photo_id', action: 'download_gallery_photo', as: :client_project_download_gallery_photo
+    get ':id/:top_level/:category_id/photos/:gallery_id', action: :gallery_show, as: :client_project_gallery
+    get ':id/:top_level/:category_id/photos/:gallery_id/:gallery_photo_id', action: :gallery_photo, as: :client_project_gallery_photo
     get ':id/:top_level/:category_id', action: 'category', as: :client_project_category
     get ':id/:top_level/:category_id/:document_id', action: 'document', as: :client_project_category_document
     get ':id/:category_id', action: 'category'

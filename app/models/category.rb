@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Provides folders for locations, embeds, and documents.
+# Provides folders for galleries, embeds, and documents.
 class Category < ApplicationRecord
   # Concerns
   include Deletable
@@ -17,7 +17,7 @@ class Category < ApplicationRecord
   # Category Methods
   has_many :documents, -> { current.order(:archived, document_uploaded_at: :desc) }
   has_many :embeds, -> { current.order(:archived) }
-  has_many :locations, -> { current.order(:archived) }
+  has_many :galleries, -> { current.order(:archived) }
 
   def to_param
     slug.blank? ? id : slug
@@ -32,6 +32,6 @@ class Category < ApplicationRecord
   end
 
   def show_menu?
-    documents.count + embeds.count + locations.count > 0
+    documents.count + embeds.count + galleries.count > 0
   end
 end

@@ -12,10 +12,10 @@ class ResizableImageUploader < CarrierWave::Uploader::Base
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     project_param = (Rails.env.test? ? model.project.slug.to_s : model.project.id.to_s)
-    # location_param = (Rails.env.test? ? model.location.slug.to_s : model.location.id.to_s)
-    location_param = model.location.id.to_s
+    # gallery_param = (Rails.env.test? ? model.gallery.slug.to_s : model.gallery.id.to_s)
+    gallery_param = model.gallery.id.to_s
     model_param = model.id.to_s
-    File.join("projects", project_param, "locations", location_param, "photos", model_param)
+    File.join("projects", project_param, "locations", gallery_param, "photos", model_param)
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

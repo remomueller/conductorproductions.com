@@ -1,0 +1,10 @@
+- gallery.gallery_photos.each do |gallery_photo|
+  = link_to [@project, gallery, gallery_photo] do
+    = image_tag(download_project_gallery_gallery_photo_path(@project, gallery, gallery_photo, size: 'thumb'))
+
+- if false
+  .row
+    - gallery.gallery_photos.each do |gallery_photo|
+      .col-xs-6.col-sm-4
+        = link_to [@project, gallery, gallery_photo] do
+          = image_tag( download_project_gallery_gallery_photo_path(@project, gallery, gallery_photo, size: 'preview'), class: 'img-responsive' )

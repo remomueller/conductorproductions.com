@@ -1,0 +1,37 @@
+%h1
+  = link_to @project.name, @project
+  |
+  Galleries
+
+- if @project.editable_by?(current_user)
+  = link_to 'New Gallery', new_project_gallery_path(@project), class: 'btn btn-xs btn-default'
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th Category
+      %th Name
+      %th Address
+      %th Creator
+      %th Archived
+      %th{ colspan: "2" }
+
+  %tbody
+    - if @galleries.count == 0
+      %tr
+        %td{ colspan: "6" }
+          .center.text-muted
+            No galleries currently exist for this project. You may
+            = link_to 'add a new gallery', new_project_gallery_path(@project)
+            for this project.
+    - else
+      - @galleries.each do |gallery|
+        %tr
+          %td= gallery.category.name if gallery.category
+          %td= link_to gallery.name, [@project, gallery]
+          %td= gallery.address
+          %td= link_to_if current_user.system_admin?, gallery.user.name, gallery.user if gallery.user
+          %td= gallery.archived
+          - if @project.editable_by?(current_user)
+            %td= link_to 'Edit', edit_project_gallery_path(@project, gallery)
+            %td= link_to 'Destroy', [@project, gallery], method: :delete, data: { confirm: "Are you sure you want to delete Gallery #{gallery.name}?" }

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-# Allows locations to be added to categories.
-class Location < ApplicationRecord
+# Allows galleries to be added to categories.
+class Gallery < ApplicationRecord
   # Concerns
   include Deletable
 
@@ -14,15 +14,15 @@ class Location < ApplicationRecord
   belongs_to :project
   belongs_to :user
   belongs_to :category
-  has_many :location_photos
+  has_many :gallery_photos
 
-  # Location Methods
+  # Model Methods
 
   def to_param
     slug.blank? ? id : slug
   end
 
   def self.find_by_param(input)
-    where("locations.slug = ? or locations.id = ?", input.to_s, input.to_i).first
+    where("galleries.slug = ? or galleries.id = ?", input.to_s, input.to_i).first
   end
 end

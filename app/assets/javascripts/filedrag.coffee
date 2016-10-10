@@ -31,10 +31,10 @@ $(document)
     )
 
     project = $(this).data('project')
-    location = $(this).data('location')
+    gallery = $(this).data('gallery')
 
     $.ajax(
-      url: root_url + "projects/#{project}/locations/#{location}/upload_photos.js"
+      url: root_url + "projects/#{project}/galleries/#{gallery}/upload_photos.js"
       type: 'PATCH'
       data: data         # The form with the file inputs.
       processData: false # Using FormData, no need to process data.

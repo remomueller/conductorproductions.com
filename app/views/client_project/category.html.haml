@@ -15,8 +15,8 @@
           %span.glyphicon.glyphicon-download
           %span.hidden-xs= @document.name_secondary
 
-- if @locations
-  = render 'client_project/locations_index'
+- if @galleries
+  = render 'client_project/galleries_index'
 - if @document
   - if @document.pdf?
     .embed-responsive{ style: 'padding-bottom: 106.25%;' }

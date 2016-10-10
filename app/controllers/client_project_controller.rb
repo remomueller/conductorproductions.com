@@ -2,14 +2,14 @@
 
 # Allows clients to browse project.
 class ClientProjectController < ApplicationController
-  before_action :store_location_in_session, except: [:download_primary_document, :download_document, :download_location_photo, :agency_logo, :client_logo ]
+  before_action :store_location_in_session, except: [:download_primary_document, :download_document, :download_gallery_photo, :agency_logo, :client_logo ]
   before_action :authenticate_client_or_current_user!
   before_action :set_project
   before_action :set_project_for_current_user
   before_action :redirect_without_project
-  before_action :invert,              only: [ :category, :document, :location_show, :location_photo ]
+  before_action :invert,              only: [:category, :document, :gallery_show, :gallery_photo]
 
-  layout 'application-sidebar', only: [ :category, :document, :location_show, :location_photo ]
+  layout 'application-sidebar', only: [:category, :document, :gallery_show, :gallery_photo]
 
   def root
     render 'menu'
@@ -23,9 +23,9 @@ class ClientProjectController < ApplicationController
     if @category
       @document = @category.documents.where(archived: false).first
       @embed = @category.embeds.where(archived: false).first
-      @locations = @category.locations.where(archived: false)
-      if @document.nil? && @embed.nil? && @locations.count == 1
-        redirect_to client_project_location_path(@project, @category.top_level.downcase, @category, @locations.first)
+      @galleries = @category.galleries.where(archived: false)
+      if @document.nil? && @embed.nil? && @galleries.count == 1
+        redirect_to client_project_gallery_path(@project, @category.top_level.downcase, @category, @galleries.first)
       end
     else
       redirect_to client_project_root_path(@project)
@@ -64,33 +64,33 @@ class ClientProjectController < ApplicationController
     end
   end
 
-  def location_show
-    @location = @project.locations.find_by_param(params[:location_id])
-    if @location
-      # render 'location'
+  def gallery_show
+    @gallery = @project.galleries.find_by_param(params[:gallery_id])
+    if @gallery
+      # render 'gallery'
     else
       redirect_to client_project_root_path(@project)
     end
   end
 
-  def location_photo
-    @location_photo = @project.location_photos.find_by_id(params[:location_photo_id])
-    if @location_photo
-      # render 'location_photo'
+  def gallery_photo
+    @gallery_photo = @project.gallery_photos.find_by_id(params[:gallery_photo_id])
+    if @gallery_photo
+      # render 'gallery_photo'
     else
       redirect_to client_project_root_path(@project)
     end
   end
 
-  def download_location_photo
-    @location_photo = @project.location_photos.find_by_id(params[:location_photo_id])
-    if @location_photo and @location_photo.photo.size > 0
+  def download_gallery_photo
+    @gallery_photo = @project.gallery_photos.find_by_id(params[:gallery_photo_id])
+    if @gallery_photo && @gallery_photo.photo.size > 0
       if params[:size] == 'preview'
-        send_file File.join( CarrierWave::Uploader::Base.root, @location_photo.photo.preview.url )
+        send_file File.join(CarrierWave::Uploader::Base.root, @gallery_photo.photo.preview.url)
       elsif params[:size] == 'thumb'
-        send_file File.join( CarrierWave::Uploader::Base.root, @location_photo.photo.thumb.url )
+        send_file File.join(CarrierWave::Uploader::Base.root, @gallery_photo.photo.thumb.url)
       else
-        send_file File.join( CarrierWave::Uploader::Base.root, @location_photo.photo.url )
+        send_file File.join(CarrierWave::Uploader::Base.root, @gallery_photo.photo.url)
       end
     else
       head :ok

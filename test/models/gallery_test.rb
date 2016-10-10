@@ -2,8 +2,8 @@
 
 require 'test_helper'
 
-# Location unit tests.
-class LocationTest < ActiveSupport::TestCase
+# Gallery unit tests.
+class GalleryTest < ActiveSupport::TestCase
   # test 'the truth' do
   #   assert true
   # end

@@ -22,7 +22,7 @@ class User < ApplicationRecord
   has_many :categories, -> { current }
   has_many :documents, -> { current }
   has_many :embeds, -> { current }
-  has_many :locations, -> { current }
+  has_many :galleries, -> { current }
 
   # User Methods
 

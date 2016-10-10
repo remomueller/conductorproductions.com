@@ -8,9 +8,8 @@ class VideosController < ApplicationController
   before_action :redirect_without_video,  only: [:show, :edit, :update, :destroy]
 
   # GET /videos
-  # GET /videos.json
   def index
-    @videos = Video.current.order(:archived, :video_page, :position).page(params[:page]).per( 20 )
+    @videos = Video.current.order(:archived, :video_page, :position).page(params[:page]).per(20)
   end
 
   def reorder
@@ -27,9 +26,7 @@ class VideosController < ApplicationController
     head :ok
   end
 
-
   # GET /videos/1
-  # GET /videos/1.json
   def show
   end
 
@@ -43,55 +40,41 @@ class VideosController < ApplicationController
   end
 
   # POST /videos
-  # POST /videos.json
   def create
     @video = current_user.videos.new(video_params)
-
-    respond_to do |format|
-      if @video.save
-        format.html { redirect_to @video, notice: 'Video was successfully created.' }
-        format.json { render :show, status: :created, location: @video }
-      else
-        format.html { render :new }
-        format.json { render json: @video.errors, status: :unprocessable_entity }
-      end
+    if @video.save
+      redirect_to @video, notice: 'Video was successfully created.'
+    else
+      render :new
     end
   end
 
-  # PATCH/PUT /videos/1
-  # PATCH/PUT /videos/1.json
+  # PATCH /videos/1
   def update
-    respond_to do |format|
-      if @video.update(video_params)
-        format.html { redirect_to @video, notice: 'Video was successfully updated.' }
-        format.json { render :show, status: :ok, location: @video }
-      else
-        format.html { render :edit }
-        format.json { render json: @video.errors, status: :unprocessable_entity }
-      end
+    if @video.update(video_params)
+      redirect_to @video, notice: 'Video was successfully updated.'
+    else
+      render :edit
     end
   end
 
   # DELETE /videos/1
-  # DELETE /videos/1.json
   def destroy
     @video.destroy
-    respond_to do |format|
-      format.html { redirect_to videos_path, notice: 'Video was successfully deleted.' }
-      format.json { head :no_content }
-    end
+    redirect_to videos_path, notice: 'Video was successfully deleted.'
   end
 
   private
-    def set_video
-      @video = Video.current.find_by_id(params[:id])
-    end
 
-    def redirect_without_video
-      empty_response_or_root_path(videos_path) unless @video
-    end
+  def set_video
+    @video = Video.current.find_by_id(params[:id])
+  end
 
-    def video_params
-      params.require(:video).permit(:video_page, :vimeo_number, :photo, :photo_cache, :position, :archived)
-    end
+  def redirect_without_video
+    empty_response_or_root_path(videos_path) unless @video
+  end
+
+  def video_params
+    params.require(:video).permit(:video_page, :vimeo_number, :photo, :photo_cache, :position, :archived)
+  end
 end

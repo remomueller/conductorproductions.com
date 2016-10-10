@@ -1,20 +1,18 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
   project: one
-  location: one
+  gallery: one
   user: system_admin
   photo: rails.png
 
 two:
   project: one
-  location: one
+  gallery: one
   user: system_admin
   photo: rails.png
 
 # To test deletion
 three:
   project: one
-  location: one
+  gallery: one
   user: system_admin
   # photo:

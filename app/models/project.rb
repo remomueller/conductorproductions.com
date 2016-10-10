@@ -82,13 +82,13 @@ class Project < ApplicationRecord
 
   # Model Relationships
   belongs_to :user
-  has_many :categories, -> { where(deleted: false).order(:top_level, :position) }
-  has_many :documents, -> { where(deleted: false).order(:archived, document_uploaded_at: :desc) }
-  has_many :embeds, -> { where(deleted: false).order(:archived, created_at: :desc) }
-  has_many :locations, -> { where(deleted: false).order(:archived, created_at: :desc) }
-  has_many :location_photos
+  has_many :categories, -> { current.order(:top_level, :position) }
+  has_many :documents, -> { current.order(:archived, document_uploaded_at: :desc) }
+  has_many :embeds, -> { current.order(:archived, created_at: :desc) }
+  has_many :galleries, -> { current.order(:archived, created_at: :desc) }
+  has_many :gallery_photos
   has_many :project_users
-  has_many :users, -> { where(deleted: false).order(:last_name, :first_name) }, through: :project_users
+  has_many :users, -> { current.order(:last_name, :first_name) }, through: :project_users
   has_many :editors, -> { where('project_users.editor = ? and users.deleted = ?', true, false) }, through: :project_users, source: :user
   has_many :viewers, -> { where('project_users.editor = ? and users.deleted = ?', false, false) }, through: :project_users, source: :user
 
