@@ -6,7 +6,6 @@
   |
   = @project.name
 
-= link_to 'Delete Project', @project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger pull-right' if @project.deletable_by?(current_user)
 - if @project.editable_by?(current_user)
   = link_to 'Edit Project', edit_project_path(@project), class: 'btn btn-xs btn-default'
 = link_to 'View Categories', project_categories_path(@project), class: 'btn btn-xs btn-default'

@@ -1,5 +1,5 @@
 .archive-menu
-  - if @category and @category.documents.where(archived: false).count > 0
+  - if @category && @category.documents.where(archived: false).count > 0
     %h4 LATEST
 
     - @category.documents.where(archived: false).each do |document|
@@ -7,7 +7,7 @@
         = link_to client_project_category_document_path(@project, top_level: @category.top_level.downcase, category_id: @category, document_id: document), class: "document-link #{'active' if @document == document}" do
           = document.name
 
-  - if @category and @category.documents.where(archived: true).count > 0
+  - if @category && @category.documents.where(archived: true).count > 0
     %h4 ARCHIVE
 
     - @category.documents.where(archived: true).each do |document|

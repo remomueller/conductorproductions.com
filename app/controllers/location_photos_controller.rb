@@ -79,7 +79,7 @@ class LocationPhotosController < ApplicationController
   def destroy
     @location_photo.destroy
     respond_to do |format|
-      format.html { redirect_to [@project, @location], notice: 'Location photo was successfully destroyed.' }
+      format.html { redirect_to [@project, @location], notice: 'Location photo was successfully deleted.' }
       format.json { head :no_content }
     end
   end

@@ -6,21 +6,26 @@
     = @category.name
   - if @document
     .pull-right
-      = link_to client_project_download_document_path(@project, @document), class: 'btn btn-xs btn-default' do
-        %span.glyphicon.glyphicon-download
-        %span.hidden-xs= @document.name
+      - if @document.primary_document.size > 0
+        = link_to client_project_download_primary_document_path(@project, @document), class: 'btn btn-xs btn-default' do
+          %span.glyphicon.glyphicon-download
+          %span.hidden-xs= @document.name
+      - if @document.document.size > 0
+        = link_to client_project_download_document_path(@project, @document), class: 'btn btn-xs btn-default' do
+          %span.glyphicon.glyphicon-download
+          %span.hidden-xs= @document.name_secondary
 
 - if @locations
   = render 'client_project/locations_index'
 - if @document
   - if @document.pdf?
     .embed-responsive{ style: 'padding-bottom: 106.25%;' }
-      %object.white-background{ data: client_project_download_document_path(@project, @document, inline: '1'), type: 'application/pdf' }
+      %object.white-background{ data: client_project_download_primary_document_path(@project, @document, inline: '1'), type: 'application/pdf' }
         alt :
-        = link_to @document.name, client_project_download_document_path(@project, @document), class: 'btn btn-xs btn-default'
+        = link_to @document.name, client_project_download_primary_document_path(@project, @document), class: 'btn btn-xs btn-default'
   - elsif @document.image?
     .center
-      = image_tag client_project_download_document_path(@project, @document, inline: '1'), class: 'white-background img-thumbnail'
+      = image_tag client_project_download_primary_document_path(@project, @document, inline: '1'), class: 'white-background img-thumbnail'
   - else
     = link_to client_project_download_document_path(@project, @document), class: 'btn btn-default' do
       %span.glyphicon.glyphicon-download

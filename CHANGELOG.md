@@ -10,6 +10,8 @@
   - Top level menu items are now hidden if they are empty
   - Subcategories no longer display in side menu if the containing gallery only
     has one subcategory
+- **Document Changes**
+  - Documents can now upload a PDF and Word version side-by-side
 - **Project Changes**
   - Top level REFERENCES has been added
   - Default categories for projects have been updated

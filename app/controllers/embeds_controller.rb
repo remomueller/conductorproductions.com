@@ -66,7 +66,7 @@ class EmbedsController < ApplicationController
   def destroy
     @embed.destroy
     respond_to do |format|
-      format.html { redirect_to project_embeds_path(@project), notice: 'Embed was successfully destroyed.' }
+      format.html { redirect_to project_embeds_path(@project), notice: 'Embed was successfully deleted.' }
       format.json { head :no_content }
     end
   end

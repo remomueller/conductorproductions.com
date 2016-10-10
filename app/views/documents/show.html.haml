@@ -19,15 +19,27 @@
   %dd= @document.user.name if @document.user
 
   %dt
-    %strong Document
+    %strong Primary Document
   %dd
     = @document.name
-    - if @document.document.size > 0
-      = link_to 'Download', download_project_document_path(@project, @document), class: 'btn btn-xs btn-default'
+    - if @document.primary_document.size > 0
+      = link_to 'Download', download_primary_project_document_path(@project, @document), class: 'btn btn-xs btn-default'
 
   %dt
     %strong File Size
-  %dd= number_to_human_size @document.document.size
+  %dd= number_to_human_size @document.primary_document.size
+
+  - if @document.document.present?
+    %dt
+      %strong Document
+    %dd
+      = @document.name_secondary
+      - if @document.document.size > 0
+        = link_to 'Download', download_project_document_path(@project, @document), class: 'btn btn-xs btn-default'
+
+    %dt
+      %strong File Size
+    %dd= number_to_human_size @document.document.size
 
   %dt
     %strong Uploaded At

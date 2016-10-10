@@ -2,7 +2,7 @@
 
 # Allows clients to browse project.
 class ClientProjectController < ApplicationController
-  before_action :store_location_in_session, except: [ :download_document, :download_location_photo, :agency_logo, :client_logo ]
+  before_action :store_location_in_session, except: [:download_primary_document, :download_document, :download_location_photo, :agency_logo, :client_logo ]
   before_action :authenticate_client_or_current_user!
   before_action :set_project
   before_action :set_project_for_current_user
@@ -42,12 +42,23 @@ class ClientProjectController < ApplicationController
     end
   end
 
+  def download_primary_document
+    @document = @project.documents.find_by_id(params[:document_id])
+    if @document && @document.primary_document.size > 0
+      disposition = (params[:inline] == '1' ? 'inline' : 'attachment')
+      type = (@document.pdf? ? 'application/pdf' : (@document.image? ? 'image/png' : 'application/octet-stream'))
+      send_file File.join(CarrierWave::Uploader::Base.root, @document.primary_document.url), type: type, disposition: disposition
+    else
+      head :ok
+    end
+  end
+
   def download_document
     @document = @project.documents.find_by_id(params[:document_id])
-    if @document and @document.document.size > 0
+    if @document && @document.document.size > 0
       disposition = (params[:inline] == '1' ? 'inline' : 'attachment')
-      type = (@document.pdf? ? 'application/pdf' : (@document.image? ? 'image/png' : 'application/octet-stream' ))
-      send_file File.join( CarrierWave::Uploader::Base.root, @document.document.url ), type: type, disposition: disposition
+      type = 'application/octet-stream'
+      send_file File.join(CarrierWave::Uploader::Base.root, @document.document.url), type: type, disposition: disposition
     else
       head :ok
     end

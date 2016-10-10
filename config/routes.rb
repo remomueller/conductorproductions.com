@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 
     resources :documents do
       member do
+        get :download_primary
         get :download
       end
     end
@@ -103,6 +104,7 @@ Rails.application.routes.draw do
     get ':id/client_logo', action: 'client_logo', as: :client_project_client_logo
 
     get ':id/documents/download/:document_id', action: 'download_document', as: :client_project_download_document
+    get ':id/documents/download_primary/:document_id', action: 'download_primary_document', as: :client_project_download_primary_document
     get ':id/photos/download/:location_photo_id', action: 'download_location_photo', as: :client_project_download_location_photo
     get ':id/:top_level/:category_id/photos/:location_id', action: :location_show, as: :client_project_location
     get ':id/:top_level/:category_id/photos/:location_id/:location_photo_id', action: :location_photo, as: :client_project_location_photo

@@ -15,7 +15,7 @@ class Category < ApplicationRecord
   belongs_to :user
 
   # Category Methods
-  has_many :documents, -> { current.order(:archived) }
+  has_many :documents, -> { current.order(:archived, document_uploaded_at: :desc) }
   has_many :embeds, -> { current.order(:archived) }
   has_many :locations, -> { current.order(:archived) }
 

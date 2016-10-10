@@ -18,7 +18,13 @@
       = f.select :category_id, grouped_options_for_select(@project.grouped_categories_for_select, @document.category_id), {}, class: 'form-control'
 
   .form-group
-    = f.label :document, 'Document (PDF, DOC, DOCX)', class: 'col-md-2 control-label'
+    = f.label :primary_document, 'Primary Document (PDF, PNG)', class: 'col-md-2 control-label'
+    .col-md-10
+      = f.file_field :primary_document, class: 'form-control'
+      = f.hidden_field :primary_document_cache
+
+  .form-group
+    = f.label :document, 'Document (DOC, DOCX) (optional)', class: 'col-md-2 control-label'
     .col-md-10
       = f.file_field :document, class: 'form-control'
       = f.hidden_field :document_cache

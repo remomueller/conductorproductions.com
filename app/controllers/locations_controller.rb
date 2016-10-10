@@ -72,7 +72,7 @@ class LocationsController < ApplicationController
   def destroy
     @location.destroy
     respond_to do |format|
-      format.html { redirect_to project_locations_path(@project), notice: 'Location was successfully destroyed.' }
+      format.html { redirect_to project_locations_path(@project), notice: 'Location was successfully deleted.' }
       format.json { head :no_content }
     end
   end

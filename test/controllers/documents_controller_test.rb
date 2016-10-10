@@ -17,6 +17,7 @@ class DocumentsControllerTest < ActionController::TestCase
     {
       archived: @document.archived,
       category_id: @document.category_id,
+      primary_document: fixture_file_upload('../../test/support/documents/test_01.pdf'),
       document: fixture_file_upload('../../test/support/documents/test_01.doc')
     }
   end
@@ -25,6 +26,7 @@ class DocumentsControllerTest < ActionController::TestCase
     {
       archived: @document2.archived,
       category_id: @document2.category_id,
+      primary_document: fixture_file_upload('../../test/support/documents/test_01.pdf'),
       document: fixture_file_upload('../../test/support/documents/test_01.doc')
     }
   end
@@ -112,35 +114,35 @@ class DocumentsControllerTest < ActionController::TestCase
 
   test 'should download document file as owner' do
     login(@system_admin)
-    assert_not_equal 0, @document.document.size
-    get :download, params: { project_id: @project, id: @document }
+    assert_not_equal 0, @document.primary_document.size
+    get :download_primary, params: { project_id: @project, id: @document }
     assert_not_nil response
     assert_not_nil assigns(:project)
     assert_not_nil assigns(:document)
     assert_kind_of String, response.body
-    assert_equal File.binread(File.join(CarrierWave::Uploader::Base.root, assigns(:document).document.url)), response.body
+    assert_equal File.binread(File.join(CarrierWave::Uploader::Base.root, assigns(:document).primary_document.url)), response.body
   end
 
   test 'should download document file as editor' do
     login(@editor_project_one)
-    assert_not_equal 0, @document.document.size
-    get :download, params: { project_id: @project, id: @document }
+    assert_not_equal 0, @document.primary_document.size
+    get :download_primary, params: { project_id: @project, id: @document }
     assert_not_nil response
     assert_not_nil assigns(:project)
     assert_not_nil assigns(:document)
     assert_kind_of String, response.body
-    assert_equal File.binread(File.join(CarrierWave::Uploader::Base.root, assigns(:document).document.url)), response.body
+    assert_equal File.binread(File.join(CarrierWave::Uploader::Base.root, assigns(:document).primary_document.url)), response.body
   end
 
   test 'should download document file as viewer' do
     login(@viewer_project_one)
-    assert_not_equal 0, @document.document.size
-    get :download, params: { project_id: @project, id: @document }
+    assert_not_equal 0, @document.primary_document.size
+    get :download_primary, params: { project_id: @project, id: @document }
     assert_not_nil response
     assert_not_nil assigns(:project)
     assert_not_nil assigns(:document)
     assert_kind_of String, response.body
-    assert_equal File.binread(File.join(CarrierWave::Uploader::Base.root, assigns(:document).document.url)), response.body
+    assert_equal File.binread(File.join(CarrierWave::Uploader::Base.root, assigns(:document).primary_document.url)), response.body
   end
 
   test 'should get edit as owner' do

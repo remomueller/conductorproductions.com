@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 # Allows files to be attached to documents.
-class DocumentUploader < CarrierWave::Uploader::Base
-
+class PrimaryDocumentUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -41,12 +40,12 @@ class DocumentUploader < CarrierWave::Uploader::Base
   # Add a white list of extensions which are allowed to be uploaded.
   # TODO: Remove this function with carrierwave 1.0.0
   def extension_white_list
-    %w(doc docx)
+    %w(pdf png)
   end
 
   # TODO: This will replace the above function in carrierwave 1.0.0
   def extension_whitelist
-    %w(doc docx)
+    %w(pdf png)
   end
 
   # Override the filename of the uploaded files:
@@ -54,5 +53,4 @@ class DocumentUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-
 end
