@@ -1,23 +1,66 @@
 = render 'layouts/per_page', per_page: 20, object_count: @projects.total_count
 
-%table.table.table-striped
+%table.table.table-striped.table-borderless.table-hover
+  %col.hidden-xs
+  %col
+  %col.hidden-xs
+  %col.hidden-xs
+  %col
+  %col{ width: '1px' }
   %thead
     %tr
-      %th Number
+      %th.hidden-xs Number
       %th Title
-      %th Client Username
-      %th Client Password
+      %th.hidden-xs Client Username
+      %th.hidden-xs Client Password
       %th Quick Preview
+      %th Actions
 
   %tbody
     - @projects.each do |project|
       %tr
-        %td= project.number
-        %td= link_to project.name, project
-        %td= project.username
-        %td
+        %td.hidden-xs= project.number
+        %td= project.name
+        %td.hidden-xs= project.username
+        %td.hidden-xs
           %span{ style: 'cursor:pointer', data: { object: 'click-to-view', content: project.password_plain } }
             = '*' * project.password_plain.to_s.size if project.password_plain.present?
-        %td= link_to "#{ENV['website_url']}/#{project.slug}", client_project_root_path(project), target: '_blank'
+        %td
+          = link_to client_project_root_path(project), target: '_blank' do
+            %span.hidden-xs
+              = "#{ENV['website_url']}/#{project.slug}"
+            %span.hidden-sm.hidden-md.hidden-lg
+              Preview
+        %td
+          .dropdown
+            = link_to '#', class: 'btn btn-default btn-xs dropdown-toggle', data: { toggle: 'dropdown' } do
+              Actions
+              %strong.caret
+
+            %ul.dropdown-menu.dropdown-menu-right
+              %li
+                = link_to client_project_root_path(project) do
+                  %span.glyphicon.glyphicon-eye-open
+                  Preview
+              %li
+                = link_to project do
+                  %span.glyphicon.glyphicon-edit
+                  Edit Project
+              - if project.editable_by?(current_user)
+                %li
+                  = link_to project_path(project, project: { archived: project.archived? ? '0' : '1' }), method: :patch do
+                    %span.glyphicon.glyphicon-briefcase
+                    - if project.archived?
+                      Restore
+                    - else
+                      Archive
+              - if project.deletable_by?(current_user)
+                %li.divider{ role: 'separator' }
+                %li
+                  = link_to project, method: :delete, data: { confirm: 'Delete project?' } do
+                    .text-danger
+                      %span.glyphicon.glyphicon-trash
+                      Delete
+
 
 .center= paginate @projects, theme: 'bootstrap'
