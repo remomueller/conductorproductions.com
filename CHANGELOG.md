@@ -12,6 +12,7 @@
     has one subcategory
 - **Document Changes**
   - Documents can now upload a PDF and Word version side-by-side
+  - Categories with only one document no longer show latest and archived submenu
 - **Gallery Changes**
   - Locations have been renamed to galleries
 - **Project Changes**
