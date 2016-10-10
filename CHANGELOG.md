@@ -23,6 +23,8 @@
   - If a category has a single location, and no associated documents or embeds,
     then the client is redirected to the single location gallery view
   - Simplified links on project index to highlight preview link
+  - URL slugs for projects, categories, and galleries now automatically fill in
+    when entering a new name
 - **Gem Changes**
   - Updated to Ruby 2.3.1
   - Updated to rails 5.0.0.1
