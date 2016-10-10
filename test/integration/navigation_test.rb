@@ -11,7 +11,6 @@ class NavigationTest < ActionDispatch::IntegrationTest
     assert_redirected_to new_user_session_path
     sign_in_as(users(:regular), '123456')
     assert_equal '/dashboard', path
-    assert_equal I18n.t('devise.sessions.signed_in'), flash[:notice]
   end
 
   test 'project viewers should be able to login' do

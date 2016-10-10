@@ -23,7 +23,8 @@ class WelcomeController < ApplicationController
     if session[:invite_token].present?
       redirect_to accept_project_users_path
     else
-      render layout: 'application'
+      redirect_to projects_path
+      # render layout: 'application'
     end
   end
 

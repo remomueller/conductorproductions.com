@@ -13,13 +13,13 @@ class WelcomeControllerTest < ActionController::TestCase
   test 'should get dashboard as collaborator' do
     login(@collaborator)
     get :dashboard
-    assert_response :success
+    assert_redirected_to projects_path
   end
 
   test 'should get dashboard as system admin' do
     login(@system_admin)
     get :dashboard
-    assert_response :success
+    assert_redirected_to projects_path
   end
 
   test 'should get index' do

@@ -3,6 +3,7 @@
 ### Enhancements
 - **General Changes**
   - Added new video to landing page
+  - Added dropdown menu for logged in users
 - **Email Changes**
   - Updated styling of emails
 - **Client Changes**
