@@ -57,9 +57,13 @@ class DocumentsController < ApplicationController
   end
 
   # PATCH /documents/1
+  # PATCH /documents/1.js
   def update
     if @document.update(document_params)
-      redirect_to [@project, @document], notice: 'Document was successfully updated.'
+      respond_to do |format|
+        format.html { redirect_to [@project, @document], notice: 'Document was successfully updated.' }
+        format.js
+      end
     else
       render :edit
     end

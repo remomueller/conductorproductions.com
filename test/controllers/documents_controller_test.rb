@@ -175,6 +175,13 @@ class DocumentsControllerTest < ActionController::TestCase
     assert_redirected_to project_document_path(assigns(:project), assigns(:document))
   end
 
+  test 'should update document as editor with ajax' do
+    login(@editor_project_one)
+    patch :update, params: { project_id: @project, id: @document2, document: document_two_params }, format: 'js'
+    assert_template 'update'
+    assert_response :success
+  end
+
   test 'should not update document as viewer' do
     login(@viewer_project_one)
     patch :update, params: { project_id: @project, id: @document2, document: document_two_params }

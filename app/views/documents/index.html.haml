@@ -8,15 +8,22 @@
 
 
 %table.table.table-striped
+  %col
+  %col
+  %col.hidden-xs
+  %col.hidden-xs
+  %col
+  - if @project.editable_by?(current_user)
+    %col{ width: '1px' }
   %thead
     %tr
       %th Category
       %th Document
-      %th Uploaded At
-      %th Creator
-      %th Archived
+      %th.hidden-xs Uploaded At
+      %th.hidden-xs Creator
+      %th.center Archived
       - if @project.editable_by?(current_user)
-        %th{ colspan: "2" }
+        %th Actions
 
   %tbody
     - if @documents.count == 0
@@ -28,12 +35,5 @@
             for this project.
     - else
       - @documents.each do |document|
-        %tr
-          %td= document.category.name if document.category
-          %td= link_to document.name, [@project, document]
-          %td= document.document_uploaded_at.strftime("%b %-d, %Y at %-I:%M %p") if document.document_uploaded_at
-          %td= document.user.name if document.user
-          %td= document.archived
-          - if @project.editable_by?(current_user)
-            %td= link_to 'Edit', edit_project_document_path(@project, document)
-            %td= link_to 'Destroy', [@project, document], method: :delete, data: { confirm: "Are you sure you want to delete Document #{document.name}?" }
+        %tr{ id: "document-#{document.id}-container" }
+          = render 'documents/document_row', document: document

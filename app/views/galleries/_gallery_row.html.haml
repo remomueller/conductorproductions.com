@@ -1,0 +1,30 @@
+%td= gallery.category.name if gallery.category
+%td= link_to gallery.name, [@project, gallery]
+%td.hidden-xs= gallery.address
+%td.hidden-xs= link_to_if current_user.system_admin?, gallery.user.name, gallery.user if gallery.user
+%td= simple_check gallery.archived
+- if @project.editable_by?(current_user)
+  %td
+    .dropdown
+      = link_to '#', class: 'btn btn-default btn-xs dropdown-toggle', data: { toggle: 'dropdown' } do
+        Actions
+        %strong.caret
+
+      %ul.dropdown-menu.dropdown-menu-right
+        %li
+          = link_to edit_project_gallery_path(@project, gallery) do
+            %span.glyphicon.glyphicon-edit
+            Edit Gallery
+        %li
+          = link_to project_gallery_path(@project, gallery, gallery: { archived: gallery.archived? ? '0' : '1' }), method: :patch, remote: true do
+            %span.glyphicon.glyphicon-briefcase
+            - if gallery.archived?
+              Restore
+            - else
+              Archive
+        %li.divider{ role: 'separator' }
+        %li
+          = link_to [@project, gallery], method: :delete, data: { confirm: 'Delete gallery?' } do
+            .text-danger
+              %span.glyphicon.glyphicon-trash
+              Delete

@@ -133,6 +133,13 @@ class GalleriesControllerTest < ActionController::TestCase
     assert_redirected_to project_gallery_path(assigns(:project), assigns(:gallery))
   end
 
+  test 'should update gallery as editor with ajax' do
+    login(@editor_project_one)
+    patch :update, params: { project_id: @project, id: @gallery, gallery: gallery_params.merge(name: 'Updated Gallery', slug: 'updated-gallery') }, format: 'js'
+    assert_template 'update'
+    assert_response :success
+  end
+
   test 'should not update gallery as viewer' do
     login(@viewer_project_one)
     patch :update, params: { project_id: @project, id: @gallery, gallery: gallery_params.merge(name: 'Updated Gallery', slug: 'updated-gallery') }

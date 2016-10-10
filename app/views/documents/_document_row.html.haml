@@ -1,0 +1,30 @@
+%td= document.category.name if document.category
+%td= link_to document.name, [@project, document]
+%td.hidden-xs= document.document_uploaded_at.strftime("%b %-d, %Y at %-I:%M %p") if document.document_uploaded_at
+%td.hidden-xs= document.user.name if document.user
+%td.center= simple_check document.archived
+- if @project.editable_by?(current_user)
+  %td
+    .dropdown
+      = link_to '#', class: 'btn btn-default btn-xs dropdown-toggle', data: { toggle: 'dropdown' } do
+        Actions
+        %strong.caret
+
+      %ul.dropdown-menu.dropdown-menu-right
+        %li
+          = link_to edit_project_document_path(@project, document) do
+            %span.glyphicon.glyphicon-edit
+            Edit Document
+        %li
+          = link_to project_document_path(@project, document, document: { archived: document.archived? ? '0' : '1' }), method: :patch, remote: true do
+            %span.glyphicon.glyphicon-briefcase
+            - if document.archived?
+              Restore
+            - else
+              Archive
+        %li.divider{ role: 'separator' }
+        %li
+          = link_to [@project, document], method: :delete, data: { confirm: 'Delete document?' } do
+            .text-danger
+              %span.glyphicon.glyphicon-trash
+              Delete

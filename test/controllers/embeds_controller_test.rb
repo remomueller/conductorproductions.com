@@ -133,6 +133,13 @@ class EmbedsControllerTest < ActionController::TestCase
     assert_redirected_to project_embed_path(assigns(:project), assigns(:embed))
   end
 
+  test 'should update embed as editor with ajax' do
+    login(@editor_project_one)
+    patch :update, params: { project_id: @project, id: @embed, embed: embed_params }, format: 'js'
+    assert_template 'update'
+    assert_response :success
+  end
+
   test 'should not update embed as viewer' do
     login(@viewer_project_one)
     patch :update, params: { project_id: @project, id: @embed, embed: embed_params }

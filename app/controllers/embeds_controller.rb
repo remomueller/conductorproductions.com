@@ -40,9 +40,13 @@ class EmbedsController < ApplicationController
   end
 
   # PATCH /embeds/1
+  # PATCH /embeds/1.js
   def update
     if @embed.update(embed_params)
-      redirect_to [@project, @embed], notice: 'Embed was successfully updated.'
+      respond_to do |format|
+        format.html { redirect_to [@project, @embed], notice: 'Embed was successfully updated.' }
+        format.js
+      end
     else
       render :edit
     end

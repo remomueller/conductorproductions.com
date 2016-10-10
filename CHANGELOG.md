@@ -26,6 +26,8 @@
   - Simplified links on project index to highlight preview link
   - URL slugs for projects, categories, and galleries now automatically fill in
     when entering a new name
+  - Documents, embeds, and galleries can now be archived on from their index
+    pages
 - **Gem Changes**
   - Updated to Ruby 2.3.1
   - Updated to rails 5.0.0.1

@@ -46,9 +46,13 @@ class GalleriesController < ApplicationController
   end
 
   # PATCH /galleries/1
+  # PATCH /galleries/1.js
   def update
     if @gallery.update(gallery_params)
-      redirect_to [@project, @gallery], notice: 'Gallery was successfully updated.'
+      respond_to do |format|
+        format.html { redirect_to [@project, @gallery], notice: 'Gallery was successfully updated.' }
+        format.js
+      end
     else
       render :edit
     end
