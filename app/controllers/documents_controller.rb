@@ -38,7 +38,7 @@ class DocumentsController < ApplicationController
 
   # GET /documents/new
   def new
-    @document = @project.documents.new
+    @document = @project.documents.new(category_id: params[:category_id])
   end
 
   # GET /documents/1/edit

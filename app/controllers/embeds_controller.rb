@@ -22,7 +22,7 @@ class EmbedsController < ApplicationController
 
   # GET /embeds/new
   def new
-    @embed = @project.embeds.new
+    @embed = @project.embeds.new(category_id: params[:category_id])
   end
 
   # GET /embeds/1/edit
