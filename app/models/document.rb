@@ -29,11 +29,19 @@ class Document < ApplicationRecord
 
   def pdf?
     return false unless primary_document.present?
-    primary_document_identifier.last(4).to_s.downcase == '.pdf'
+    primary_extension == 'PDF'
   end
 
   def image?
     return false unless primary_document.present?
-    primary_document_identifier.last(4).to_s.downcase == '.png'
+    primary_extension == 'PNG'
+  end
+
+  def primary_extension
+    primary_document.file.extension.to_s.upcase
+  end
+
+  def secondary_extension
+    document.file.extension.to_s.upcase
   end
 end

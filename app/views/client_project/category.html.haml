@@ -9,11 +9,17 @@
       - if @document.primary_document.size > 0
         = link_to client_project_download_primary_document_path(@project, @document), class: 'btn btn-xs btn-default' do
           %span.glyphicon.glyphicon-download
-          %span.hidden-xs= @document.name
+          %span.hidden-xs
+            Download
+          %span
+            = @document.primary_extension
       - if @document.document.size > 0
         = link_to client_project_download_document_path(@project, @document), class: 'btn btn-xs btn-default' do
           %span.glyphicon.glyphicon-download
-          %span.hidden-xs= @document.name_secondary
+          %span.hidden-xs
+            Download
+          %span
+            = @document.secondary_extension
 
 - if @galleries
   = render 'client_project/galleries_index'
