@@ -33,7 +33,7 @@
       = render 'welcome/header'
 
     = render 'layouts/flash_messages'
-    %div{ class: (params[:controller] == 'client_project' && %w(root menu).include?(params[:action]) ? 'container-fluid' : 'container') }
+    .container
       = yield
 
     = render 'welcome/footer'

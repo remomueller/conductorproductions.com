@@ -10,7 +10,6 @@
   - Top level menu items are now hidden if they are empty
   - Subcategories no longer display in side menu if the containing gallery only
     has one subcategory
-  - Project menu bars now properly extend to the right of the screen
 - **Document Changes**
   - Documents can now upload a PDF and Word version side-by-side
   - Categories with only one document no longer show latest and archived submenu
