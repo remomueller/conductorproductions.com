@@ -1,0 +1,16 @@
+.categories-list {
+  overflow: auto;
+  list-style: none;
+  margin-left: 20px;
+  padding: 0;
+}
+
+.category-box {
+  cursor: move;
+  vertical-align: top;
+  margin-bottom: 10px;
+}
+
+.category-box-inner {
+  padding-left: 10px;
+}

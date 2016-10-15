@@ -4,6 +4,7 @@
   fileDragReady()
   galleriesReady()
   galleryPhotosReady()
+  categoriesReady()
 
 $(document).ready(ready)
 $(document)

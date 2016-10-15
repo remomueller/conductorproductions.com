@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       get :client_logo
       get :collaborators
       post :invite_user
+      post :save_category_order
     end
 
     resources :categories do

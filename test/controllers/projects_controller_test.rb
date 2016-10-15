@@ -20,6 +20,17 @@ class ProjectsControllerTest < ActionController::TestCase
     }
   end
 
+  test 'should reorder categories as owner' do
+    login(@system_admin)
+    post :save_category_order, params: {
+      id: @project, top_level: 'PRODUCTION',
+      category_ids: [categories(:locations).id]
+    }, format: 'js'
+    categories(:locations).reload
+    assert_equal 0, categories(:locations).position
+    assert_response :success
+  end
+
   test 'should invite new user to project' do
     login(@editor_project_one)
     assert_difference('ProjectUser.count') do

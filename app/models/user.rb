@@ -30,6 +30,10 @@ class User < ApplicationRecord
     "#{first_name} #{last_name}"
   end
 
+  def nickname
+    "#{first_name} #{last_name.first}"
+  end
+
   def all_projects
     Project.current.with_editor(id, true)
   end

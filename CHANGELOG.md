@@ -28,6 +28,7 @@
     when entering a new name
   - Documents, embeds, and galleries can now be archived on from their index
     pages
+  - Project main page layout has been updated while editing project
 - **Gem Changes**
   - Updated to Ruby 2.3.1
   - Updated to rails 5.0.0.1

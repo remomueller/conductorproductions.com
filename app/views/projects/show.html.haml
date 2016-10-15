@@ -5,6 +5,7 @@
     = link_to 'Archived', archived_projects_path
   |
   = @project.name
+  = link_to 'Preview', client_project_root_path(@project), class: 'btn btn-lg btn-primary'
 
 - if @project.editable_by?(current_user)
   = link_to 'Edit Project', edit_project_path(@project), class: 'btn btn-xs btn-default'
@@ -12,60 +13,92 @@
 = link_to 'View Documents', project_documents_path(@project), class: 'btn btn-xs btn-default'
 = link_to 'View Embeds', project_embeds_path(@project), class: 'btn btn-xs btn-default'
 = link_to 'View Galleries', project_galleries_path(@project), class: 'btn btn-xs btn-default'
-= link_to "#{@project.editable_by?(current_user) ? 'Add' : 'View'} Collaborators", collaborators_project_path(@project), class: 'btn btn-xs btn-default'
 
-%dl.dl-horizontal
-  %dt
-    %strong Project Name
-  %dd
-    = @project.name
+.row
+  .col-xs-6.col-sm-9
+    - Project::TOP_LEVELS.each do |top_level|
+      %div{ style: 'margin-bottom: 20px;' }
+        - categories = @project.categories.where(top_level: top_level)
+        %h2{ style: categories.present? ? nil : 'text-muted' }= top_level
+        %ul.categories-list{ data: { object: 'categories-sortable', project: @project.to_param, top_level: top_level } }
+          - categories.each do |category|
+            %li.category-box{ data: { category_id: category.id } }
+              = link_to category.name, [@project, category], style: !category.show_menu? ? 'color: #777;' : nil
+              .category-box-inner
+                %small
+                - if category.documents.present?
+                  - if category.galleries.count + category.embeds.count > 0
+                    = succeed ',' do
+                      = pluralize category.documents.count, 'Document'
+                  - else
+                    = pluralize category.documents.count, 'Document'
+                - if category.galleries.present?
+                  - if category.embeds.count > 0
+                    = succeed ',' do
+                      = pluralize category.galleries.count, 'Gallery'
+                  - else
+                    = pluralize category.galleries.count, 'Gallery'
+                - if category.embeds.present?
+                  = pluralize category.embeds.count, 'Video'
+        %div{ style: 'margin-left: 20px;margin-top: -10px;' }
+          = link_to new_project_category_path(@project, top_level: top_level), class: 'btn btn-xs btn-default' do
+            %span.glyphicon.glyphicon-plus
+            Add Category
+  .col-xs-6.col-sm-3
+    %h2 Settings
+    %div{ style: 'background-color: #ededed;display: inline-block;padding: 10px;' }
+      %table.table.table-borderless.table-striped{ style: 'margin-bottom: 0;' }
+        %tr
+          %th Project Name
+          %td= @project.name
 
-  %dt
-    %strong Project Number
-  %dd
-    = @project.number
+        %tr
+          %th Project Number
+          %td= @project.number
 
-  %dt
-    %strong URL Slug
-  %dd
-    = @project.slug
+        %tr
+          %th URL Slug
+          %td= @project.slug
 
-  %dt
-    %strong Client Username
-  %dd
-    = @project.username
+        %tr
+          %th Client Username
+          %td= @project.username
 
-  %dt
-    %strong Client Password
-  %dd
-    %span{ style: 'cursor:pointer', data: { object: 'click-to-view', content: @project.password_plain } }
-      = '*' * @project.password_plain.to_s.size if @project.password_plain.present?
+        %tr
+          %th Client Password
+          %td
+            %span{ style: 'cursor:pointer', data: { object: 'click-to-view', content: @project.password_plain } }
+              = '*' * @project.password_plain.to_s.size if @project.password_plain.present?
+        %tr
+          %th Owner
+          %td= @project.user.nickname if @project.user
 
-  %dt
-    %strong Owner
-  %dd
-    = @project.user.name if @project.user
+        - if @project.agency_logo.size > 0
+          %tr
+            %th Agency Logo
+            %td= @project.agency_logo_identifier
 
-  - if @project.agency_logo.size > 0
-    %dt
-      %strong Agency Logo
-    %dd
-      = @project.agency_logo_identifier
+          %tr
+            %th Agency Logo Size
+            %td= number_to_human_size @project.agency_logo.size
 
-    %dt
-      %strong Agency Logo Size
-    %dd= number_to_human_size @project.agency_logo.size
+        - if @project.client_logo.size > 0
+          %tr
+            %th Client Logo
+            %td= @project.client_logo_identifier
 
-  - if @project.client_logo.size > 0
-    %dt
-      %strong Client Logo
-    %dd
-      = @project.client_logo_identifier
-
-    %dt
-      %strong Client Logo Size
-    %dd= number_to_human_size @project.client_logo.size
-
+          %tr
+            %th Client Logo Size
+            %td= number_to_human_size @project.client_logo.size
+        %tr
+          %th Team
+          %td
+            %ul.list-unstyled
+              - @project.users.order(:first_name, :last_name).each do |user|
+                %li= user.nickname
+        - if @project.editable_by?(current_user)
+          %tr
+            %td{ colspan: 2 }= link_to 'Add Team Member', collaborators_project_path(@project), class: 'btn btn-xs btn-default btn-block'
 
 - if @project.agency_logo.size > 0
   .center{ style: 'width:100%' }

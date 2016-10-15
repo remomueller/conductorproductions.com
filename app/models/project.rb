@@ -82,7 +82,7 @@ class Project < ApplicationRecord
 
   # Model Relationships
   belongs_to :user
-  has_many :categories, -> { current.order(:top_level, :position) }
+  has_many :categories, -> { current.order(:top_level, 'position nulls last') }
   has_many :documents, -> { current.order(:archived, document_uploaded_at: :desc) }
   has_many :embeds, -> { current.order(:archived, created_at: :desc) }
   has_many :galleries, -> { current.order(:archived, created_at: :desc) }

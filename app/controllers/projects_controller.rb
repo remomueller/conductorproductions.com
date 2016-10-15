@@ -3,13 +3,25 @@
 # Allows projects to be created and updated.
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
-  before_action :check_system_admin,        only: [:new, :create]
-  before_action :set_deletable_project,     only: [:destroy]
-  before_action :set_editable_project,      only: [:invite_user, :edit, :update]
-  before_action :set_viewable_project,      only: [:collaborators, :show, :agency_logo, :client_logo]
-  before_action :redirect_without_project,  only: [:collaborators, :invite_user, :show, :agency_logo, :client_logo, :edit, :update, :destroy]
+  before_action :check_system_admin, only: [:new, :create]
+  before_action :find_deletable_project_or_redirect, only: [:destroy]
+  before_action :find_editable_project_or_redirect, only: [
+    :invite_user, :edit, :update, :save_category_order
+  ]
+  before_action :find_viewable_project_or_redirect, only: [
+    :collaborators, :show, :agency_logo, :client_logo
+  ]
 
   layout 'application'
+
+  # POST /projects/1/save_category_order.js
+  def save_category_order
+    params[:category_ids].each_with_index do |category_id, index|
+      category = @project.categories.where(top_level: params[:top_level]).find_by_id category_id
+      category.update position: index if category
+    end
+    head :ok
+  end
 
   def collaborators
   end
@@ -76,16 +88,17 @@ class ProjectsController < ApplicationController
 
   private
 
-  def set_editable_project
+  def find_editable_project_or_redirect
     super(:id)
   end
 
-  def set_viewable_project
+  def find_viewable_project_or_redirect
     super(:id)
   end
 
-  def set_deletable_project
+  def find_deletable_project_or_redirect
     @project = Project.where(user_id: current_user.id).find_by_param(params[:id])
+    redirect_without_project
   end
 
   def redirect_without_project

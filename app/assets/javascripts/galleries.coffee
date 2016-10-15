@@ -15,12 +15,11 @@
     $this = $(this)
     $this.sortable(
       tolerance: 'pointer'
-      axis: 'x'
+      # axis: 'x'
       stop: ->
         params = {}
         params.gallery_photo_ids = $this.sortable('toArray', attribute: 'data-gallery-photo-id')
-        console.log params
-        $.post("#{root_url}projects/#{$(this).data('project')}/galleries/#{$(this).data('gallery')}/save_photo_order", params, null, 'script')
+        $.post("#{root_url}projects/#{$this.data('project')}/galleries/#{$this.data('gallery')}/save_photo_order", params, null, 'script')
         true
     )
   )

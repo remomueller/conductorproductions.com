@@ -27,7 +27,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/new
   def new
-    @category = @project.categories.new(position: @project.categories.count+1)
+    @category = @project.categories.new(top_level: params[:top_level])
   end
 
   # GET /categories/1/edit
