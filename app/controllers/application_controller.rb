@@ -58,6 +58,16 @@ class ApplicationController < ActionController::Base
     redirect_to client_login_path unless current_client? || current_user
   end
 
+  def find_editable_project_or_redirect(id = :project_id)
+    @project = current_user.all_projects.find_by_param(params[id])
+    redirect_without_project
+  end
+
+  def find_viewable_project_or_redirect(id = :project_id)
+    @project = current_user.all_viewable_projects.find_by_param(params[id])
+    redirect_without_project
+  end
+
   def set_editable_project(id = :project_id)
     @project = current_user.all_projects.find_by_param(params[id])
   end

@@ -7,30 +7,34 @@
   %col.hidden-xs
   %col
   %col{ width: '1px' }
+  %col{ width: '1px' }
   %thead
     %tr
       %th.hidden-xs Number
       %th Title
+      %th Quick Preview
       %th.hidden-xs Client Username
       %th.hidden-xs Client Password
-      %th Quick Preview
-      %th Actions
+      %th.center{ colspan: 2 } Actions
 
   %tbody
     - @projects.each do |project|
       %tr
         %td.hidden-xs= project.number
         %td= project.name
-        %td.hidden-xs= project.username
-        %td.hidden-xs
-          %span{ style: 'cursor:pointer', data: { object: 'click-to-view', content: project.password_plain } }
-            = '*' * project.password_plain.to_s.size if project.password_plain.present?
         %td
           = link_to client_project_root_path(project), target: '_blank' do
             %span.hidden-xs
               = "#{ENV['website_url']}/#{project.slug}"
             %span.hidden-sm.hidden-md.hidden-lg
               Preview
+        %td.hidden-xs= project.username
+        %td.hidden-xs
+          %span{ style: 'cursor:pointer', data: { object: 'click-to-view', content: project.password_plain } }
+            = '*' * project.password_plain.to_s.size if project.password_plain.present?
+        %td
+          = link_to project, class: 'btn btn-default btn-xs' do
+            %span.glyphicon.glyphicon-cog
         %td
           .dropdown
             = link_to '#', class: 'btn btn-default btn-xs dropdown-toggle', data: { toggle: 'dropdown' } do

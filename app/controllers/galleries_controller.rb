@@ -3,14 +3,26 @@
 # Allows creation of galleries.
 class GalleriesController < ApplicationController
   before_action :authenticate_user!
+  before_action :find_viewable_project_or_redirect, only: [:index, :show]
+  before_action :find_editable_project_or_redirect, only: [
+    :new, :create, :edit, :update, :destroy, :upload_photos, :save_photo_order
+  ]
+  before_action :find_gallery_or_redirect, only: [
+    :show, :edit, :update, :destroy, :upload_photos, :save_photo_order
+  ]
 
-  before_action :set_viewable_project,      only: [:index, :show]
-  before_action :set_editable_project,      only: [:new, :create, :edit, :update, :destroy, :upload_photos]
-  before_action :redirect_without_project
+  # POST /galleries/1/save_photo_order.js
+  def save_photo_order
+    params[:gallery_photo_ids].each_with_index do |gallery_photo_id, index|
+      gallery_photo = @gallery.gallery_photos.find_by_id gallery_photo_id
+      if gallery_photo
+        gallery_photo.update position: index
+      end
+    end
+    head :ok
+  end
 
-  before_action :set_gallery,              only: [:show, :edit, :update, :destroy, :upload_photos]
-  before_action :redirect_without_gallery, only: [:show, :edit, :update, :destroy, :upload_photos]
-
+  # PATCH /galleries/1/upload_photos.js
   def upload_photos
     params[:photos].each do |photo|
       @gallery.gallery_photos.create(project_id: @project.id, user_id: current_user.id, photo: photo)
@@ -66,8 +78,9 @@ class GalleriesController < ApplicationController
 
   private
 
-  def set_gallery
-    @gallery = @project.galleries.find_by_param(params[:id])
+  def find_gallery_or_redirect
+    @gallery = @project.galleries.find_by_param params[:id]
+    redirect_without_gallery
   end
 
   def redirect_without_gallery

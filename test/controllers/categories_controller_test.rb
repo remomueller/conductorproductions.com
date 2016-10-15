@@ -21,6 +21,16 @@ class CategoriesControllerTest < ActionController::TestCase
     }
   end
 
+  test 'should reorder galleries as owner' do
+    login(@system_admin)
+    post :save_gallery_order, params: { project_id: @project, id: categories(:locations), gallery_ids: [galleries(:two).id, galleries(:one).id] }, format: 'js'
+    galleries(:one).reload
+    galleries(:two).reload
+    assert_equal 0, galleries(:two).position
+    assert_equal 1, galleries(:one).position
+    assert_response :success
+  end
+
   test 'should get index as owner' do
     login(@system_admin)
     get :index, params: { project_id: @project }

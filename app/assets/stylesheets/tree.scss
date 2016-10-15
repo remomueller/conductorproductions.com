@@ -8,8 +8,20 @@
 
 @import 'variables';
 
+// // App Mixins
+// @import 'mixins/all';
+
 // Components
 @import 'components/all';
+
+// // Extensions
+// @import 'extensions/all';
+
+// // Fixes
+// @import 'fixes/all';
+
+// Objects
+@import 'objects/all';
 
 // @import 'sizes';
 
@@ -31,4 +43,3 @@
 @import 'tables';
 
 @import 'filedrag';
-@import 'galleries';

@@ -17,7 +17,7 @@ class Category < ApplicationRecord
   # Category Methods
   has_many :documents, -> { current.order(:archived, document_uploaded_at: :desc) }
   has_many :embeds, -> { current.order(:archived) }
-  has_many :galleries, -> { current.order(:archived) }
+  has_many :galleries, -> { current.order(:archived, 'position nulls last') }
 
   def to_param
     slug.blank? ? id : slug

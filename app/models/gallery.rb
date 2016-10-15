@@ -14,7 +14,7 @@ class Gallery < ApplicationRecord
   belongs_to :project
   belongs_to :user
   belongs_to :category
-  has_many :gallery_photos
+  has_many :gallery_photos, -> { order('position nulls last') }
 
   # Model Methods
 

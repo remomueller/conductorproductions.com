@@ -23,7 +23,11 @@ Rails.application.routes.draw do
       post :invite_user
     end
 
-    resources :categories
+    resources :categories do
+      member do
+        post :save_gallery_order
+      end
+    end
 
     resources :documents do
       member do
@@ -37,6 +41,7 @@ Rails.application.routes.draw do
     resources :galleries do
       member do
         patch :upload_photos
+        post :save_photo_order
       end
       resources :gallery_photos do
         member do

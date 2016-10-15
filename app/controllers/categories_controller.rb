@@ -3,12 +3,18 @@
 # Allows categories to be created and modified.
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
+  before_action :find_viewable_project_or_redirect, only: [:index, :show]
+  before_action :find_editable_project_or_redirect, only: [:new, :create, :edit, :update, :destroy, :save_gallery_order]
+  before_action :find_category_or_redirect, only: [:show, :edit, :update, :destroy, :save_gallery_order]
 
-  before_action :set_viewable_project,      only: [:index, :show]
-  before_action :set_editable_project,      only: [:new, :create, :edit, :update, :destroy]
-  before_action :redirect_without_project
-
-  before_action :set_category, only: [:show, :edit, :update, :destroy]
+  # POST /categories/1/save_gallery_order.js
+  def save_gallery_order
+    params[:gallery_ids].each_with_index do |gallery_id, index|
+      gallery = @category.galleries.find_by_id gallery_id
+      gallery.update position: index if gallery
+    end
+    head :ok
+  end
 
   # GET /categories
   def index
@@ -55,8 +61,13 @@ class CategoriesController < ApplicationController
 
   private
 
-  def set_category
-    @category = @project.categories.find_by_param(params[:id])
+  def find_category_or_redirect
+    @category = @project.categories.find_by_param params[:id]
+    redirect_without_category
+  end
+
+  def redirect_without_category
+    empty_response_or_root_path(project_categories_path(@project)) unless @category
   end
 
   def category_params

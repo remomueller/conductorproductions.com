@@ -1,10 +1,5 @@
-- gallery.gallery_photos.each do |gallery_photo|
-  = link_to [@project, gallery, gallery_photo] do
-    = image_tag(download_project_gallery_gallery_photo_path(@project, gallery, gallery_photo, size: 'thumb'))
-
-- if false
-  .row
-    - gallery.gallery_photos.each do |gallery_photo|
-      .col-xs-6.col-sm-4
-        = link_to [@project, gallery, gallery_photo] do
-          = image_tag( download_project_gallery_gallery_photo_path(@project, gallery, gallery_photo, size: 'preview'), class: 'img-responsive' )
+%ul.gallery-photos-list{ data: { object: 'gallery-photos-sortable', project: @project.to_param, gallery: gallery.to_param } }
+  - gallery.gallery_photos.each do |gallery_photo|
+    %li.gallery-photo-box{ data: { gallery_photo_id: gallery_photo.id } }
+      = link_to [@project, gallery, gallery_photo] do
+        = image_tag(download_project_gallery_gallery_photo_path(@project, gallery, gallery_photo, size: 'thumb'))

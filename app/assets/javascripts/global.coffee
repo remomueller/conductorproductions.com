@@ -2,6 +2,8 @@
   homeReady()
   videosReady()
   fileDragReady()
+  galleriesReady()
+  galleryPhotosReady()
 
 $(document).ready(ready)
 $(document)

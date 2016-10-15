@@ -1,8 +1,9 @@
 - @galleries.each do |gallery|
-  .gallery-container
-    %h2= link_to gallery.name, client_project_gallery_path(@project, gallery.category.top_level.downcase, gallery.category, gallery)
-    = simple_format gallery.address
-    - gallery.gallery_photos.each do |gallery_photo|
-      %div{ style: 'display:inline-block;margin-right:20px;margin-bottom:20px' }
-        = link_to client_project_gallery_photo_path(@project, gallery.category.top_level.downcase, gallery.category, gallery, gallery_photo), style: 'cursor: pointer' do
-          = image_tag( client_project_download_gallery_photo_path(@project, gallery_photo, size: 'thumb'), class: 'img-responsive white-background' )
+  - if gallery.gallery_photos.present?
+    .gallery-container
+      %h2= link_to gallery.name, client_project_gallery_path(@project, gallery.category.top_level.downcase, gallery.category, gallery)
+      = simple_format gallery.address
+      - gallery.gallery_photos.each do |gallery_photo|
+        %div{ style: 'display:inline-block;margin-right:20px;margin-bottom:20px' }
+          = link_to client_project_gallery_photo_path(@project, gallery.category.top_level.downcase, gallery.category, gallery, gallery_photo), style: 'cursor: pointer' do
+            = image_tag( client_project_download_gallery_photo_path(@project, gallery_photo, size: 'thumb'), class: 'img-responsive white-background' )

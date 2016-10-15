@@ -15,6 +15,7 @@
   - Categories with only one document no longer show latest and archived submenu
 - **Gallery Changes**
   - Locations have been renamed to galleries
+  - Gallery and photo positions can be reordered
 - **Project Changes**
   - Top level REFERENCES has been added
   - Default categories for projects have been updated

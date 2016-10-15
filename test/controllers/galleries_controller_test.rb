@@ -22,6 +22,16 @@ class GalleriesControllerTest < ActionController::TestCase
     }
   end
 
+  test 'should reorder gallery photos as owner' do
+    login(@system_admin)
+    post :save_photo_order, params: { project_id: @project, id: galleries(:one), gallery_photo_ids: [gallery_photos(:two).id, gallery_photos(:one).id] }, format: 'js'
+    gallery_photos(:one).reload
+    gallery_photos(:two).reload
+    assert_equal 0, gallery_photos(:two).position
+    assert_equal 1, gallery_photos(:one).position
+    assert_response :success
+  end
+
   test 'should get index as owner' do
     login(@system_admin)
     get :index, params: { project_id: @project }
