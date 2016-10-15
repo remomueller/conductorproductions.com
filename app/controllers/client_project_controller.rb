@@ -23,7 +23,7 @@ class ClientProjectController < ApplicationController
     if @category
       @document = @category.documents.where(archived: false).first
       @embed = @category.embeds.where(archived: false).first
-      @galleries = @category.galleries.where(archived: false)
+      @galleries = @category.galleries.where(archived: false).select{ |g| g.gallery_photos.count > 0 }
       if @document.nil? && @embed.nil? && @galleries.count == 1
         redirect_to client_project_gallery_path(@project, @category.top_level.downcase, @category, @galleries.first)
       end

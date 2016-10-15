@@ -33,8 +33,11 @@
 - if @project.editable_by?(current_user)
   %h2
     Galleries
-
+    = succeed ' ' do
+      = link_to new_project_gallery_path(@project, category_id: @category.id), class: 'btn btn-xs btn-default' do
+        %span.glyphicon.glyphicon-plus
     %small Drag to reorder galleries and photos.
+
 
   %div{ data: { object: 'galleries-sortable', project: @project.to_param, category: @category.to_param } }
     - @category.galleries.where(archived: false).each do |gallery|

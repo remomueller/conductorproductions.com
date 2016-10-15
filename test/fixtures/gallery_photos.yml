@@ -16,3 +16,9 @@ three:
   gallery: one
   user: system_admin
   # photo:
+
+single_photo:
+  project: two
+  gallery: single_location
+  user: system_admin
+  # photo:

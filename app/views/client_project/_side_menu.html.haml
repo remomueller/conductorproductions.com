@@ -24,7 +24,7 @@
             .side-menu-triangle-left-sub-white
             = category.name
           - if @category == category || (@gallery && @gallery.category == category)
-            - unarchived_galleries = category.galleries.where(archived: false)
+            - unarchived_galleries = category.galleries.where(archived: false).select{ |g| g.gallery_photos.count > 0 }
             - if unarchived_galleries.count > 1
               - unarchived_galleries.each do |gallery|
                 = link_to client_project_gallery_path(@project, category.top_level.downcase, category, gallery), class: "side-menu-sub-sub-header #{'active' if @gallery == gallery}" do

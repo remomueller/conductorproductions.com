@@ -40,7 +40,7 @@ class GalleriesController < ApplicationController
 
   # GET /galleries/new
   def new
-    @gallery = @project.galleries.new
+    @gallery = @project.galleries.new(category_id: params[:category_id])
   end
 
   # GET /galleries/1/edit
