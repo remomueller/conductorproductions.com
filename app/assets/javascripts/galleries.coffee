@@ -15,7 +15,6 @@
     $this = $(this)
     $this.sortable(
       tolerance: 'pointer'
-      cursorAt: { left: 16 }
       axis: 'x'
       stop: ->
         params = {}
