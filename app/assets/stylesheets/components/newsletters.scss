@@ -5,6 +5,7 @@
 
   .yir-banner-year {
     font-size: 96px;
+    text-align:right;
   }
 
   .yir-banner-subtitle {
@@ -82,7 +83,6 @@
 }
 
 .yir-columns {
-  margin-left: 40px;
   margin-bottom: 40px;
 
   .yir-column {
@@ -112,6 +112,7 @@
     display: -webkit-flex; /* Safari */
     display: flex;
     min-height: 100px;
+    margin-left: 40px;
 
     .yir-column {
       -webkit-flex: 1;  /* Safari 6.1+ */
