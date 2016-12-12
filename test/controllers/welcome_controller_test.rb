@@ -114,6 +114,11 @@ class WelcomeControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test 'should get year in review' do
+    get :year_in_review
+    assert_response :success
+  end
+
   # Older versions
 
   # test 'should get about' do

@@ -1,0 +1,128 @@
+- @title = 'Year In Review: 2016'
+
+- vimeo_url = "//player.vimeo.com/video/"
+- common_settings = "?api=1&title=0&byline=0&portrait=0&color=ffffff&autoplay=1"
+
+.yir-banner
+  .container
+    .row
+      .col-xs-6.nowrap
+        .yir-banner-year 2016
+      .col-xs-6
+        .yir-banner-subtitle
+          A YEAR
+          %br
+          %span.nowrap IN REVIEW
+
+.container
+  .yir-callout
+    We have been steadily growing, and this year was our best year yet. We
+    produced dozens of commercials and videos with great clients (who,
+    thankfully for us, keep coming back for more). Here are just a few samples
+    of our recent work. For the full line-up go to
+    = succeed '.' do
+      = link_to 'ConductorProductions.com', ENV['website_url'], class: 'plain-link'
+
+  #video-frame{ style: "width:100%;display:none;" }
+    .embed-responsive.embed-responsive-16by9{ style: "z-index:100" }
+      %iframe.embed-responsive-item{ src: "", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
+
+  .yir-highlights
+    .yir-highlight
+      .yir-video-left
+        .yir-title THUMBTACK
+        .yir-content
+          We created and produced 2 campaigns for a total of 8 commercials for the
+          San Francisco based Thumbtack.com.
+        .yir-footer
+          WATCH HERE &raquo;
+      .yir-video-right
+        .yir-image
+          - image_thumbnail = 'videos/drtv/drtv-1800flowers-thumb.png'
+          - vimeo_number = '185990535'
+          - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
+          = image_tag image_thumbnail, class: 'video-thumbnail', data: { object: 'launch-video', video_src: video_link }, alt: '' # , style: 'width:100%'
+
+    .yir-highlight
+      .yir-video-left
+        .yir-title REBAGG
+        .yir-content
+          We helped introduce New York based Rebagg.com to the market with 2
+          successful campaigns which we created and produced.
+        .yir-footer
+          WATCH HERE &raquo;
+      .yir-video-right
+        .yir-image
+          - image_thumbnail = 'videos/drtv/drtv-1800flowers-thumb.png'
+          - vimeo_number = '185990535'
+          - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
+          = image_tag image_thumbnail, class: 'video-thumbnail', data: { object: 'launch-video', video_src: video_link }, alt: '' # , style: 'width:100%'
+
+
+    .yir-highlight
+      .yir-video-left
+        .yir-title SHIELDS MRI
+        .yir-content
+          This year we began working with Bobby Farrelly. One of the spots he
+          directed for Conductor was for Shields MRI, featuring Tom Brady.
+        .yir-footer
+          WATCH HERE &raquo;
+      .yir-video-right
+        .yir-image
+          - image_thumbnail = 'videos/drtv/drtv-1800flowers-thumb.png'
+          - vimeo_number = '185990535'
+          - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
+          = image_tag image_thumbnail, class: 'video-thumbnail', data: { object: 'launch-video', video_src: video_link }, alt: '' # , style: 'width:100%'
+
+
+    .yir-highlight
+      .yir-video-left
+        .yir-title SUN LIFE FINANCIAL
+        .yir-content
+          We've been busy shooting and editing min-docs, including this one. We sent
+          a crew to Idaho to capture a true customer story for Sun Life Financial.
+        .yir-footer
+          WATCH HERE &raquo;
+      .yir-video-right
+        .yir-image
+          - image_thumbnail = 'videos/drtv/drtv-1800flowers-thumb.png'
+          - vimeo_number = '185990535'
+          - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
+          = image_tag image_thumbnail, class: 'video-thumbnail', data: { object: 'launch-video', video_src: video_link }, alt: '' # , style: 'width:100%'
+
+
+  .yir-columns
+    .yir-column.yir-column-left
+      .yir-column-title
+        STAFF SPOTLIGHT
+      .yir-column-content
+        .yir-title JIM FERGUESON
+        Our editor, Jim Fergueson, has
+        %span{ style: 'color: red' }
+          lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    .yir-column.yir-column-center
+    .yir-column.yir-column-right
+      .yir-column-title.yir-column-title-right
+        IN THE NEWS
+      .yir-column-content
+        %span{ style: 'color: red' }
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur.
+
+.yir-footer
+  .yir-footer-address
+    .container
+      CONDUCTOR PRODUCTIONS | 142 Berkeley St Fl 2 Boston, MA 02116
+  .yir-footer-contact
+    .container
+      Contact us at
+      = mail_to 'info@conductorproductions.com', 'info@conductorproductions.com'
+      or 617.262.1400

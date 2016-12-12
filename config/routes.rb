@@ -71,6 +71,7 @@ Rails.application.routes.draw do
     get 'images/videos/:video_id', action: :download_video_image, as: :download_video_image
     get :contact
     post :submit_contact
+    get :year_in_review, path: 'year-in-review'
     # get :news
     # get :about
     # get :clients
