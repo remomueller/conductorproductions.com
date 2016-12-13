@@ -4,6 +4,10 @@
 - **General Changes**
   - Added a new Year in Review page
 
+### Bug Fix
+- Fixed a JavaScript that occurred when adding event listener to non-existent
+  video
+
 ## 0.6.0 (October 16, 2016)
 
 ### Enhancements
