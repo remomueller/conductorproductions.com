@@ -1,3 +1,5 @@
+$brand-green-light: #f7f8f3;
+
 .yir-banner {
   background-color: $brand-green;
   color: $brand-white;
@@ -43,8 +45,17 @@
     margin-bottom: 20px;
     position: relative;
 
+    .yir-video-frame-container {
+      display: none;
+    }
+
     .yir-video-left {
       padding: 10px;
+      position: relative;
+
+      .yir-watch-here {
+        display: none;
+      }
     }
 
     .yir-video-right {
@@ -62,6 +73,12 @@
       display: flex;
       position: relative;
 
+      .yir-video-frame-container {
+        -webkit-flex: 1;  /* Safari 6.1+ */
+        -ms-flex: 1;  /* IE 10 */
+        flex: 1;
+      }
+
       .yir-video-left {
         -webkit-flex: 1;  /* Safari 6.1+ */
         -ms-flex: 1;  /* IE 10 */
@@ -69,6 +86,17 @@
 
         .yir-content {
           padding-right: 50px;
+        }
+
+        .yir-watch-here {
+          display: block;
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+
+          &.yir-watch-here-indent {
+            right: -150px;
+          }
         }
       }
 
@@ -86,7 +114,7 @@
   margin-bottom: 40px;
 
   .yir-column {
-    background-color: $gray-lighter;
+    background-color: $brand-green-light;
     margin-bottom: 20px;
 
     .yir-column-title {

@@ -5,6 +5,7 @@
 
 .yir-banner
   .container
+    = render 'layouts/newsletter_header'
     .row
       .col-xs-6.nowrap
         .yir-banner-year 2016
@@ -16,79 +17,116 @@
 
 .container
   .yir-callout
-    We have been steadily growing, and this year was our best year yet. We
-    produced dozens of commercials and videos with great clients (who,
-    thankfully for us, keep coming back for more). Here are just a few samples
-    of our recent work. For the full line-up go to
+    We have been steadily growing, and this year has been our best yet. In 2016,
+    we created and produced dozens of successful commercials and videos with
+    great clients from all over the country. (And, thankfully for us, they keep
+    coming back for more). Here are just a few samples of our recent work. For
+    the full line-up go to
     = succeed '.' do
       = link_to 'ConductorProductions.com', ENV['website_url'], class: 'plain-link'
+    We hope to work with you in 2017. Have a excellent New Year!
 
   #video-frame{ style: "width:100%;display:none;" }
     .embed-responsive.embed-responsive-16by9{ style: "z-index:100" }
       %iframe.embed-responsive-item{ src: "", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
 
   .yir-highlights
-    .yir-highlight
+    .yir-highlight{ data: { object: 'video-frame-container', position: 0 } }
+      .yir-video-frame-container
+        .embed-responsive.embed-responsive-16by9{ style: "z-index:100" }
+          %iframe.embed-responsive-item{ src: "", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
+
       .yir-video-left
+        - vimeo_number = '195377823'
+        - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
+
         .yir-title THUMBTACK
         .yir-content
-          We created and produced 2 campaigns for a total of 8 commercials for the
-          San Francisco based Thumbtack.com.
-        .yir-footer
-          WATCH HERE &raquo;
+          Conductor created and produced two campaigns for a total of 25
+          commercials for the San Francisco based
+          = succeed '.' do
+            = link_to 'Thumbtack.com', 'https://www.thumbtack.com/', class: 'white-link'
+        .yir-watch-here
+          = link_to '#', data: { object: 'launch-newsletter-video', video_src: video_link, position: 0 }, class: 'white-link' do
+            WATCH HERE &raquo;
       .yir-video-right
-        .yir-image
-          - image_thumbnail = 'videos/drtv/drtv-1800flowers-thumb.png'
-          - vimeo_number = '185990535'
-          - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
-          = image_tag image_thumbnail, class: 'video-thumbnail', data: { object: 'launch-video', video_src: video_link }, alt: '' # , style: 'width:100%'
+        .yir-image.hidden-xs
+          - image_thumbnail = 'newsletter/thumbtack-bar.png'
+          = image_tag image_thumbnail, class: 'video-thumbnail', data: { object: 'launch-newsletter-video', video_src: video_link, position: 0 }, alt: '' # , style: 'width:100%'
+        .yir-image.hidden-sm.hidden-md.hidden-lg.center
+          - image_thumbnail = 'newsletter/thumbtack-plain.png'
+          = image_tag image_thumbnail, class: 'video-thumbnail', data: { object: 'launch-newsletter-video', video_src: video_link, position: 0 }, alt: '' # , style: 'width:100%'
 
-    .yir-highlight
+    .yir-highlight{ data: { object: 'video-frame-container', position: 1 } }
+      .yir-video-frame-container
+        .embed-responsive.embed-responsive-16by9{ style: "z-index:100" }
+          %iframe.embed-responsive-item{ src: "", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
       .yir-video-left
+        - image_thumbnail = 'videos/drtv/drtv-1800flowers-thumb.png'
+        - vimeo_number = '195307110'
+        - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
         .yir-title REBAGG
         .yir-content
-          We helped introduce New York based Rebagg.com to the market with 2
-          successful campaigns which we created and produced.
-        .yir-footer
-          WATCH HERE &raquo;
+          We helped introduce New York based
+          = link_to 'Rebagg.com', 'https://rebagg.com/', class: 'white-link'
+          to the market with two
+          successful national campaigns.
+        .yir-watch-here.yir-watch-here-indent
+          = link_to '#', data: { object: 'launch-newsletter-video', video_src: video_link, position: 1 }, class: 'white-link' do
+            WATCH HERE &raquo;
       .yir-video-right
-        .yir-image
-          - image_thumbnail = 'videos/drtv/drtv-1800flowers-thumb.png'
-          - vimeo_number = '185990535'
-          - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
-          = image_tag image_thumbnail, class: 'video-thumbnail', data: { object: 'launch-video', video_src: video_link }, alt: '' # , style: 'width:100%'
+        .yir-image.hidden-xs
+          - image_thumbnail = 'newsletter/rebagg-bar.png'
+          = image_tag image_thumbnail, class: 'video-thumbnail', data: { object: 'launch-newsletter-video', video_src: video_link, position: 1 }, alt: '' # , style: 'width:100%'
+        .yir-image.hidden-sm.hidden-md.hidden-lg.center
+          - image_thumbnail = 'newsletter/rebagg-plain.png'
+          = image_tag image_thumbnail, class: 'video-thumbnail', data: { object: 'launch-newsletter-video', video_src: video_link, position: 1 }, alt: '' # , style: 'width:100%'
 
 
-    .yir-highlight
+    .yir-highlight{ data: { object: 'video-frame-container', position: 2 } }
+      .yir-video-frame-container
+        .embed-responsive.embed-responsive-16by9{ style: "z-index:100" }
+          %iframe.embed-responsive-item{ src: "", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
       .yir-video-left
+        - vimeo_number = '185990535'
+        - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
         .yir-title SHIELDS MRI
         .yir-content
           This year we began working with Bobby Farrelly. One of the spots he
-          directed for Conductor was for Shields MRI, featuring Tom Brady.
-        .yir-footer
-          WATCH HERE &raquo;
+          directed with Conductor was for Shields MRI, featuring Tom Brady.
+        .yir-watch-here
+          = link_to '#', data: { object: 'launch-newsletter-video', video_src: video_link, position: 2 }, class: 'white-link' do
+            WATCH HERE &raquo;
       .yir-video-right
-        .yir-image
-          - image_thumbnail = 'videos/drtv/drtv-1800flowers-thumb.png'
-          - vimeo_number = '185990535'
-          - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
-          = image_tag image_thumbnail, class: 'video-thumbnail', data: { object: 'launch-video', video_src: video_link }, alt: '' # , style: 'width:100%'
+        .yir-image.hidden-xs
+          - image_thumbnail = 'newsletter/shields-bar.png'
+          = image_tag image_thumbnail, class: 'video-thumbnail', data: { object: 'launch-newsletter-video', video_src: video_link, position: 2 }, alt: '' # , style: 'width:100%'
+        .yir-image.hidden-sm.hidden-md.hidden-lg.center
+          - image_thumbnail = 'newsletter/shields-plain.png'
+          = image_tag image_thumbnail, class: 'video-thumbnail', data: { object: 'launch-newsletter-video', video_src: video_link, position: 2 }, alt: '' # , style: 'width:100%'
 
-
-    .yir-highlight
+    .yir-highlight{ data: { object: 'video-frame-container', position: 3 } }
+      - vimeo_number = '185988791'
+      - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
+      .yir-video-frame-container
+        .embed-responsive.embed-responsive-16by9{ style: "z-index:100" }
+          %iframe.embed-responsive-item{ src: "", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
       .yir-video-left
         .yir-title SUN LIFE FINANCIAL
         .yir-content
-          We've been busy shooting and editing min-docs, including this one. We sent
-          a crew to Idaho to capture a true customer story for Sun Life Financial.
-        .yir-footer
-          WATCH HERE &raquo;
+          We've been busy shooting and editing mini-docs, including this one. We
+          sent a crew to Idaho to capture a true customer story for Sun Life
+          Financial.
+        .yir-watch-here.yir-watch-here-indent
+          = link_to '#', data: { object: 'launch-newsletter-video', video_src: video_link, position: 3 }, class: 'white-link' do
+            WATCH HERE &raquo;
       .yir-video-right
-        .yir-image
-          - image_thumbnail = 'videos/drtv/drtv-1800flowers-thumb.png'
-          - vimeo_number = '185990535'
-          - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
-          = image_tag image_thumbnail, class: 'video-thumbnail', data: { object: 'launch-video', video_src: video_link }, alt: '' # , style: 'width:100%'
+        .yir-image.hidden-xs
+          - image_thumbnail = 'newsletter/sun-life-bar.png'
+          = image_tag image_thumbnail, class: 'video-thumbnail', data: { object: 'launch-newsletter-video', video_src: video_link, position: 3 }, alt: '' # , style: 'width:100%'
+        .yir-image.hidden-sm.hidden-md.hidden-lg.center
+          - image_thumbnail = 'newsletter/sun-life-plain.png'
+          = image_tag image_thumbnail, class: 'video-thumbnail', data: { object: 'launch-newsletter-video', video_src: video_link, position: 3 }, alt: '' # , style: 'width:100%'
 
 
   .yir-columns
@@ -98,30 +136,27 @@
       .yir-column-content
         .yir-title JIM FERGUESON
         .pull-right= image_tag 'newsletter/jim-fergueson.png', style: 'width: 200px;margin-left: 20px;margin-top: -34px;'
-        Our editor, Jim Fergueson, has
-        %span{ style: 'color: red' }
-          lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Our editor, Jim Fergueson, had his third film premiere at this year's
+        Short Film Corner at the Cannes Film Festival. Written and produced over
+        two years, his film "Overachiever" touches on the harsh realities that
+        recent graduates face. It follows one man's journey of realizing that we
+        are in a world that doesn't give handouts and "values unreachable
+        experience often without offering second chances."
+        = link_to 'http://emag.imaginenews.com/755/01-04-2016#page/8' do
+          Read more in this article from Imagine Magazine.
     .yir-column.yir-column-center
     .yir-column.yir-column-right
       .yir-column-title.yir-column-title-right
         IN THE NEWS
       .yir-column-content
-        %span{ style: 'color: red' }
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat.
-        .pull-left= image_tag 'newsletter/moxie-awards.png', style: 'margin-right: 20px;'
-        %span{ style: 'color: red' }
-          Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet,
-          consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
+        Roll out the red carpet! Conductor Productions and media partner Mercury
+        Media were nominated for 3 Moxie Awards at the 2016 ERA convention in
+        Las Vegas. Quite the honor. The team was nominated in the category Best
+        Short Form Variety for Mobile Help and Best Short Form of the Year,
+        Brand Response for Stride Rite Shoot. We were happy to take home the
+        award for Best Health Show of the Year for Quell Wearable Pain Relief.
+        .center{ style: 'margin-top: 10px;' }
+          = image_tag 'newsletter/moxie-awards.png', style: 'margin-right: 20px;max-width: 100%'
 
 .yir-footer
   .yir-footer-address

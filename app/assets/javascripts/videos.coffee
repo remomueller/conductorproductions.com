@@ -20,6 +20,10 @@ $(document)
     $("#other-videos").show()
     $("#video-frame").hide()
     $("#video-frame iframe").attr('src', "")
+    $('.yir-video-left').show()
+    $('.yir-video-right').show()
+    $('.yir-video-frame-container').hide()
+    $('.yir-video-frame-container iframe').attr('src', '')
     false
   )
   .on('click', "[data-object~='launch-video']", ->
