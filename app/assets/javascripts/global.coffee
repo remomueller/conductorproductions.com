@@ -5,6 +5,7 @@
   galleriesReady()
   galleryPhotosReady()
   categoriesReady()
+  slidesReady()
 
 $(document).ready(ready)
 $(document)
