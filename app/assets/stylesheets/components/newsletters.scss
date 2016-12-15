@@ -1,31 +1,13 @@
 $brand-green-light: #f7f8f3;
 
 .yir-banner {
-  background-color: $brand-green;
-  color: $brand-white;
-  margin-bottom: 40px;
+  // background-color: #97a73b;
+  margin-bottom: 20px;
+  margin-left: -15px;
+  margin-right: -15px;
 
-  .yir-banner-year {
-    font-size: 96px;
-    text-align:right;
-  }
-
-  .yir-banner-subtitle {
-    font-size: 32px;
-    line-height: 1em;
-    margin-top: 40px;
-  }
-}
-
-@media screen and (min-width: $screen-sm-min) {
-  .yir-banner {
-    .yir-banner-year {
-      font-size: 128px;
-    }
-
-    .yir-banner-subtitle {
-      margin-top: 64px;
-    }
+  img {
+    width: 100%;
   }
 }
 

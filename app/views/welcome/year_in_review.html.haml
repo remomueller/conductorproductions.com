@@ -5,15 +5,7 @@
 
 .yir-banner
   .container
-    =# render 'layouts/newsletter_header'
-    .row
-      .col-xs-6.nowrap
-        .yir-banner-year 2016
-      .col-xs-6
-        .yir-banner-subtitle
-          A YEAR
-          %br
-          %span.nowrap IN REVIEW
+    = image_tag 'newsletter/2016.png', alt: '2016 A YEAR IN REVIEW'
 
 .container
   .yir-callout
@@ -57,7 +49,7 @@
           - image_thumbnail = 'newsletter/thumbtack-plain.png'
           = image_tag image_thumbnail, class: 'video-thumbnail', data: { object: 'launch-newsletter-video', video_src: video_link, position: 0 }, alt: '' # , style: 'width:100%'
 
-    .yir-highlight.slideanim{ data: { object: 'video-frame-container', position: 1 } }
+    .yir-highlight{ data: { object: 'video-frame-container', position: 1 } }
       .yir-video-frame-container
         .embed-responsive.embed-responsive-16by9{ style: "z-index:100" }
           %iframe.embed-responsive-item{ src: "", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
@@ -83,7 +75,7 @@
           = image_tag image_thumbnail, class: 'video-thumbnail', data: { object: 'launch-newsletter-video', video_src: video_link, position: 1 }, alt: '' # , style: 'width:100%'
 
 
-    .yir-highlight.slideanim{ data: { object: 'video-frame-container', position: 2 } }
+    .yir-highlight{ data: { object: 'video-frame-container', position: 2 } }
       .yir-video-frame-container
         .embed-responsive.embed-responsive-16by9{ style: "z-index:100" }
           %iframe.embed-responsive-item{ src: "", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
@@ -105,7 +97,7 @@
           - image_thumbnail = 'newsletter/shields-plain.png'
           = image_tag image_thumbnail, class: 'video-thumbnail', data: { object: 'launch-newsletter-video', video_src: video_link, position: 2 }, alt: '' # , style: 'width:100%'
 
-    .yir-highlight.slideanim{ data: { object: 'video-frame-container', position: 3 } }
+    .yir-highlight{ data: { object: 'video-frame-container', position: 3 } }
       - vimeo_number = '185988791'
       - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
       .yir-video-frame-container
