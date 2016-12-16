@@ -2,7 +2,6 @@ $(document)
   .on('click', "[data-object~='launch-newsletter-video']", ->
     $("#shade").fadeIn()
     video_container_parent = "[data-object~='video-frame-container'][data-position=#{$(this).data('position')}]"
-    console.log video_container_parent
     $(video_container_parent).find('.yir-video-left').hide()
     $(video_container_parent).find('.yir-video-right').hide()
     video_container = $(video_container_parent).find('.yir-video-frame-container')
