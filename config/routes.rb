@@ -63,6 +63,7 @@ Rails.application.routes.draw do
 
   get 'invite/:invite_token' => 'project_users#invite'
 
+  get '2016', to: redirect('year-in-review')
   scope module: 'welcome' do
     get :dashboard
     get :index
