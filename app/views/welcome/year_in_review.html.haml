@@ -31,23 +31,26 @@
       .yir-video-left
         - vimeo_number = '195377823'
         - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
-
-        .yir-title THUMBTACK
+        - data = { object: 'launch-newsletter-video', video_src: video_link, position: 0 }
+        .yir-video-title{ data: data } THUMBTACK
         .yir-content
           Conductor created and produced two campaigns for a total of 25
           commercials for the San Francisco based
           = succeed '.' do
             = link_to 'Thumbtack.com', 'https://www.thumbtack.com/', class: 'white-link'
         .yir-watch-here
-          = link_to '#', data: { object: 'launch-newsletter-video', video_src: video_link, position: 0 }, class: 'white-link' do
+          = link_to '#', data: data, class: 'white-link' do
             WATCH HERE &raquo;
       .yir-video-right
         .yir-image.hidden-xs
           - image_thumbnail = 'newsletter/thumbtack-bar.png'
-          = image_tag image_thumbnail, class: 'video-thumbnail', data: { object: 'launch-newsletter-video', video_src: video_link, position: 0 }, alt: '' # , style: 'width:100%'
+          = image_tag image_thumbnail, class: 'video-thumbnail', data: data, alt: ''
         .yir-image.hidden-sm.hidden-md.hidden-lg.center
           - image_thumbnail = 'newsletter/thumbtack-plain.png'
-          = image_tag image_thumbnail, class: 'video-thumbnail', data: { object: 'launch-newsletter-video', video_src: video_link, position: 0 }, alt: '' # , style: 'width:100%'
+          = image_tag image_thumbnail, class: 'video-thumbnail', data: data, alt: '', style: 'max-width:100%'
+        .hidden-sm.hidden-md.hidden-lg.center{ style: 'padding-top: 5px;' }
+          = link_to '#', data: data, class: 'white-link' do
+            WATCH HERE
 
     .yir-highlight{ data: { object: 'video-frame-container', position: 1 } }
       .yir-video-frame-container
@@ -57,23 +60,26 @@
         - image_thumbnail = 'videos/drtv/drtv-1800flowers-thumb.png'
         - vimeo_number = '195307110'
         - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
-        .yir-title REBAGG
+        - data = { object: 'launch-newsletter-video', video_src: video_link, position: 1 }
+        .yir-video-title{ data: data } REBAGG
         .yir-content
           We helped introduce New York based
           = link_to 'Rebagg.com', 'https://rebagg.com/', class: 'white-link'
           to the market with two
           successful national campaigns.
         .yir-watch-here.yir-watch-here-indent
-          = link_to '#', data: { object: 'launch-newsletter-video', video_src: video_link, position: 1 }, class: 'white-link' do
+          = link_to '#', data: data, class: 'white-link' do
             WATCH HERE &raquo;
       .yir-video-right
         .yir-image.hidden-xs
           - image_thumbnail = 'newsletter/rebagg-bar.png'
-          = image_tag image_thumbnail, class: 'video-thumbnail', data: { object: 'launch-newsletter-video', video_src: video_link, position: 1 }, alt: '' # , style: 'width:100%'
+          = image_tag image_thumbnail, class: 'video-thumbnail', data: data, alt: ''
         .yir-image.hidden-sm.hidden-md.hidden-lg.center
           - image_thumbnail = 'newsletter/rebagg-plain.png'
-          = image_tag image_thumbnail, class: 'video-thumbnail', data: { object: 'launch-newsletter-video', video_src: video_link, position: 1 }, alt: '' # , style: 'width:100%'
-
+          = image_tag image_thumbnail, class: 'video-thumbnail', data: data, alt: '', style: 'max-width:100%'
+        .hidden-sm.hidden-md.hidden-lg.center{ style: 'padding-top: 5px;' }
+          = link_to '#', data: data, class: 'white-link' do
+            WATCH HERE
 
     .yir-highlight{ data: { object: 'video-frame-container', position: 2 } }
       .yir-video-frame-container
@@ -82,44 +88,51 @@
       .yir-video-left
         - vimeo_number = '185990535'
         - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
-        .yir-title SHIELDS MRI
+        - data = { object: 'launch-newsletter-video', video_src: video_link, position: 2 }
+        .yir-video-title{ data: data } SHIELDS MRI
         .yir-content
           This year we began working with Bobby Farrelly. One of the spots he
           directed with Conductor was for Shields MRI, featuring Tom Brady.
         .yir-watch-here
-          = link_to '#', data: { object: 'launch-newsletter-video', video_src: video_link, position: 2 }, class: 'white-link' do
+          = link_to '#', data: data, class: 'white-link' do
             WATCH HERE &raquo;
       .yir-video-right
         .yir-image.hidden-xs
           - image_thumbnail = 'newsletter/shields-bar.png'
-          = image_tag image_thumbnail, class: 'video-thumbnail', data: { object: 'launch-newsletter-video', video_src: video_link, position: 2 }, alt: '' # , style: 'width:100%'
+          = image_tag image_thumbnail, class: 'video-thumbnail', data: data, alt: ''
         .yir-image.hidden-sm.hidden-md.hidden-lg.center
           - image_thumbnail = 'newsletter/shields-plain.png'
-          = image_tag image_thumbnail, class: 'video-thumbnail', data: { object: 'launch-newsletter-video', video_src: video_link, position: 2 }, alt: '' # , style: 'width:100%'
+          = image_tag image_thumbnail, class: 'video-thumbnail', data: data, alt: '', style: 'max-width:100%'
+        .hidden-sm.hidden-md.hidden-lg.center{ style: 'padding-top: 5px;' }
+          = link_to '#', data: data, class: 'white-link' do
+            WATCH HERE
 
     .yir-highlight{ data: { object: 'video-frame-container', position: 3 } }
-      - vimeo_number = '185988791'
-      - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
       .yir-video-frame-container
         .embed-responsive.embed-responsive-16by9{ style: "z-index:100" }
           %iframe.embed-responsive-item{ src: "", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
       .yir-video-left
-        .yir-title SUN LIFE FINANCIAL
+        - vimeo_number = '185988791'
+        - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
+        - data = { object: 'launch-newsletter-video', video_src: video_link, position: 3 }
+        .yir-video-title{ data: data } SUN LIFE FINANCIAL
         .yir-content
           We've been busy shooting and editing mini-docs, including this one. We
           sent a crew to Idaho to capture a true customer story for Sun Life
           Financial.
         .yir-watch-here.yir-watch-here-indent
-          = link_to '#', data: { object: 'launch-newsletter-video', video_src: video_link, position: 3 }, class: 'white-link' do
+          = link_to '#', data: data, class: 'white-link' do
             WATCH HERE &raquo;
       .yir-video-right
         .yir-image.hidden-xs
           - image_thumbnail = 'newsletter/sun-life-bar.png'
-          = image_tag image_thumbnail, class: 'video-thumbnail', data: { object: 'launch-newsletter-video', video_src: video_link, position: 3 }, alt: '' # , style: 'width:100%'
+          = image_tag image_thumbnail, class: 'video-thumbnail', data: data, alt: ''
         .yir-image.hidden-sm.hidden-md.hidden-lg.center
           - image_thumbnail = 'newsletter/sun-life-plain.png'
-          = image_tag image_thumbnail, class: 'video-thumbnail', data: { object: 'launch-newsletter-video', video_src: video_link, position: 3 }, alt: '' # , style: 'width:100%'
-
+          = image_tag image_thumbnail, class: 'video-thumbnail', data: data, alt: '', style: 'max-width:100%'
+        .hidden-sm.hidden-md.hidden-lg.center{ style: 'padding-top: 5px;' }
+          = link_to '#', data: data, class: 'white-link' do
+            WATCH HERE
 
   .yir-columns
     .yir-column.yir-column-left

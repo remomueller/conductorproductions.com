@@ -42,6 +42,7 @@ $brand-green-light: #f7f8f3;
 
     .yir-video-right {
       text-align: right;
+      padding-bottom: 10px;
     }
   }
 }
@@ -73,11 +74,14 @@ $brand-green-light: #f7f8f3;
         .yir-watch-here {
           display: block;
           position: absolute;
-          bottom: 10px;
-          right: 10px;
+
+          right: -150px;
+          top: 10px;
 
           &.yir-watch-here-indent {
             right: -150px;
+            bottom: 10px;
+            top: initial;
           }
         }
       }
@@ -87,6 +91,24 @@ $brand-green-light: #f7f8f3;
         -ms-flex: 0;  /* IE 10 */
         flex: 0;
         width: 360px;
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $screen-md-min) {
+  .yir-highlights {
+    .yir-highlight {
+      .yir-video-left {
+        .yir-watch-here {
+          bottom: 10px;
+          top: initial;
+          right: 10px;
+
+          &.yir-watch-here-indent {
+          }
+        }
       }
     }
   }
@@ -109,7 +131,7 @@ $brand-green-light: #f7f8f3;
     .yir-column-content {
       font-size: 20px;
       padding: 20px;
-      text-align: justify;
+      // text-align: justify;
     }
   }
 
@@ -151,6 +173,13 @@ $brand-green-light: #f7f8f3;
       }
     }
   }
+}
+
+.yir-video-title {
+  color: $brand-green;
+  font-size: 24px;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .yir-title {
