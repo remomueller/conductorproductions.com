@@ -2,14 +2,11 @@ $brand-green-light: #f7f8f3;
 
 .yir-banner {
   background: #fff; /* Old browsers */
-  background: -moz-linear-gradient(left,  #97a73b 0%, #97a73b 49%, #ffffff 51%, #ffffff 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left,  #97a73b 0%,#97a73b 49%,#ffffff 51%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right,  #97a73b 0%,#97a73b 49%,#ffffff 51%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#97a73b', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
-
+  background: -moz-linear-gradient(left,  #000000 0%, #000000 50%, #ffffff 01%, #ffffff 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #000000 0%,#000000 50%,#ffffff 50%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #000000 0%,#000000 50%,#ffffff 50%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
   margin-bottom: 20px;
-  margin-left: -15px;
-  margin-right: -15px;
 
   img {
     width: 100%;
@@ -143,6 +140,10 @@ $brand-green-light: #f7f8f3;
       font-size: 20px;
       padding: 20px;
       // text-align: justify;
+
+      img {
+        max-width: 50%;
+      }
     }
   }
 

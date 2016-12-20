@@ -5,7 +5,7 @@
 
 .yir-banner
   .container
-    = image_tag 'newsletter/microsite-header.png', alt: '2016 A YEAR IN REVIEW'
+    = image_tag 'newsletter/microsite-header-black.png', alt: '2016 A YEAR IN REVIEW'
 
 .container
   .yir-callout
@@ -34,7 +34,7 @@
         - data = { object: 'launch-newsletter-video', video_src: video_link, position: 0 }
         .yir-video-title{ data: data } THUMBTACK
         .yir-content
-          Conductor created and produced two campaigns for a total of 25
+          Conductor created and produced two campaigns for a total of 26
           commercials for the San Francisco based
           = succeed '.' do
             = link_to 'Thumbtack.com', 'https://www.thumbtack.com/', class: 'white-link'
@@ -140,7 +140,7 @@
         STAFF SPOTLIGHT
       .yir-column-content
         .yir-title JIM FERGUESON
-        .pull-right= image_tag 'newsletter/jim-fergueson.png', style: 'width: 200px;margin-left: 20px;'
+        = image_tag 'newsletter/jim-fergueson.png', style: 'width: 200px;margin-left: 20px;', class: 'pull-right'
         Our editor, Jim Fergueson, had his third film premiere at this year's
         Short Film Corner at the Cannes Film Festival. Written and produced over
         two years, his film "Overachiever" touches on the harsh realities that
@@ -160,7 +160,7 @@
         Short Form Variety for Mobile Help and Best Short Form of the Year,
         Brand Response for Stride Rite Snoot. We were happy to take home the
         award for Best Health Show of the Year for Quell Wearable Pain Relief.
-        .center{ style: 'margin-top: 10px;' }
+        .center{ style: 'margin-top: 30px;' }
           = link_to 'http://blog.retailing.org/era-reveals-2016-moxie-award-winners' do
             = image_tag 'newsletter/moxie-awards.png', style: 'margin-right: 20px;max-width: 100%'
 
