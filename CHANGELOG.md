@@ -1,4 +1,4 @@
-## 0.7.0
+## 0.7.0 (December 20, 2016)
 
 ### Enhancements
 - **General Changes**
