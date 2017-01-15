@@ -4,6 +4,7 @@
 - **Gem Changes**
   - Updated to Ruby 2.4.0
   - Updated to rails 5.0.1
+  - Updated to jquery-rails 4.2.2
 
 ## 0.7.0 (December 20, 2016)
 
