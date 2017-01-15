@@ -1,3 +1,5 @@
+## 0.8.0
+
 ## 0.7.0 (December 20, 2016)
 
 ### Enhancements
