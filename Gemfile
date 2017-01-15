@@ -16,7 +16,7 @@ gem 'bcrypt',               '~> 3.1.10'
 gem 'font-awesome-rails'
 gem 'carrierwave',          '~> 1.0.0'
 gem 'mini_magick'
-gem 'jquery-ui-rails',      '~> 5.0.5'
+gem 'jquery-ui-rails',      '~> 6.0.1'
 gem 'kaminari',             '~> 0.17.0'
 
 # Rails Defaults

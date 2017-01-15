@@ -2,7 +2,7 @@
   $('[data-object~="videos-sortable"]').sortable(
     handle: ".handle"
     axis: "y"
-    stop: () ->
+    stop: ->
       sortable_order = $('[data-object~="videos-sortable"]').sortable('toArray', attribute: 'data-video-id')
       params = {}
       params.video_page = $(this).data('video-page')
