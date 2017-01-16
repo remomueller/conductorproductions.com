@@ -19,4 +19,15 @@
 #= require bootstrap-sprockets
 #= require turbolinks
 #= require global
-#= require_tree .
+
+#= require categories
+#= require filedrag
+#= require galleries
+#= require global
+#= require google_analytics
+#= require home
+#= require newsletter
+#= require projects
+#= require slides
+#= require slug
+#= require videos

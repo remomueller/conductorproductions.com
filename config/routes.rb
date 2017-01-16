@@ -3,6 +3,17 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
+  get 'pc' => 'pc#index'
+
+  namespace :pc do
+    get :clients
+    get :contact
+    get :directors
+    get :index
+    get :our_work, path: 'our-work'
+    get :what_we_do, path: 'what-we-do'
+  end
+
   resources :videos do
     collection do
       get 'reorder/:video_page', action: 'reorder', as: :reorder

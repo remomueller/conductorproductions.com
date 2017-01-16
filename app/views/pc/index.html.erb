@@ -1,0 +1,437 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Conductor Productions</title>
+    <meta name="description" content="Video Production Company Located in Downtown Boston" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <%= stylesheet_link_tag 'screen', media: 'all', data: { turbolinks_track: 'reload' } %>
+    <!-- endbuild -->
+</head>
+
+<body>
+
+    <!-- Sticky Header -->
+    <header class="header" id="stickyHeader">
+        <section class="header-inner inner-wrapper">
+            <a href="/" class="logo-container left" title="Conductor Productions">
+                <img src="images/conductor-logo.svg" alt="Conductor Productions">
+            </a>
+            <div class="menu-icon menu-trigger">
+                <small>menu</small>
+                <span class="top"></span>
+                <span class="mid"></span>
+                <span class="bottom"></span>
+            </div>
+        </section>
+    </header><!-- / End Sticky Header -->
+
+    <nav class="nav-container">
+        <div class="inner">
+            <div class="nav-close" id="menuClose">&times;</div>
+            <ul>
+                <li><a href="what-we-do.html" title="What We Do">What We Do</a></li>
+                <li><a href="our-work.html" title="Our Work">Our Work</a></li>
+                <li class="directors">
+                    <span class="block directors-toggle" title="Directors">Directors</span>
+                    <ul class="dropdown-nav">
+                        <li class="dropdown-item">
+                            <a href="directors.html" title="Noah Lyndiard">
+                                Noah Lyndiard
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="directors.html" title="Noah Lyndiard">
+                                James Ferguson
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="directors.html" title="Noah Lyndiard">
+                                Michael Lavalongname
+                            </a>
+                        </li>
+                    </ul>
+                </li><!-- / end directors -->
+                <li><a href="clients.html" title="Clients">Clients</a></li>
+                <li><a href="contact.html" title="Contact">Contact</a></li>
+                <li><a href="#" title="Client Portal">Client Portal</a></li>
+            </ul>
+        </div><!-- / end inner nav -->
+    </nav><!-- / end navigation -->
+
+    <main class="outer-wrapper bounds home">
+        <div class="welcome no-border title-header outer-wrapper">
+            <div class="left">
+                <h1>
+                    <b class="first">We're Conductor.</b>
+                    <i class="page-name">We’re a company of Film, TV, and Commercial Directors and Producers</i>
+                </h1>
+            </div>
+            <!-- end left track -->
+            <svg width="199px" height="178px" class="arrow-design right" viewBox="0 0 179 158">
+                <g stroke="none" stroke-width="1" fill="none">
+                    <g transform="translate(-1261.000000, -2.000000)" fill-opacity="1" fill="#000">
+                        <g transform="translate(-38.000000, 2.000000)">
+                            <path d="M1299,0 L2345.20949,0 L2422,79 L2345.20949,158 L1330.30314,158 L1299,0 Z" transform="translate(1860.500000, 79.000000) scale(-1, 1) translate(-1860.500000, -79.000000) "></path>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            <div class="menu-icon right menu-trigger">
+                <small>menu</small>
+                <span class="top"></span>
+                <span class="mid"></span>
+                <span class="bottom"></span>
+            </div>
+            <!-- / end menu icon -->
+        </div>
+        <!-- / end welcome -->
+        <section class="hero video-player">
+            <div class="hero-inner video-inner">
+                <div class="video-carousel" id="heroCarousel">
+                    <div class="item">
+                        <img src="images/home-river.jpg" alt="Charles River" />
+                    </div><!-- / end item -->
+                    <div class="item" class="video-outer" data-videourl="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119">
+                        <div class="video-container">
+                            <span class="play-btn" title="Play">
+                                <span class="play"></span>
+                            </span>
+                            <video id="standalonePlayer" class="video" src="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" poster="/images/posters/thumbtack.png" muted>
+                            </video>
+                        </div><!-- / end video container -->
+                    </div>
+                </div><!-- / end video container -->
+                <div class="hero-callout video-callout">
+                    <h2>
+                        We are the <span>architects</span> and
+                        <span>builders</span> of commercials that work
+                    </h2>
+                    <a href="/what-we-do.html" class="button right" data-role="button" title="What We Do">Learn More</a>
+                </div><!-- / end hero callout -->
+            </div><!-- / end hero inner -->
+            <div class="video-controls disabled" id="videoControls">
+                <!-- / end slide list -->
+                <ul class="controls right">
+                    <li>
+                        <a href="#" id="restart" title="Restart" class="icon icon-restart"></a>
+                    </li>
+                    <li>
+                        <a href="#" id="pause" title="Play/Pause" class="icon icon-pause"></a>
+                    </li>
+                    <li>
+                        <a href="#" id="volume" title="Volume"  class="icon icon-mute-video"></a>
+                    </li>
+                </ul>
+                <!-- / end video controls -->
+            </div>
+            <!-- / end hero controls -->
+        </section>
+        <!-- / end hero -->
+        <section class="middle see-more-work">
+            <div class="callouts">
+                <div class="item">
+                    <a href="/login" class="button" data-role="button">Client Portal</a>
+                </div><!-- / end callout -->
+                <div class="scroll-callout item">
+                    <img src="images/arrow-down-callout.svg" alt="Backdrop" class="backdrop" />
+                    <div class="content">
+                        <span>Scroll To See</span>
+                        <span>More Work</span>
+                        <a href="#" class="arrow">
+                            <span class="icon icon-down-arrow"></span>
+                        </a>
+                    </div><!-- / end panel -->
+                </div><!-- / end scroll callout -->
+                <div class="item">
+                    <a href="/contact.html" class="button" data-role="button">Contact Frank</a>
+                </div>
+            </div><!-- / end callouts -->
+            <div class="background-gradient"></div><!-- / end background gradient -->
+        </section>
+        <!-- / end middle see more work section -->
+        <section class="work-outer work-grid outer-wrapper">
+            <ul class="grid-row">
+                <li data-videoid="01" data-videourl="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" data-posterurl="/images/posters/thumbtack.png" class="item commercial">
+                    <a href="/our-work.html#01" title="View Project">
+                        <div class="caption">
+                            <div class="inner">
+                                <span class="icon icon-mag-glass"></span>
+                                <span class="title">NetFlix</span>
+                                <span class="description">This is a sweet caption about said kitten.</span>
+                                <span class="view button" data-role="button">View Project</span>
+                            </div>
+                            <!-- / end inner -->
+                        </div>
+                        <!-- / end caption -->
+                        <div class="image-container">
+                            <%= image_tag 'pc/placeholders/grid-item-three.jpg', alt: 'GOLF' %>
+                        </div>
+                        <!-- / end image container -->
+                    </a>
+                </li>
+                <!-- / end item -->
+                <li data-videoid="02" data-videourl="/videos/mov_bbb.mp4" data-posterurl="/images/posters/thumbtack-2.png" class="item commercial">
+                    <a href="/our-work.html#02" title="View Project">
+                        <div class="caption">
+                            <div class="inner">
+                                <span class="icon icon-mag-glass"></span>
+                                <span class="title">Stride Rite</span>
+                                <span class="description">This is a sweet caption about said kitten.</span>
+                                <span class="view button" data-role="button">View Project</span>
+                            </div>
+                            <!-- / end inner -->
+                        </div>
+                        <!-- / end caption -->
+                        <div class="image-container">
+                            <%= image_tag 'pc/placeholders/grid-item-two.jpg', alt: 'GOLF' %>
+                        </div>
+                        <!-- / end image container -->
+                    </a>
+                </li>
+                <!-- / end item -->
+                <li data-videoid="03" data-videourl="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" data-posterurl="/images/posters/thumbtack-2.png" class="item commercial">
+                    <a href="/our-work.html#03" title="View Project">
+                        <div class="caption">
+                            <div class="inner">
+                                <span class="icon icon-mag-glass"></span>
+                                <span class="title">NetFlix</span>
+                                <span class="description">This is a sweet caption about said kitten.</span>
+                                <span class="view button" data-role="button">View Project</span>
+                            </div>
+                            <!-- / end inner -->
+                        </div>
+                        <!-- / end caption -->
+                        <div class="image-container">
+                            <%= image_tag 'pc/placeholders/grid-item.jpg', alt: 'GOLF' %>
+                        </div>
+                        <!-- / end image container -->
+                    </a>
+                </li>
+                <!-- / end item -->
+                <li data-videoid="04" data-videourl="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" data-posterurl="/images/posters/thumbtack.png" class="item digital-content">
+                    <a href="/our-work.html#04" title="View Project">
+                        <div class="caption">
+                            <div class="inner">
+                                <span class="icon icon-mag-glass"></span>
+                                <span class="title">NetFlix</span>
+                                <span class="description">This is a sweet caption about said kitten.</span>
+                                <span class="view button" data-role="button">View Project</span>
+                            </div>
+                            <!-- / end inner -->
+                        </div>
+                        <!-- / end caption -->
+                        <div class="image-container">
+                            <%= image_tag 'pc/placeholders/grid-item-two.jpg', alt: 'GOLF' %>
+                        </div>
+                        <!-- / end image container -->
+                    </a>
+                </li>
+                <!-- / end item -->
+                <li data-videoid="05" data-videourl="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" data-posterurl="/images/posters/thumbtack.png" class="item digital-content">
+                    <a href="/our-work.html#05" title="View Project">
+                        <div class="caption">
+                            <div class="inner">
+                                <span class="icon icon-mag-glass"></span>
+                                <span class="title">NetFlix</span>
+                                <span class="description">This is a sweet caption about said kitten.</span>
+                                <span class="view button" data-role="button">View Project</span>
+                            </div>
+                            <!-- / end inner -->
+                        </div>
+                        <!-- / end caption -->
+                        <div class="image-container">
+                            <%= image_tag 'pc/placeholders/grid-item-three.jpg', alt: 'GOLF' %>
+                        </div>
+                        <!-- / end image container -->
+                    </a>
+                </li>
+                <!-- / end item -->
+                <li data-videoid="06" data-videourl="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" data-posterurl="/images/posters/thumbtack.png" class="item digital-content">
+                    <a href="/our-work.html#06" title="View Project">
+                        <div class="caption">
+                            <div class="inner">
+                                <span class="icon icon-mag-glass"></span>
+                                <span class="title">NetFlix</span>
+                                <span class="description">This is a sweet caption about said kitten.</span>
+                                <span class="view button" data-role="button">View Project</span>
+                            </div>
+                            <!-- / end inner -->
+                        </div>
+                        <!-- / end caption -->
+                        <div class="image-container">
+                            <%= image_tag 'pc/placeholders/grid-item-three.jpg', alt: 'GOLF' %>
+                        </div>
+                        <!-- / end image container -->
+                    </a>
+                </li>
+                <!-- / end item -->
+            </ul>
+        </section>
+        <!-- / end work outer -->
+        <section class="services-outer services logo-track-callout">
+            <div class="track left-pane">
+                <div class="pane-holder"></div><!-- / end content -->
+                <svg viewBox="542 433 221 372" class="right">
+                    <path d="M544,435.518 L759.752,620.516" stroke="#000" stroke-width="2" fill="none"></path>
+                    <path d="M543.67739,803.710836 L760.148806,619.555164" stroke="#000" stroke-width="2" fill="none"></path>
+                </svg>
+            </div><!-- / end left track -->
+            <div class="track right-pane">
+                <svg viewBox="284 342 217 366" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <polygon id="Page-1" stroke="none" fill="#000" fill-rule="evenodd" points="501.752 709.542 501.752 523.878 501.752 345 286 524.544"></polygon>
+                </svg>
+                <div class="pane-holder"></div><!-- / end pane content -->
+            </div><!-- end right track -->
+            <div class="gradient"></div><!-- / end gradient -->
+            <div class="outer-content-top">
+                <div class="inner-content">
+                    <p>
+                        Let us show you our secrets, who we are, how hard we work and how wide <br />our reach is.
+                    </p>
+                    <small>You'll be happy you did. </small>
+                    <a href="/what-we-do.html" title="What We Do" data-role="button" class="button">
+                        What We Do
+                    </a>
+                </div><!-- / end content -->
+                <aside class="callout-sidebar">
+                    <ul>
+                        <li><span>Commercials</span></li>
+                        <li><span>Brand Response</span></li>
+                        <li><span>Digital Content</span></li>
+                    </ul>
+                </aside><!-- / end callout side bar -->
+            </div><!-- / end outer content top -->
+        </section><!-- / end services -->
+        <section class="parallax office-image full-width">
+            <!-- <img src="images/office-shot.jpg" alt="Office Shot" /> -->
+        </section><!-- / end parallax full-width -->
+        <section class="office-location office-map homepage-office">
+            <div id="officeMap" data-markertitle="Conductor Productions" data-markericon="images/map-marker.svg" class="conductor-office map-container"></div>
+        </section><!-- / end office location map -->
+        <section class="contact-us angled-callout">
+            <div class="backdrop">
+                <svg viewBox="0 0 1442 577" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <polygon id="Path-23" stroke="none" fill-opacity="0.15" fill="#cccccc" fill-rule="evenodd" points="0.6328125 183.320312 1441.34766 576.492188 1440.73828 0.93359375 0.6328125 0.9375"></polygon>
+                </svg>
+            </div>
+            <div class="inner-content">
+                <h1>Conveniently Located In</h1>
+                <h2>Downtown Boston</h2>
+                <div class="address">
+                    <ul>
+                        <li>
+                            <a href="https://www.google.com/maps/place/142+Berkeley+St,+Boston,+MA+02116/data=!4m2!3m1!1s0x89e37a733f730321:0xf61f8f53a93d2e66?sa=X&ved=0ahUKEwiL8e3j0MrQAhXHYiYKHX-pCfsQ8gEIIjAB" target="_blank" title="Click Here for Directions">
+                                142 Berkeley Street
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.google.com/maps/place/142+Berkeley+St,+Boston,+MA+02116/data=!4m2!3m1!1s0x89e37a733f730321:0xf61f8f53a93d2e66?sa=X&ved=0ahUKEwiL8e3j0MrQAhXHYiYKHX-pCfsQ8gEIIjAB" target="_blank" title="Click Here for Directions">
+                                Boston MA 02116
+                            </a>
+                        </li>
+                        <li class="phone">
+                            <a href="tel:6173224888" title="Call Now!">
+                                617 - 322 - 4888
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/contact.html" title="Contact Us" data-role="button" class="button">
+                                Contact Frank
+                            </a>
+                        </li>
+                    </ul>
+                </div><!-- / end address -->
+            </div><!-- / end inner content -->
+        </section><!-- / end contact us -->
+
+    </main>
+    <!-- / end outer wrapper bound -->
+    <footer class="outer-wrapper">
+        <section class="footer-inner inner-wrapper">
+            <div class="company-info">
+                <h3 class="site-title">Conductor Productions</h3>
+                <span>142 Berkeley St, Boston, MA<b>|</b>
+                <a href="tel:6172621400" title="Call Now">(617) 262-1400 </a>
+                </span>
+                <span class="copyright">
+                    © 2016 Conductor Productions
+                </span>
+            </div>
+            <!-- / end left contact and company info -->
+            <aside class="footer-nav">
+                <ul class="social-media">
+                    <li class="facebook">
+                        <a href="https://www.facebook.com/ConductorCreative" target="_blank" title="Facebook">
+                            <span class="icon icon-facebook"></span>
+                        </a>
+                    </li>
+                    <li class="instagram">
+                        <a href="#" target="_blank" title="Instagram">
+                            <span class="icon icon-instagram"></span>
+                        </a>
+                    </li>
+                    <li class="linked-in">
+                        <a href="http://www.linkedin.com/pub/noah-lydiard/3/b5b/749" target="_blank" title="Linked In">
+                            <span class="icon icon-linked-in"></span>
+                        </a>
+                    </li>
+                </ul><!-- / end social media -->
+                <ul class="menu">
+                    <li>
+                        <%= link_to 'What We Do', pc_what_we_do_path, title: 'What We Do' %>
+                    </li>
+                    <li>
+                        <%= link_to 'Our Work', pc_our_work_path, title: 'Our Work' %>
+                    </li>
+                    <li>
+                        <%= link_to 'Directors', pc_directors_path, title: 'Directors' %>
+                    </li>
+                    <li>
+                        <%= link_to 'Clients', pc_clients_path, title: 'Clients' %>
+                    </li>
+                    <li>
+                        <%= link_to 'Contact', pc_contact_path, title: 'Contact' %>
+                    </li>
+                    <li>
+                        <%= link_to 'Login', client_login_path, title: 'Login' %>
+                    </li>
+                </ul><!-- / end menu -->
+            </aside>
+            <!-- / end footer nav -->
+        </section>
+        <!-- / end footer inner -->
+    </footer>
+    <!-- / end footer -->
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+    (function(b, o, i, l, e, r) {
+        b.GoogleAnalyticsObject = l;
+        b[l] || (b[l] =
+            function() {
+                (b[l].q = b[l].q || []).push(arguments)
+            });
+        b[l].l = +new Date;
+        e = o.createElement(i);
+        r = o.getElementsByTagName(i)[0];
+        e.src = '//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e, r)
+    }(window, document, 'script', 'ga'));
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+    </script>
+    <!-- build:js scripts/main.js -->
+    <%= javascript_include_tag 'dev' %>
+    <!-- endbuild -->
+</body>
+
+</html>

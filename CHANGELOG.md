@@ -1,6 +1,14 @@
 ## 0.8.0
 
 ### Enhancements
+- **General Changes**
+  - Pages redesigned by PixelCure
+    - Home Page
+    - What We Do
+    - Our Work
+    - Directors
+    - Clients
+    - Contact
 - **Gem Changes**
   - Updated to Ruby 2.4.0
   - Updated to rails 5.0.1
