@@ -1,4 +1,4 @@
-## 0.7.1
+## 0.7.1 (February 6, 2017)
 
 ### Enhancements
 - **General Changes**
