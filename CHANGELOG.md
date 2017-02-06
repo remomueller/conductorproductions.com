@@ -18,6 +18,12 @@
   - Updated to jquery-ui-rails 6.0.1
   - Updated to kaminari 1.0.0
 
+## 0.7.1 (February 6, 2017)
+
+### Enhancements
+- **General Changes**
+  - Updated the link to the first video on the landing page
+
 ## 0.7.0 (December 20, 2016)
 
 ### Enhancements
