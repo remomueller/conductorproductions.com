@@ -1,5 +1,9 @@
 ## 0.7.1
 
+### Enhancements
+- **General Changes**
+  - Updated the link to the first video on the landing page
+
 ## 0.7.0 (December 20, 2016)
 
 ### Enhancements
