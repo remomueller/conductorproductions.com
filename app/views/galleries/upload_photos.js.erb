@@ -1,2 +1,3 @@
 $("#photo-count").html("<%= @gallery.gallery_photos.count %>")
 $("#gallery-photos").html("<%=j render 'gallery_photos/photos', gallery: @gallery %>");
+galleryPhotosReady();

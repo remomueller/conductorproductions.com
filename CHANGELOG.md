@@ -18,6 +18,10 @@
   - Updated to jquery-ui-rails 6.0.1
   - Updated to kaminari 1.0.0
 
+### Bug Fix
+- Fixed a bug that prevented gallery photos from being rearranged after
+  uploading a new photo
+
 ## 0.7.1 (February 6, 2017)
 
 ### Enhancements
