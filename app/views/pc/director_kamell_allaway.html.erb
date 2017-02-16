@@ -24,7 +24,7 @@
     <header class="header" id="stickyHeader">
         <section class="header-inner inner-wrapper">
             <a href="/" class="logo-container left" title="Conductor Productions">
-                <img src="images/conductor-logo.svg" alt="Conductor Productions">
+                <%= image_tag 'pc/conductor-logo.svg', alt: 'Conductor Productions' %>
             </a>
             <div class="menu-icon menu-trigger">
                 <small>menu</small>
@@ -103,7 +103,7 @@
                         <span class="play-btn" title="Play">
                             <span class="play"></span>
                         </span>
-                        <video id="standalonePlayer" preload="true" class="video" src="https://player.vimeo.com/external/201349116.hd.mp4?s=35d08c3bb8ed6da244d9d92b2ad346d01ebb02fa&profile_id=119" poster="/images/directors/kamell/posters/kamell-feature.png">
+                        <video id="standalonePlayer" preload="true" class="video" src="https://player.vimeo.com/external/201349116.hd.mp4?s=35d08c3bb8ed6da244d9d92b2ad346d01ebb02fa&profile_id=119" poster="<%= asset_path 'pc/directors/kamell/posters/kamell-feature.png' %>">
                         </video>
                     </div><!-- / end video container -->
                 </div><!-- / end video -->
@@ -146,7 +146,7 @@
         <!-- / end middle see more work section -->
         <section class="work-outer work-grid outer-wrapper" id="workGrid">
             <ul class="grid-row">
-                <li data-videoid="03" data-videourl="https://player.vimeo.com/external/201183151.hd.mp4?s=b0ef7a5651c7b1f2fd308970ed6dd8f3e93388da&profile_id=174" data-posterurl="/images/directors/kamell/posters/oyster-kids.png" class="item commercial">
+                <li data-videoid="03" data-videourl="https://player.vimeo.com/external/201183151.hd.mp4?s=b0ef7a5651c7b1f2fd308970ed6dd8f3e93388da&profile_id=174" data-posterurl="<%= asset_path 'pc/directors/kamell/posters/oyster-kids.png' %>" class="item commercial">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
@@ -164,7 +164,7 @@
                     </a>
                 </li>
                 <!-- / end item -->
-                <li data-videoid="04" data-videourl="https://player.vimeo.com/external/201183082.hd.mp4?s=f2103b74281ab57ef8f27a917a35fcb8454fe87e&profile_id=119" data-posterurl="/images/directors/kamell/posters/daily-itineraries.png" class="item digital-content">
+                <li data-videoid="04" data-videourl="https://player.vimeo.com/external/201183082.hd.mp4?s=f2103b74281ab57ef8f27a917a35fcb8454fe87e&profile_id=119" data-posterurl="<%= asset_path 'pc/directors/kamell/posters/daily-itineraries.png' %>" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
@@ -183,7 +183,7 @@
                     </a>
                 </li>
                 <!-- / end item -->
-                <li data-videoid="05" data-videourl="https://player.vimeo.com/external/201720859.sd.mp4?s=2c719f6a6676d3910f6c2b931e40b1e7c680bad5&profile_id=165" data-posterurl="/images/directors/kamell/posters/j-dock-seafood.png" class="item digital-content">
+                <li data-videoid="05" data-videourl="https://player.vimeo.com/external/201720859.sd.mp4?s=2c719f6a6676d3910f6c2b931e40b1e7c680bad5&profile_id=165" data-posterurl="<%= asset_path 'pc/directors/kamell/posters/j-dock-seafood.png' %>" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
@@ -201,7 +201,7 @@
                     </a>
                 </li>
                 <!-- / end item -->
-                <li data-videoid="06" data-videourl="https://player.vimeo.com/external/201720889.sd.mp4?s=266f18e05afaed1039d60f7624f10fed2639a913&profile_id=165" data-posterurl="/images/directors/kamell/posters/pygmy-hippo.png" class="item digital-content">
+                <li data-videoid="06" data-videourl="https://player.vimeo.com/external/201720889.sd.mp4?s=266f18e05afaed1039d60f7624f10fed2639a913&profile_id=165" data-posterurl="<%= asset_path 'pc/directors/kamell/posters/pygmy-hippo.png' %>" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">

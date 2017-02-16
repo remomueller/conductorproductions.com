@@ -24,7 +24,7 @@
     <header class="header" id="stickyHeader">
         <section class="header-inner inner-wrapper">
             <a href="/" class="logo-container left" title="Conductor Productions">
-                <img src="images/conductor-logo.svg" alt="Conductor Productions">
+                <%= image_tag 'pc/conductor-logo.svg', alt: 'Conductor Productions' %>
             </a>
             <div class="menu-icon menu-trigger">
                 <small>menu</small>
@@ -104,7 +104,7 @@
                         <span class="play-btn" title="Play">
                             <span class="play"></span>
                         </span>
-                        <video id="standalonePlayer" preload="true" class="video" src="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" poster="/images/home-river.jpg">
+                        <video id="standalonePlayer" preload="true" class="video" src="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" poster="<%= asset_path 'pc/home-river.jpg' %>">
                         </video>
                     </div><!-- / end video container -->
                 </div><!-- / end video -->
@@ -150,7 +150,7 @@
         <!-- / end middle see more work section -->
         <section class="work-outer work-grid outer-wrapper" id="workGrid">
             <ul class="grid-row">
-                <li data-videoid="03" data-videourl="https://player.vimeo.com/external/185990535.hd.mp4?s=3cb398ceffa173313da9c9fbea97e0cd434952fb&profile_id=119" data-posterurl="/images/posters/shields.png" class="item commercial">
+                <li data-videoid="03" data-videourl="https://player.vimeo.com/external/185990535.hd.mp4?s=3cb398ceffa173313da9c9fbea97e0cd434952fb&profile_id=119" data-posterurl="<%= asset_path 'pc/posters/shields.png' %>" class="item commercial">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
@@ -168,7 +168,7 @@
                     </a>
                 </li>
                 <!-- / end item -->
-                <li data-videoid="04" data-videourl="https://player.vimeo.com/external/200017943.hd.mp4?s=692f57c8032cb89a9a52d00a243c8bbe74eeaa26&profile_id=119" data-posterurl="/images/posters/putnam.png" class="item digital-content">
+                <li data-videoid="04" data-videourl="https://player.vimeo.com/external/200017943.hd.mp4?s=692f57c8032cb89a9a52d00a243c8bbe74eeaa26&profile_id=119" data-posterurl="<%= asset_path 'pc/posters/putnam.png' %>" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
@@ -187,7 +187,7 @@
                     </a>
                 </li>
                 <!-- / end item -->
-                <li data-videoid="05" data-videourl="https://player.vimeo.com/external/124955438.hd.mp4?s=a2467bbea9b3f59360e89a344e400803e5790d3d&profile_id=119" data-posterurl="/images/posters/netflix.png" class="item digital-content">
+                <li data-videoid="05" data-videourl="https://player.vimeo.com/external/124955438.hd.mp4?s=a2467bbea9b3f59360e89a344e400803e5790d3d&profile_id=119" data-posterurl="<%= asset_path 'pc/posters/netflix.png' %>" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
@@ -205,7 +205,7 @@
                     </a>
                 </li>
                 <!-- / end item -->
-                <li data-videoid="06" data-videourl="https://player.vimeo.com/external/185988791.hd.mp4?s=7f9729032fc6d75446e61750fe396b576404c16c&profile_id=119" data-posterurl="/images/posters/sunlife.png" class="item digital-content">
+                <li data-videoid="06" data-videourl="https://player.vimeo.com/external/185988791.hd.mp4?s=7f9729032fc6d75446e61750fe396b576404c16c&profile_id=119" data-posterurl="<%= asset_path 'pc/posters/sunlife.png' %>" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">

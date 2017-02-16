@@ -24,7 +24,7 @@
     <header class="header" id="stickyHeader">
         <section class="header-inner inner-wrapper">
             <a href="/" class="logo-container left" title="Conductor Productions">
-                <img src="images/conductor-logo.svg" alt="Conductor Productions">
+                <%= image_tag 'pc/conductor-logo.svg', alt: 'Conductor Productions' %>
             </a>
             <div class="menu-icon menu-trigger">
                 <small>menu</small>
@@ -103,7 +103,7 @@
                         <span class="play-btn" title="Play">
                             <span class="play"></span>
                         </span>
-                        <video id="standalonePlayer" preload="true" class="video" src="https://player.vimeo.com/external/201003898.hd.mp4?s=d2bc0c27603428e67470aea6b800f3d21b86c122&profile_id=119" poster="/images/directors/christian/posters/reebok-two.png">
+                        <video id="standalonePlayer" preload="true" class="video" src="https://player.vimeo.com/external/201003898.hd.mp4?s=d2bc0c27603428e67470aea6b800f3d21b86c122&profile_id=119" poster="<%= asset_path 'pc/directors/christian/posters/reebok-two.png' %>">
                         </video>
                     </div><!-- / end video container -->
                 </div><!-- / end video -->
@@ -149,7 +149,7 @@
         <!-- / end middle see more work section -->
         <section class="work-outer work-grid outer-wrapper" id="workGrid">
             <ul class="grid-row">
-                <li data-videoid="03" data-videourl="https://player.vimeo.com/external/201004205.hd.mp4?s=92ffbffc8b20495415fbbf52b333770f5ab9f590&profile_id=119" data-posterurl="/images/directors/christian/posters/reebok-one.png" class="item commercial">
+                <li data-videoid="03" data-videourl="https://player.vimeo.com/external/201004205.hd.mp4?s=92ffbffc8b20495415fbbf52b333770f5ab9f590&profile_id=119" data-posterurl="<%= asset_path 'pc/directors/christian/posters/reebok-one.png' %>" class="item commercial">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
@@ -167,7 +167,7 @@
                     </a>
                 </li>
                 <!-- / end item -->
-                <li data-videoid="04" data-videourl="https://player.vimeo.com/external/201003456.hd.mp4?s=9aa4cf5e4661b71cefc4f46989bea093f7769e74&profile_id=174" data-posterurl="/images/directors/christian/posters/blue-hills-bank.png" class="item digital-content">
+                <li data-videoid="04" data-videourl="https://player.vimeo.com/external/201003456.hd.mp4?s=9aa4cf5e4661b71cefc4f46989bea093f7769e74&profile_id=174" data-posterurl="<%= asset_path 'pc/directors/christian/posters/blue-hills-bank.png' %>" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
@@ -185,7 +185,7 @@
                     </a>
                 </li>
                 <!-- / end item -->
-                <li data-videoid="05" data-videourl="https://player.vimeo.com/external/201004292.hd.mp4?s=91978f253cc7e1d54695a9df87f4cd237c4e46d4&profile_id=119" data-posterurl="/images/directors/christian/posters/mass-eye-and-ear.png" class="item digital-content">
+                <li data-videoid="05" data-videourl="https://player.vimeo.com/external/201004292.hd.mp4?s=91978f253cc7e1d54695a9df87f4cd237c4e46d4&profile_id=119" data-posterurl="<%= asset_path 'pc/directors/christian/posters/mass-eye-and-ear.png' %>" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
@@ -203,7 +203,7 @@
                     </a>
                 </li>
                 <!-- / end item -->
-                <li data-videoid="06" data-videourl="https://player.vimeo.com/external/201003898.hd.mp4?s=d2bc0c27603428e67470aea6b800f3d21b86c122&profile_id=119" data-posterurl="/images/directors/christian/posters/reebok-two.png" class="item digital-content">
+                <li data-videoid="06" data-videourl="https://player.vimeo.com/external/201003898.hd.mp4?s=d2bc0c27603428e67470aea6b800f3d21b86c122&profile_id=119" data-posterurl="<%= asset_path 'pc/directors/christian/posters/reebok-two.png' %>" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">

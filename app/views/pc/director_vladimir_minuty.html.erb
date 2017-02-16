@@ -24,7 +24,7 @@
     <header class="header" id="stickyHeader">
         <section class="header-inner inner-wrapper">
             <a href="/" class="logo-container left" title="Conductor Productions">
-                <img src="images/conductor-logo.svg" alt="Conductor Productions">
+                <%= image_tag 'pc/conductor-logo.svg', alt: 'Conductor Productions' %>
             </a>
             <div class="menu-icon menu-trigger">
                 <small>menu</small>
@@ -103,7 +103,7 @@
                         <span class="play-btn" title="Play">
                             <span class="play"></span>
                         </span>
-                        <video id="standalonePlayer" preload="true" class="video" src="https://player.vimeo.com/external/124955438.hd.mp4?s=a2467bbea9b3f59360e89a344e400803e5790d3d&profile_id=119" poster="/images/directors/vladimir/posters/featured-video.png">
+                        <video id="standalonePlayer" preload="true" class="video" src="https://player.vimeo.com/external/124955438.hd.mp4?s=a2467bbea9b3f59360e89a344e400803e5790d3d&profile_id=119" poster="<%= asset_path 'pc/directors/vladimir/posters/featured-video.png' %>">
                         </video>
                     </div><!-- / end video container -->
                 </div><!-- / end video -->
@@ -143,7 +143,7 @@
         <!-- / end middle see more work section -->
         <section class="work-outer work-grid outer-wrapper" id="workGrid">
             <ul class="grid-row">
-                <li data-videoid="03" data-videourl="https://player.vimeo.com/external/165878569.hd.mp4?s=25730e29bc1a8774b6f923a3eb0106c6f1d7227a&profile_id=119" data-posterurl="/images/directors/vladimir/posters/quell.png" class="item commercial">
+                <li data-videoid="03" data-videourl="https://player.vimeo.com/external/165878569.hd.mp4?s=25730e29bc1a8774b6f923a3eb0106c6f1d7227a&profile_id=119" data-posterurl="<%= asset_path 'pc/directors/vladimir/posters/quell.png' %>" class="item commercial">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
@@ -161,7 +161,7 @@
                     </a>
                 </li>
                 <!-- / end item -->
-                <li data-videoid="04" data-videourl="https://player.vimeo.com/external/124955437.hd.mp4?s=ec1ec685a10b612f34ee5b994ece257e5a30b1b4&profile_id=119" data-posterurl="/images/directors/vladimir/posters/nike.png" class="item digital-content">
+                <li data-videoid="04" data-videourl="https://player.vimeo.com/external/124955437.hd.mp4?s=ec1ec685a10b612f34ee5b994ece257e5a30b1b4&profile_id=119" data-posterurl="<%= asset_path 'pc/directors/vladimir/posters/nike.png' %>" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
@@ -179,7 +179,7 @@
                     </a>
                 </li>
                 <!-- / end item -->
-                <li data-videoid="05" data-videourl="https://player.vimeo.com/external/199902296.hd.mp4?s=e9221d8427dce2f973df31ddd86858c351f252dc&profile_id=119" data-posterurl="/images/directors/vladimir/posters/clarks.png" class="item digital-content">
+                <li data-videoid="05" data-videourl="https://player.vimeo.com/external/199902296.hd.mp4?s=e9221d8427dce2f973df31ddd86858c351f252dc&profile_id=119" data-posterurl="<%= asset_path 'pc/directors/vladimir/posters/clarks.png' %>" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
@@ -197,7 +197,7 @@
                     </a>
                 </li>
                 <!-- / end item -->
-                <li data-videoid="06" data-videourl="https://player.vimeo.com/external/135689809.hd.mp4?s=9092cbc2b036383cd5a4a7cbd2e4792550a8b71d&profile_id=119" data-posterurl="/images/directors/vladimir/posters/toco.png" class="item digital-content">
+                <li data-videoid="06" data-videourl="https://player.vimeo.com/external/135689809.hd.mp4?s=9092cbc2b036383cd5a4a7cbd2e4792550a8b71d&profile_id=119" data-posterurl="<%= asset_path 'pc/directors/vladimir/posters/toco.png' %>" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">

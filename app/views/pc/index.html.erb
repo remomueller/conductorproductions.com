@@ -24,7 +24,7 @@
     <header class="header" id="stickyHeader">
         <section class="header-inner inner-wrapper">
             <a href="/" class="logo-container left" title="Conductor Productions">
-                <img src="images/conductor-logo.svg" alt="Conductor Productions">
+                <%= image_tag 'pc/conductor-logo.svg', alt: 'Conductor Productions' %>
             </a>
             <div class="menu-icon menu-trigger">
                 <small>menu</small>
@@ -127,7 +127,7 @@
             </div><!-- / end carousel container -->
             <div class="hero-inner video-inner">
                 <div class="video-container">
-                    <video id="standalonePlayer" preload="true" class="video" src="https://player.vimeo.com/external/200017964.hd.mp4?s=9792d3c55bb64ff685fd85e8bb5df288ddbc5a76&profile_id=119" poster="/images/posters/netflix.png">
+                    <video id="standalonePlayer" preload="true" class="video" src="https://player.vimeo.com/external/200017964.hd.mp4?s=9792d3c55bb64ff685fd85e8bb5df288ddbc5a76&profile_id=119" poster="<%= asset_path 'pc/posters/netflix.png' %>">
                     </video>
                 </div><!-- / end video container -->
             </div><!-- / end hero inner -->
@@ -160,7 +160,7 @@
                     <a href="/login" class="button" data-role="button">Client Portal</a>
                 </div><!-- / end callout -->
                 <div class="scroll-callout item">
-                    <img src="images/arrow-down-callout.svg" alt="Backdrop" class="backdrop" />
+                    <%= image_tag 'pc/arrow-down-callout.svg', alt: 'Backdrop" class="backdrop' %>
                     <div class="content">
                         <span>For a good time</span>
                         <span>Press here</span>

@@ -24,7 +24,7 @@
     <header class="header" id="stickyHeader">
         <section class="header-inner inner-wrapper">
             <a href="/" class="logo-container left" title="Conductor Productions">
-                <img src="images/conductor-logo.svg" alt="Conductor Productions">
+                <%= image_tag 'pc/conductor-logo.svg', alt: 'Conductor Productions' %>
             </a>
             <div class="menu-icon menu-trigger">
                 <small>menu</small>
@@ -97,7 +97,7 @@
                     <span class="play-btn" title="Play">
                         <span class="play"></span>
                     </span>
-                    <video id="standalonePlayer" preload="true" class="video" src="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" poster="/images/posters/thumbtack.png">
+                    <video id="standalonePlayer" preload="true" class="video" src="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" poster="<%= asset_path 'pc/posters/thumbtack.png' %>">
                     </video>
                 </div><!-- / end video container -->
             </div><!-- / end hero inner -->
@@ -132,7 +132,7 @@
         <!-- / end middle see more work section -->
         <section class="work-outer work-grid outer-wrapper" id="workGrid">
             <ul class="grid-row">
-                <li data-videoid="01" data-videourl="https://player.vimeo.com/external/98734404.hd.mp4?s=5698921cc6b64a5c4d6f9475db05a650e3ebedb2&profile_id=113" data-posterurl="/images/posters/reebok.png" class="item commercial">
+                <li data-videoid="01" data-videourl="https://player.vimeo.com/external/98734404.hd.mp4?s=5698921cc6b64a5c4d6f9475db05a650e3ebedb2&profile_id=113" data-posterurl="<%= asset_path 'pc/posters/reebok.png' %>" class="item commercial">
                     <a href="#">
                         <div class="caption">
                             <div class="inner">
@@ -170,14 +170,14 @@
                             </p>
                             <ul class="logos clean panel-table">
                                 <li class="logo cell">
-                                    <img src="images/logos/reebok.png" alt="Reebok" />
+                                    <%= image_tag 'pc/logos/reebok.png', alt: 'Reebok' %>
                                 </li><!-- / end logo -->
                             </ul><!-- / end logos -->
                         </div><!-- / end work description -->
                     </div><!-- / end item info template -->
                 </li>
                 <!-- / end item -->
-                <li data-videoid="02" data-videourl="https://player.vimeo.com/external/165875802.hd.mp4?s=b69b68547cadde8ec3c9ba2a89f43529d4e05e43&profile_id=119" data-posterurl="/images/posters/rebagg.png" class="item commercial">
+                <li data-videoid="02" data-videourl="https://player.vimeo.com/external/165875802.hd.mp4?s=b69b68547cadde8ec3c9ba2a89f43529d4e05e43&profile_id=119" data-posterurl="<%= asset_path 'pc/posters/rebagg.png' %>" class="item commercial">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
@@ -214,17 +214,17 @@
                             </p>
                             <ul class="logos clean panel-table">
                                 <li class="logo cell">
-                                    <img src="images/logos/nb-white.png" alt="NB (New Balance)" />
+                                    <%= image_tag 'pc/logos/nb-white.png', alt: 'NB (New Balance)' %>
                                 </li><!-- / end logo -->
                                 <li class="logo cell">
-                                    <img src="images/logos/irobot-white.png" alt="New Balance" />
+                                    <%= image_tag 'pc/logos/irobot-white.png', alt: 'New Balance' %>
                                 </li><!-- / end logos -->
                             </ul><!-- / end logos -->
                         </div><!-- / end work description -->
                     </div><!-- / end item info template -->
                 </li>
                 <!-- / end item -->
-                <li data-videoid="03" data-videourl="https://player.vimeo.com/external/195307110.hd.mp4?s=f008900bd75a855a5662fd931532ae1ad7284795&profile_id=119" data-posterurl="/images/posters/rebagg-two.png" class="item commercial">
+                <li data-videoid="03" data-videourl="https://player.vimeo.com/external/195307110.hd.mp4?s=f008900bd75a855a5662fd931532ae1ad7284795&profile_id=119" data-posterurl="<%= asset_path 'pc/posters/rebagg-two.png' %>" class="item commercial">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
@@ -261,17 +261,17 @@
                             </p>
                             <ul class="logos clean panel-table">
                                 <li class="logo cell">
-                                    <img src="images/logos/nb-white.png" alt="NB (New Balance)" />
+                                    <%= image_tag 'pc/logos/nb-white.png', alt: 'NB (New Balance)' %>
                                 </li><!-- / end logo -->
                                 <li class="logo cell">
-                                    <img src="images/logos/irobot-white.png" alt="New Balance" />
+                                    <%= image_tag 'pc/logos/irobot-white.png', alt: 'New Balance' %>
                                 </li><!-- / end logos -->
                             </ul><!-- / end logos -->
                         </div><!-- / end work description -->
                     </div><!-- / end item info template -->
                 </li>
                 <!-- / end item -->
-                <li data-videoid="04" data-videourl="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" data-posterurl="/images/posters/thumbtack-two.png" class="item digital-content">
+                <li data-videoid="04" data-videourl="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" data-posterurl="<%= asset_path 'pc/posters/thumbtack-two.png' %>" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
@@ -308,17 +308,17 @@
                             </p>
                             <ul class="logos clean panel-table">
                                 <li class="logo cell">
-                                    <img src="images/logos/nb-white.png" alt="NB (New Balance)" />
+                                    <%= image_tag 'pc/logos/nb-white.png', alt: 'NB (New Balance)' %>
                                 </li><!-- / end logo -->
                                 <li class="logo cell">
-                                    <img src="images/logos/irobot-white.png" alt="New Balance" />
+                                    <%= image_tag 'pc/logos/irobot-white.png', alt: 'New Balance' %>
                                 </li><!-- / end logos -->
                             </ul><!-- / end logos -->
                         </div><!-- / end work description -->
                     </div><!-- / end item info template -->
                 </li>
                 <!-- / end item -->
-                <li data-videoid="05" data-videourl="https://player.vimeo.com/external/124955435.hd.mp4?s=1666ee060db36801cf7d9f90ec2f7606c1fc9688&profile_id=119" data-posterurl="/images/posters/putnam.png" class="item digital-content">
+                <li data-videoid="05" data-videourl="https://player.vimeo.com/external/124955435.hd.mp4?s=1666ee060db36801cf7d9f90ec2f7606c1fc9688&profile_id=119" data-posterurl="<%= asset_path 'pc/posters/putnam.png' %>" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
@@ -355,17 +355,17 @@
                             </p>
                             <ul class="logos clean panel-table">
                                 <li class="logo cell">
-                                    <img src="images/logos/nb-white.png" alt="NB (New Balance)" />
+                                    <%= image_tag 'pc/logos/nb-white.png', alt: 'NB (New Balance)' %>
                                 </li><!-- / end logo -->
                                 <li class="logo cell">
-                                    <img src="images/logos/irobot-white.png" alt="New Balance" />
+                                    <%= image_tag 'pc/logos/irobot-white.png', alt: 'New Balance' %>
                                 </li><!-- / end logos -->
                             </ul><!-- / end logos -->
                         </div><!-- / end work description -->
                     </div><!-- / end item info template -->
                 </li>
                 <!-- / end item -->
-                <li data-videoid="06" data-videourl="https://player.vimeo.com/external/199903406.hd.mp4?s=c08ead5f6385f8c581eaa98349789768ea760c48&profile_id=174" data-posterurl="/images/posters/striderite-phibian.png" class="item digital-content">
+                <li data-videoid="06" data-videourl="https://player.vimeo.com/external/199903406.hd.mp4?s=c08ead5f6385f8c581eaa98349789768ea760c48&profile_id=174" data-posterurl="<%= asset_path 'pc/posters/striderite-phibian.png' %>" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
@@ -402,17 +402,17 @@
                             </p>
                             <ul class="logos clean panel-table">
                                 <li class="logo cell">
-                                    <img src="images/logos/nb-white.png" alt="NB (New Balance)" />
+                                    <%= image_tag 'pc/logos/nb-white.png', alt: 'NB (New Balance)' %>
                                 </li><!-- / end logo -->
                                 <li class="logo cell">
-                                    <img src="images/logos/irobot-white.png" alt="New Balance" />
+                                    <%= image_tag 'pc/logos/irobot-white.png', alt: 'New Balance' %>
                                 </li><!-- / end logos -->
                             </ul><!-- / end logos -->
                         </div><!-- / end work description -->
                     </div><!-- / end item info template -->
                 </li>
                 <!-- / end item -->
-                <li data-videoid="07" data-videourl="https://player.vimeo.com/external/124955437.hd.mp4?s=ec1ec685a10b612f34ee5b994ece257e5a30b1b4&profile_id=119" data-posterurl="/images/posters/nike.png" class="item digital-content">
+                <li data-videoid="07" data-videourl="https://player.vimeo.com/external/124955437.hd.mp4?s=ec1ec685a10b612f34ee5b994ece257e5a30b1b4&profile_id=119" data-posterurl="<%= asset_path 'pc/posters/nike.png' %>" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
@@ -449,17 +449,17 @@
                             </p>
                             <ul class="logos clean panel-table">
                                 <li class="logo cell">
-                                    <img src="images/logos/nb-white.png" alt="NB (New Balance)" />
+                                    <%= image_tag 'pc/logos/nb-white.png', alt: 'NB (New Balance)' %>
                                 </li><!-- / end logo -->
                                 <li class="logo cell">
-                                    <img src="images/logos/irobot-white.png" alt="New Balance" />
+                                    <%= image_tag 'pc/logos/irobot-white.png', alt: 'New Balance' %>
                                 </li><!-- / end logos -->
                             </ul><!-- / end logos -->
                         </div><!-- / end work description -->
                     </div><!-- / end item info template -->
                 </li>
                 <!-- / end item -->
-                <li data-videoid="08" data-videourl="https://player.vimeo.com/external/199905668.hd.mp4?s=14d36dc2c4451772939408aac5e339cefc38e858&profile_id=119" data-posterurl="/images/posters/cocoon.sealy.png" class="item digital-content">
+                <li data-videoid="08" data-videourl="https://player.vimeo.com/external/199905668.hd.mp4?s=14d36dc2c4451772939408aac5e339cefc38e858&profile_id=119" data-posterurl="<%= asset_path 'pc/posters/cocoon.sealy.png' %>" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
@@ -496,17 +496,17 @@
                             </p>
                             <ul class="logos clean panel-table">
                                 <li class="logo cell">
-                                    <img src="images/logos/nb-white.png" alt="NB (New Balance)" />
+                                    <%= image_tag 'pc/logos/nb-white.png', alt: 'NB (New Balance)' %>
                                 </li><!-- / end logo -->
                                 <li class="logo cell">
-                                    <img src="images/logos/irobot-white.png" alt="New Balance" />
+                                    <%= image_tag 'pc/logos/irobot-white.png', alt: 'New Balance' %>
                                 </li><!-- / end logos -->
                             </ul><!-- / end logos -->
                         </div><!-- / end work description -->
                     </div><!-- / end item info template -->
                 </li>
                 <!-- / end item -->
-                <li data-videoid="09" data-videourl="https://player.vimeo.com/external/199905551.hd.mp4?s=2eaa49771e4e7d15232d5fbd26d2f0d75e36f954&profile_id=169" data-posterurl="/images/posters/telo-years.png" class="item digital-content">
+                <li data-videoid="09" data-videourl="https://player.vimeo.com/external/199905551.hd.mp4?s=2eaa49771e4e7d15232d5fbd26d2f0d75e36f954&profile_id=169" data-posterurl="<%= asset_path 'pc/posters/telo-years.png' %>" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
@@ -543,17 +543,17 @@
                             </p>
                             <ul class="logos clean panel-table">
                                 <li class="logo cell">
-                                    <img src="images/logos/nb-white.png" alt="NB (New Balance)" />
+                                    <%= image_tag 'pc/logos/nb-white.png', alt: 'NB (New Balance)' %>
                                 </li><!-- / end logo -->
                                 <li class="logo cell">
-                                    <img src="images/logos/irobot-white.png" alt="New Balance" />
+                                    <%= image_tag 'pc/logos/irobot-white.png', alt: 'New Balance' %>
                                 </li><!-- / end logos -->
                             </ul><!-- / end logos -->
                         </div><!-- / end work description -->
                     </div><!-- / end item info template -->
                 </li>
                 <!-- / end item -->
-                <li data-videoid="10" data-videourl="https://player.vimeo.com/external/199902296.hd.mp4?s=e9221d8427dce2f973df31ddd86858c351f252dc&profile_id=119" data-posterurl="/images/posters/clarks.png" class="item commercial">
+                <li data-videoid="10" data-videourl="https://player.vimeo.com/external/199902296.hd.mp4?s=e9221d8427dce2f973df31ddd86858c351f252dc&profile_id=119" data-posterurl="<%= asset_path 'pc/posters/clarks.png' %>" class="item commercial">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
@@ -590,17 +590,17 @@
                             </p>
                             <ul class="logos clean panel-table">
                                 <li class="logo cell">
-                                    <img src="images/logos/nb-white.png" alt="NB (New Balance)" />
+                                    <%= image_tag 'pc/logos/nb-white.png', alt: 'NB (New Balance)' %>
                                 </li><!-- / end logo -->
                                 <li class="logo cell">
-                                    <img src="images/logos/irobot-white.png" alt="New Balance" />
+                                    <%= image_tag 'pc/logos/irobot-white.png', alt: 'New Balance' %>
                                 </li><!-- / end logos -->
                             </ul><!-- / end logos -->
                         </div><!-- / end work description -->
                     </div><!-- / end item info template -->
                 </li>
                 <!-- / end item -->
-                <li data-videoid="11" data-videourl="https://player.vimeo.com/external/185988782.hd.mp4?s=d82d8ee983bb1121e758809f36785a7c147120a0&profile_id=119" data-posterurl="/images/posters/thumbtack.png" class="item commercial">
+                <li data-videoid="11" data-videourl="https://player.vimeo.com/external/185988782.hd.mp4?s=d82d8ee983bb1121e758809f36785a7c147120a0&profile_id=119" data-posterurl="<%= asset_path 'pc/posters/thumbtack.png' %>" class="item commercial">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
@@ -619,7 +619,7 @@
                     </a>
                 </li>
                 <!-- / end item -->
-                <li data-videoid="12" data-videourl="https://player.vimeo.com/external/111656553.hd.mp4?s=966399ef5d6a38e4031b58bfb41b64c1ad5c3d23&profile_id=119" data-posterurl="/images/posters/brother.png" class="item commercial">
+                <li data-videoid="12" data-videourl="https://player.vimeo.com/external/111656553.hd.mp4?s=966399ef5d6a38e4031b58bfb41b64c1ad5c3d23&profile_id=119" data-posterurl="<%= asset_path 'pc/posters/brother.png' %>" class="item commercial">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
@@ -637,7 +637,7 @@
                     </a>
                 </li>
                 <!-- / end item -->
-                <li data-videoid="13" data-videourl="https://player.vimeo.com/external/185990535.hd.mp4?s=3cb398ceffa173313da9c9fbea97e0cd434952fb&profile_id=119" data-posterurl="/images/posters/shields.png" class="item commercial">
+                <li data-videoid="13" data-videourl="https://player.vimeo.com/external/185990535.hd.mp4?s=3cb398ceffa173313da9c9fbea97e0cd434952fb&profile_id=119" data-posterurl="<%= asset_path 'pc/posters/shields.png' %>" class="item commercial">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
@@ -655,7 +655,7 @@
                     </a>
                 </li>
                 <!-- / end item -->
-                <li data-videoid="14" data-videourl="https://player.vimeo.com/external/124955438.hd.mp4?s=a2467bbea9b3f59360e89a344e400803e5790d3d&profile_id=119" data-posterurl="/images/posters/netflix.png" class="item digital-content">
+                <li data-videoid="14" data-videourl="https://player.vimeo.com/external/124955438.hd.mp4?s=a2467bbea9b3f59360e89a344e400803e5790d3d&profile_id=119" data-posterurl="<%= asset_path 'pc/posters/netflix.png' %>" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
@@ -673,7 +673,7 @@
                     </a>
                 </li>
                 <!-- / end item -->
-                <li data-videoid="15" data-videourl="https://player.vimeo.com/external/185988791.hd.mp4?s=7f9729032fc6d75446e61750fe396b576404c16c&profile_id=119" data-posterurl="/images/posters/sunlife.png" class="item digital-content">
+                <li data-videoid="15" data-videourl="https://player.vimeo.com/external/185988791.hd.mp4?s=7f9729032fc6d75446e61750fe396b576404c16c&profile_id=119" data-posterurl="<%= asset_path 'pc/posters/sunlife.png' %>" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
