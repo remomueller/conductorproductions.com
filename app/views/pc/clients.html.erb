@@ -39,31 +39,27 @@
         <div class="inner">
             <div class="nav-close" id="menuClose">&times;</div>
             <ul>
-                <li><a href="what-we-do.html" title="What We Do">What We Do</a></li>
-                <li><a href="our-work.html" title="Our Work">Our Work</a></li>
+                <li><%= link_to 'Our Work', pc_our_work_path, title: 'Our Work' %></li>
                 <li class="directors">
                     <span class="block directors-toggle" title="Directors">Directors</span>
                     <ul class="dropdown-nav">
                         <li class="dropdown-item">
-                            <a href="directors.html" title="Noah Lyndiard">
-                                Noah Lyndiard
-                            </a>
+                            <%= link_to 'Noah Lydiard', pc_director_noah_lydiard_path, title: 'Noah Lydiard' %>
                         </li>
                         <li class="dropdown-item">
-                            <a href="directors.html" title="Noah Lyndiard">
-                                James Ferguson
-                            </a>
+                            <%= link_to 'Kamell Allaway', pc_director_kamell_allaway_path, title: 'Kamell Allaway' %>
                         </li>
                         <li class="dropdown-item">
-                            <a href="directors.html" title="Noah Lyndiard">
-                                Michael Lavalongname
-                            </a>
+                            <%= link_to 'Vladimir Minuty', pc_director_vladimir_minuty_path, title: 'Vladimir Minuty' %>
+                        </li>
+                        <li class="dropdown-item">
+                            <%= link_to 'Christian Williams', pc_director_christian_williams_path, title: 'Christian Williams' %>
                         </li>
                     </ul>
                 </li><!-- / end directors -->
-                <li><a href="clients.html" title="Clients">Clients</a></li>
-                <li><a href="contact.html" title="Contact">Contact</a></li>
-                <li><a href="#" title="Client Portal">Client Portal</a></li>
+                <li><%= link_to 'Clients', pc_clients_path, title: 'Clients' %></li>
+                <li><%= link_to 'Contact', pc_contact_path, title: 'Contact' %></li>
+                <li><%= link_to 'Client Portal', client_login_path, title: 'Client Portal' %></li>
             </ul>
         </div><!-- / end inner nav -->
     </nav><!-- / end navigation -->
@@ -72,7 +68,7 @@
         <div class="title-header inner-page outer-wrapper">
             <div class="left">
                 <h1>
-                    <a class="first crumb" href="/" title="Conductor Productions">Conductor</a>
+                    <%= link_to 'Conductor', pc_index_path, title: 'Conductor Productions', class: 'first crumb' %>
                     <i class="page-name">Clients</i>
                 </h1>
             </div>
@@ -96,21 +92,55 @@
         </div>
         <!-- / end title-header -->
         <div class="intro">
-            <h2>Conductor has the ability to produce <span class="lighter">anywhere in the country</span></h2>
-            <p>with professional crews and talent</p>
+            <h2>Testimonials</h2>
         </div>
         <!-- / end intro -->
         <section class="hero clients testimonials">
+            <ul class="panel-table testimonials-inner clean">
+                <li class="cell">
+                    <blockquote>
+                        “This was by far the easiest shoot I’ve attended, because Noah
+                        and the team did a great job of forcing the hard decisions to be
+                        made ahead of time, and of running a tight ship leading up to
+                        and during the shoot. The Thumbtack team has great things to
+                        say about Conductor, and I know feels really fortunate to have a
+                        partner like Conductor.”
+                        <strong>Dan, Thumbtack</strong>
+                    </blockquote>
+                </li><!-- / end testimonial -->
+                <li class="cell">
+                    <blockquote>
+                        “The filmmakers at Conductor are creative, strategic, talented
+                        and fun to collaborate with. They took the time to understand
+                        our brand and our goals. The commercials and digital assets
+                        they produced communicated Stride Rite’s standards and values,
+                        and more importantly, helped us exceed our sales goals. I would
+                        highly recommend Conductor!”
+                        <strong>Liz, Stride Rite</strong>
+                    </blockquote>
+                </li><!-- / end testimonial -->
+                <li class="cell">
+                    <blockquote>
+                        “Conductor has been a wonderful partner to work with on all
+                        our video production needs. They are professional, organized,
+                        communicative, talented and fun to work with! Everyone from
+                        the producers, directors, animators, editors, stylists, and crew
+                        are easy to work with and are excellent at adapting to change
+                        and direction. They work well under tight deadlines and last
+                        minute changes that still result in a great end product. Our
+                        experience working the Conductor team has been nothing but
+                        positive.”
+                        <strong>Donna, Clarks Americas Inc.</strong>
+                    </blockquote>
+                </li><!-- / end testimonial -->
+            </ul><!-- / end testimonials inner -->
         </section>
         <!-- / end full bleed hero -->
-        <section class="middle tighten clients">
-            <div class="inner extra-margin copy">
+        <section class="middle clients">
+            <div class="inner copy">
                 <h2>
-                    We live by collaborating with <span class="lighten">great clients</span>.
+                    Collaborators
                 </h2>
-                <p>
-                     When we build a commercial for you, we pretend your service or product we are pitching is ours, and the money we are spending is coming from our own pockets. You’re not (just) a paycheck. You’re a partner, and that’s why most of our clients keep coming back.
-                </p>
             </div><!-- / end clients intro middle -->
             <div class="background-gradient"></div><!-- / end background gradient -->
         </section>
@@ -118,67 +148,128 @@
         <section class="panel-table clients-grid">
             <ul class="container">
                 <li class="client-logo">
-                    <%= image_tag 'pc/logos/toyota-white.png', alt: 'TOYOTA' %>
+                    <%= image_tag 'pc/logos/toyota-white.png', alt: 'Toyota' %>
                 </li>
                 <li class="client-logo">
-                    <%= image_tag 'pc/logos/puma-white.png', alt: 'PUMA' %>
+                    <%= image_tag 'pc/logos/puma-white.png', alt: 'Puma' %>
                 </li>
                 <li class="client-logo">
                     <%= image_tag 'pc/logos/irobot-white.png', alt: 'iROBOT' %>
                 </li>
                 <li class="client-logo">
-                    <%= image_tag 'pc/logos/tj-maxx-white.png', alt: 'TJ MAXX' %>
+                    <%= image_tag 'pc/logos/tj-maxx-white.png', alt: 'TJ Maxx' %>
                 </li>
                 <li class="client-logo">
-                    <%= image_tag 'pc/logos/lindt-white.png', alt: 'LINDT' %>
+                    <%= image_tag 'pc/logos/lindt-white.png', alt: 'Lindt' %>
                 </li>
                 <li class="client-logo">
-                    <%= image_tag 'pc/logos/brother-white.png', alt: 'BROTHER' %>
+                    <%= image_tag 'pc/logos/brother-white.png', alt: 'Brother' %>
                 </li>
                 <li class="client-logo">
-                    <%= image_tag 'pc/logos/nb-white.png', alt: 'NEW BALANCE' %>
+                    <%= image_tag 'pc/logos/nb-white.png', alt: 'New Balance' %>
                 </li>
                 <li class="client-logo">
-                    <%= image_tag 'pc/logos/fidelity-white.png', alt: 'FIDELITY' %>
+                    <%= image_tag 'pc/logos/fidelity-white.png', alt: 'Fidelity' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/american-standard-white.png', alt: 'American Standard' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/clarks-white.png', alt: 'Clarks' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/cocoon-white.png', alt: 'Cocoon' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/dragon-white.png', alt: 'Dragon' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/general-mills-white.png', alt: 'General Mills' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/keurig-white.png', alt: 'Keurig' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/laithwaite-white.png', alt: 'Laithwaite' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/mobile-help-white.png', alt: 'Mobile Help' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/quell-white.png', alt: 'Quell' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/rebagg-white.png', alt: 'Rebagg' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/reebok-white.png', alt: 'Reebok' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/resorts-casino-logo.png', alt: 'Resorts Casino' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/stride-rite-white.png', alt: 'Stride Rite' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/summer-infant-white.png', alt: 'Summer Infant' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/sun-financial-white.png', alt: 'Sun Financial' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/thumbtack-white.png', alt: 'Thumbtack' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/tripping-white.png', alt: 'Tripping' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/gerber-white.png', alt: 'Gerber' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/hmr-white.png', alt: 'HMR Investments' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/putnam-white.png', alt: 'Putnam Investments' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/1-800-flowers-white.png', alt: '1800 Flowers' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/adore-white.png', alt: 'Adore' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/bjs-white.png', alt: 'BJs' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/corning-white.png', alt: 'Corning' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/eve-white.png', alt: 'Eve' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/flex-shopper-white.png', alt: 'Flex Shopper' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/marshalls-white.png', alt: 'Marshalls' %>
+                </li>
+                <li class="client-logo bulbhead">
+                    <%= image_tag 'pc/logos/bulbhead-white.png', alt: 'Bulbhead' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/solid-works-white.png', alt: 'Solid Works' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/silpada-white.png', alt: 'Silpada' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/wayside-omaha-white.png', alt: 'Wayside Omaha Steaks' %>
+                </li>
+                <li class="client-logo">
+                    <%= image_tag 'pc/logos/skreens-white.png', alt: 'Skreens' %>
                 </li>
             </ul><!-- / end outer clients -->
         </section>
         <!-- / end clients grid -->
-        <section class="services-outer services logo-track-callout">
-            <div class="track left-pane">
-                <div class="pane-holder"></div><!-- / end content -->
-                <svg viewBox="542 433 221 372" class="right">
-                    <path d="M544,435.518 L759.752,620.516" stroke="#000" stroke-width="2" fill="none"></path>
-                    <path d="M543.67739,803.710836 L760.148806,619.555164" stroke="#000" stroke-width="2" fill="none"></path>
-                </svg>
-            </div><!-- / end left track -->
-            <div class="track right-pane">
-                <svg viewBox="284 342 217 366" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <polygon id="Page-1" stroke="none" fill="#000" fill-rule="evenodd" points="501.752 709.542 501.752 523.878 501.752 345 286 524.544"></polygon>
-                </svg>
-                <div class="pane-holder"></div><!-- / end pane content -->
-            </div><!-- end right track -->
-            <div class="gradient"></div><!-- / end gradient -->
-            <div class="outer-content-top">
-                <div class="inner-content">
-                    <p>
-                        Let us show you our secrets, who we are, how hard we work and how wide <br />our reach is.
-                    </p>
-                    <small>You'll be happy you did. </small>
-                    <a href="/what-we-do.html" title="What We Do" data-role="button" class="button">
-                        What We Do
-                    </a>
-                </div><!-- / end content -->
-                <aside class="callout-sidebar">
-                    <ul>
-                        <li><span>Commercials</span></li>
-                        <li><span>Brand Response</span></li>
-                        <li><span>Digital Content</span></li>
-                    </ul>
-                </aside><!-- / end callout side bar -->
-            </div><!-- / end outer content top -->
-        </section><!-- / end services -->
-
     </main>
     <!-- / end outer wrapper bound -->
     <footer class="outer-wrapper">
@@ -213,13 +304,10 @@
                 </ul><!-- / end social media -->
                 <ul class="menu">
                     <li>
-                        <%= link_to 'What We Do', pc_what_we_do_path, title: 'What We Do' %>
-                    </li>
-                    <li>
                         <%= link_to 'Our Work', pc_our_work_path, title: 'Our Work' %>
                     </li>
                     <li>
-                        <%= link_to 'Directors', pc_directors_path, title: 'Directors' %>
+                        <%= link_to 'Directors', pc_director_noah_lydiard_path, title: 'Directors' %>
                     </li>
                     <li>
                         <%= link_to 'Clients', pc_clients_path, title: 'Clients' %>

@@ -39,40 +39,36 @@
         <div class="inner">
             <div class="nav-close" id="menuClose">&times;</div>
             <ul>
-                <li><a href="what-we-do.html" title="What We Do">What We Do</a></li>
-                <li><a href="our-work.html" title="Our Work">Our Work</a></li>
+                <li><%= link_to 'Our Work', pc_our_work_path, title: 'Our Work' %></li>
                 <li class="directors">
                     <span class="block directors-toggle" title="Directors">Directors</span>
                     <ul class="dropdown-nav">
                         <li class="dropdown-item">
-                            <a href="directors.html" title="Noah Lyndiard">
-                                Noah Lyndiard
-                            </a>
+                            <%= link_to 'Noah Lydiard', pc_director_noah_lydiard_path, title: 'Noah Lydiard' %>
                         </li>
                         <li class="dropdown-item">
-                            <a href="directors.html" title="Noah Lyndiard">
-                                James Ferguson
-                            </a>
+                            <%= link_to 'Kamell Allaway', pc_director_kamell_allaway_path, title: 'Kamell Allaway' %>
                         </li>
                         <li class="dropdown-item">
-                            <a href="directors.html" title="Noah Lyndiard">
-                                Michael Lavalongname
-                            </a>
+                            <%= link_to 'Vladimir Minuty', pc_director_vladimir_minuty_path, title: 'Vladimir Minuty' %>
+                        </li>
+                        <li class="dropdown-item">
+                            <%= link_to 'Christian Williams', pc_director_christian_williams_path, title: 'Christian Williams' %>
                         </li>
                     </ul>
                 </li><!-- / end directors -->
-                <li><a href="clients.html" title="Clients">Clients</a></li>
-                <li><a href="contact.html" title="Contact">Contact</a></li>
-                <li><a href="#" title="Client Portal">Client Portal</a></li>
+                <li><%= link_to 'Clients', pc_clients_path, title: 'Clients' %></li>
+                <li><%= link_to 'Contact', pc_contact_path, title: 'Contact' %></li>
+                <li><%= link_to 'Client Portal', client_login_path, title: 'Client Portal' %></li>
             </ul>
         </div><!-- / end inner nav -->
     </nav><!-- / end navigation -->
 
     <main class="outer-wrapper bounds our-work">
-        <div class="title-header inner-page outer-wrapper">
+        <div class="title-header inner-page pull outer-wrapper">
             <div class="left">
                 <h1>
-                    <a class="first crumb" href="/" title="Conductor Productions">Conductor</a>
+                    <%= link_to 'Conductor', pc_index_path, title: 'Conductor Productions', class: 'first crumb' %>
                     <i class="page-name">Our Work</i>
                 </h1>
             </div>
@@ -101,7 +97,7 @@
                     <span class="play-btn" title="Play">
                         <span class="play"></span>
                     </span>
-                    <video id="standalonePlayer" class="video" src="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" poster="/images/posters/thumbtack.png">
+                    <video id="standalonePlayer" preload="true" class="video" src="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" poster="/images/posters/thumbtack.png">
                     </video>
                 </div><!-- / end video container -->
             </div><!-- / end hero inner -->
@@ -123,32 +119,77 @@
             <!-- / end hero controls -->
         </section>
         <!-- / end hero -->
-        <div class="middle work-item-info" id="workItemInfo" data-itemclass="item"></div><!-- / end work item info -->
+        <!-- LEAVING THIS UI HERE, HOWEVER I DONT BELIEVE THEY WILL BE USING THE FEATURE AT THIS TIME. THERE IS A SWITCH IN THE JAVASCRIPT DEPENDING ON IF THIS ELEMENT EXISTS -->
+        <!--div class="middle work-item-info" id="workItemInfo" data-itemclass="item"></div><!-- / end work item info -->
         <section class="middle work-intro">
             <div class="inner">
-                <h2>
-                What do you get when you combine 20 years of brand and entertainment experience with 20 years of direct response experience? <span class="lighter">You get the best of both worlds.</span>
-                </h2>
+                <p>
+                    If you’re going to reach out, then stand out. Seriously; media channels are much too cluttered to waste your marketing dollars on a steaming pile of bad video. Do it right. Make something that works for your brand. Call us- we’re waiting- your customers are too.
+                </p>
             </div><!-- / end callouts -->
             <div class="background-gradient"></div><!-- / end background gradient -->
         </section>
         <!-- / end middle see more work section -->
         <section class="work-outer work-grid outer-wrapper" id="workGrid">
             <ul class="grid-row">
-                <li data-videoid="01" data-videourl="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" data-posterurl="/images/posters/thumbtack.png" class="item commercial">
+                <li data-videoid="01" data-videourl="https://player.vimeo.com/external/98734404.hd.mp4?s=5698921cc6b64a5c4d6f9475db05a650e3ebedb2&profile_id=113" data-posterurl="/images/posters/reebok.png" class="item commercial">
                     <a href="#">
                         <div class="caption">
                             <div class="inner">
                                 <span class="icon icon-mag-glass"></span>
-                                <span class="title">NetFlix</span>
-                                <span class="description">This is a sweet caption about said kitten.</span>
+                                <span class="title">Reebok</span>
+                                <!-- <span class="description">This is a sweet caption about said kitten.</span> -->
                                 <span class="view button" data-role="button">View Project</span>
                             </div>
                             <!-- / end inner -->
                         </div>
                         <!-- / end caption -->
                         <div class="image-container">
-                            <%= image_tag 'pc/placeholders/grid-item-three.jpg', alt: 'GOLF' %>
+                            <%= image_tag 'pc/posters/reebok.png', alt: 'Reebok' %>
+                        </div>
+                        <!-- / end image container -->
+                    </a>
+                    <div class="item-info panel-table">
+                        <div class="nav-close work-item-close" title="Close Item">
+                            &times;
+                        </div><!-- / end menu item info close -->
+                        <div class="cell client-info">
+                            <h2 class="client">Reebok</h2>
+                            <ul class="clean">
+                                <li class="work-title">
+                                    <em>Title:</em> Title
+                                </li>
+                                <li>
+                                    <em>Type:</em> Commercials
+                                </li>
+                            </ul>
+                        </div><!-- / end client work info -->
+                        <div class="cell description">
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            </p>
+                            <ul class="logos clean panel-table">
+                                <li class="logo cell">
+                                    <img src="images/logos/reebok.png" alt="Reebok" />
+                                </li><!-- / end logo -->
+                            </ul><!-- / end logos -->
+                        </div><!-- / end work description -->
+                    </div><!-- / end item info template -->
+                </li>
+                <!-- / end item -->
+                <li data-videoid="02" data-videourl="https://player.vimeo.com/external/165875802.hd.mp4?s=b69b68547cadde8ec3c9ba2a89f43529d4e05e43&profile_id=119" data-posterurl="/images/posters/rebagg.png" class="item commercial">
+                    <a href="#" title="View Project">
+                        <div class="caption">
+                            <div class="inner">
+                                <span class="icon icon-mag-glass"></span>
+                                <span class="title">Rebagg</span>
+                                <span class="view button" data-role="button">View Project</span>
+                            </div>
+                            <!-- / end inner -->
+                        </div>
+                        <!-- / end caption -->
+                        <div class="image-container">
+                            <%= image_tag 'pc/posters/rebagg.png', alt: 'Rebagg' %>
                         </div>
                         <!-- / end image container -->
                     </a>
@@ -183,20 +224,19 @@
                     </div><!-- / end item info template -->
                 </li>
                 <!-- / end item -->
-                <li data-videoid="02" data-videourl="/videos/mov_bbb.mp4" data-posterurl="/images/posters/thumbtack-2.png" class="item commercial">
+                <li data-videoid="03" data-videourl="https://player.vimeo.com/external/195307110.hd.mp4?s=f008900bd75a855a5662fd931532ae1ad7284795&profile_id=119" data-posterurl="/images/posters/rebagg-two.png" class="item commercial">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
                                 <span class="icon icon-mag-glass"></span>
-                                <span class="title">Stride Rite</span>
-                                <span class="description">This is a sweet caption about said kitten.</span>
+                                <span class="title">Rebagg</span>
                                 <span class="view button" data-role="button">View Project</span>
                             </div>
                             <!-- / end inner -->
                         </div>
                         <!-- / end caption -->
                         <div class="image-container">
-                            <%= image_tag 'pc/placeholders/grid-item-two.jpg', alt: 'GOLF' %>
+                            <%= image_tag 'pc/posters/rebagg-two.png', alt: 'Rebagg' %>
                         </div>
                         <!-- / end image container -->
                     </a>
@@ -205,10 +245,10 @@
                             &times;
                         </div><!-- / end menu item info close -->
                         <div class="cell client-info">
-                            <h2 class="client">New Balance</h2>
+                            <h2 class="client">Rebagg</h2>
                             <ul class="clean">
                                 <li class="work-title">
-                                    <em>Title:</em> Run Boston 2017
+                                    <em>Title:</em> Title
                                 </li>
                                 <li>
                                     <em>Type:</em> Commercials
@@ -231,20 +271,19 @@
                     </div><!-- / end item info template -->
                 </li>
                 <!-- / end item -->
-                <li data-videoid="03" data-videourl="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" data-posterurl="/images/posters/thumbtack-2.png" class="item commercial">
+                <li data-videoid="04" data-videourl="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" data-posterurl="/images/posters/thumbtack-two.png" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
                                 <span class="icon icon-mag-glass"></span>
-                                <span class="title">NetFlix</span>
-                                <span class="description">This is a sweet caption about said kitten.</span>
+                                <span class="title">Thumbtack</span>
                                 <span class="view button" data-role="button">View Project</span>
                             </div>
                             <!-- / end inner -->
                         </div>
                         <!-- / end caption -->
                         <div class="image-container">
-                            <%= image_tag 'pc/placeholders/grid-item.jpg', alt: 'GOLF' %>
+                            <%= image_tag 'pc/posters/thumbtack-two.png', alt: 'Thumbtack' %>
                         </div>
                         <!-- / end image container -->
                     </a>
@@ -253,10 +292,10 @@
                             &times;
                         </div><!-- / end menu item info close -->
                         <div class="cell client-info">
-                            <h2 class="client">New Balance</h2>
+                            <h2 class="client">Thumbtack</h2>
                             <ul class="clean">
                                 <li class="work-title">
-                                    <em>Title:</em> Run Boston 2017
+                                    <em>Title:</em> Title
                                 </li>
                                 <li>
                                     <em>Type:</em> Commercials
@@ -279,20 +318,19 @@
                     </div><!-- / end item info template -->
                 </li>
                 <!-- / end item -->
-                <li data-videoid="04" data-videourl="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" data-posterurl="/images/posters/thumbtack.png" class="item digital-content">
+                <li data-videoid="05" data-videourl="https://player.vimeo.com/external/124955435.hd.mp4?s=1666ee060db36801cf7d9f90ec2f7606c1fc9688&profile_id=119" data-posterurl="/images/posters/putnam.png" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
                                 <span class="icon icon-mag-glass"></span>
-                                <span class="title">NetFlix</span>
-                                <span class="description">This is a sweet caption about said kitten.</span>
+                                <span class="title">Putnam Investments</span>
                                 <span class="view button" data-role="button">View Project</span>
                             </div>
                             <!-- / end inner -->
                         </div>
                         <!-- / end caption -->
                         <div class="image-container">
-                            <%= image_tag 'pc/placeholders/grid-item-two.jpg', alt: 'GOLF' %>
+                            <%= image_tag 'pc/posters/putnam.png', alt: 'Putnam Investments' %>
                         </div>
                         <!-- / end image container -->
                     </a>
@@ -301,10 +339,10 @@
                             &times;
                         </div><!-- / end menu item info close -->
                         <div class="cell client-info">
-                            <h2 class="client">New Balance</h2>
+                            <h2 class="client">Putnam Investments</h2>
                             <ul class="clean">
                                 <li class="work-title">
-                                    <em>Title:</em> Run Boston 2017
+                                    <em>Title:</em> Title
                                 </li>
                                 <li>
                                     <em>Type:</em> Commercials
@@ -327,20 +365,19 @@
                     </div><!-- / end item info template -->
                 </li>
                 <!-- / end item -->
-                <li data-videoid="05" data-videourl="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" data-posterurl="/images/posters/thumbtack.png" class="item digital-content">
+                <li data-videoid="06" data-videourl="https://player.vimeo.com/external/199903406.hd.mp4?s=c08ead5f6385f8c581eaa98349789768ea760c48&profile_id=174" data-posterurl="/images/posters/striderite-phibian.png" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
                                 <span class="icon icon-mag-glass"></span>
-                                <span class="title">NetFlix</span>
-                                <span class="description">This is a sweet caption about said kitten.</span>
+                                <span class="title">Stride Rite: Phibian</span>
                                 <span class="view button" data-role="button">View Project</span>
                             </div>
                             <!-- / end inner -->
                         </div>
                         <!-- / end caption -->
                         <div class="image-container">
-                            <%= image_tag 'pc/placeholders/grid-item-three.jpg', alt: 'GOLF' %>
+                            <%= image_tag 'pc/posters/striderite-phibian.png', alt: 'Stride Rite Phibian' %>
                         </div>
                         <!-- / end image container -->
                     </a>
@@ -349,10 +386,10 @@
                             &times;
                         </div><!-- / end menu item info close -->
                         <div class="cell client-info">
-                            <h2 class="client">New Balance</h2>
+                            <h2 class="client">Stride Rite: Phibian</h2>
                             <ul class="clean">
                                 <li class="work-title">
-                                    <em>Title:</em> Run Boston 2017
+                                    <em>Title:</em> Title
                                 </li>
                                 <li>
                                     <em>Type:</em> Commercials
@@ -375,20 +412,19 @@
                     </div><!-- / end item info template -->
                 </li>
                 <!-- / end item -->
-                <li data-videoid="06" data-videourl="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" data-posterurl="/images/posters/thumbtack.png" class="item digital-content">
+                <li data-videoid="07" data-videourl="https://player.vimeo.com/external/124955437.hd.mp4?s=ec1ec685a10b612f34ee5b994ece257e5a30b1b4&profile_id=119" data-posterurl="/images/posters/nike.png" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
                                 <span class="icon icon-mag-glass"></span>
-                                <span class="title">NetFlix</span>
-                                <span class="description">This is a sweet caption about said kitten.</span>
+                                <span class="title">Nike</span>
                                 <span class="view button" data-role="button">View Project</span>
                             </div>
                             <!-- / end inner -->
                         </div>
                         <!-- / end caption -->
                         <div class="image-container">
-                            <%= image_tag 'pc/placeholders/grid-item-three.jpg', alt: 'GOLF' %>
+                            <%= image_tag 'pc/posters/nike.png', alt: 'Nike' %>
                         </div>
                         <!-- / end image container -->
                     </a>
@@ -397,10 +433,10 @@
                             &times;
                         </div><!-- / end menu item info close -->
                         <div class="cell client-info">
-                            <h2 class="client">New Balance</h2>
+                            <h2 class="client">Nike</h2>
                             <ul class="clean">
                                 <li class="work-title">
-                                    <em>Title:</em> Run Boston 2017
+                                    <em>Title:</em> Title
                                 </li>
                                 <li>
                                     <em>Type:</em> Commercials
@@ -423,20 +459,19 @@
                     </div><!-- / end item info template -->
                 </li>
                 <!-- / end item -->
-                <li data-videoid="07" data-videourl="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" data-posterurl="/images/posters/thumbtack.png" class="item digital-content">
+                <li data-videoid="08" data-videourl="https://player.vimeo.com/external/199905668.hd.mp4?s=14d36dc2c4451772939408aac5e339cefc38e858&profile_id=119" data-posterurl="/images/posters/cocoon.sealy.png" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
                                 <span class="icon icon-mag-glass"></span>
-                                <span class="title">NetFlix</span>
-                                <span class="description">This is a sweet caption about said kitten.</span>
+                                <span class="title">Sealy Cocoon</span>
                                 <span class="view button" data-role="button">View Project</span>
                             </div>
                             <!-- / end inner -->
                         </div>
                         <!-- / end caption -->
                         <div class="image-container">
-                            <%= image_tag 'pc/placeholders/grid-item.jpg', alt: 'GOLF' %>
+                            <%= image_tag 'pc/posters/cocoon.sealy.png', alt: 'Sealy Cocoon' %>
                         </div>
                         <!-- / end image container -->
                     </a>
@@ -445,10 +480,10 @@
                             &times;
                         </div><!-- / end menu item info close -->
                         <div class="cell client-info">
-                            <h2 class="client">New Balance</h2>
+                            <h2 class="client">Sealy Cocoon</h2>
                             <ul class="clean">
                                 <li class="work-title">
-                                    <em>Title:</em> Run Boston 2017
+                                    <em>Title:</em> Title
                                 </li>
                                 <li>
                                     <em>Type:</em> Commercials
@@ -471,20 +506,19 @@
                     </div><!-- / end item info template -->
                 </li>
                 <!-- / end item -->
-                <li data-videoid="08" data-videourl="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" data-posterurl="/images/posters/thumbtack.png" class="item digital-content">
+                <li data-videoid="09" data-videourl="https://player.vimeo.com/external/199905551.hd.mp4?s=2eaa49771e4e7d15232d5fbd26d2f0d75e36f954&profile_id=169" data-posterurl="/images/posters/telo-years.png" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
                                 <span class="icon icon-mag-glass"></span>
-                                <span class="title">NetFlix</span>
-                                <span class="description">This is a sweet caption about said kitten.</span>
+                                <span class="title">TeloYears</span>
                                 <span class="view button" data-role="button">View Project</span>
                             </div>
                             <!-- / end inner -->
                         </div>
                         <!-- / end caption -->
                         <div class="image-container">
-                            <%= image_tag 'pc/placeholders/grid-item-two.jpg', alt: 'GOLF' %>
+                            <%= image_tag 'pc/posters/telo-years.png', alt: 'Telo Years' %>
                         </div>
                         <!-- / end image container -->
                     </a>
@@ -493,10 +527,10 @@
                             &times;
                         </div><!-- / end menu item info close -->
                         <div class="cell client-info">
-                            <h2 class="client">New Balance</h2>
+                            <h2 class="client">Telo Years</h2>
                             <ul class="clean">
                                 <li class="work-title">
-                                    <em>Title:</em> Run Boston 2017
+                                    <em>Title:</em> Title
                                 </li>
                                 <li>
                                     <em>Type:</em> Commercials
@@ -519,20 +553,19 @@
                     </div><!-- / end item info template -->
                 </li>
                 <!-- / end item -->
-                <li data-videoid="09" data-videourl="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" data-posterurl="/images/posters/thumbtack-2.png" class="item digital-content">
+                <li data-videoid="10" data-videourl="https://player.vimeo.com/external/199902296.hd.mp4?s=e9221d8427dce2f973df31ddd86858c351f252dc&profile_id=119" data-posterurl="/images/posters/clarks.png" class="item commercial">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
                                 <span class="icon icon-mag-glass"></span>
-                                <span class="title">NetFlix</span>
-                                <span class="description">This is a sweet caption about said kitten.</span>
+                                <span class="title">Clarks</span>
                                 <span class="view button" data-role="button">View Project</span>
                             </div>
                             <!-- / end inner -->
                         </div>
                         <!-- / end caption -->
                         <div class="image-container">
-                            <%= image_tag 'pc/placeholders/grid-item-three.jpg', alt: 'GOLF' %>
+                            <%= image_tag 'pc/posters/clarks.png', alt: 'Clarks' %>
                         </div>
                         <!-- / end image container -->
                     </a>
@@ -541,10 +574,10 @@
                             &times;
                         </div><!-- / end menu item info close -->
                         <div class="cell client-info">
-                            <h2 class="client">New Balance</h2>
+                            <h2 class="client">Clarks</h2>
                             <ul class="clean">
                                 <li class="work-title">
-                                    <em>Title:</em> Run Boston 2017
+                                    <em>Title:</em> Title
                                 </li>
                                 <li>
                                     <em>Type:</em> Commercials
@@ -567,379 +600,100 @@
                     </div><!-- / end item info template -->
                 </li>
                 <!-- / end item -->
-                <li data-videoid="10" data-videourl="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" data-posterurl="/images/posters/thumbtack.png" class="item commercial">
+                <li data-videoid="11" data-videourl="https://player.vimeo.com/external/185988782.hd.mp4?s=d82d8ee983bb1121e758809f36785a7c147120a0&profile_id=119" data-posterurl="/images/posters/thumbtack.png" class="item commercial">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
                                 <span class="icon icon-mag-glass"></span>
-                                <span class="title">NetFlix</span>
-                                <span class="description">This is a sweet caption about said kitten.</span>
+                                <span class="title">Thumbtack</span>
+                                <!-- <span class="description">This is a sweet caption about said kitten.</span> -->
                                 <span class="view button" data-role="button">View Project</span>
                             </div>
                             <!-- / end inner -->
                         </div>
                         <!-- / end caption -->
                         <div class="image-container">
-                            <%= image_tag 'pc/placeholders/grid-item.jpg?cache=bust', alt: 'GOLF' %>
+                            <%= image_tag 'pc/posters/thumbtack.png', alt: 'Thumbtack' %>
                         </div>
                         <!-- / end image container -->
                     </a>
-                    <div class="item-info panel-table">
-                        <div class="nav-close work-item-close" title="Close Item">
-                            &times;
-                        </div><!-- / end menu item info close -->
-                        <div class="cell client-info">
-                            <h2 class="client">New Balance</h2>
-                            <ul class="clean">
-                                <li class="work-title">
-                                    <em>Title:</em> Run Boston 2017
-                                </li>
-                                <li>
-                                    <em>Type:</em> Commercials
-                                </li>
-                            </ul>
-                        </div><!-- / end client work info -->
-                        <div class="cell description">
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </p>
-                            <ul class="logos clean panel-table">
-                                <li class="logo cell">
-                                    <img src="images/logos/nb-white.png" alt="NB (New Balance)" />
-                                </li><!-- / end logo -->
-                                <li class="logo cell">
-                                    <img src="images/logos/irobot-white.png" alt="New Balance" />
-                                </li><!-- / end logos -->
-                            </ul><!-- / end logos -->
-                        </div><!-- / end work description -->
-                    </div><!-- / end item info template -->
                 </li>
                 <!-- / end item -->
-                <li data-videoid="11" data-videourl="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" data-posterurl="/images/posters/thumbtack.png" class="item commercial">
+                <li data-videoid="12" data-videourl="https://player.vimeo.com/external/111656553.hd.mp4?s=966399ef5d6a38e4031b58bfb41b64c1ad5c3d23&profile_id=119" data-posterurl="/images/posters/brother.png" class="item commercial">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
                                 <span class="icon icon-mag-glass"></span>
-                                <span class="title">NetFlix</span>
-                                <span class="description">This is a sweet caption about said kitten.</span>
+                                <span class="title">Brother Printer</span>
                                 <span class="view button" data-role="button">View Project</span>
                             </div>
                             <!-- / end inner -->
                         </div>
                         <!-- / end caption -->
                         <div class="image-container">
-                            <%= image_tag 'pc/placeholders/grid-item-two.jpg', alt: 'GOLF' %>
+                            <%= image_tag 'pc/posters/brother.png', alt: 'Brother' %>
                         </div>
                         <!-- / end image container -->
                     </a>
-                    <div class="item-info panel-table">
-                        <div class="nav-close work-item-close" title="Close Item">
-                            &times;
-                        </div><!-- / end menu item info close -->
-                        <div class="cell client-info">
-                            <h2 class="client">New Balance</h2>
-                            <ul class="clean">
-                                <li class="work-title">
-                                    <em>Title:</em> Run Boston 2017
-                                </li>
-                                <li>
-                                    <em>Type:</em> Commercials
-                                </li>
-                            </ul>
-                        </div><!-- / end client work info -->
-                        <div class="cell description">
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </p>
-                            <ul class="logos clean panel-table">
-                                <li class="logo cell">
-                                    <img src="images/logos/nb-white.png" alt="NB (New Balance)" />
-                                </li><!-- / end logo -->
-                                <li class="logo cell">
-                                    <img src="images/logos/irobot-white.png" alt="New Balance" />
-                                </li><!-- / end logos -->
-                            </ul><!-- / end logos -->
-                        </div><!-- / end work description -->
-                    </div><!-- / end item info template -->
                 </li>
                 <!-- / end item -->
-                <li data-videoid="12" data-videourl="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" data-posterurl="/images/posters/thumbtack.png" class="item commercial">
+                <li data-videoid="13" data-videourl="https://player.vimeo.com/external/185990535.hd.mp4?s=3cb398ceffa173313da9c9fbea97e0cd434952fb&profile_id=119" data-posterurl="/images/posters/shields.png" class="item commercial">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
                                 <span class="icon icon-mag-glass"></span>
-                                <span class="title">NetFlix</span>
-                                <span class="description">This is a sweet caption about said kitten.</span>
+                                <span class="title">Shields MRI</span>
                                 <span class="view button" data-role="button">View Project</span>
                             </div>
                             <!-- / end inner -->
                         </div>
                         <!-- / end caption -->
                         <div class="image-container">
-                            <%= image_tag 'pc/placeholders/grid-item.jpg?cache=bust', alt: 'GOLF' %>
+                            <%= image_tag 'pc/posters/shields.png', alt: 'Shields MRI' %>
                         </div>
                         <!-- / end image container -->
                     </a>
-                    <div class="item-info panel-table">
-                        <div class="nav-close work-item-close" title="Close Item">
-                            &times;
-                        </div><!-- / end menu item info close -->
-                        <div class="cell client-info">
-                            <h2 class="client">New Balance</h2>
-                            <ul class="clean">
-                                <li class="work-title">
-                                    <em>Title:</em> Run Boston 2017
-                                </li>
-                                <li>
-                                    <em>Type:</em> Commercials
-                                </li>
-                            </ul>
-                        </div><!-- / end client work info -->
-                        <div class="cell description">
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </p>
-                            <ul class="logos clean panel-table">
-                                <li class="logo cell">
-                                    <img src="images/logos/nb-white.png" alt="NB (New Balance)" />
-                                </li><!-- / end logo -->
-                                <li class="logo cell">
-                                    <img src="images/logos/irobot-white.png" alt="New Balance" />
-                                </li><!-- / end logos -->
-                            </ul><!-- / end logos -->
-                        </div><!-- / end work description -->
-                    </div><!-- / end item info template -->
                 </li>
                 <!-- / end item -->
-                <li data-videoid="13" data-videourl="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" data-posterurl="/images/posters/thumbtack.png" class="item digital-content">
+                <li data-videoid="14" data-videourl="https://player.vimeo.com/external/124955438.hd.mp4?s=a2467bbea9b3f59360e89a344e400803e5790d3d&profile_id=119" data-posterurl="/images/posters/netflix.png" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
                                 <span class="icon icon-mag-glass"></span>
                                 <span class="title">NetFlix</span>
-                                <span class="description">This is a sweet caption about said kitten.</span>
                                 <span class="view button" data-role="button">View Project</span>
                             </div>
                             <!-- / end inner -->
                         </div>
                         <!-- / end caption -->
                         <div class="image-container">
-                            <%= image_tag 'pc/placeholders/grid-item-three.jpg', alt: 'GOLF' %>
+                            <%= image_tag 'pc/posters/netflix.png', alt: 'Netflix' %>
                         </div>
                         <!-- / end image container -->
                     </a>
-                    <div class="item-info panel-table">
-                        <div class="nav-close work-item-close" title="Close Item">
-                            &times;
-                        </div><!-- / end menu item info close -->
-                        <div class="cell client-info">
-                            <h2 class="client">New Balance</h2>
-                            <ul class="clean">
-                                <li class="work-title">
-                                    <em>Title:</em> Run Boston 2017
-                                </li>
-                                <li>
-                                    <em>Type:</em> Commercials
-                                </li>
-                            </ul>
-                        </div><!-- / end client work info -->
-                        <div class="cell description">
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </p>
-                            <ul class="logos clean panel-table">
-                                <li class="logo cell">
-                                    <img src="images/logos/nb-white.png" alt="NB (New Balance)" />
-                                </li><!-- / end logo -->
-                                <li class="logo cell">
-                                    <img src="images/logos/irobot-white.png" alt="New Balance" />
-                                </li><!-- / end logos -->
-                            </ul><!-- / end logos -->
-                        </div><!-- / end work description -->
-                    </div><!-- / end item info template -->
                 </li>
                 <!-- / end item -->
-                <li data-videoid="14" data-videourl="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" data-posterurl="/images/posters/thumbtack.png" class="item commercial">
+                <li data-videoid="15" data-videourl="https://player.vimeo.com/external/185988791.hd.mp4?s=7f9729032fc6d75446e61750fe396b576404c16c&profile_id=119" data-posterurl="/images/posters/sunlife.png" class="item digital-content">
                     <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
                                 <span class="icon icon-mag-glass"></span>
-                                <span class="title">NetFlix</span>
-                                <span class="description">This is a sweet caption about said kitten.</span>
+                                <span class="title">SunLife Financial</span>
                                 <span class="view button" data-role="button">View Project</span>
                             </div>
                             <!-- / end inner -->
                         </div>
                         <!-- / end caption -->
                         <div class="image-container">
-                            <%= image_tag 'pc/placeholders/grid-item.jpg?cache=bust', alt: 'GOLF' %>
+                            <%= image_tag 'pc/posters/sunlife.png', alt: 'SunLife Financial' %>
                         </div>
                         <!-- / end image container -->
                     </a>
-                    <div class="item-info panel-table">
-                        <div class="nav-close work-item-close" title="Close Item">
-                            &times;
-                        </div><!-- / end menu item info close -->
-                        <div class="cell client-info">
-                            <h2 class="client">New Balance</h2>
-                            <ul class="clean">
-                                <li class="work-title">
-                                    <em>Title:</em> Run Boston 2017
-                                </li>
-                                <li>
-                                    <em>Type:</em> Commercials
-                                </li>
-                            </ul>
-                        </div><!-- / end client work info -->
-                        <div class="cell description">
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </p>
-                            <ul class="logos clean panel-table">
-                                <li class="logo cell">
-                                    <img src="images/logos/nb-white.png" alt="NB (New Balance)" />
-                                </li><!-- / end logo -->
-                                <li class="logo cell">
-                                    <img src="images/logos/irobot-white.png" alt="New Balance" />
-                                </li><!-- / end logos -->
-                            </ul><!-- / end logos -->
-                        </div><!-- / end work description -->
-                    </div><!-- / end item info template -->
-                </li>
-                <!-- / end item -->
-                <li data-videoid="15" data-videourl="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" data-posterurl="/images/posters/thumbtack.png" class="item brand-response">
-                    <a href="#" title="View Project">
-                        <div class="caption">
-                            <div class="inner">
-                                <span class="icon icon-mag-glass"></span>
-                                <span class="title">NetFlix</span>
-                                <span class="description">This is a sweet caption about said kitten.</span>
-                                <span class="view button" data-role="button">View Project</span>
-                            </div>
-                            <!-- / end inner -->
-                        </div>
-                        <!-- / end caption -->
-                        <div class="image-container">
-                            <%= image_tag 'pc/placeholders/grid-item.jpg', alt: 'GOLF' %>
-                        </div>
-                        <!-- / end image container -->
-                    </a>
-                    <div class="item-info panel-table">
-                        <div class="nav-close work-item-close" title="Close Item">
-                            &times;
-                        </div><!-- / end menu item info close -->
-                        <div class="cell client-info">
-                            <h2 class="client">New Balance</h2>
-                            <ul class="clean">
-                                <li class="work-title">
-                                    <em>Title:</em> Run Boston 2017
-                                </li>
-                                <li>
-                                    <em>Type:</em> Commercials
-                                </li>
-                            </ul>
-                        </div><!-- / end client work info -->
-                        <div class="cell description">
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </p>
-                            <ul class="logos clean panel-table">
-                                <li class="logo cell">
-                                    <img src="images/logos/nb-white.png" alt="NB (New Balance)" />
-                                </li><!-- / end logo -->
-                                <li class="logo cell">
-                                    <img src="images/logos/irobot-white.png" alt="New Balance" />
-                                </li><!-- / end logos -->
-                            </ul><!-- / end logos -->
-                        </div><!-- / end work description -->
-                    </div><!-- / end item info template -->
-                </li>
-                <!-- / end item -->
-                <li data-videoid="16" data-videourl="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" data-posterurl="/images/posters/thumbtack.png" class="item brand-response">
-                    <a href="#" title="View Project">
-                        <div class="caption">
-                            <div class="inner">
-                                <span class="icon icon-mag-glass"></span>
-                                <span class="title">NetFlix</span>
-                                <span class="description">This is a sweet caption about said kitten.</span>
-                                <span class="view button" data-role="button">View Project</span>
-                            </div>
-                            <!-- / end inner -->
-                        </div>
-                        <!-- / end caption -->
-                        <div class="image-container">
-                            <%= image_tag 'pc/placeholders/grid-item.jpg?cache=bust', alt: 'GOLF' %>
-                        </div>
-                        <!-- / end image container -->
-                    </a>
-                    <div class="item-info panel-table">
-                        <div class="nav-close work-item-close" title="Close Item">
-                            &times;
-                        </div><!-- / end menu item info close -->
-                        <div class="cell client-info">
-                            <h2 class="client">New Balance</h2>
-                            <ul class="clean">
-                                <li class="work-title">
-                                    <em>Title:</em> Run Boston 2017
-                                </li>
-                                <li>
-                                    <em>Type:</em> Commercials
-                                </li>
-                            </ul>
-                        </div><!-- / end client work info -->
-                        <div class="cell description">
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </p>
-                            <ul class="logos clean panel-table">
-                                <li class="logo cell">
-                                    <img src="images/logos/nb-white.png" alt="NB (New Balance)" />
-                                </li><!-- / end logo -->
-                                <li class="logo cell">
-                                    <img src="images/logos/irobot-white.png" alt="New Balance" />
-                                </li><!-- / end logos -->
-                            </ul><!-- / end logos -->
-                        </div><!-- / end work description -->
-                    </div><!-- / end item info template -->
                 </li>
                 <!-- / end item -->
             </ul>
         </section>
         <!-- / end work outer -->
-        <section class="services-outer services logo-track-callout">
-            <div class="track left-pane">
-                <div class="pane-holder"></div><!-- / end content -->
-                <svg viewBox="542 433 221 372" class="right">
-                    <path d="M544,435.518 L759.752,620.516" stroke="#000" stroke-width="2" fill="none"></path>
-                    <path d="M543.67739,803.710836 L760.148806,619.555164" stroke="#000" stroke-width="2" fill="none"></path>
-                </svg>
-            </div><!-- / end left track -->
-            <div class="track right-pane">
-                <svg viewBox="284 342 217 366" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <polygon id="Page-1" stroke="none" fill="#000" fill-rule="evenodd" points="501.752 709.542 501.752 523.878 501.752 345 286 524.544"></polygon>
-                </svg>
-                <div class="pane-holder"></div><!-- / end pane content -->
-            </div><!-- end right track -->
-            <div class="gradient"></div><!-- / end gradient -->
-            <div class="outer-content-top">
-                <div class="inner-content">
-                    <p>
-                        We move your product into the hands and minds of consumers.
-                    </p>
-                    <small>Your bottom line is our bottom line.</small>
-                    <a href="/what-we-do.html" title="What We Do" data-role="button" class="button">
-                        What We Do
-                    </a>
-                </div><!-- / end content -->
-                <aside class="callout-sidebar">
-                    <ul>
-                        <li><span>Commercials</span></li>
-                        <li><span>Brand Response</span></li>
-                        <li><span>Digital Content</span></li>
-                    </ul>
-                </aside><!-- / end callout side bar -->
-            </div><!-- / end outer content top -->
-        </section><!-- / end services -->
     </main>
     <!-- / end outer wrapper bound -->
     <footer class="outer-wrapper">
@@ -974,13 +728,10 @@
                 </ul><!-- / end social media -->
                 <ul class="menu">
                     <li>
-                        <%= link_to 'What We Do', pc_what_we_do_path, title: 'What We Do' %>
-                    </li>
-                    <li>
                         <%= link_to 'Our Work', pc_our_work_path, title: 'Our Work' %>
                     </li>
                     <li>
-                        <%= link_to 'Directors', pc_directors_path, title: 'Directors' %>
+                        <%= link_to 'Directors', pc_director_noah_lydiard_path, title: 'Directors' %>
                     </li>
                     <li>
                         <%= link_to 'Clients', pc_clients_path, title: 'Clients' %>

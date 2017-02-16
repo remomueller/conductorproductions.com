@@ -16,7 +16,4 @@ class PcController < ApplicationController
 
   def our_work
   end
-
-  def what_we_do
-  end
 end

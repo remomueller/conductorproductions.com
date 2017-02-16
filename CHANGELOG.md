@@ -4,7 +4,6 @@
 - **General Changes**
   - Pages redesigned by PixelCure
     - Home Page
-    - What We Do
     - Our Work
     - Directors
     - Clients

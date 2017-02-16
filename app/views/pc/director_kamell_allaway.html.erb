@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Conductor Productions | Directors - Noah Lydiard</title>
+    <title>Conductor Productions | Directors - Kamell Allaway</title>
     <meta name="description" content="Video Production Company Located in Downtown Boston" />
     <meta name="viewport" content="width=device-width" />
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -39,42 +39,38 @@
         <div class="inner">
             <div class="nav-close" id="menuClose">&times;</div>
             <ul>
-                <li><a href="what-we-do.html" title="What We Do">What We Do</a></li>
-                <li><a href="our-work.html" title="Our Work">Our Work</a></li>
+                <li><%= link_to 'Our Work', pc_our_work_path, title: 'Our Work' %></li>
                 <li class="directors">
                     <span class="block directors-toggle" title="Directors">Directors</span>
                     <ul class="dropdown-nav">
                         <li class="dropdown-item">
-                            <a href="directors.html" title="Noah Lyndiard">
-                                Noah Lyndiard
-                            </a>
+                            <%= link_to 'Noah Lydiard', pc_director_noah_lydiard_path, title: 'Noah Lydiard' %>
                         </li>
                         <li class="dropdown-item">
-                            <a href="directors.html" title="Noah Lyndiard">
-                                James Ferguson
-                            </a>
+                            <%= link_to 'Kamell Allaway', pc_director_kamell_allaway_path, title: 'Kamell Allaway' %>
                         </li>
                         <li class="dropdown-item">
-                            <a href="directors.html" title="Noah Lyndiard">
-                                Michael Lavalongname
-                            </a>
+                            <%= link_to 'Vladimir Minuty', pc_director_vladimir_minuty_path, title: 'Vladimir Minuty' %>
+                        </li>
+                        <li class="dropdown-item">
+                            <%= link_to 'Christian Williams', pc_director_christian_williams_path, title: 'Christian Williams' %>
                         </li>
                     </ul>
                 </li><!-- / end directors -->
-                <li><a href="clients.html" title="Clients">Clients</a></li>
-                <li><a href="contact.html" title="Contact">Contact</a></li>
-                <li><a href="#" title="Client Portal">Client Portal</a></li>
+                <li><%= link_to 'Clients', pc_clients_path, title: 'Clients' %></li>
+                <li><%= link_to 'Contact', pc_contact_path, title: 'Contact' %></li>
+                <li><%= link_to 'Client Portal', client_login_path, title: 'Client Portal' %></li>
             </ul>
         </div><!-- / end inner nav -->
     </nav><!-- / end navigation -->
 
     <main class="outer-wrapper bounds directors">
-        <div class="title-header inner-page outer-wrapper">
+        <div class="title-header pull inner-page outer-wrapper">
             <div class="left">
                 <h1>
-                    <a class="first crumb" href="/" title="Conductor Productions">Conductor</a>
+                    <%= link_to 'Conductor', pc_index_path, title: 'Conductor Productions', class: 'first crumb' %>
                     <i class="page-name crumb">Directors</i>
-                    <span class="page-child">Noah Lydiard</span>
+                    <span class="page-child">Kamell Allaway</span>
                 </h1>
             </div>
             <!-- end left track -->
@@ -97,18 +93,17 @@
         </div>
         <!-- / end title-header -->
         <div class="intro">
-            <h2><span class="profession">Director</span> Noah Lydiard</h2>
-            <p>Executive Producer, Director, Owner</p>
+            <h2><span class="profession">Director</span> Kamell Allaway</h2>
         </div>
         <!-- / end intro -->
         <section class="video-player">
             <div class="video-inner">
-                <div class="video-outer" data-videoplayer="true" data-videourl="../videos/big_buck_bunny.mp4">
+                <div class="video-outer">
                     <div class="video-container">
                         <span class="play-btn" title="Play">
                             <span class="play"></span>
                         </span>
-                        <video id="standalonePlayer" class="video" src="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" poster="/images/home-river.jpg">
+                        <video id="standalonePlayer" preload="true" class="video" src="https://player.vimeo.com/external/201349116.hd.mp4?s=35d08c3bb8ed6da244d9d92b2ad346d01ebb02fa&profile_id=119" poster="/images/directors/kamell/posters/kamell-feature.png">
                         </video>
                     </div><!-- / end video container -->
                 </div><!-- / end video -->
@@ -131,100 +126,94 @@
             <!-- / end hero controls -->
         </section>
         <!-- / end video player -->
-        <section class="middle tighten creator-bio">
-            <div class="inner extra-margin copy">
+        <section class="middle tighten creator-bio panel-table">
+            <div class="inner cell extra-margin copy">
                 <h2>
-                   Humbly delighted by the fact that the very thing he would choose to do for fun <span class="lighter">is also the very thing that earns him a living.</span>
+                    <span class="lighter">Kamell Allaway is a Los Angeles based director.</span> His filmography includes, features, shorts, commercials, and music videos.
                 </h2>
                 <p>
-                    Ever since he saw a behind the scenes look at the making of Raiders of the Lost Ark was enough to cement Noah's unwavering love of all things cinema… he has been a student ever since. Having been in the commercial and advertising business for more than 15 years, Noah’s bandwidth of knowledge and understanding of the industry reaches far beyond his Massachusetts roots. Noah has worked with national brands, various award-winning advertising agencies, as well as production companies. He has built a broadcast department, shot independent films, and edited television shows. Continuing to let his passion for movies fuel his career, his latest adventure includes directing 2nd unit action scenes, designing and directing the opening sequence as well as co-producing in the feature film, Office Uprising.
+                    Kamell spent his early years traveling the country and studying film, creative writing, and psychology at Yale University, CSU Northridge, and the USC School of Cinematic Arts, which is where he received his MFA in 2013.  His shorts have premiered around the world, including the 2011 and 2013 Cannes Film Festival.  His feature film Sea Horse premiered at the 2015 Cinequest Film Festival and went on to play several other festivals before its' VOD release on Amazon and iTunes.  His music videos have been featured by MTV, VH1, Vevo, Alternative Press, and many more.  Most recently Kamell has worked with comedians Josh Robert Thompson from The Late Late Show and Melissa Villasenor from Saturday Night Live, directing several promos and sketches.
                 </p>
                 <p>
-                    Noah’s openness, and friendliness are the basis of his success. His simple deep-rooted love for filmmaking and its related industries create a lasting trust between himself and his clients; making Conductor one of the most sought after companies for Brand Advertising and Brand Response.
-                </p>
-                <p>
-                    Through and through, this self built, production junkie can be described in the simplest of terms: Family man. Executive Producer. Director. Movie Nerd. Believer.
+                    Kamell was named a director to watch by the SHOOT New Directors Showcase in 2015.  When he's not directing, he's eating chocolate cake.  Lots and lots of chocolate cake.
                 </p>
                 <strong class="scroll-cta">
-                    Scroll down, to see more of Noah's work.
+                    Scroll down, to see more of Kamell's work.
                 </strong><!-- / end scroll cta -->
             </div><!-- / end bio -->
             <div class="background-gradient"></div><!-- / end background gradient -->
         </section>
         <!-- / end middle see more work section -->
-        <section class="work-outer work-grid outer-wrapper">
+        <section class="work-outer work-grid outer-wrapper" id="workGrid">
             <ul class="grid-row">
-                <li class="item">
-                    <a href="#">
+                <li data-videoid="03" data-videourl="https://player.vimeo.com/external/201183151.hd.mp4?s=b0ef7a5651c7b1f2fd308970ed6dd8f3e93388da&profile_id=174" data-posterurl="/images/directors/kamell/posters/oyster-kids.png" class="item commercial">
+                    <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
                                 <span class="icon icon-mag-glass"></span>
-                                <span class="title">NetFlix</span>
-                                <span class="description">This is a sweet caption about said kitten.</span>
+                                <span class="title">Oyster Kids</span>
                                 <span class="view button" data-role="button">View Project</span>
                             </div>
                             <!-- / end inner -->
                         </div>
                         <!-- / end caption -->
                         <div class="image-container">
-                            <img src="http://Lorempixel.com/800/420?no=cache" alt="GOLF" />
+                            <%= image_tag 'pc/directors/kamell/posters/oyster-kids.png', alt: 'Oyster Kids' %>
                         </div>
                         <!-- / end image container -->
                     </a>
                 </li>
                 <!-- / end item -->
-                <li class="item">
-                    <a href="#">
+                <li data-videoid="04" data-videourl="https://player.vimeo.com/external/201183082.hd.mp4?s=f2103b74281ab57ef8f27a917a35fcb8454fe87e&profile_id=119" data-posterurl="/images/directors/kamell/posters/daily-itineraries.png" class="item digital-content">
+                    <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
                                 <span class="icon icon-mag-glass"></span>
-                                <span class="title">Stride Rite</span>
-                                <span class="description">This is a sweet caption about said kitten.</span>
+                                <span class="title">Daily Itineraries</span>
+                                <span class="description">with Jennifer Lopez</span>
                                 <span class="view button" data-role="button">View Project</span>
                             </div>
                             <!-- / end inner -->
                         </div>
                         <!-- / end caption -->
                         <div class="image-container">
-                            <img src="http://Lorempixel.com/800/420/sports" alt="GOLF" />
+                            <%= image_tag 'pc/directors/kamell/posters/daily-itineraries.png', alt: 'Daily Itineraries' %>
                         </div>
                         <!-- / end image container -->
                     </a>
                 </li>
                 <!-- / end item -->
-                <li class="item">
-                    <a href="#">
+                <li data-videoid="05" data-videourl="https://player.vimeo.com/external/201720859.sd.mp4?s=2c719f6a6676d3910f6c2b931e40b1e7c680bad5&profile_id=165" data-posterurl="/images/directors/kamell/posters/j-dock-seafood.png" class="item digital-content">
+                    <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
                                 <span class="icon icon-mag-glass"></span>
-                                <span class="title">NetFlix</span>
-                                <span class="description">This is a sweet caption about said kitten.</span>
+                                <span class="title">J-Dock Seafood</span>
                                 <span class="view button" data-role="button">View Project</span>
                             </div>
                             <!-- / end inner -->
                         </div>
                         <!-- / end caption -->
                         <div class="image-container">
-                            <img src=" http://Lorempixel.com/800/420" alt="GOLF" />
+                            <%= image_tag 'pc/directors/kamell/posters/j-dock-seafood.png', alt: 'J-Dock Seafood' %>
                         </div>
                         <!-- / end image container -->
                     </a>
                 </li>
                 <!-- / end item -->
-                <li class="item">
-                    <a href="#">
+                <li data-videoid="06" data-videourl="https://player.vimeo.com/external/201720889.sd.mp4?s=266f18e05afaed1039d60f7624f10fed2639a913&profile_id=165" data-posterurl="/images/directors/kamell/posters/pygmy-hippo.png" class="item digital-content">
+                    <a href="#" title="View Project">
                         <div class="caption">
                             <div class="inner">
                                 <span class="icon icon-mag-glass"></span>
-                                <span class="title">NetFlix</span>
-                                <span class="description">This is a sweet caption about said kitten.</span>
+                                <span class="title">Pygmy Hippo Shoppe</span>
                                 <span class="view button" data-role="button">View Project</span>
                             </div>
                             <!-- / end inner -->
                         </div>
                         <!-- / end caption -->
                         <div class="image-container">
-                            <img src="http://Lorempixel.com/800/420/sports?cache=bust" alt="GOLF" />
+                            <%= image_tag 'pc/directors/kamell/posters/pygmy-hippo.png', alt: 'Pygmy Hippo Shoppe' %>
                         </div>
                         <!-- / end image container -->
                     </a>
@@ -237,33 +226,28 @@
         <section class="director-work work-grid no-margin instagrid">
             <!-- / end work type -->
             <ul class="stills clean panel-table">
-                <li class="still cell"><%= image_tag 'pc/directors/noah/camcorder.png', alt: 'Camcorder' %></li>
-                <li class="still cell"><%= image_tag 'pc/directors/noah/on-set.png', alt: 'On Set' %></li>
-                <li class="still cell"><%= image_tag 'pc/directors/noah/on-set.png', alt: 'Placeholder' %></li>
-                <li class="still cell"><%= image_tag 'pc/directors/noah/bird.png', alt: 'Chicken' %></li>
-                <li class="still cell"><%= image_tag 'pc/directors/noah/pipe.png', alt: 'Pipe' %></li>
-                <li class="still cell"><%= image_tag 'pc/directors/noah/bw-onset.png', alt: 'On Set' %></li>
-                <li class="still cell"><%= image_tag 'pc/directors/noah/a-24.png', alt: 'Video Camera' %></li>
-                <li class="still cell"><%= image_tag 'pc/directors/noah/shark.jpg', alt: 'Shark' %></li>
+                <li class="still cell"><%= image_tag 'pc/directors/kamell/kamell-director-pic-1.jpg', alt: 'foggy' %></li>
+                <li class="still cell"><%= image_tag 'pc/directors/kamell/kamell-director-pic-7.jpg', alt: 'camera lenses' %></li>
+                <li class="still cell"><%= image_tag 'pc/directors/kamell/kamell-director-pic-6.jpg', alt: 'man standing in a sunny room' %></li>
+                <li class="still cell"><%= image_tag 'pc/directors/kamell/kamell-director-pic-2.jpg', alt: 'portrait of a man' %></li>
+                <li class="still cell"><%= image_tag 'pc/directors/kamell/kamell-director-pic-3.jpg', alt: 'on set' %></li>
+                <li class="still cell"><%= image_tag 'pc/directors/kamell/kamell-director-pic-4.jpg', alt: 'man and cloud sky' %></li>
+                <li class="still cell"><%= image_tag 'pc/directors/kamell/kamell-director-pic-5.jpg', alt: 'airplane window' %></li>
+                <li class="still cell"><%= image_tag 'pc/directors/kamell/kamell-director-pic-8.jpg', alt: 'man in garden' %></li>
             </ul>
             <!-- / end stills -->
         </section>
         <!-- / end work outer production stills -->
         <section class="container social-outer gradient">
-            <h3>Follow us on social media</h3>
+            <h3>Follow Kamell on social media</h3>
             <ul class="social-media">
-                <li class="twitter">
-                    <a href="#" title="Facebook">
+                <li class="facebook">
+                    <a href="https://www.facebook.com/kamell.allaway" target="_blank" title="Facebook">
                         <span class="icon icon-facebook"></span>
                     </a>
                 </li>
-                <li class="twitter">
-                    <a href="#" title="Twitter">
-                        <span class="icon icon-twitter"></span>
-                    </a>
-                </li>
-                <li class="linked-in">
-                    <a href="#" title="Instagram">
+                <li class="instagram">
+                    <a href="https://www.instagram.com/kamellowtail/" target="_blank" title="Instagram">
                         <span class="icon icon-instagram"></span>
                     </a>
                 </li><!-- / end linked in -->
@@ -304,13 +288,10 @@
                 </ul><!-- / end social media -->
                 <ul class="menu">
                     <li>
-                        <%= link_to 'What We Do', pc_what_we_do_path, title: 'What We Do' %>
-                    </li>
-                    <li>
                         <%= link_to 'Our Work', pc_our_work_path, title: 'Our Work' %>
                     </li>
                     <li>
-                        <%= link_to 'Directors', pc_directors_path, title: 'Directors' %>
+                        <%= link_to 'Directors', pc_director_noah_lydiard_path, title: 'Directors' %>
                     </li>
                     <li>
                         <%= link_to 'Clients', pc_clients_path, title: 'Clients' %>

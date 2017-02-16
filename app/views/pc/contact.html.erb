@@ -39,31 +39,27 @@
         <div class="inner">
             <div class="nav-close" id="menuClose">&times;</div>
             <ul>
-                <li><a href="what-we-do.html" title="What We Do">What We Do</a></li>
-                <li><a href="our-work.html" title="Our Work">Our Work</a></li>
+                <li><%= link_to 'Our Work', pc_our_work_path, title: 'Our Work' %></li>
                 <li class="directors">
                     <span class="block directors-toggle" title="Directors">Directors</span>
                     <ul class="dropdown-nav">
                         <li class="dropdown-item">
-                            <a href="directors.html" title="Noah Lyndiard">
-                                Noah Lyndiard
-                            </a>
+                            <%= link_to 'Noah Lydiard', pc_director_noah_lydiard_path, title: 'Noah Lydiard' %>
                         </li>
                         <li class="dropdown-item">
-                            <a href="directors.html" title="Noah Lyndiard">
-                                James Ferguson
-                            </a>
+                            <%= link_to 'Kamell Allaway', pc_director_kamell_allaway_path, title: 'Kamell Allaway' %>
                         </li>
                         <li class="dropdown-item">
-                            <a href="directors.html" title="Noah Lyndiard">
-                                Michael Lavalongname
-                            </a>
+                            <%= link_to 'Vladimir Minuty', pc_director_vladimir_minuty_path, title: 'Vladimir Minuty' %>
+                        </li>
+                        <li class="dropdown-item">
+                            <%= link_to 'Christian Williams', pc_director_christian_williams_path, title: 'Christian Williams' %>
                         </li>
                     </ul>
                 </li><!-- / end directors -->
-                <li><a href="clients.html" title="Clients">Clients</a></li>
-                <li><a href="contact.html" title="Contact">Contact</a></li>
-                <li><a href="#" title="Client Portal">Client Portal</a></li>
+                <li><%= link_to 'Clients', pc_clients_path, title: 'Clients' %></li>
+                <li><%= link_to 'Contact', pc_contact_path, title: 'Contact' %></li>
+                <li><%= link_to 'Client Portal', client_login_path, title: 'Client Portal' %></li>
             </ul>
         </div><!-- / end inner nav -->
     </nav><!-- / end navigation -->
@@ -72,7 +68,7 @@
         <div class="title-header inner-page outer-wrapper">
             <div class="left">
                 <h1>
-                    <a class="first crumb" href="/" title="Conductor Productions">Conductor</a>
+                    <%= link_to 'Conductor', pc_index_path, title: 'Conductor Productions', class: 'first crumb' %>
                     <i class="page-name">Contact</i>
                 </h1>
             </div>
@@ -95,31 +91,6 @@
             <!-- / end menu icon -->
         </div>
         <!-- / end title-header -->
-        <section class="middle contact-info">
-            <h2>Conveniently located in</h2>
-            <h3>Downtown Boston.</h3>
-            <div class="panel-table">
-                <div class="address cell">
-                    <a target="_blank" title="Click here for directions!" class="block" href="https://www.google.com/maps/place/142+Berkeley+St,+Boston,+MA+02116/@42.3487138,-71.0744704,17z/data=!3m1!4b1!4m5!3m4!1s0x89e37a733f730321:0xf61f8f53a93d2e66!8m2!3d42.3487138!4d-71.0722817">
-                        <span class="block">142 Berkeley St Floor 2</span>
-                        <span class="block">Boston MA 02116</span>
-                    </a>
-                    <span class="block walk">A short walk from the Arlington T stop!</span>
-                </div><!-- / end column -->
-                <div class="contact cell">
-                    <span class="block">
-                        If quickly would you’d like to speak to Conductor 
-                    </span>
-                    <span class="block phone">
-                        Call Frank @ <a href="tel:6172621400" title="Call Conductor Productions" />617-262-1400</a></span>
-                    </span>
-                    <strong>
-                        Otherwise, feel free to <a href="mailto:info@conductor.com">send us an email below</a>.
-                    </strong>
-                </div><!-- / end column -->
-            </div><!-- / end contact info table -->
-        </section>
-        <!-- / end middle contact info section -->
         <section class="contact-form panes">
             <div class="form pane">
                 <h4>Drop a line, say hi.</h4>
@@ -142,9 +113,6 @@
             <div class="form-image pane"></div><!-- / end right form image (image in CSS background) -->
         </section>
         <!-- / end contact form -->
-        <section class="office-map contact-office">
-            <div id="officeMap" data-markertitle="Conductor Productions" data-markericon="images/map-marker.svg" class="conductor-office map-container"></div>
-        </section><!-- / end office location map -->
     </main>
     <!-- / end outer wrapper bound -->
     <footer class="outer-wrapper">
@@ -179,13 +147,10 @@
                 </ul><!-- / end social media -->
                 <ul class="menu">
                     <li>
-                        <%= link_to 'What We Do', pc_what_we_do_path, title: 'What We Do' %>
-                    </li>
-                    <li>
                         <%= link_to 'Our Work', pc_our_work_path, title: 'Our Work' %>
                     </li>
                     <li>
-                        <%= link_to 'Directors', pc_directors_path, title: 'Directors' %>
+                        <%= link_to 'Directors', pc_director_noah_lydiard_path, title: 'Directors' %>
                     </li>
                     <li>
                         <%= link_to 'Clients', pc_clients_path, title: 'Clients' %>

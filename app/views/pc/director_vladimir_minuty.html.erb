@@ -1,0 +1,334 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Conductor Productions | Directors - Vladimir Minuty</title>
+    <meta name="description" content="Video Production Company Located in Downtown Boston" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <%= stylesheet_link_tag 'screen', media: 'all', data: { turbolinks_track: 'reload' } %>
+    <!-- endbuild -->
+</head>
+
+<body>
+
+    <!-- Sticky Header -->
+    <header class="header" id="stickyHeader">
+        <section class="header-inner inner-wrapper">
+            <a href="/" class="logo-container left" title="Conductor Productions">
+                <img src="images/conductor-logo.svg" alt="Conductor Productions">
+            </a>
+            <div class="menu-icon menu-trigger">
+                <small>menu</small>
+                <span class="top"></span>
+                <span class="mid"></span>
+                <span class="bottom"></span>
+            </div>
+        </section>
+    </header><!-- / End Sticky Header -->
+
+    <nav class="nav-container">
+        <div class="inner">
+            <div class="nav-close" id="menuClose">&times;</div>
+            <ul>
+                <li><%= link_to 'Our Work', pc_our_work_path, title: 'Our Work' %></li>
+                <li class="directors">
+                    <span class="block directors-toggle" title="Directors">Directors</span>
+                    <ul class="dropdown-nav">
+                        <li class="dropdown-item">
+                            <%= link_to 'Noah Lydiard', pc_director_noah_lydiard_path, title: 'Noah Lydiard' %>
+                        </li>
+                        <li class="dropdown-item">
+                            <%= link_to 'Kamell Allaway', pc_director_kamell_allaway_path, title: 'Kamell Allaway' %>
+                        </li>
+                        <li class="dropdown-item">
+                            <%= link_to 'Vladimir Minuty', pc_director_vladimir_minuty_path, title: 'Vladimir Minuty' %>
+                        </li>
+                        <li class="dropdown-item">
+                            <%= link_to 'Christian Williams', pc_director_christian_williams_path, title: 'Christian Williams' %>
+                        </li>
+                    </ul>
+                </li><!-- / end directors -->
+                <li><%= link_to 'Clients', pc_clients_path, title: 'Clients' %></li>
+                <li><%= link_to 'Contact', pc_contact_path, title: 'Contact' %></li>
+                <li><%= link_to 'Client Portal', client_login_path, title: 'Client Portal' %></li>
+            </ul>
+        </div><!-- / end inner nav -->
+    </nav><!-- / end navigation -->
+
+    <main class="outer-wrapper bounds directors">
+        <div class="title-header pull inner-page outer-wrapper">
+            <div class="left">
+                <h1>
+                    <%= link_to 'Conductor', pc_index_path, title: 'Conductor Productions', class: 'first crumb' %>
+                    <i class="page-name crumb">Directors</i>
+                    <span class="page-child">Vladimir Minuty</span>
+                </h1>
+            </div>
+            <!-- end left track -->
+            <svg width="199px" height="178px" class="arrow-design right" viewBox="0 0 179 158">
+                <g stroke="none" stroke-width="1" fill="none">
+                    <g transform="translate(-1261.000000, -2.000000)" fill-opacity="1" fill="#000">
+                        <g transform="translate(-38.000000, 2.000000)">
+                            <path d="M1299,0 L2345.20949,0 L2422,79 L2345.20949,158 L1330.30314,158 L1299,0 Z" transform="translate(1860.500000, 79.000000) scale(-1, 1) translate(-1860.500000, -79.000000) "></path>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            <div class="menu-icon right menu-trigger">
+                <small>menu</small>
+                <span class="top"></span>
+                <span class="mid"></span>
+                <span class="bottom"></span>
+            </div>
+            <!-- / end menu icon -->
+        </div>
+        <!-- / end title-header -->
+        <div class="intro">
+            <h2><span class="profession">Director</span> Vladimir Minuty</h2>
+        </div>
+        <!-- / end intro -->
+        <section class="video-player">
+            <div class="video-inner">
+                <div class="video-outer">
+                    <div class="video-container">
+                        <span class="play-btn" title="Play">
+                            <span class="play"></span>
+                        </span>
+                        <video id="standalonePlayer" preload="true" class="video" src="https://player.vimeo.com/external/124955438.hd.mp4?s=a2467bbea9b3f59360e89a344e400803e5790d3d&profile_id=119" poster="/images/directors/vladimir/posters/featured-video.png">
+                        </video>
+                    </div><!-- / end video container -->
+                </div><!-- / end video -->
+            </div><!-- / end video inner -->
+            <div class="video-controls disabled" id="videoControls">
+                <!-- / end slide list -->
+                <ul class="controls right">
+                    <li>
+                        <a href="#" id="restart" title="Restart" class="icon icon-restart"></a>
+                    </li>
+                    <li>
+                        <a href="#" id="pause" title="Play/Pause" class="icon icon-pause"></a>
+                    </li>
+                    <li>
+                        <a href="#" id="volume" title="Volume"  class="icon icon-mute-video"></a>
+                    </li>
+                </ul>
+                <!-- / end video controls -->
+            </div>
+            <!-- / end hero controls -->
+        </section>
+        <!-- / end video player -->
+        <section class="middle tighten creator-bio panel-table">
+            <div class="inner cell extra-margin copy">
+                <p>
+                    Visually dynamic, with a sharp sense for storytelling, Vladimir Minuty transformed his talent for illustration into a unique filmmaking style. As a boy, his love of movies was sparked by Richard Donner’s “Superman: The Movie,” which promised, “you will believe a man can fly.”
+                </p>
+                <p>
+                    A graduate of the Mass College of Art, Vlad rose through the ranks of the film industry via  assistant directing, storyboarding then ultimately directing short films, music videos and commercials. His award winning work has won accolades at the Hampton’s International Film Festival, the Roxbury Film Festival and most recently at the Moxie Awards for Best Health Show. During his career he’s worked with clients including Clarks, American Standard Bath, Quell, Hasbro Toyota, Volvo, McDonalds, Dunkin Donuts, Papa Gino’s, Wendy’s, Ocean Spray, Quaker Oats and others. Vlad has also coauthored a book on storyboarding titled “Storyboarding Turning Script to Motion.” Currently, Vlad is developing feature film projects for theatrical release.
+                </p>
+                <strong class="scroll-cta">
+                    Scroll down, to see more of Vladimir's work.
+                </strong><!-- / end scroll cta -->
+            </div><!-- / end bio -->
+            <div class="background-gradient"></div><!-- / end background gradient -->
+        </section>
+        <!-- / end middle see more work section -->
+        <section class="work-outer work-grid outer-wrapper" id="workGrid">
+            <ul class="grid-row">
+                <li data-videoid="03" data-videourl="https://player.vimeo.com/external/165878569.hd.mp4?s=25730e29bc1a8774b6f923a3eb0106c6f1d7227a&profile_id=119" data-posterurl="/images/directors/vladimir/posters/quell.png" class="item commercial">
+                    <a href="#" title="View Project">
+                        <div class="caption">
+                            <div class="inner">
+                                <span class="icon icon-mag-glass"></span>
+                                <span class="title">Quell</span>
+                                <span class="view button" data-role="button">View Project</span>
+                            </div>
+                            <!-- / end inner -->
+                        </div>
+                        <!-- / end caption -->
+                        <div class="image-container">
+                            <%= image_tag 'pc/directors/vladimir/posters/quell.png', alt: 'Quell' %>
+                        </div>
+                        <!-- / end image container -->
+                    </a>
+                </li>
+                <!-- / end item -->
+                <li data-videoid="04" data-videourl="https://player.vimeo.com/external/124955437.hd.mp4?s=ec1ec685a10b612f34ee5b994ece257e5a30b1b4&profile_id=119" data-posterurl="/images/directors/vladimir/posters/nike.png" class="item digital-content">
+                    <a href="#" title="View Project">
+                        <div class="caption">
+                            <div class="inner">
+                                <span class="icon icon-mag-glass"></span>
+                                <span class="title">Nike</span>
+                                <span class="view button" data-role="button">View Project</span>
+                            </div>
+                            <!-- / end inner -->
+                        </div>
+                        <!-- / end caption -->
+                        <div class="image-container">
+                            <%= image_tag 'pc/directors/vladimir/posters/nike.png', alt: 'Nike' %>
+                        </div>
+                        <!-- / end image container -->
+                    </a>
+                </li>
+                <!-- / end item -->
+                <li data-videoid="05" data-videourl="https://player.vimeo.com/external/199902296.hd.mp4?s=e9221d8427dce2f973df31ddd86858c351f252dc&profile_id=119" data-posterurl="/images/directors/vladimir/posters/clarks.png" class="item digital-content">
+                    <a href="#" title="View Project">
+                        <div class="caption">
+                            <div class="inner">
+                                <span class="icon icon-mag-glass"></span>
+                                <span class="title">Clarks</span>
+                                <span class="view button" data-role="button">View Project</span>
+                            </div>
+                            <!-- / end inner -->
+                        </div>
+                        <!-- / end caption -->
+                        <div class="image-container">
+                            <%= image_tag 'pc/directors/vladimir/posters/clarks.png', alt: 'Clarks' %>
+                        </div>
+                        <!-- / end image container -->
+                    </a>
+                </li>
+                <!-- / end item -->
+                <li data-videoid="06" data-videourl="https://player.vimeo.com/external/135689809.hd.mp4?s=9092cbc2b036383cd5a4a7cbd2e4792550a8b71d&profile_id=119" data-posterurl="/images/directors/vladimir/posters/toco.png" class="item digital-content">
+                    <a href="#" title="View Project">
+                        <div class="caption">
+                            <div class="inner">
+                                <span class="icon icon-mag-glass"></span>
+                                <span class="title">Toco</span>
+                                <span class="view button" data-role="button">View Project</span>
+                            </div>
+                            <!-- / end inner -->
+                        </div>
+                        <!-- / end caption -->
+                        <div class="image-container">
+                            <%= image_tag 'pc/directors/vladimir/posters/toco.png', alt: 'Toco' %>
+                        </div>
+                        <!-- / end image container -->
+                    </a>
+                </li>
+                <!-- / end item -->
+            </ul>
+            <!-- / end table -->
+        </section>
+        <!-- / end work outer -->
+        <section class="director-work work-grid no-margin instagrid">
+            <!-- / end work type -->
+            <ul class="stills clean panel-table">
+                <li class="still cell"><%= image_tag 'pc/directors/vladimir/headshot-1.jpg', alt: 'Headshot' %></li>
+                <li class="still cell"><%= image_tag 'pc/directors/vladimir/headshot-2.jpg', alt: 'Headshot 2' %></li>
+                <li class="still cell"><%= image_tag 'pc/directors/vladimir/headshot-3.jpg', alt: 'Headshot 3' %></li>
+                <li class="still cell"><%= image_tag 'pc/directors/vladimir/headshot-4.jpg', alt: 'Headshot' %></li>
+                <li class="still cell"><%= image_tag 'pc/directors/vladimir/dark-knight.jpg', alt: 'The Dark Knight' %></li>
+                <li class="still cell"><%= image_tag 'pc/directors/vladimir/kill-bill.jpg', alt: 'Kill Bill' %></li>
+                <li class="still cell"><%= image_tag 'pc/directors/vladimir/amsel.jpg', alt: 'Amsel' %></li>
+                <li class="still cell"><%= image_tag 'pc/directors/vladimir/star-wars.jpg', alt: 'Star Wars' %></li>
+            </ul>
+            <!-- / end stills -->
+        </section>
+        <!-- / end work outer production stills -->
+        <section class="container social-outer gradient">
+            <h3>Follow Vladimir on social media</h3>
+            <ul class="social-media">
+                <li class="facebook">
+                    <a href="https://www.facebook.com/vminuty" title="Facebook" target="_blank">
+                        <span class="icon icon-facebook"></span>
+                    </a>
+                </li>
+                <li class="twitter">
+                    <a href="https://twitter.com/minutyvminuty" title="Twitter" target="_blank">
+                        <span class="icon icon-twitter"></span>
+                    </a>
+                </li>
+                <li class="instagram">
+                    <a href="https://www.instagram.com/kal_el7/?hl=en" title="Instagram" target="_blank">
+                        <span class="icon icon-instagram"></span>
+                    </a>
+                </li><!-- / end linked in -->
+            </ul><!-- / end social icon list -->
+        </section>
+        <!-- / end container social -->
+    </main>
+    <!-- / end outer wrapper bound -->
+    <footer class="outer-wrapper">
+        <section class="footer-inner inner-wrapper">
+            <div class="company-info">
+                <h3 class="site-title">Conductor Productions</h3>
+                <span>142 Berkeley St, Boston, MA<b>|</b>
+                <a href="tel:6172621400" title="Call Now">(617) 262-1400 </a>
+                </span>
+                <span class="copyright">
+                    © 2016 Conductor Productions
+                </span>
+            </div>
+            <!-- / end left contact and company info -->
+            <aside class="footer-nav">
+                <ul class="social-media">
+                    <li class="facebook">
+                        <a href="https://www.facebook.com/ConductorCreative" target="_blank" title="Facebook">
+                            <span class="icon icon-facebook"></span>
+                        </a>
+                    </li>
+                    <li class="instagram">
+                        <a href="#" target="_blank" title="Instagram">
+                            <span class="icon icon-instagram"></span>
+                        </a>
+                    </li>
+                    <li class="linked-in">
+                        <a href="http://www.linkedin.com/pub/noah-lydiard/3/b5b/749" target="_blank" title="Linked In">
+                            <span class="icon icon-linked-in"></span>
+                        </a>
+                    </li>
+                </ul><!-- / end social media -->
+                <ul class="menu">
+                    <li>
+                        <%= link_to 'Our Work', pc_our_work_path, title: 'Our Work' %>
+                    </li>
+                    <li>
+                        <%= link_to 'Directors', pc_director_noah_lydiard_path, title: 'Directors' %>
+                    </li>
+                    <li>
+                        <%= link_to 'Clients', pc_clients_path, title: 'Clients' %>
+                    </li>
+                    <li>
+                        <%= link_to 'Contact', pc_contact_path, title: 'Contact' %>
+                    </li>
+                    <li>
+                        <%= link_to 'Login', client_login_path, title: 'Login' %>
+                    </li>
+                </ul><!-- / end menu -->
+            </aside>
+            <!-- / end footer nav -->
+        </section>
+        <!-- / end footer inner -->
+    </footer>    <!-- / end footer -->
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+    (function(b, o, i, l, e, r) {
+        b.GoogleAnalyticsObject = l;
+        b[l] || (b[l] =
+            function() {
+                (b[l].q = b[l].q || []).push(arguments)
+            });
+        b[l].l = +new Date;
+        e = o.createElement(i);
+        r = o.getElementsByTagName(i)[0];
+        e.src = '//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e, r)
+    }(window, document, 'script', 'ga'));
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+    </script>
+    <!-- build:js scripts/main.js -->
+    <%= javascript_include_tag 'dev' %>
+    <!-- endbuild -->
+</body>
+
+</html>

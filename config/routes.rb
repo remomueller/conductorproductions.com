@@ -8,10 +8,12 @@ Rails.application.routes.draw do
   namespace :pc do
     get :clients
     get :contact
-    get :directors
     get :index
     get :our_work, path: 'our-work'
-    get :what_we_do, path: 'what-we-do'
+    get :director_christian_williams, path: 'directors/christian-williams'
+    get :director_kamell_allaway, path: 'directors/kamell-allaway'
+    get :director_noah_lydiard, path: 'directors/noah-lydiard'
+    get :director_vladimir_minuty, path: 'directors/vladimir-minuty'
   end
 
   resources :videos do
