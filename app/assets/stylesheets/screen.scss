@@ -12751,7 +12751,7 @@ button::-moz-focus-inner,
 
 /* line 819, ../sass/3_Components/_component.scss */
 .parallax {
-  background: url(/../../images/home-river.jpg) 0 0 no-repeat;
+  background: asset-url('pc/home-river.jpg') 0 0 no-repeat;
   background-size: cover;
   box-shadow: 0 13px 10px rgba(0, 0, 0, 0.6);
   height: 725px;
@@ -14383,7 +14383,7 @@ body.with-nav-open main {
 }
 /* line 115, ../sass/6_Pages/_contact.scss */
 .contact .contact-form.panes .pane.form-image {
-  background: url(../../images/contact-square.jpg) no-repeat top center;
+  background: asset-url('pc/contact-square.jpg') no-repeat top center;
   background-size: cover;
 }
 @media screen and (max-width: 960px) {
