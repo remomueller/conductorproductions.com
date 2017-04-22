@@ -16,7 +16,7 @@
   - Updated to bootstrap-sass 3.3.7
   - Updated to jquery-ui-rails 6.0.1
   - Updated to kaminari 1.0.1
-  - Updated to simplecov 0.13.0
+  - Updated to simplecov 0.14.1
   - Updated to pg 0.20.0
 
 ### Bug Fix
