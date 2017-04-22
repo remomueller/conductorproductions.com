@@ -9,16 +9,16 @@ gem 'pg',                   '0.20.0'
 
 # Gems used by project
 gem 'autoprefixer-rails'
-gem 'devise',               '~> 4.2.0'
-gem 'haml',                 '~> 4.0.7'
-gem 'figaro',               '~> 1.1.1'
-gem 'bootstrap-sass',       '~> 3.3.7'
 gem 'bcrypt',               '~> 3.1.10'
-gem 'font-awesome-rails'
+gem 'bootstrap-sass',       '~> 3.3.7'
 gem 'carrierwave',          '~> 1.0.0'
-gem 'mini_magick'
+gem 'devise',               '~> 4.2.0'
+gem 'figaro',               '~> 1.1.1'
+gem 'font-awesome-rails',   '~> 4.7.0'
+gem 'haml',                 '~> 4.0.7'
 gem 'jquery-ui-rails',      '~> 6.0.1'
 gem 'kaminari',             '~> 1.0.1'
+gem 'mini_magick'
 
 # Rails Defaults
 gem 'coffee-rails',         '~> 4.2'
@@ -32,6 +32,6 @@ gem 'turbolinks',           '~> 5'
 # Testing
 group :test do
   gem 'minitest'
-  gem 'simplecov',          '~> 0.14.1',           require: false
   gem 'rails-controller-testing'
+  gem 'simplecov', '~> 0.14.1', require: false
 end
