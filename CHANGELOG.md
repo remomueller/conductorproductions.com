@@ -11,7 +11,7 @@
 - **Gem Changes**
   - Updated to Ruby 2.4.1
   - Updated to rails 5.0.1
-  - Updated to jquery-rails 4.2.2
+  - Updated to jquery-rails 4.3.1
   - Updated to carrierwave 1.0.0
   - Updated to bootstrap-sass 3.3.7
   - Updated to jquery-ui-rails 6.0.1
