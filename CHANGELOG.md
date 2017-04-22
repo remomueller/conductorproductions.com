@@ -17,6 +17,7 @@
   - Updated to jquery-ui-rails 6.0.1
   - Updated to kaminari 1.0.0
   - Updated to simplecov 0.13.0
+  - Updated to pg 0.20.0
 
 ### Bug Fix
 - Fixed a bug that prevented gallery photos from being rearranged after
