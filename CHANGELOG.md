@@ -8,6 +8,8 @@
     - Directors
     - Clients
     - Contact
+- **Video Changes**
+  - System admins can now configure videos on the home page
 - **Gem Changes**
   - Updated to Ruby 2.4.1
   - Updated to rails 5.0.2

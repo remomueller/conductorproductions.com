@@ -6,14 +6,14 @@ class Video < ApplicationRecord
   mount_uploader :photo, VideoImageUploader
 
   # Constants
-  PAGES = [['WORK', 'work'], ['DRTV', 'drtv']]
+  PAGES = [%w[HOME home], %w[WORK work], %w[DRTV drtv]]
 
   # Concerns
   include Deletable
 
   # Model Validation
   validates :video_page, :vimeo_number, :photo, :position, :user_id, presence: true
-  validates :video_page, inclusion: { in: %w(work drtv) }
+  validates :video_page, inclusion: { in: PAGES.collect(&:second) }
   validates :vimeo_number, uniqueness: { scope: [:deleted, :video_page] }
   validates :vimeo_number, numericality: { greater_than_or_equal_to: 0 }
   validates :position, numericality: { greater_than_or_equal_to: 0 }

@@ -1,7 +1,15 @@
 # frozen_string_literal: true
 
 namespace :videos do
-  desc "Populate Initial Videos on WORK and DRTV pages"
+  desc 'Add Initial Home Page Videos'
+  task home: :environment do
+    user = User.where(system_admin: true).first
+    home_videos.each_with_index do |(photo, vimeo_number), position|
+      create_video('home', photo, vimeo_number, position, user)
+    end
+  end
+
+  desc 'Populate Initial Videos on WORK and DRTV pages'
   task populate: :environment do
     user = User.where(system_admin: true).first
     work_videos.each_with_index do |(photo, vimeo_number), position|
@@ -16,10 +24,23 @@ namespace :videos do
     puts "#{page.upcase}: Creating Video ##{vimeo_number} #{photo_name}"
     photo = File.open(Rails.root.join("app", "assets", "images", "videos", page, photo_name))
     user.videos.create(
-      page: page,
+      video_page: page,
       vimeo_number: vimeo_number,
       photo: photo,
-      position: position)
+      position: position
+    )
+  end
+
+  def home_videos
+    [
+      ['home-shields-thumb.png', '202787202'], # Brady
+      ['home-blank-thumb.png', '214078213'],
+      ['home-thumbtack4.png', '185988782'],
+      ['home-blank-thumb.png', '212969403'],
+      ['home-blank-thumb.png', '212969571'],
+      ['home-brother-thumb.png', '111656554'], # Brother
+      ['home-netflix-thumb.png', '124955438'] # Netflix
+    ]
   end
 
   def work_videos
@@ -79,5 +100,4 @@ namespace :videos do
       ["drtv-united-law-thumb.png", "106220311"]
     ]
   end
-
 end

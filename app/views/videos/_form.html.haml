@@ -1,35 +1,28 @@
-= form_for @video, html: { class: 'form-horizontal', multipart: true } do |f|
-  - if @video.errors.any?
-    .panel.panel-danger
-      .panel-heading
-        %strong
-          = pluralize(@video.errors.count, "error")
-          prohibited this video from being saved:
-      .panel-body
-        %ul
-          - @video.errors.full_messages.each do |message|
-            %li= message
-
+= form_for video, html: { class: 'form-horizontal', multipart: true } do |f|
   .form-group
     = f.label :video_page, nil, class: 'col-md-2 control-label'
     .col-md-10
-      = f.select :video_page, [['--Select a Page--', nil]] + Video::PAGES, {}, class: 'form-control'
+      = f.select :video_page, Video::PAGES, { include_blank: '--Select a Page--' }, class: 'form-control'
+      = render 'layouts/errors', object: video, key: :video_page
 
   .form-group
     = f.label :photo, nil, class: 'col-md-2 control-label'
     .col-md-10
       = f.file_field :photo, class: 'form-control'
       = f.hidden_field :photo_cache
+      = render 'layouts/errors', object: video, key: :photo
 
   .form-group
     = f.label :vimeo_number, nil, class: 'col-md-2 control-label'
     .col-md-10
       = f.text_field :vimeo_number, class: 'form-control'
+      = render 'layouts/errors', object: video, key: :vimeo_number
 
   .form-group
     = f.label :position, nil, class: 'col-md-2 control-label'
     .col-md-10
       = f.text_field :position, class: 'form-control'
+      = render 'layouts/errors', object: video, key: :position
 
   .form-group
     = f.label :archived, nil, class: 'col-md-2 control-label'
