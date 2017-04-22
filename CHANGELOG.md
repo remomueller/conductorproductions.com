@@ -9,7 +9,7 @@
     - Clients
     - Contact
 - **Gem Changes**
-  - Updated to Ruby 2.4.0
+  - Updated to Ruby 2.4.1
   - Updated to rails 5.0.1
   - Updated to jquery-rails 4.2.2
   - Updated to carrierwave 1.0.0
