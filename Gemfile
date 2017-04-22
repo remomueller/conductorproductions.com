@@ -8,6 +8,7 @@ gem 'rails',                '5.0.2'
 gem 'pg',                   '0.20.0'
 
 # Gems used by project
+gem 'autoprefixer-rails'
 gem 'devise',               '~> 4.2.0'
 gem 'haml',                 '~> 4.0.7'
 gem 'figaro',               '~> 1.1.1'

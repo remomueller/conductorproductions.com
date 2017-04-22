@@ -18,6 +18,7 @@
   - Updated to kaminari 1.0.1
   - Updated to simplecov 0.14.1
   - Updated to pg 0.20.0
+  - Added autoprefixer-rails
 
 ### Bug Fix
 - Fixed a bug that prevented gallery photos from being rearranged after
