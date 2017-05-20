@@ -19,6 +19,11 @@ class WelcomeController < ApplicationController
   #   render layout: 'conductor-application-v1'
   # end
 
+  # GET /drtv
+  def drtv
+    redirect_to work_path
+  end
+
   def dashboard
     if session[:invite_token].present?
       redirect_to accept_project_users_path

@@ -70,25 +70,29 @@ class WelcomeControllerTest < ActionController::TestCase
 
   test 'should get drtv' do
     get :drtv
-    assert_response :success
+    assert_redirected_to work_path
+    # assert_response :success
   end
 
   test 'should get drtv as client' do
     login_client(@client)
     get :drtv
-    assert_response :success
+    assert_redirected_to work_path
+    # assert_response :success
   end
 
   test 'should get drtv as system admin' do
     login(@system_admin)
     get :drtv
-    assert_response :success
+    assert_redirected_to work_path
+    # assert_response :success
   end
 
   test 'should get drtv as collaborator' do
     login(@collaborator)
     get :drtv
-    assert_response :success
+    assert_redirected_to work_path
+    # assert_response :success
   end
 
   test 'should get contact' do

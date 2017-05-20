@@ -8,8 +8,9 @@
   |
   = link_to 'WORK', work_path, class: "#{'active' if params[:action] == 'work'}"
   |
-  = link_to 'DRTV', drtv_path, class: "#{'active' if params[:action] == 'drtv'}"
-  |
+  - if false
+    = link_to 'DRTV', drtv_path, class: "#{'active' if params[:action] == 'drtv'}"
+    |
   = link_to 'CONTACT', contact_path, class: "#{'active' if params[:action] == 'contact'}"
   |
   - if current_user

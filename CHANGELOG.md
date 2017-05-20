@@ -3,6 +3,7 @@
 ### Enhancements
 - **General Changes**
   - Login cookies are now cross subdomain and work between www and non-www URLs
+  - The DRTV page now redirects to the Work page
 - **Video Changes**
   - Admins can now set Client Name and Agency Name for videos
   - Hovering over videos now displays Client Name and Agency Name
