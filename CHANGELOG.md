@@ -4,6 +4,7 @@
 - **Gem Changes**
   - Updated to devise 4.3.0
   - Updated to carrierwave 1.1.0
+  - Updated to haml 5.0.1
 
 ## 0.8.0 (April 22, 2017)
 
