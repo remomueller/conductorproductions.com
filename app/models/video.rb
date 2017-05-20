@@ -28,7 +28,7 @@ class Video < ApplicationRecord
   end
 
   def video_page_string
-    item = PAGES.select { |_name, value| value == video_page }.first
-    item ? item[0] : ''
+    item = PAGES.find { |_name, value| value == video_page }
+    item ? item[0] : ""
   end
 end

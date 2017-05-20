@@ -19,6 +19,18 @@
       = render 'layouts/errors', object: video, key: :vimeo_number
 
   .form-group
+    = f.label :client_name, "Client Name (hover)", class: 'col-md-2 control-label'
+    .col-md-10
+      = f.text_field :client_name, class: 'form-control'
+      = render 'layouts/errors', object: video, key: :client_name
+
+  .form-group
+    = f.label :agency_name, "Agency Name (hover)", class: 'col-md-2 control-label'
+    .col-md-10
+      = f.text_field :agency_name, class: 'form-control'
+      = render 'layouts/errors', object: video, key: :agency_name
+
+  .form-group
     = f.label :position, nil, class: 'col-md-2 control-label'
     .col-md-10
       = f.text_field :position, class: 'form-control'

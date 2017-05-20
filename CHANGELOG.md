@@ -3,6 +3,9 @@
 ### Enhancements
 - **General Changes**
   - Login cookies are now cross subdomain and work between www and non-www URLs
+- **Video Changes**
+  - Admins can now set Client Name and Agency Name for videos
+  - Hovering over videos now displays Client Name and Agency Name
 - **Gem Changes**
   - Updated to rails 5.1.1
   - Updated to devise 4.3.0

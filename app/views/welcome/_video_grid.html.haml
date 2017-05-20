@@ -11,7 +11,20 @@
           - image_thumbnail = download_video_image_path(video, size: 'preview')
           - video_link = "#{vimeo_url}#{video.vimeo_number}#{common_settings}"
           .col-xs-6.col-sm-4{ class: "#{'hidden-xs' if i == videos.count - 1 and (i % 2) == 0}", style: "padding-bottom:20px" }
-            = image_tag image_thumbnail, style: 'width:100%', class: 'video-thumbnail', data: { object: 'launch-video', video_src: video_link }, alt: ''
+            .video-thumbnail{ data: { object: 'launch-video', video_src: video_link } }
+              .video-caption
+                .inner
+                  - if video.client_name.blank? && video.agency_name.blank?
+                    %span.icon
+                      %i.fa.fa-play
+                  - else
+                    - if video.client_name.present?
+                      %span.client-name= video.client_name
+                    - if video.agency_name.present?
+                      %span.agency-name
+                        Agency:
+                        = video.agency_name
+              = image_tag image_thumbnail, style: 'width:100%', class: 'video-thumbnail', data: { object: 'launch-video', video_src: video_link }, alt: ''
       #video-frame{ style: "width:100%;display:none;" }
         .embed-responsive.embed-responsive-16by9{ style: "z-index:100" }
           %iframe.embed-responsive-item{ src: "", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
