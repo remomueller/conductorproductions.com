@@ -98,11 +98,11 @@ class ClientProjectController < ApplicationController
   end
 
   def agency_logo
-    send_file File.join( CarrierWave::Uploader::Base.root, @project.agency_logo.url )
+    send_file File.join(CarrierWave::Uploader::Base.root, @project.agency_logo.url)
   end
 
   def client_logo
-    send_file File.join( CarrierWave::Uploader::Base.root, @project.client_logo.url )
+    send_file File.join(CarrierWave::Uploader::Base.root, @project.client_logo.url)
   end
 
   private
