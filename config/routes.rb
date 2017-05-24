@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'external/home'
+
   root 'welcome#index'
 
   get 'pc' => 'pc#index'
@@ -94,6 +96,10 @@ Rails.application.routes.draw do
 
   scope module: 'application' do
     get :version
+  end
+
+  scope module: :external do
+    get :landing_draft, path: "landing/draft"
   end
 
   scope module: 'client_session' do

@@ -1,0 +1,29 @@
+= render "welcome/header"
+
+.container
+  .center.video-container
+    .video-frame.video-frame-upper-left
+
+    .home-video
+      = render "welcome/carousel"
+
+    .flip-tab-right.hidden-xs
+      %div{ style: "height: 21px;" }
+        = link_to "WORK", "work.html", style: "color:#fff"
+
+    .video-frame.video-frame-lower-right
+
+
+  .home-intro-text
+    We are a company of Creative Directors and Producers who create commercials
+    and digital content designed to *sell. We work with agencies and brands to
+    build work that competes on a national level for your customer's attention.
+    Bring us you boards, ideas or products and we'll collaborate with you to
+    make something worth airing.
+
+  .home-intro-text
+    *sell – if you want people to like your brand and buy your products, you
+    need to get into their hearts, or be on their minds. We can help you make
+    that happen.
+
+= render "welcome/footer"
