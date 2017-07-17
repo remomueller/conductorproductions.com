@@ -9,6 +9,7 @@
   - Hovering over videos now displays Client Name and Agency Name
 - **Gem Changes**
   - Updated to rails 5.1.2
+  - Updated to pg 0.21.0
   - Updated to devise 4.3.0
   - Updated to carrierwave 1.1.0
   - Updated to haml 5.0.1
