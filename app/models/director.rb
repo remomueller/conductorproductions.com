@@ -9,6 +9,9 @@ class Director < ApplicationRecord
   # Uploaders
   mount_uploader :photo, ImageUploader
 
+  # Validations
+  validates :name, presence: true
+
   # Methods
   def destroy
     update_column :slug, nil

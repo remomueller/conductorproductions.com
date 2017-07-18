@@ -8,7 +8,7 @@ class DirectorsController < ApplicationController
 
   # GET /directors
   def index
-    @directors = Director.all
+    @directors = Director.current.order("position nulls last").page(params[:page]).per(20)
   end
 
   # # GET /directors/1

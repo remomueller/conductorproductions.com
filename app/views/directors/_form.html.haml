@@ -1,4 +1,4 @@
-= form_with(model: director, local: true, class: 'form-horizontal') do |form|
+= form_with(model: director, local: true, class: "form-horizontal") do |form|
   .form-group
     = form.label :name, nil, class: "col-md-2 control-label"
     .col-md-10
@@ -12,11 +12,11 @@
       = render "layouts/errors", object: director, key: :slug
 
   .form-group
-    = form.label :photo, nil, class: 'col-md-2 control-label'
+    = form.label :photo, nil, class: "col-md-2 control-label"
     .col-md-10
-      = form.file_field :photo, class: 'form-control'
+      = form.file_field :photo, class: "form-control"
       = form.hidden_field :photo_cache
-      = render 'layouts/errors', object: director, key: :photo
+      = render "layouts/errors", object: director, key: :photo
 
   .form-group
     = form.label :biography, nil, class: "col-md-2 control-label"
@@ -34,3 +34,4 @@
   .form-group
     .col-md-10.col-md-offset-2
       = form.submit nil, class: "btn btn-primary"
+      = link_to "Cancel", director.new_record? ? directors_path : director, class: "btn btn-default"

@@ -1,0 +1,55 @@
+- @title = "Directors"
+
+
+%h1= @title
+
+= link_to "New Director", new_director_path, class: "btn btn-xs btn-default"
+= render "layouts/per_page", per_page: 20, object_count: @directors.total_count
+
+
+- if @directors.present?
+  %table.table.table-striped.table-borderless.table-hover
+    %col{ width: "1px" }
+    %col
+    %col{ width: "1px" }
+    %col{ width: "1px" }
+    %thead
+      %tr
+        %th
+        %th Name
+        %th Archived
+        %th.center Actions
+
+    %tbody
+      - @directors.each do |director|
+        %tr
+          %td= director.position
+          %td= link_to director.name, director
+          %td= director.archived
+          %td.center
+            .dropdown
+              = link_to "#", class: "btn btn-default btn-xs dropdown-toggle", data: { toggle: "dropdown" } do
+                Actions
+                %strong.caret
+
+              %ul.dropdown-menu.dropdown-menu-right
+                %li
+                  = link_to public_director_path(director) do
+                    %span.glyphicon.glyphicon-eye-open
+                    Preview
+                %li
+                  = link_to edit_director_path(director) do
+                    %span.glyphicon.glyphicon-edit
+                    Edit Director
+                  %li.divider{ role: "separator" }
+                  %li
+                    = link_to director, method: :delete, data: { confirm: "Delete director?" } do
+                      .text-danger
+                        %span.glyphicon.glyphicon-trash
+                        Delete
+- else
+  .jumbotron
+    %h2 No directors.
+    %p
+      = link_to "Add a new director", new_director_path
+      now!

@@ -1,4 +1,6 @@
-%h1 Projects
+- @title = "Projects"
+
+%h1= @title
 
 - if current_user.system_admin?
   = link_to 'New Project', new_project_path, class: 'btn btn-xs btn-default'

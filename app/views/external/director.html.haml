@@ -1,5 +1,8 @@
 - @title = @director.name
 
+- content_for :body_class do
+  black-bg no-footer
+
 - vimeo_url = "//player.vimeo.com/video/"
 - common_settings = "?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"
 
@@ -20,10 +23,10 @@
         %div{ style: "position:relative;padding-top:20px;padding-bottom:20px" }
           .row
             - videos.each_with_index do |video, i|
-              - image_thumbnail = download_video_image_path(video, size: 'preview')
+              - image_thumbnail = download_video_image_path(video, size: "preview")
               - video_link = "#{vimeo_url}#{video.vimeo_number}#{common_settings}"
               .col-xs-6.col-sm-3{ class: "#{'hidden-xs' if i == videos.count - 1 and (i % 2) == 0}", style: "padding-bottom:20px" }
-                .video-thumbnail{ data: { object: 'launch-director-video', video_src: video_link } }
+                .video-thumbnail{ data: { object: "launch-director-video", video_src: video_link } }
                   .video-caption
                     .inner
                       - if video.client_name.blank? && video.agency_name.blank?
@@ -36,7 +39,7 @@
                           %span.agency-name
                             Agency:
                             = video.agency_name
-                  = image_tag image_thumbnail, style: 'width:100%', class: 'video-thumbnail', data: { object: 'launch-video', video_src: video_link }, alt: ''
+                  = image_tag image_thumbnail, style: "width: 100%;", class: "video-thumbnail", data: { object: "launch-video", video_src: video_link }, alt: ""
 
 
         %h1.center.director-name{ style: "padding-bottom: 20px;" }
@@ -46,25 +49,26 @@
 
 / .director-divide{ style: "height: 2px; background-color: #333;" }
 
-.director-box{ style: "margin-bottom: -60px;" }
-  .container
-    .director-backdrop
-      .director-grey-backdrop
-      .director-black-clip
+- if @director.biography.present?
+  .director-box
+    .container
+      .director-backdrop
+        .director-grey-backdrop
+        .director-black-clip
 
-      .director-content
-        .row
-          .col-sm-7{ style: "text-align: justify;" }
-            = simple_format @director.biography
-          .col-sm-5.hidden-xs
-            - if @director.photo.size > 0
-              .director-img-container
-                .director-img-backdrop
-                = image_tag photo_director_path(@director), class: "director-img"
-        .row
-          %h3.center{ style: "padding-bottom: 10px;" }
-            %span{ style: "font-weight: 200;letter-spacing: 5px;" }= @director.name.upcase
-            &nbsp;
-            |
-            &nbsp;
-            %span{ style: "font-weight: bolder;letter-spacing: 5px;" } DIRECTOR
+        .director-content
+          .row
+            .col-sm-7{ style: "text-align: justify;" }
+              = simple_format @director.biography
+            .col-sm-5.hidden-xs
+              - if @director.photo.size > 0
+                .director-img-container
+                  .director-img-backdrop
+                  = image_tag photo_director_path(@director), class: "director-img"
+          .row
+            %h3.center{ style: "padding-bottom: 10px;" }
+              %span{ style: "font-weight: 200;letter-spacing: 5px;" }= @director.name.upcase
+              &nbsp;
+              |
+              &nbsp;
+              %span{ style: "font-weight: bolder;letter-spacing: 5px;" } DIRECTOR

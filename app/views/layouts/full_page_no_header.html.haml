@@ -20,7 +20,7 @@
     = stylesheet_link_tag "application", media: "all", data: { turbolinks_track: "reload" }
     = javascript_include_tag "application", data: { turbolinks_track: "reload" }
   -# Should be used with full page layouts that use footer but NO header.
-  %body#top.full-page-no-header{ class: yield(:body_class), style: "margin-bottom: 0px;" }
+  %body#top.full-page-no-header{ class: yield(:body_class) }
     =# render 'layouts/flash_messages'
     = yield :header
     = yield
