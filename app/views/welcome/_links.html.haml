@@ -8,6 +8,16 @@
   |
   = link_to 'WORK', work_path, class: "#{'active' if params[:action] == 'work'}"
   |
+  - @directors = Director.current.where(archived: false).order(:position)
+  - if @directors.present?
+    %span.dropdown
+      = link_to "DIRECTORS", '#', class: 'dropdown-toggle', data: { object: 'dropdown', toggle: 'dropdown' }
+      %ul.dropdown-menu.dropdown-menu-right{ role: 'menu' }
+        - @directors.each do |director|
+          %li
+            = link_to director.name, public_director_path(director)
+    |
+
   - if false
     = link_to 'DRTV', drtv_path, class: "#{'active' if params[:action] == 'drtv'}"
     |

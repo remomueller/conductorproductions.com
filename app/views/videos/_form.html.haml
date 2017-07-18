@@ -2,7 +2,7 @@
   .form-group
     = f.label :video_page, nil, class: 'col-md-2 control-label'
     .col-md-10
-      = f.select :video_page, Video::PAGES, { include_blank: '--Select a Page--' }, class: 'form-control'
+      = f.select :video_page, Video::PAGES + Director.current.pluck(:name, :id), { include_blank: '--Select a Page--' }, class: 'form-control'
       = render 'layouts/errors', object: video, key: :video_page
 
   .form-group

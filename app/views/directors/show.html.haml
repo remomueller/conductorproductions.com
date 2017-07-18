@@ -1,0 +1,27 @@
+%p
+  %strong Name:
+  = @director.name
+
+%p
+  %strong Public Page:
+  = link_to @director.slug, public_director_path(@director)
+
+%p
+  %strong Biography:
+= simple_format @director.biography
+
+- if @director.photo.size > 0
+  .center{ style: "width:100%" }
+    = image_tag photo_director_path(@director), class: "img-responsive", style: "display:inline-block"
+
+%p
+  %strong Position:
+  = @director.position
+
+%p
+  %strong Archived:
+  = @director.archived
+
+= link_to "Edit", edit_director_path(@director)
+|
+= link_to "Back", directors_path

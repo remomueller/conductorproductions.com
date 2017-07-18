@@ -8,4 +8,9 @@ class ExternalControllerTest < ActionDispatch::IntegrationTest
     get landing_draft_path
     assert_response :success
   end
+
+  test "should get director page" do
+    get public_director_path(directors(:one))
+    assert_response :success
+  end
 end

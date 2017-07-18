@@ -22,6 +22,7 @@
 
 #= require categories
 #= require filedrag
+#= require directors
 #= require galleries
 #= require global
 #= require google_analytics

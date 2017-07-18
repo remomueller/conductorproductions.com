@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Director One
+  slug: director-one
+  biography: MyText
+  position: 1
+  archived: false
+  deleted: false
+
+two:
+  name: Director Two
+  slug: director-two
+  biography: MyText
+  position: 2
+  archived: false
+  deleted: false

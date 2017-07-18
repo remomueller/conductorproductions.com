@@ -13,9 +13,9 @@ class Video < ApplicationRecord
 
   # Model Validation
   validates :video_page, :vimeo_number, :photo, :position, :user_id, presence: true
-  validates :video_page, inclusion: { in: PAGES.collect(&:second) }
+  # validates :video_page, inclusion: { in: PAGES.collect(&:second) }
   validates :vimeo_number, uniqueness: { scope: [:deleted, :video_page] }
-  validates :vimeo_number, numericality: { greater_than_or_equal_to: 0 }
+  # validates :vimeo_number, numericality: { greater_than_or_equal_to: 0 }
   validates :position, numericality: { greater_than_or_equal_to: 0 }
 
   # Model Relationships
@@ -29,6 +29,13 @@ class Video < ApplicationRecord
 
   def video_page_string
     item = PAGES.find { |_name, value| value == video_page }
-    item ? item[0] : ""
+    director = Director.find_by(id: video_page)
+    if item
+      item[0]
+    elsif director
+      director.name
+    else
+      ""
+    end
   end
 end

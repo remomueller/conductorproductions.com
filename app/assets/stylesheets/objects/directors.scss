@@ -1,0 +1,65 @@
+.director-box {
+  background-color: $brand-black;
+  color: $p200-grey;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+
+.director-name {
+  color: $p400-grey;
+}
+
+.director-backdrop {
+  position: relative;
+
+  .director-grey-backdrop {
+    position: absolute;
+    background-color: #777; // $p600-grey;
+    // z-index: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .director-black-clip {
+    position: absolute;
+    background-color: $brand-black;
+    // z-index: 0;
+    clip-path: polygon(-1% -1%, 101% -1%, 101% 30%, 97% 95%, 50% 101%, -1% 101%);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .director-content {
+    position: relative;
+    padding: 40px;
+  }
+}
+
+.director-img-container {
+  position: relative;
+  margin-right: 60px;
+  padding-top: 15px;
+
+  .director-img-backdrop {
+    background-color: #777; // $p600-grey;
+    position: absolute;
+    top: 0;
+    right: -15px;
+    left: 15px;
+    bottom: 15px;
+  }
+
+  img {
+    position: relative;
+  }
+}
+
+.director-img {
+  height: auto;
+  max-width: 100%;
+}
