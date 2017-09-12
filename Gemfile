@@ -33,5 +33,5 @@ gem "turbolinks",           "~> 5"
 group :test do
   gem "minitest"
   gem "rails-controller-testing"
-  gem "simplecov", "~> 0.14.1", require: false
+  gem "simplecov", "~> 0.15.1", require: false
 end
