@@ -12,6 +12,12 @@
       = render "layouts/errors", object: member, key: :slug
 
   .form-group
+    = form.label :title, nil, class: "col-md-2 control-label"
+    .col-md-10
+      = form.text_field :title, class: "form-control", id: :member_title
+      = render "layouts/errors", object: member, key: :title
+
+  .form-group
     = form.label :photo, nil, class: "col-md-2 control-label"
     .col-md-10
       = form.file_field :photo, class: "form-control"
