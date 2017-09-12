@@ -9,20 +9,21 @@
 - videos = @member.videos.order(:position).limit(4)
 - first_video_link = "#{vimeo_url}#{videos.first.vimeo_number}?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=0&amp;color=ffffff" if videos.present?
 
+
 .director-box
-  .container
+  .container{ style: "position: relative;" }
+    = link_to root_path, class: "director-close-link" do
+      &times;
+
     .director-backdrop
       .director-grey-backdrop.hidden-xs
       .director-black-clip.hidden-xs
 
       .director-content{ style: "padding-top: 0;" }
-        .pull-right
-          = link_to root_path, class: "director-close-link" do
-            &times;
         %h1.center.director-name{ style: "padding-bottom: 20px;" }
           %span{ style: "font-weight: 200;letter-spacing: 5px;" }= @member.name.upcase
           &nbsp;
-          %span{ style: "font-weight: bolder;letter-spacing: 5px;" }= @member.title.upcase
+          %span.nowrap{ style: "font-weight: bolder;letter-spacing: 5px;" }= @member.title.upcase
 
         #director-video-frame
           .embed-responsive.embed-responsive-16by9

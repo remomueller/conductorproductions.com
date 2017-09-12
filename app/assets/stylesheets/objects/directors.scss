@@ -3,7 +3,7 @@
   color: $p200-grey;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   padding-bottom: 40px;
-  padding-top: 40px;
+  // padding-top: 40px;
 }
 
 .director-name {
@@ -12,8 +12,12 @@
 
 .director-close-link {
   color: $p400-grey;
-  font-size: 24px;
+  font-size: 32px;
   text-decoration: none;
+  top: 0;
+  right: 0;
+  position: absolute;
+  z-index: $zindex-navbar;
 
   &:hover,
   &:focus,
