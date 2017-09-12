@@ -10,7 +10,7 @@
   - Admins can now set Client Name and Agency Name for videos
   - Hovering over videos now displays Client Name and Agency Name
 - **Gem Changes**
-  - Updated to rails 5.1.2
+  - Updated to rails 5.1.4
   - Updated to pg 0.21.0
   - Updated to devise 4.3.0
   - Updated to carrierwave 1.1.0
