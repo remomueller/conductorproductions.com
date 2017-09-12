@@ -16,6 +16,11 @@
       .director-black-clip.hidden-xs
 
       .director-content{ style: "padding-top: 0" }
+        %h1.center.director-name{ style: "padding-bottom: 20px;" }
+          %span{ style: "font-weight: 200;letter-spacing: 5px;" }= @director.name.upcase
+          &nbsp;
+          %span{ style: "font-weight: bolder;letter-spacing: 5px;" } DIRECTOR
+
         #director-video-frame
           .embed-responsive.embed-responsive-16by9
             %iframe{ src: first_video_link, webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
@@ -40,12 +45,6 @@
                             Agency:
                             = video.agency_name
                   = image_tag image_thumbnail, style: "width: 100%;", class: "video-thumbnail", data: { object: "launch-video", video_src: video_link }, alt: ""
-
-
-        %h1.center.director-name{ style: "padding-bottom: 20px;" }
-          %span{ style: "font-weight: 200;letter-spacing: 5px;" }= @director.name.upcase
-          &nbsp;
-          %span{ style: "font-weight: bolder;letter-spacing: 5px;" } DIRECTOR
 
 / .director-divide{ style: "height: 2px; background-color: #333;" }
 
