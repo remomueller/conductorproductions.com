@@ -9,12 +9,12 @@ class ExternalController < ApplicationController
     render layout: "conductor-application-v2"
   end
 
-  # GET /member/:slug
+  # GET /team/:slug
   def member
     render layout: "full_page_no_header"
   end
 
-  # GET /member/:slug/photo
+  # GET /team/:slug/photo
   def photo_member
     send_file File.join(CarrierWave::Uploader::Base.root, @member.photo.url)
   end

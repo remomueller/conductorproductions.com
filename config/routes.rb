@@ -103,8 +103,8 @@ Rails.application.routes.draw do
   scope module: :external do
     get :landing_draft, path: "landing/draft"
     get :director, path: "director/:member", action: :member
-    get :member, path: "member/:member", as: :public_member
-    get :photo_member, path: "member/:member/photo"
+    get :member, path: "team/:member", as: :public_member
+    get :photo_member, path: "team/:member/photo"
   end
 
   scope module: "client_session" do
