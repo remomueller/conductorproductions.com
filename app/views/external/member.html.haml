@@ -7,8 +7,7 @@
 - common_settings = "?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"
 
 - videos = @member.videos.order(:position).limit(4)
-- first_video_link = "#{vimeo_url}#{videos.first.vimeo_number}?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=0&amp;color=ffffff" if videos.present?
-
+- first_video_link = "#{vimeo_url}#{videos.first.vimeo_number}?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff&amp;background=1" if videos.present?
 
 .director-box
   .container{ style: "position: relative;" }
