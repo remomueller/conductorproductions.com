@@ -9,8 +9,8 @@ class ExternalControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get director page" do
-    get public_director_path(directors(:one))
+  test "should get member page" do
+    get public_member_path(members(:one))
     assert_response :success
   end
 end

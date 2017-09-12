@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-# Name, biography, and videos of directors.
-class Director < ApplicationRecord
+# Name, biography, and videos of members.
+class Member < ApplicationRecord
   # Concerns
   include Deletable
   include Sluggable
@@ -10,7 +10,7 @@ class Director < ApplicationRecord
   mount_uploader :photo, ImageUploader
 
   # Validations
-  validates :name, presence: true
+  validates :name, :title, presence: true
 
   # Methods
   def destroy

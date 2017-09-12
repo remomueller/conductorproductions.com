@@ -1,0 +1,31 @@
+%p
+  %strong Name:
+  = @member.name
+
+%p
+  %strong Public Page:
+  = link_to @member.slug, public_member_path(@member)
+
+%p
+  %strong Title:
+  = @member.title
+
+%p
+  %strong Biography:
+= simple_format @member.biography
+
+- if @member.photo.size > 0
+  .center{ style: "width:100%" }
+    = image_tag photo_member_path(@member), class: "img-responsive", style: "display:inline-block"
+
+%p
+  %strong Position:
+  = @member.position
+
+%p
+  %strong Archived:
+  = @member.archived
+
+= link_to "Edit", edit_member_path(@member)
+|
+= link_to "Back", members_path

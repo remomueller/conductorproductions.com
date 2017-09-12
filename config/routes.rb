@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get "pc" => "pc#index"
 
-  resources :directors
+  resources :members
 
   namespace :pc do
     get :clients
@@ -102,8 +102,9 @@ Rails.application.routes.draw do
 
   scope module: :external do
     get :landing_draft, path: "landing/draft"
-    get :director, path: "director/:director", as: :public_director
-    get :photo_director, path: "director/:director/photo"
+    get :director, path: "director/:member", action: :member
+    get :member, path: "member/:member", as: :public_member
+    get :photo_member, path: "member/:member/photo"
   end
 
   scope module: "client_session" do

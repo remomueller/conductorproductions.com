@@ -29,11 +29,11 @@ class Video < ApplicationRecord
 
   def video_page_string
     item = PAGES.find { |_name, value| value == video_page }
-    director = Director.find_by(id: video_page)
+    member = Member.find_by(id: video_page)
     if item
       item[0]
-    elsif director
-      director.name
+    elsif member
+      member.name
     else
       ""
     end

@@ -2,31 +2,31 @@
 
 # Displays public pages.
 class ExternalController < ApplicationController
-  before_action :set_director, only: [:director, :photo_director]
+  before_action :set_member, only: [:member, :photo_member]
 
   # GET /landing/draft
   def landing_draft
     render layout: "conductor-application-v2"
   end
 
-  # GET /director/:slug
-  def director
+  # GET /member/:slug
+  def member
     render layout: "full_page_no_header"
   end
 
-  # GET /director/:slug/photo
-  def photo_director
-    send_file File.join(CarrierWave::Uploader::Base.root, @director.photo.url)
+  # GET /member/:slug/photo
+  def photo_member
+    send_file File.join(CarrierWave::Uploader::Base.root, @member.photo.url)
   end
 
   private
 
-  def set_director
-    @director = Director.current.where(archived: false).find_by_param(params[:director])
-    redirect_without_director!
+  def set_member
+    @member = Member.current.where(archived: false).find_by_param(params[:member])
+    redirect_without_member!
   end
 
-  def redirect_without_director!
-    empty_response_or_root_path(directors_path) unless @director
+  def redirect_without_member!
+    empty_response_or_root_path(members_path) unless @member
   end
 end

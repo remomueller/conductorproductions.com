@@ -2,6 +2,7 @@
 
 one:
   name: Director One
+  title: director
   slug: director-one
   biography: MyText
   position: 1
@@ -10,6 +11,7 @@ one:
 
 two:
   name: Director Two
+  title: director
   slug: director-two
   biography: MyText
   position: 2

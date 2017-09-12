@@ -1,28 +1,28 @@
-= form_with(model: director, local: true, class: "form-horizontal") do |form|
+= form_with(model: member, local: true, class: "form-horizontal") do |form|
   .form-group
     = form.label :name, nil, class: "col-md-2 control-label"
     .col-md-10
-      = form.text_field :name, class: "form-control", data: { object: (director.new_record? ? "create-slug" : ""), target: "#director_slug" }
-      = render "layouts/errors", object: director, key: :name
+      = form.text_field :name, class: "form-control", data: { object: (member.new_record? ? "create-slug" : ""), target: "#member_slug" }
+      = render "layouts/errors", object: member, key: :name
 
   .form-group
     = form.label :slug, nil, class: "col-md-2 control-label"
     .col-md-10
-      = form.text_field :slug, class: "form-control", id: :director_slug
-      = render "layouts/errors", object: director, key: :slug
+      = form.text_field :slug, class: "form-control", id: :member_slug
+      = render "layouts/errors", object: member, key: :slug
 
   .form-group
     = form.label :photo, nil, class: "col-md-2 control-label"
     .col-md-10
       = form.file_field :photo, class: "form-control"
       = form.hidden_field :photo_cache
-      = render "layouts/errors", object: director, key: :photo
+      = render "layouts/errors", object: member, key: :photo
 
   .form-group
     = form.label :biography, nil, class: "col-md-2 control-label"
     .col-md-10
       = form.text_area :biography, class: "form-control", rows: 7
-      = render "layouts/errors", object: director, key: :biography
+      = render "layouts/errors", object: member, key: :biography
 
   .form-group
     = form.label :archived, nil, class: "col-md-2 control-label"
@@ -34,4 +34,4 @@
   .form-group
     .col-md-10.col-md-offset-2
       = form.submit nil, class: "btn btn-primary"
-      = link_to "Cancel", director.new_record? ? directors_path : director, class: "btn btn-default"
+      = link_to "Cancel", member.new_record? ? members_path : member, class: "btn btn-default"

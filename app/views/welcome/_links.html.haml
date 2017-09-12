@@ -8,14 +8,14 @@
   |
   = link_to "WORK", work_path, class: "#{'active' if params[:action] == 'work'}"
   |
-  - @directors = Director.current.where(archived: false).order(:position)
-  - if @directors.present? && false
+  - @members = Member.current.where(archived: false).order(:position)
+  - if @members.present? && false
     %span.dropdown
-      = link_to "DIRECTORS", "#", class: "dropdown-toggle", data: { object: "dropdown", toggle: "dropdown" }
+      = link_to "MEMBERS", "#", class: "dropdown-toggle", data: { object: "dropdown", toggle: "dropdown" }
       %ul.dropdown-menu.dropdown-menu-right{ role: "menu" }
-        - @directors.each do |director|
+        - @members.each do |member|
           %li
-            = link_to director.name, public_director_path(director)
+            = link_to member.name, public_member_path(member)
     |
 
   - if false
@@ -35,9 +35,9 @@
             Projects
         - if current_user.system_admin?
           %li
-            = link_to directors_path do
+            = link_to members_path do
               %span.glyphicon.glyphicon-bullhorn
-              Directors
+              Members
           %li
             = link_to videos_path do
               %span.glyphicon.glyphicon-film
