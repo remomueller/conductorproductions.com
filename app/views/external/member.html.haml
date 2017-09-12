@@ -15,7 +15,10 @@
       .director-grey-backdrop.hidden-xs
       .director-black-clip.hidden-xs
 
-      .director-content{ style: "padding-top: 0" }
+      .director-content{ style: "padding-top: 0;" }
+        .pull-right
+          = link_to root_path, class: "director-close-link" do
+            &times;
         %h1.center.director-name{ style: "padding-bottom: 20px;" }
           %span{ style: "font-weight: 200;letter-spacing: 5px;" }= @member.name.upcase
           &nbsp;

@@ -10,6 +10,19 @@
   color: $p400-grey;
 }
 
+.director-close-link {
+  color: $p400-grey;
+  font-size: 24px;
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $p500-grey;
+    text-decoration: none;
+  }
+}
+
 .director-backdrop {
   position: relative;
 
