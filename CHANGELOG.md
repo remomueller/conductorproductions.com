@@ -1,6 +1,7 @@
 ## Bootstrap 4
 
 - **Gem Changes**
+  - Updated to ruby 2.4.2
   - Updated to bootstrap 4.0.0.beta
 
 ## 0.9.0
