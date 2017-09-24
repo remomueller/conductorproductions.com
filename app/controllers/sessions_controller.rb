@@ -5,11 +5,11 @@ class SessionsController < Devise::SessionsController
   before_action :invert, only: [:new, :create]
   prepend_before_action :sign_out_project, only: :destroy
 
-  layout 'application-login', only: [:new, :create]
+  # layout "application-login", only: [:new, :create]
 
   # Overwrite devise to provide JSON responses as well
   def create
-    project = Project.current.where.not(username: [nil, '']).find_by_username(params[:user][:email])
+    project = Project.current.where.not(username: [nil, ""]).find_by_username(params[:user][:email])
     if project && project.authenticate(params[:user][:password])
       session[:project_ids] ||= []
       session[:project_ids] << project.id
@@ -22,7 +22,7 @@ class SessionsController < Devise::SessionsController
         redirect_to client_project_menu_path(project)
       end
     elsif project
-      redirect_to new_user_session_path, alert: 'Invalid username or password.'
+      redirect_to new_user_session_path, alert: "Invalid username or password."
     else
       super
     end

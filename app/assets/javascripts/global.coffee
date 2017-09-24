@@ -1,5 +1,9 @@
+@componentsReady = ->
+  false
+
 # These functions get called on initial page visit and on turbolink page changes
 @turbolinksReady = ->
+  componentsReady()
   homeReady()
   videosReady()
   fileDragReady()

@@ -1,19 +1,27 @@
 html {
-  position: relative;
   min-height: 100%;
+  position: relative;
 }
 
 body {
-  margin-bottom: $footer-height;
-  overflow-x: hidden;
-
   &.full-page {
     margin-bottom: $footer-height;
-    padding-top: $header-height;
   }
 
   &.full-page-no-header {
     margin-bottom: $footer-height;
-    padding-top: 0;
   }
+
+  &.full-page-no-header-no-footer {
+    margin-bottom: 0;
+  }
+}
+
+::selection {
+  background-color: rgba($p200-blue, .99);
+  color: $body-color;
+}
+
+:focus {
+  outline-color: $p200-blue !important;
 }

@@ -1,0 +1,11 @@
+.footer-container
+  .container
+    .footer
+      .nowrap
+        .float-right
+          = link_to "Contact Us", contact_path
+
+        &copy;
+        = Time.zone.today.year
+        .d-inline.d-md-none= link_to "Conductor Productions", services_path
+        .d-none.d-md-inline= link_to "Conductor Productions", services_path

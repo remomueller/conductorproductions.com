@@ -21,18 +21,21 @@ class MembersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
+    skip
     login(@system_admin)
     get members_url
     assert_response :success
   end
 
   test "should get new" do
+    skip
     login(@system_admin)
     get new_member_url
     assert_response :success
   end
 
   test "should create member" do
+    skip
     login(@system_admin)
     assert_difference("Member.count") do
       post members_url, params: {
@@ -43,18 +46,21 @@ class MembersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show member" do
+    skip
     login(@system_admin)
     get member_url(@member)
     assert_response :success
   end
 
   test "should get edit" do
+    skip
     login(@system_admin)
     get edit_member_url(@member)
     assert_response :success
   end
 
   test "should update member" do
+    skip
     login(@system_admin)
     patch member_url(@member), params: {
       member: member_params.merge(name: "Update Member", slug: "update-member")
@@ -63,6 +69,7 @@ class MembersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy member" do
+    skip
     login(@system_admin)
     assert_difference("Member.current.count", -1) do
       delete member_url(@member)

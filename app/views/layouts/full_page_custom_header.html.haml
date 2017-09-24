@@ -2,7 +2,7 @@
 %html{ lang: "en" }
   %head
     = render "layouts/head"
-  %body#top.full-page-no-header{ class: yield(:body_class) }
+  %body#top.full-page{ class: yield(:body_class) }
     = render "layouts/flash_bar"
     = yield :header
     = yield

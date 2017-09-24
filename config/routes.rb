@@ -1,24 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get "external/home"
-
-  root "welcome#index"
-
-  get "pc" => "pc#index"
+  root "external#landing"
 
   resources :members
-
-  namespace :pc do
-    get :clients
-    get :contact
-    get :index
-    get :our_work, path: "our-work"
-    get :director_christian_williams, path: "directors/christian-williams"
-    get :director_kamell_allaway, path: "directors/kamell-allaway"
-    get :director_noah_lydiard, path: "directors/noah-lydiard"
-    get :director_vladimir_minuty, path: "directors/vladimir-minuty"
-  end
 
   resources :videos do
     collection do
@@ -81,30 +66,33 @@ Rails.application.routes.draw do
   get "invite/:invite_token" => "project_users#invite"
 
   get "2016", to: redirect("year-in-review")
-  scope module: "welcome" do
-    get :dashboard
-    get :index
-    get :work
-    get :drtv
-    get "images/videos/:video_id", action: :download_video_image, as: :download_video_image
-    get :contact
-    post :submit_contact
-    get :year_in_review, path: "year-in-review"
-    # get :news
-    # get :about
-    # get :clients
-    # get :index_v1
-  end
+  # scope module: "welcome" do
+  #   get :dashboard
+  #   get :index
+  #   get :work
+  #   get :drtv
 
-  scope module: "application" do
-    get :version
-  end
+  #   get :contact
+  #   post :submit_contact
+  #   get :year_in_review, path: "year-in-review"
+  #   # get :news
+  #   # get :about
+  #   # get :clients
+  #   # get :index_v1
+  # end
 
   scope module: :external do
     get :landing_draft, path: "landing/draft"
     get :director, path: "director/:member", action: :member
     get :member, path: "team/:member", as: :public_member
     get :photo_member, path: "team/:member/photo"
+    get "images/videos/:video_id", action: :download_video_image, as: :download_video_image
+
+    get :contact
+    get :landing
+    get :services
+    get :team
+    get :version
   end
 
   scope module: "client_session" do

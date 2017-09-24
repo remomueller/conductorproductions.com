@@ -1,7 +1,15 @@
-.black-bg {
+.background-brand-white {
+  background-color: $brand-white;
+}
+
+.background-brand-black {
   background-color: $brand-black;
 }
 
-.no-footer {
-  margin-bottom: 0 !important;
+.background-p900-grey {
+  background-color: $p900-grey;
+}
+
+.background-black-transparent {
+  background-color: rgba($brand-black, .6);
 }

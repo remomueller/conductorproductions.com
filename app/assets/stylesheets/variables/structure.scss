@@ -1,19 +1,5 @@
 // Variables to define page structure and accounting for header and footer
 // spacing.
 
-$header-height: 50px;
-$footer-height: 60px;
-
-
-
-// Layout: Application Login
-$footer-image-offset: 50px;
-$footer-image-height: 527px;
-$footer-image-right-width: 290px;
-$footer-login-height: $footer-image-height - $footer-image-offset;
-
-
-$footer-image-offset-xs: 25px;
-$footer-image-height-xs: 328px;
-$footer-image-right-width-xs: 168px;
-$footer-login-height-xs: $footer-image-height-xs - $footer-image-offset-xs;
+$header-height: 56px;
+$footer-height: 100px;

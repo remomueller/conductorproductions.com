@@ -13,12 +13,23 @@
 # (https://github.com/rails/sprockets#sprockets-directives)
 # for details about supported directives.
 #
-#= require jquery
-#= require jquery_ujs
-#= require jquery-ui/widgets/sortable
-#= require bootstrap-sprockets
+#= require jquery3
+#= require rails-ujs
 #= require turbolinks
+#= require popper
+#= require bootstrap
+#= require jquery-ui/widgets/sortable
+
 #= require global
+
+# External
+
+# Components
+
+# Extensions
+
+# Objects
+
 
 #= require categories
 #= require filedrag
