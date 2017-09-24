@@ -1,9 +1,15 @@
 %video.video-full-page-16x9{ autoplay: "true", loop: "true", muted: "true", plays_inline: "true" }
   %source{ src: "https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119", type: "video/mp4" }
 
-.page-box.background-black-transparent.text-light.d-flex.flex-column.justify-content-end
-  .container.text-right
-    %h1.brand-bold Conductor Productions
+.page-box.text-light.background-black-animated.d-flex.flex-column.justify-content-between
+  .container
+    %h1.m-0.brand-bold.animated-fade-in-title
+      Conductor Productions
+  .container.text-center
+    %h1.brand-bold.animated-fade-out-title
+      - "Conductor Productions".split("").each_with_index do |letter, index|
+        %span.animated-letter{ class: "animation-delay-#{index * 50}" }>= letter
+  .container
 
 .page-box.last-box.background-brand-black.text-light
   .container

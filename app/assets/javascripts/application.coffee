@@ -25,6 +25,7 @@
 # External
 
 # Components
+#= require components/animations
 
 # Extensions
 

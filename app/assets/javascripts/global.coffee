@@ -1,5 +1,5 @@
 @componentsReady = ->
-  false
+  animationsReady()
 
 # These functions get called on initial page visit and on turbolink page changes
 @turbolinksReady = ->
