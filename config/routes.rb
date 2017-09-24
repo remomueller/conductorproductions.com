@@ -3,6 +3,10 @@
 Rails.application.routes.draw do
   root "external#landing"
 
+  scope module: :internal do
+    get :dashboard
+  end
+
   resources :members
 
   resources :videos do
@@ -67,7 +71,6 @@ Rails.application.routes.draw do
 
   get "2016", to: redirect("year-in-review")
   # scope module: "welcome" do
-  #   get :dashboard
   #   get :index
   #   get :work
   #   get :drtv

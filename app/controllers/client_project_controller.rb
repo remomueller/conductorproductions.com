@@ -9,10 +9,12 @@ class ClientProjectController < ApplicationController
   before_action :redirect_without_project
   before_action :invert,              only: [:category, :document, :gallery_show, :gallery_photo]
 
-  layout 'application-sidebar', only: [:category, :document, :gallery_show, :gallery_photo]
+  # TODO: Redo sidebar for client projects
+  # layout "application-sidebar", only: [:category, :document, :gallery_show, :gallery_photo]
+  layout "layouts/full_page_no_header", only: [:category, :document, :gallery_show, :gallery_photo]
 
   def root
-    render 'menu'
+    render "menu"
   end
 
   def menu
@@ -36,7 +38,7 @@ class ClientProjectController < ApplicationController
     @category = @project.categories.find_by_param(params[:category_id])
     if @category
       @document = @project.documents.find_by_id(params[:document_id])
-      render 'category'
+      render "category"
     else
       redirect_to client_project_root_path(@project)
     end
@@ -45,8 +47,8 @@ class ClientProjectController < ApplicationController
   def download_primary_document
     @document = @project.documents.find_by_id(params[:document_id])
     if @document && @document.primary_document.size > 0
-      disposition = (params[:inline] == '1' ? 'inline' : 'attachment')
-      type = (@document.pdf? ? 'application/pdf' : (@document.image? ? 'image/png' : 'application/octet-stream'))
+      disposition = (params[:inline] == "1" ? "inline" : "attachment")
+      type = (@document.pdf? ? "application/pdf" : (@document.image? ? "image/png" : "application/octet-stream"))
       send_file File.join(CarrierWave::Uploader::Base.root, @document.primary_document.url), type: type, disposition: disposition
     else
       head :ok
@@ -56,8 +58,8 @@ class ClientProjectController < ApplicationController
   def download_document
     @document = @project.documents.find_by_id(params[:document_id])
     if @document && @document.document.size > 0
-      disposition = (params[:inline] == '1' ? 'inline' : 'attachment')
-      type = 'application/octet-stream'
+      disposition = (params[:inline] == "1" ? "inline" : "attachment")
+      type = "application/octet-stream"
       send_file File.join(CarrierWave::Uploader::Base.root, @document.document.url), type: type, disposition: disposition
     else
       head :ok
@@ -67,7 +69,7 @@ class ClientProjectController < ApplicationController
   def gallery_show
     @gallery = @project.galleries.find_by_param(params[:gallery_id])
     if @gallery
-      # render 'gallery'
+      # render "gallery"
     else
       redirect_to client_project_root_path(@project)
     end
@@ -76,7 +78,7 @@ class ClientProjectController < ApplicationController
   def gallery_photo
     @gallery_photo = @project.gallery_photos.find_by_id(params[:gallery_photo_id])
     if @gallery_photo
-      # render 'gallery_photo'
+      # render "gallery_photo"
     else
       redirect_to client_project_root_path(@project)
     end
@@ -85,9 +87,9 @@ class ClientProjectController < ApplicationController
   def download_gallery_photo
     @gallery_photo = @project.gallery_photos.find_by_id(params[:gallery_photo_id])
     if @gallery_photo && @gallery_photo.photo.size > 0
-      if params[:size] == 'preview'
+      if params[:size] == "preview"
         send_file File.join(CarrierWave::Uploader::Base.root, @gallery_photo.photo.preview.url)
-      elsif params[:size] == 'thumb'
+      elsif params[:size] == "thumb"
         send_file File.join(CarrierWave::Uploader::Base.root, @gallery_photo.photo.thumb.url)
       else
         send_file File.join(CarrierWave::Uploader::Base.root, @gallery_photo.photo.url)

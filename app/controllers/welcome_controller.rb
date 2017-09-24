@@ -2,8 +2,6 @@
 
 # Displays public facing pages.
 class WelcomeController < ApplicationController
-  before_action :authenticate_user!, only: [:dashboard]
-
   layout 'conductor-application-v2'
 
   def submit_contact
@@ -22,14 +20,5 @@ class WelcomeController < ApplicationController
   # GET /drtv
   def drtv
     redirect_to work_path
-  end
-
-  def dashboard
-    if session[:invite_token].present?
-      redirect_to accept_project_users_path
-    else
-      redirect_to projects_path
-      # render layout: 'application'
-    end
   end
 end

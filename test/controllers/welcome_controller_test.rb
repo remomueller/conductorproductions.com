@@ -4,26 +4,6 @@ require 'test_helper'
 
 # Tests to assure that public pages are viewable.
 class WelcomeControllerTest < ActionController::TestCase
-  setup do
-    @client = projects(:one)
-    @system_admin = users(:system_admin)
-    @collaborator = users(:collaborator)
-  end
-
-  test 'should get dashboard as collaborator' do
-    skip
-    login(@collaborator)
-    get :dashboard
-    assert_redirected_to projects_path
-  end
-
-  test 'should get dashboard as system admin' do
-    skip
-    login(@system_admin)
-    get :dashboard
-    assert_redirected_to projects_path
-  end
-
   test 'should get index' do
     skip
     get :index

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require 'test_helper'
+require "test_helper"
 
 # Tests to assure clients can browse project.
-class ClientProjectControllerTest < ActionController::TestCase
+class ClientProjectControllerTest < ActionDispatch::IntegrationTest
   setup do
     @system_admin = users(:system_admin)
     @editor_project_one = users(:editor_project_one)
@@ -12,252 +12,234 @@ class ClientProjectControllerTest < ActionController::TestCase
     @client_two = projects(:two)
   end
 
-  test 'should get client project root as client' do
-    skip
+  test "should get client project root as client" do
     login_client(@client)
-    get :root, params: { id: projects(:one) }
+    get client_project_root_url(id: projects(:one))
     assert_not_nil assigns(:project)
     assert_response :success
   end
 
-  test 'should get client project root as owner' do
-    skip
+  test "should get client project root as owner" do
     login(@system_admin)
-    get :root, params: { id: projects(:one) }
+    get client_project_root_url(id: projects(:one))
     assert_not_nil assigns(:project)
     assert_response :success
   end
 
-  test 'should get client project root as editor' do
+  test "should get client project root as editor" do
     skip
     login(@editor_project_one)
-    get :root, params: { id: projects(:one) }
+    get client_project_root_url(id: projects(:one))
     assert_not_nil assigns(:project)
     assert_response :success
   end
 
-  test 'should get client project root as viewer' do
+  test "should get client project root as viewer" do
     skip
     login(@viewer_project_one)
-    get :root, params: { id: projects(:one) }
+    get client_project_root_url(id: projects(:one))
     assert_not_nil assigns(:project)
     assert_response :success
   end
 
-  test 'should not get client project root as logged out user' do
-    skip
-    get :root, params: { id: projects(:one) }
+  test "should not get client project root as logged out user" do
+    get client_project_root_url(id: projects(:one))
     assert_nil assigns(:project)
     assert_redirected_to client_login_path
   end
 
-  test 'should get client project menu as client' do
-    skip
+  test "should get client project menu as client" do
     login_client(@client)
-    get :menu, params: { id: projects(:one) }
+    get client_project_menu_url(id: projects(:one))
     assert_not_nil assigns(:project)
     assert_response :success
   end
 
-  test 'should get client project menu as owner' do
-    skip
+  test "should get client project menu as owner" do
     login(@system_admin)
-    get :menu, params: { id: projects(:one) }
+    get client_project_menu_url(id: projects(:one))
     assert_not_nil assigns(:project)
     assert_response :success
   end
 
-  test 'should get client project menu as editor' do
-    skip
+  test "should get client project menu as editor" do
     login(@editor_project_one)
-    get :menu, params: { id: projects(:one) }
+    get client_project_menu_url(id: projects(:one))
     assert_not_nil assigns(:project)
     assert_response :success
   end
 
-  test 'should get client project menu as viewer' do
-    skip
+  test "should get client project menu as viewer" do
     login(@viewer_project_one)
-    get :menu, params: { id: projects(:one) }
+    get client_project_menu_url(id: projects(:one))
     assert_not_nil assigns(:project)
     assert_response :success
   end
 
-  test 'should not get client project menu as logged out user' do
-    skip
-    get :menu, params: { id: projects(:one) }
+  test "should not get client project menu as logged out user" do
+    get client_project_menu_url(id: projects(:one))
     assert_nil assigns(:project)
     assert_redirected_to client_login_path
   end
 
-  test 'should get client project concepts category as client' do
-    skip
+  test "should get client project concepts category as client" do
     login_client(@client)
-    get :category, params: { id: projects(:one), top_level: 'creative', category_id: 'concepts' }
+    get client_project_category_url(id: projects(:one), top_level: "creative", category_id: "concepts")
     assert_not_nil assigns(:project)
     assert_response :success
   end
 
-  test 'should get client project concepts category as owner' do
-    skip
+  test "should get client project concepts category as owner" do
     login(@system_admin)
-    get :category, params: { id: projects(:one), top_level: 'creative', category_id: 'concepts' }
+    get client_project_category_url(id: projects(:one), top_level: "creative", category_id: "concepts")
     assert_not_nil assigns(:project)
     assert_response :success
   end
 
-  test 'should get client project concepts category as editor' do
-    skip
+  test "should get client project concepts category as editor" do
     login(@editor_project_one)
-    get :category, params: { id: projects(:one), top_level: 'creative', category_id: 'concepts' }
+    get client_project_category_url(id: projects(:one), top_level: "creative", category_id: "concepts")
     assert_not_nil assigns(:project)
     assert_response :success
   end
 
-  test 'should get client project concepts category as viewer' do
-    skip
+  test "should get client project concepts category as viewer" do
     login(@viewer_project_one)
-    get :category, params: { id: projects(:one), top_level: 'creative', category_id: 'concepts' }
+    get client_project_category_url(id: projects(:one), top_level: "creative", category_id: "concepts")
     assert_not_nil assigns(:project)
     assert_response :success
   end
 
-  test 'should not get client project concepts category as logged out user' do
-    skip
-    get :category, params: { id: projects(:one), top_level: 'creative', category_id: 'concepts' }
+  test "should not get client project concepts category as logged out user" do
+    get client_project_category_url(id: projects(:one), top_level: "creative", category_id: "concepts")
     assert_nil assigns(:project)
     assert_redirected_to client_login_path
   end
 
-  test 'should get client project treatment category as client' do
-    skip
+  test "should get client project treatment category as client" do
     login_client(@client)
-    get :category, params: { id: projects(:one), top_level: 'creative', category_id: 'treatment' }
+    get client_project_category_url(id: projects(:one), top_level: "creative", category_id: "treatment")
     assert_response :success
     assert_not_nil assigns(:project)
   end
 
-  test 'should get client project script category as client' do
-    skip
+  test "should get client project script category as client" do
     login_client(@client)
-    get :category, params: { id: projects(:one), top_level: 'creative', category_id: 'script' }
+    get client_project_category_url(id: projects(:one), top_level: "creative", category_id: "script")
     assert_response :success
     assert_not_nil assigns(:project)
   end
 
-  test 'should get client project boards category as client' do
-    skip
+  test "should get client project boards category as client" do
     login_client(@client)
-    get :category, params: { id: projects(:one), top_level: 'creative', category_id: 'boards' }
+    get client_project_category_url(id: projects(:one), top_level: "creative", category_id: "boards")
     assert_response :success
     assert_not_nil assigns(:project)
   end
 
-  test 'should get client project references category as client' do
-    skip
+  test "should get client project references category as client" do
     login_client(@client)
-    get :category, params: { id: projects(:one), top_level: 'creative', category_id: 'references' }
+    get client_project_category_url(id: projects(:one), top_level: "creative", category_id: "references")
     assert_response :success
     assert_not_nil assigns(:project)
   end
 
-  test 'should get category and redirect to single gallery' do
-    skip
+  test "should get category and redirect to single gallery" do
     login_client(@client_two)
-    get :category, params: { id: @client_two, top_level: 'production', category_id: categories(:locations_two) }
+    get client_project_category_url(id: @client_two, top_level: "production", category_id: categories(:locations_two))
     assert_not_nil assigns(:project)
-    assert_redirected_to client_project_gallery_path(@client_two, 'production', categories(:locations_two), galleries(:single_location))
+    assert_redirected_to client_project_gallery_path(@client_two, "production", categories(:locations_two), galleries(:single_location))
   end
 
-  test 'should get client project gallery as client' do
+  test "should get client project gallery as client" do
     skip
     login_client(@client)
-    get :gallery_show, params: { id: projects(:one), top_level: 'production', category_id: 'locations', gallery_id: galleries(:one) }
+    get :gallery_show, params: { id: projects(:one), top_level: "production", category_id: "locations", gallery_id: galleries(:one) }
     assert_not_nil assigns(:project)
     assert_not_nil assigns(:gallery)
     assert_response :success
   end
 
-  test 'should get client project gallery as owner' do
+  test "should get client project gallery as owner" do
     skip
     login(@system_admin)
-    get :gallery_show, params: { id: projects(:one), top_level: 'production', category_id: 'locations', gallery_id: galleries(:one) }
+    get :gallery_show, params: { id: projects(:one), top_level: "production", category_id: "locations", gallery_id: galleries(:one) }
     assert_not_nil assigns(:project)
     assert_not_nil assigns(:gallery)
     assert_response :success
   end
 
-  test 'should get client project gallery as editor' do
+  test "should get client project gallery as editor" do
     skip
     login(@editor_project_one)
-    get :gallery_show, params: { id: projects(:one), top_level: 'production', category_id: 'locations', gallery_id: galleries(:one) }
+    get :gallery_show, params: { id: projects(:one), top_level: "production", category_id: "locations", gallery_id: galleries(:one) }
     assert_not_nil assigns(:project)
     assert_not_nil assigns(:gallery)
     assert_response :success
   end
 
-  test 'should get client project gallery as viewer' do
+  test "should get client project gallery as viewer" do
     skip
     login(@viewer_project_one)
-    get :gallery_show, params: { id: projects(:one), top_level: 'production', category_id: 'locations', gallery_id: galleries(:one) }
+    get :gallery_show, params: { id: projects(:one), top_level: "production", category_id: "locations", gallery_id: galleries(:one) }
     assert_not_nil assigns(:project)
     assert_not_nil assigns(:gallery)
     assert_response :success
   end
 
-  test 'should not get client project gallery as logged out user' do
+  test "should not get client project gallery as logged out user" do
     skip
-    get :gallery_show, params: { id: projects(:one), top_level: 'production', category_id: 'locations', gallery_id: galleries(:one) }
+    get :gallery_show, params: { id: projects(:one), top_level: "production", category_id: "locations", gallery_id: galleries(:one) }
     assert_nil assigns(:project)
     assert_nil assigns(:gallery)
     assert_redirected_to client_login_path
   end
 
-  test 'should get client project gallery photo as client' do
+  test "should get client project gallery photo as client" do
     skip
     login_client(@client)
-    get :gallery_photo, params: { id: projects(:one), top_level: 'production', category_id: 'locations', gallery_id: galleries(:one), gallery_photo_id: gallery_photos(:one) }
+    get :gallery_photo, params: { id: projects(:one), top_level: "production", category_id: "locations", gallery_id: galleries(:one), gallery_photo_id: gallery_photos(:one) }
     assert_not_nil assigns(:project)
     assert_not_nil assigns(:gallery_photo)
     assert_response :success
   end
 
-  test 'should get client project gallery photo as owner' do
+  test "should get client project gallery photo as owner" do
     skip
     login(@system_admin)
-    get :gallery_photo, params: { id: projects(:one), top_level: 'production', category_id: 'locations', gallery_id: galleries(:one), gallery_photo_id: gallery_photos(:one) }
+    get :gallery_photo, params: { id: projects(:one), top_level: "production", category_id: "locations", gallery_id: galleries(:one), gallery_photo_id: gallery_photos(:one) }
     assert_not_nil assigns(:project)
     assert_not_nil assigns(:gallery_photo)
     assert_response :success
   end
 
-  test 'should get client project gallery photo as editor' do
+  test "should get client project gallery photo as editor" do
     skip
     login(@editor_project_one)
-    get :gallery_photo, params: { id: projects(:one), top_level: 'production', category_id: 'locations', gallery_id: galleries(:one), gallery_photo_id: gallery_photos(:one) }
+    get :gallery_photo, params: { id: projects(:one), top_level: "production", category_id: "locations", gallery_id: galleries(:one), gallery_photo_id: gallery_photos(:one) }
     assert_not_nil assigns(:project)
     assert_not_nil assigns(:gallery_photo)
     assert_response :success
   end
 
-  test 'should get client project gallery photo as viewer' do
+  test "should get client project gallery photo as viewer" do
     skip
     login(@viewer_project_one)
-    get :gallery_photo, params: { id: projects(:one), top_level: 'production', category_id: 'locations', gallery_id: galleries(:one), gallery_photo_id: gallery_photos(:one) }
+    get :gallery_photo, params: { id: projects(:one), top_level: "production", category_id: "locations", gallery_id: galleries(:one), gallery_photo_id: gallery_photos(:one) }
     assert_not_nil assigns(:project)
     assert_not_nil assigns(:gallery_photo)
     assert_response :success
   end
 
-  test 'should not get client project gallery photo as logged out user' do
+  test "should not get client project gallery photo as logged out user" do
     skip
-    get :gallery_photo, params: { id: projects(:one), top_level: 'production', category_id: 'locations', gallery_id: galleries(:one), gallery_photo_id: gallery_photos(:one) }
+    get :gallery_photo, params: { id: projects(:one), top_level: "production", category_id: "locations", gallery_id: galleries(:one), gallery_photo_id: gallery_photos(:one) }
     assert_nil assigns(:project)
     assert_nil assigns(:gallery_photo)
     assert_redirected_to client_login_path
   end
 
-  test 'should download client project gallery photo as client' do
+  test "should download client project gallery photo as client" do
     skip
     login_client(@client)
     get :download_gallery_photo, params: { id: projects(:one), gallery_photo_id: gallery_photos(:one) }
@@ -268,7 +250,7 @@ class ClientProjectControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test 'should download client project gallery photo as owner' do
+  test "should download client project gallery photo as owner" do
     skip
     login(@system_admin)
     get :download_gallery_photo, params: { id: projects(:one), gallery_photo_id: gallery_photos(:one) }
@@ -279,7 +261,7 @@ class ClientProjectControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test 'should download client project gallery photo as editor' do
+  test "should download client project gallery photo as editor" do
     skip
     login(@editor_project_one)
     get :download_gallery_photo, params: { id: projects(:one), gallery_photo_id: gallery_photos(:one) }
@@ -290,7 +272,7 @@ class ClientProjectControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test 'should download client project gallery photo as viewer' do
+  test "should download client project gallery photo as viewer" do
     skip
     login(@viewer_project_one)
     get :download_gallery_photo, params: { id: projects(:one), gallery_photo_id: gallery_photos(:one) }
@@ -301,7 +283,7 @@ class ClientProjectControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test 'should not download client project gallery photo as logged out user' do
+  test "should not download client project gallery photo as logged out user" do
     skip
     get :download_gallery_photo, params: { id: projects(:one), gallery_photo_id: gallery_photos(:one) }
     assert_nil assigns(:project)
