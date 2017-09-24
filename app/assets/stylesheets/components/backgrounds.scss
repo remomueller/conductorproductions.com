@@ -10,9 +10,11 @@
   background-color: $p900-grey;
 }
 
+$background-video-transparency: 0; // 0.6;
+
 // Uses JavaScript to start
 .background-black-transparent {
-  background-color: rgba($brand-black, .6);
+  background-color: rgba($brand-black, $background-video-transparency);
   transition: background-color 2s ease-in-out;
 
   &.start-animation {
@@ -26,7 +28,7 @@
   }
 
   100% {
-    background-color: rgba($brand-black, .6);
+    background-color: rgba($brand-black, $background-video-transparency);
   }
 }
 
