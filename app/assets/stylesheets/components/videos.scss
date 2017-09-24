@@ -15,6 +15,18 @@
   }
 }
 
+.video-full-page-16x9 {
+  height: auto;
+  left: 50%;
+  min-width: 100%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  min-height: 56.25vw;
+  max-height: 100vh;
+}
+
 // .video-thumbnail {
 //   cursor: pointer;
 //   position: relative;

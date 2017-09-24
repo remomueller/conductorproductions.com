@@ -3,10 +3,6 @@
 # Provides general application helper methods for HAML views.
 module ApplicationHelper
   def simple_check(checked)
-    if checked
-      content_tag :span, nil, class: %w(glyphicon glyphicon-ok)
-    else
-      ''
-    end
+    content_tag(:i, "", class: "fa #{checked ? "fa-check-square-o" : "fa-square-o"}")
   end
 end
