@@ -4,14 +4,7 @@ require "test_helper"
 
 # Tests to assure external pages are accessible.
 class ExternalControllerTest < ActionDispatch::IntegrationTest
-  test "should get landing draft" do
-    skip
-    get landing_draft_url
-    assert_response :success
-  end
-
   test "should get member page" do
-    skip
     get public_member_url(members(:one))
     assert_response :success
   end

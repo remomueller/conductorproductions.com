@@ -3,7 +3,8 @@
   left: 50%;
   min-height: 100%;
   min-width: 100%;
-  position: absolute; // or fixed;
+  position: fixed;
+  // position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
   width: auto;
