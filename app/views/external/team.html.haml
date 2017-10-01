@@ -1,3 +1,18 @@
 - @title = "Directors and Creators"
 
-team.html.haml
+= render "layouts/flash_bar"
+#top-menu= render "layouts/menu"
+
+.page-box.last-box.background-brand-black.text-light
+  .container
+    .card-columns
+      - Member.current.where(archived: false).order(:name).each do |member|
+        .card.text-white.bg-dark
+          - if member.photo.size > 0 && false
+            = image_tag photo_member_path(member), class: "card-img-top"
+          - else
+            .card-header
+              = member.title.titleize
+          .card-body
+            %h4.card-title= member.name
+            = link_to "View profile.", public_member_path(member)

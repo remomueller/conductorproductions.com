@@ -1,15 +1,18 @@
 %video.video-full-page-16x9{ autoplay: "true", loop: "true", muted: "true", plays_inline: "true" }
   %source{ src: "https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119", type: "video/mp4" }
 
-.page-box.text-light.background-black-animated.d-flex.flex-column.justify-content-between
+.page-box.page-box-no-padding.text-light.background-black-animated.d-flex.flex-column.justify-content-between
   .container-fluid
   .container-fluid.text-center
     %h1.brand-bold.landing-title.animated-fade-out-title
       - ENV["website_name"].upcase.split("").each_with_index do |letter, index|
         %span.animated-letter{ class: "animation-delay-#{index * 50}" }>= letter
-  .container-fluid
-    .brand-bold.landing-subtitle.animated-fade-in-title
-      = "CONDUCTOR".upcase
+  .container-fluid.background-black-semi-transparent.p-3
+    .landing-subtitle.animated-fade-in-title
+      .float-right
+        = link_to team_path, style: "color: #fff;" do
+          %i.fa.fa-lock
+      .brand-bold= "CONDUCTOR".upcase
 
 .page-box.last-box.background-brand-black.text-light
   .container

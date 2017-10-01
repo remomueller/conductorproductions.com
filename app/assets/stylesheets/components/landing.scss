@@ -16,19 +16,16 @@
   font-size: 1.25rem;
 
   @include media-breakpoint-up(sm) {
-    text-align: right;
+    text-align: left;
     font-size: 1.5rem;
-    padding-right: 10px;
   }
 
   @include media-breakpoint-up(md) {
     font-size: 1.75rem;
-    padding-right: 30px;
   }
 
   @include media-breakpoint-up(lg) {
     font-size: 2rem;
-    padding-right: 40px;
   }
 
   @include media-breakpoint-up(xl) {

@@ -9,9 +9,10 @@ class ExternalController < ApplicationController
     render layout: "layouts/full_page_no_header"
   end
 
-  # # GET /team
-  # def team
-  # end
+  # GET /team
+  def team
+    render layout: "layouts/full_page_no_header"
+  end
 
   # # GET /services
   # def services
