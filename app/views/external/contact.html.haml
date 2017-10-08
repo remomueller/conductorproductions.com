@@ -1,9 +1,6 @@
 - @title = "Contact"
 
 = form_tag submit_contact_path, method: :post, class: "form-horizontal" do
-  - if params[:action] == "submit_contact" && (params[:name].blank? || params[:email].blank? || params[:body].blank?)
-    .alert.alert-danger Please fill in all fields.
-
   .form-group
     .col-sm-12
       = text_field_tag :name, params[:name], class: "form-control", placeholder: "Name"
@@ -15,6 +12,14 @@
   .form-group
     .col-sm-12
       = text_area_tag :body, params[:body], class: "form-control", placeholder: "Message", rows: 10
+
+  - if params[:action] == "submit_contact" && (params[:name].blank? || params[:email].blank? || params[:body].blank?)
+    .form-group
+      .col-sm-12
+        .alert.alert-danger
+          %button.close{ type: "button", data: { dismiss: "alert" }, aria: { label: "Close" } }
+            %span{ aria: { hidden: "true" } } &times;
+          Please fill in all fields.
 
   .form-group
     .col-sm-12
