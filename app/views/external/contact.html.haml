@@ -1,2 +1,22 @@
 - @title = "Contact"
-contact.html.haml
+
+= form_tag submit_contact_path, method: :post, class: "form-horizontal" do
+  - if params[:action] == "submit_contact" && (params[:name].blank? || params[:email].blank? || params[:body].blank?)
+    .alert.alert-danger Please fill in all fields.
+
+  .form-group
+    .col-sm-12
+      = text_field_tag :name, params[:name], class: "form-control", placeholder: "Name"
+
+  .form-group
+    .col-sm-12
+      = email_field_tag :email, params[:email], class: "form-control", placeholder: "Email"
+
+  .form-group
+    .col-sm-12
+      = text_area_tag :body, params[:body], class: "form-control", placeholder: "Message", rows: 10
+
+  .form-group
+    .col-sm-12
+      %button.btn.btn-primary.small-caps{ type: "submit" } Send Message
+      %span.small-caps or give us a call at 617-262-1400.

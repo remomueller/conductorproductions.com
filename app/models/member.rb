@@ -5,6 +5,9 @@ class Member < ApplicationRecord
   # Concerns
   include Deletable
   include Sluggable
+  include Squishable
+
+  squish :name, :title, :nickname
 
   # Uploaders
   mount_uploader :photo, ImageUploader

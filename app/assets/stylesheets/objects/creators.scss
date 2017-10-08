@@ -1,0 +1,25 @@
+.creator-name {
+  display: block;
+}
+
+.creator-title {
+  display: none;
+}
+
+.creator {
+  display: block;
+  font-variant: small-caps;
+  padding: 1rem;
+
+  @media (hover) {
+    &:hover {
+      .creator-name {
+        display: none;
+      }
+
+      .creator-title {
+        display: block;
+      }
+    }
+  }
+}

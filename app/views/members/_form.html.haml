@@ -18,6 +18,18 @@
       = render "layouts/errors", object: member, key: :title
 
   .form-group
+    = form.label :nickname, nil, class: "col-md-2 control-label"
+    .col-md-10
+      = form.text_field :nickname, class: "form-control"
+      = render "layouts/errors", object: member, key: :nickname
+
+  .form-group
+    = form.label :position, nil, class: "col-md-2 control-label"
+    .col-md-10
+      = form.text_field :position, class: "form-control"
+      = render "layouts/errors", object: member, key: :position
+
+  .form-group
     = form.label :photo, nil, class: "col-md-2 control-label"
     .col-md-10
       = form.file_field :photo, class: "form-control"

@@ -1,18 +1,10 @@
-- @title = "Directors and Creators"
+- @title = "Creators"
 
-= render "layouts/flash_bar"
-#top-menu= render "layouts/menu"
-
-.page-box.last-box.background-brand-black.text-light
+.page-box.last-box.d-flex.align-items-center
   .container
-    .card-columns
-      - Member.current.where(archived: false).order(:name).each do |member|
-        .card.text-white.bg-dark
-          - if member.photo.size > 0 && false
-            = image_tag photo_member_path(member), class: "card-img-top"
-          - else
-            .card-header
-              = member.title.titleize
-          .card-body
-            %h4.card-title= member.name
-            = link_to "View profile.", public_member_path(member)
+    .text-center
+      - Member.current.where(archived: false).where.not(nickname: [nil, ""]).order(:position).each do |member|
+        = link_to public_member_path(member), class: "link-unstyled creator" do
+          .creator-title
+            %strong= member.title.titleize
+          .creator-name= member.nickname

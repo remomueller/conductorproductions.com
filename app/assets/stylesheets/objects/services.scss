@@ -1,0 +1,11 @@
+.service {
+  border-bottom: 1px solid $p100-grey;
+  font-variant: small-caps;
+}
+
+.service-description {
+  font-size: 80%;
+  font-weight: normal;
+  color: $p500-grey;
+  margin-left: 1rem;
+}

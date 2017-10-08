@@ -1,12 +1,12 @@
 %nav.navbar.navbar-expand-lg.navbar-dark.background-brand-black
-  .container
-    = link_to "Conductor Productions", root_path, class: "navbar-brand"
+  .container{ style: "font-variant: small-caps;" }
+    = link_to "Conductor", root_path, class: "navbar-brand brand-bold"
 
     %button.navbar-toggler{ type: "button", data: { toggle: "collapse", target: "#menu-body" }, aria: { controls: "menu-body", expanded: "false", label: "Toggle navigation" } }
       %span.navbar-toggler-icon
 
     #menu-body.collapse.navbar-collapse
-      %ul.navbar-nav.mr-auto
-        = render "menu/item", title: "Directors and Creators", path: team_path, icon: "bullhorn"
+      %ul.navbar-nav.mr-auto{ style: "font-variant: small-caps;" }
+        = render "menu/item", title: "Creators", path: creators_path, icon: "bullhorn"
         = render "menu/item", title: "Services", path: services_path, icon: "cubes"
         = render "menu/item", title: "Contact", path: contact_path, icon: "envelope-o"

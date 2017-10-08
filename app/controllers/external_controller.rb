@@ -9,18 +9,34 @@ class ExternalController < ApplicationController
     render layout: "layouts/full_page_no_header"
   end
 
-  # GET /team
-  def team
-    render layout: "layouts/full_page_no_header"
+  # GET /creators
+  def creators
+    render :team, layout: "layouts/full_page"
   end
 
-  # # GET /services
-  # def services
-  # end
+  # GET /team
+  def team
+    render layout: "layouts/full_page"
+  end
+
+  # GET /services
+  def services
+    render layout: "layouts/full_page"
+  end
 
   # # GET /contact
   # def contact
   # end
+
+  # POST /contact
+  def submit_contact
+    if params[:name].present? && params[:email].present? && params[:body].present?
+      UserMailer.contact(params[:name], params[:email], params[:body]).deliver_now if EMAILS_ENABLED
+      redirect_to contact_path, notice: "Thanks for getting in touch!"
+    else
+      render :contact
+    end
+  end
 
   # GET /version
   # GET /version.json
@@ -30,7 +46,7 @@ class ExternalController < ApplicationController
 
   # GET /team/:slug
   def member
-    render layout: "full_page_no_header"
+    render layout: "layouts/full_page"
   end
 
   # GET /team/:slug/photo
