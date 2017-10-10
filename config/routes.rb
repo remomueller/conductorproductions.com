@@ -97,6 +97,7 @@ Rails.application.routes.draw do
     get :services
     get :creators
     get :team
+    get :art
     get :version
   end
 

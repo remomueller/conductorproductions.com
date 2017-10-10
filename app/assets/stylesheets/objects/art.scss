@@ -1,0 +1,51 @@
+$art-padding: 1px;
+
+.art {
+  padding: 0 0 $art-padding 0;
+
+  .artwork {
+    overflow: hidden;
+
+    img {
+      transition: transform .5s ease-out;
+      width: 100%;
+
+      @media (hover) {
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+.art-1 {
+  @include media-breakpoint-down(xs) {
+    padding-right: ($art-padding / 2);
+  }
+}
+
+.art-2 {
+  @include media-breakpoint-down(xs) {
+    padding-left: ($art-padding / 2);
+  }
+}
+
+.art-sm-1 {
+  @include media-breakpoint-up(sm) {
+    padding-right: (2 * $art-padding / 3);
+  }
+}
+
+.art-sm-2 {
+  @include media-breakpoint-up(sm) {
+    padding-left: ($art-padding / 3);
+    padding-right: ($art-padding / 3);
+  }
+}
+
+.art-sm-3 {
+  @include media-breakpoint-up(sm) {
+    padding-left: (2 * $art-padding / 3);
+  }
+}

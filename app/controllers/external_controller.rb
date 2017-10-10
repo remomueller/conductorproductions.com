@@ -11,17 +11,22 @@ class ExternalController < ApplicationController
 
   # GET /creators
   def creators
-    render :team, layout: "layouts/full_page"
+    render :team, layout: "layouts/full_page_custom_header"
   end
 
   # GET /team
   def team
-    render layout: "layouts/full_page"
+    render layout: "layouts/full_page_custom_header"
   end
 
   # GET /services
   def services
-    render layout: "layouts/full_page"
+    render layout: "layouts/full_page_custom_header"
+  end
+
+  # GET /art
+  def art
+    render layout: "layouts/full_page_custom_header"
   end
 
   # # GET /contact

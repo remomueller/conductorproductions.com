@@ -1,10 +1,12 @@
 - @title = "Creators"
 
-.page-box.last-box.d-flex.align-items-center
-  .container
+= render "layouts/menu2"
+
+.page-box.last-box.d-flex.align-items-center{ style: "overflow-y: hidden;" }
+  .container-fluid.p-0
     .text-center
       - Member.current.where(archived: false).where.not(nickname: [nil, ""]).order(:position).each do |member|
-        = link_to public_member_path(member), class: "link-unstyled creator" do
-          .creator-title
+        = link_to public_member_path(member), class: "link-unstyled creator creator-b" do
+          .creator-surface.creator-title
             %strong= member.title.titleize
-          .creator-name= member.nickname
+          .creator-surface.creator-name= member.nickname

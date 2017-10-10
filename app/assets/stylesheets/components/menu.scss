@@ -1,0 +1,34 @@
+.navbar-conductor {
+  background-color: rgba($brand-white, .75);
+  font-variant: small-caps;
+
+  a {
+    color: $body-color;
+    transition: all .25s ease-out;
+
+    &:hover,
+    &:focus,
+    &:active {
+      // transform: rotate(90deg);
+      transform: scale(1.2);
+      // opacity: .5;
+      color: $body-color;
+      text-decoration: none;
+    }
+  }
+}
+
+.navbar-nav-scroll {
+  max-width: 100%;
+//   height: 2.5rem;
+//   margin-top: .25rem;
+  overflow: hidden;
+//   font-size: .875rem;
+
+  .navbar-nav {
+//     padding-bottom: 2rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+}
