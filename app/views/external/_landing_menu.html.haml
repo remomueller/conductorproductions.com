@@ -1,7 +1,7 @@
 - if true
   #landing-menu.background-black-semi-transparent.text-white{ style: "position: fixed; top: 0; right: 0; left; 0;z-index: 1030;width: 100%;"}
     Landings:
-    = link_to "1", landing_path, class: "small-caps #{"text-white" if current_page?(landing_path)}"
+    = link_to "1", landing_path, class: "small-caps #{"text-white" if current_page?(landing_path) || current_page?(root_path)}"
     - (2..7).each do |number|
       = link_to number, landing_page_path(page: number), class: "small-caps #{"text-white" if current_page?(landing_page_path(page: number))}"
     %small.text-muted
