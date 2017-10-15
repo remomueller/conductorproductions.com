@@ -64,7 +64,7 @@ class ExternalController < ApplicationController
 
   # GET /team/:slug
   def member
-    render layout: "layouts/full_page"
+    render layout: "layouts/full_page_custom_header"
   end
 
   # GET /team/:slug/photo
