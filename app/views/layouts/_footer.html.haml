@@ -2,10 +2,17 @@
   .container
     .footer
       .nowrap
-        .float-right
-          = link_to "Contact Us", contact_path
+        .float-right.brand
+          &copy;
+          = link_to "CONDUCTOR", services_path
+          = Time.zone.today.year
 
-        &copy;
-        = Time.zone.today.year
-        .d-inline.d-md-none= link_to "Conductor", services_path
-        .d-none.d-md-inline= link_to "Conductor Productions", services_path
+        = link_to "https://www.facebook.com/ConductorCreative", class: "link-unstyled" do
+          %i.fa.fa-facebook
+        &nbsp;
+        = link_to "https://twitter.com/conductorprod", class: "link-unstyled" do
+          %i.fa.fa-twitter
+        &nbsp;
+        = link_to "http://www.linkedin.com/pub/noah-lydiard/3/b5b/749", class: "link-unstyled" do
+          %i.fa.fa-linkedin
+

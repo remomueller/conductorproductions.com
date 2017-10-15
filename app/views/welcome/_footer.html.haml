@@ -6,18 +6,18 @@
 
     - unless current_client? and params[:controller].in?(['client_project', 'client_session'])
       .pull-left
-        = link_to 'https://www.facebook.com/ConductorCreative', class: 'plain-link' do
+        = link_to 'https://www.facebook.com/ConductorCreative', class: 'link-unstyled' do
           %i.fa.fa-facebook
         &nbsp;
-        = link_to 'https://twitter.com/conductorprod', class: 'plain-link' do
+        = link_to 'https://twitter.com/conductorprod', class: 'link-unstyled' do
           %i.fa.fa-twitter
         &nbsp;
-        = link_to 'http://www.linkedin.com/pub/noah-lydiard/3/b5b/749', class: 'plain-link' do
+        = link_to 'http://www.linkedin.com/pub/noah-lydiard/3/b5b/749', class: 'link-unstyled' do
           %i.fa.fa-linkedin
 
     .pull-right.conductor-logo-footer
       - if current_client? and params[:controller] == 'client_project'
-        = link_to 'https://conductor.wetransfer.com', class: 'plain-link', target: '_blank' do
+        = link_to 'https://conductor.wetransfer.com', class: 'link-unstyled', target: '_blank' do
           SEND US FILES | up to 20gb
       - else
         &copy; CONDUCTOR

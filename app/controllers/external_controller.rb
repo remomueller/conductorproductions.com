@@ -14,6 +14,13 @@ class ExternalController < ApplicationController
     render layout: "layouts/full_page_no_header"
   end
 
+  # GET /landing/:page
+  def landing_page
+    page = params[:page].to_i
+    page = nil if page <= 1
+    render "landing#{page}", layout: "layouts/full_page_no_header"
+  end
+
   # GET /creators
   def creators
     render :team, layout: "layouts/full_page_custom_header"

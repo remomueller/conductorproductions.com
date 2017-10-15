@@ -36,6 +36,24 @@ $background-video-transparency: 0; // 0.6;
   }
 }
 
+
+// Animates without requiring JavaScript
+.background-white-animated {
+  animation: fade-white 5000ms;
+  animation-fill-mode: forwards;
+  background-color: rgba($brand-white, .6);
+}
+
+@keyframes fade-white {
+  0% {
+    background-color: rgba($brand-white, 1);
+  }
+
+  100% {
+    background-color: rgba($brand-white, .6);
+  }
+}
+
 // Animates without requiring JavaScript
 .background-black-animated {
   animation: fade-background 2000ms;

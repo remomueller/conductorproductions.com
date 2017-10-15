@@ -2,12 +2,4 @@
 
 = render "layouts/menu2"
 
-.page-box.last-box.d-flex.align-items-center
-  .container-fluid
-    - videos = Video.current.where(video_page: "work").order(:position)
-    .row
-      - videos.each_with_index do |video, index|
-        .col-6.col-sm-4.art{ class: "art-#{index % 2 + 1} art-sm-#{index % 3 + 1}" }
-          .artwork
-            - image_thumbnail = download_video_image_path(video, size: "preview")
-            = image_tag image_thumbnail
+= render "external/work_grid"

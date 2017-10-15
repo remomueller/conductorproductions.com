@@ -1,0 +1,20 @@
+= render "external/landing_menu", text: "Background with transparent flag and videos below."
+
+.page-box.d-flex.flex-column.justify-content-around.text-center.overflow-hidden
+  .container
+    .mb-3
+      = link_to "#work", data: { object: "scroll-anchor" } do
+        = image_tag "conductor-productions-logo.png", size: "128x128", style: "border: 1px solid #000;border-radius: .25rem;"
+    .small-caps
+      = link_to "#work", data: { object: "scroll-anchor" }, class: "link-unstyled" do
+        Creative that Performs
+
+    = link_to "#work", data: { object: "scroll-anchor" }, class: "scroll-down-arrow link-unstyled" do
+      %i.fa.fa-chevron-down
+
+#work
+- @menu_invisible = true
+-# @menu_transparent = false
+= render "layouts/menu2"
+
+= render "external/work_grid"

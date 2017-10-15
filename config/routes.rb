@@ -91,6 +91,8 @@ Rails.application.routes.draw do
     get :photo_member, path: "team/:member/photo"
     get "images/videos/:video_id", action: :download_video_image, as: :download_video_image
 
+    get :landing_page, path: "landing/:page"
+
     get :art
     get :contact
     post :submit_contact, path: "contact"

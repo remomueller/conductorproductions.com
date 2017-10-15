@@ -3,6 +3,7 @@
   %head
     = render "layouts/head"
   %body#top.full-page-no-header{ class: yield(:body_class) }
+    #shade
     = render "layouts/flash_bar"
     = yield :header
     = yield

@@ -1,0 +1,20 @@
+.full-video-frame
+  .full-video-frame-close
+    &times;
+  .full-video-frame-caption
+  .embed-responsive.embed-responsive-16by9
+    %iframe.embed-responsive-item{ src: "", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
+
+.page-box.last-box.d-flex.align-items-center.p-0.background-brand-white
+  .container-fluid
+    - videos = Video.current.where(video_page: "work").order(:position)
+    - vimeo_url = "//player.vimeo.com/video/"
+    - common_settings = "?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"
+
+    .row
+      - videos.each_with_index do |video, index|
+        - video_link = "#{vimeo_url}#{video.vimeo_number}#{common_settings}"
+        .col-6.col-sm-4.art{ class: "art-#{index % 2 + 1} art-sm-#{index % 3 + 1}" }
+          .artwork{ data: { object: "launch-full-page-video", video_src: video_link, video_caption: "Produced by CONDUCTOR" } }
+            - image_thumbnail = download_video_image_path(video, size: "preview")
+            = image_tag image_thumbnail

@@ -1,0 +1,14 @@
+%video.video-full-page-16x9{ autoplay: "true", loop: "true", muted: "true", plays_inline: "true" }
+  %source{ src: "https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119", type: "video/mp4" }
+
+%div= render "external/landing_menu", text: "Flag with background video"
+
+.page-box.last-box.d-flex.flex-column.justify-content-around.text-center
+
+  .container
+    .mb-3
+      = link_to work_path do
+        = image_tag "conductor-productions-logo.png", size: "128x128", style: "border: 1px solid #000;border-radius: .25rem;"
+    .small-caps
+      Creative that
+      = link_to "Performs", work_path, class: "link-unstyled"

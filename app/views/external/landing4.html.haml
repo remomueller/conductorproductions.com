@@ -1,0 +1,10 @@
+= render "external/landing_menu", text: "Just flag and opening paragraph."
+
+.page-box.last-box.d-flex.flex-column.justify-content-around.text-center
+  .container
+    .mb-3
+      = link_to work_path do
+        = image_tag "conductor-productions-logo.png", size: "128x128", style: "border: 1px solid #000;border-radius: .25rem;"
+    .small-caps
+      Creative that
+      = link_to "Performs", work_path, class: "link-unstyled"

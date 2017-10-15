@@ -1,0 +1,9 @@
+= render "external/landing_menu", text: "Grid of still with transparent curtain with flag (logo) and menu that moves up."
+
+.page-box.page-box-no-padding.d-flex.flex-column.justify-content-around.text-center{ style: "position: fixed;z-index: 80;background-color: rgba(255,255,255,0.8);" }
+  .container
+    .mb-3= image_tag "conductor-productions-logo.png", size: "128x128", style: "border: 1px solid #000;border-radius: .25rem;"
+    .small-caps
+      Creative that Performs
+
+= render "external/work_grid"

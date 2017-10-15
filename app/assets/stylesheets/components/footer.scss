@@ -1,6 +1,5 @@
 .footer-container {
-  background-color: $brand-black; // $p900-grey;
-  color: $navbar-dark-color;
+  background-color: $brand-white;
   bottom: 0;
   height: $footer-height;
   position: absolute;
@@ -12,8 +11,8 @@
   }
 
   a {
-    // color: $body-color;
-    color: $navbar-dark-color;
+    color: $body-color;
+    // color: $navbar-dark-color;
     transition: color .4s ease-out;
 
     &:hover,
@@ -22,8 +21,7 @@
     &.active,
     &.disabled,
     &[disabled] {
-      // color: darken($p500-blue, 15%);
-      color: $navbar-dark-hover-color;
+      // color: $navbar-dark-hover-color;
     }
   }
 

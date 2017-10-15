@@ -5,6 +5,7 @@ $art-padding: 1px;
 
   .artwork {
     overflow: hidden;
+    cursor: pointer;
 
     img {
       transition: transform .5s ease-out;

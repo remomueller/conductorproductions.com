@@ -26,6 +26,9 @@
 
 # Components
 #= require components/animations
+#= require components/landing
+#= require components/links
+#= require components/work
 
 # Extensions
 

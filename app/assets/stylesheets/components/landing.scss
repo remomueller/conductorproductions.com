@@ -32,3 +32,22 @@
     font-size: 2.5rem;
   }
 }
+
+.scroll-down-arrow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 1rem;
+  line-height: 1rem;
+  font-size: 2rem;
+  text-align: center;
+
+  transition: transform .5s ease-out;
+
+  @media (hover) {
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

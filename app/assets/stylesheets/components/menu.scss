@@ -6,6 +6,15 @@
     background-color: rgba($brand-white, .75);
   }
 
+  &.navbar-conductor-invisible {
+    transition: opacity .25s ease-out;
+    opacity: 0;
+
+    &.navbar-conductor-visible {
+      opacity: 1;
+    }
+  }
+
   a {
     color: $body-color;
     transition: all .25s ease-out;

@@ -14,6 +14,11 @@ class ExternalControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get landing page" do
+    get landing_page_url(page: 2)
+    assert_response :success
+  end
+
   test "should get services" do
     get services_url
     assert_response :success

@@ -1,0 +1,57 @@
+.noscroll {
+  overflow: hidden;
+}
+
+#shade {
+//  transition: opacity .25s ease-in-out;
+
+  opacity: 0.8;
+  // filter: alpha(opacity=80);
+
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  z-index: $zindex-modal-backdrop;
+  width: 100%;
+  height: 100%;
+  background-color: $brand-black;
+  display: none;
+}
+
+.full-video-frame {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: $zindex-modal;
+  max-height: 100vh;
+  max-width: 100vw;
+}
+
+.full-video-frame-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: $zindex-popover;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1rem;
+  padding: 1rem;
+  color: $brand-white;
+}
+
+.full-video-frame-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  color: $brand-white;
+  font-variant: small-caps;
+  text-align: center;
+  padding-bottom: 1rem;
+  pointer-events: none;
+  z-index: $zindex-popover;
+}
+
