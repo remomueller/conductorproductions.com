@@ -1,0 +1,14 @@
+= render "external/landing_menu", text: "Just flag and opening paragraph."
+
+.page-box.last-box.d-flex.flex-column.justify-content-around.text-center
+  .container
+    .mb-3
+      = link_to work_path do
+        = image_tag "conductor-productions-logo.png", size: "128x128", style: "border: 1px solid #000;border-radius: .25rem;"
+    .brand
+      Conductor produces original television commercials and long/short form videos for
+      brands and agencies. We don't just tell stories. Our work compels your customers to
+      love your brand, buy your product, use your service or go to your store. We work
+      really hard to make sure that our creative delivers above expected ROI for you or
+      your client. That's why we say:
+      = link_to "We make content that works.", work_path
