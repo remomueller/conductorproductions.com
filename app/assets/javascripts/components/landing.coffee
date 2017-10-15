@@ -7,3 +7,10 @@ $(window).on("scroll", ->
     else
       $(this).removeClass("navbar-conductor-visible")
 )
+
+$(document)
+  .on('click', "[data-object~='close-landing-menu']", ->
+    $("#landing-menu").remove()
+    false
+  )
+
