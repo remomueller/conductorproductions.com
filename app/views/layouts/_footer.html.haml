@@ -1,11 +1,18 @@
 .footer-container
-  .container
+  .container-fluid
     .footer
       .nowrap
-        .float-right.brand
-          &copy;
-          = link_to "CONDUCTOR", services_path
-          = Time.zone.today.year
+        .float-right.text-right.small{ style: "margin-top: -1.75rem;" }
+          = link_to "https://goo.gl/maps/SN9WNcZXGUB2", class: "link-unstyled" do
+            %i.fa.fa-map-marker
+            CONDUCTOR PRODUCTIONS
+            %br
+            142 Berkeley St, Floor 2
+            %br
+            Boston, MA 02116
+          %br
+          617-262-1400
+
 
         = link_to "https://www.facebook.com/ConductorCreative", class: "link-unstyled" do
           %i.fa.fa-facebook
@@ -15,4 +22,3 @@
         &nbsp;
         = link_to "http://www.linkedin.com/pub/noah-lydiard/3/b5b/749", class: "link-unstyled" do
           %i.fa.fa-linkedin
-

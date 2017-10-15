@@ -41,7 +41,7 @@ $background-video-transparency: 0; // 0.6;
 .background-white-animated {
   animation: fade-white 5000ms;
   animation-fill-mode: forwards;
-  background-color: rgba($brand-white, .6);
+  background-color: rgba($brand-white, .5);
 }
 
 @keyframes fade-white {
@@ -50,7 +50,7 @@ $background-video-transparency: 0; // 0.6;
   }
 
   100% {
-    background-color: rgba($brand-white, .6);
+    background-color: rgba($brand-white, .5);
   }
 }
 
