@@ -1,8 +1,10 @@
 - @title = "Creators"
 
+- @menu_transparent = false
+
 = render "layouts/menu2"
 
-.page-box.last-box.d-flex.align-items-center{ style: "overflow-y: hidden;" }
+.page-box.last-box.d-flex.align-items-center.overflow-hidden
   .container-fluid.p-0
     .text-center
       - Member.current.where(archived: false).where.not(nickname: [nil, ""]).order(:position).each do |member|
