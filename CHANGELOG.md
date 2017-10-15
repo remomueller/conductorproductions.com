@@ -3,6 +3,7 @@
 - **Gem Changes**
   - Updated to ruby 2.4.2
   - Updated to bootstrap 4.0.0.beta
+  - Updated to carrierwave 1.2.1
 
 ## 0.9.0
 
