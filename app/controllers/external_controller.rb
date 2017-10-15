@@ -4,6 +4,11 @@
 class ExternalController < ApplicationController
   before_action :set_member, only: [:member, :photo_member]
 
+  # GET /art
+  def art
+    render layout: "layouts/full_page_custom_header"
+  end
+
   # GET /landing
   def landing
     render layout: "layouts/full_page_no_header"
@@ -14,24 +19,25 @@ class ExternalController < ApplicationController
     render :team, layout: "layouts/full_page_custom_header"
   end
 
-  # GET /team
-  def team
-    render layout: "layouts/full_page_custom_header"
-  end
-
   # GET /services
   def services
     render layout: "layouts/full_page_custom_header"
   end
 
-  # GET /art
-  def art
+  # GET /team
+  def team
     render layout: "layouts/full_page_custom_header"
   end
 
-  # # GET /contact
-  # def contact
-  # end
+  # GET /work
+  def work
+    render layout: "layouts/full_page_custom_header"
+  end
+
+  # GET /contact
+  def contact
+    render layout: "layouts/full_page_custom_header"
+  end
 
   # POST /contact
   def submit_contact
@@ -39,7 +45,7 @@ class ExternalController < ApplicationController
       UserMailer.contact(params[:name], params[:email], params[:body]).deliver_now if EMAILS_ENABLED
       redirect_to contact_path, notice: "Thanks for getting in touch!"
     else
-      render :contact
+      render :contact, layout: "layouts/full_page_custom_header"
     end
   end
 

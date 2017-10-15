@@ -24,6 +24,11 @@ class ExternalControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get work" do
+    get work_url
+    assert_response :success
+  end
+
   test "should get version" do
     get version_url
     assert_response :success

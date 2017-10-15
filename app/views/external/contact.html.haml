@@ -1,27 +1,28 @@
 - @title = "Contact"
 
-= form_tag submit_contact_path, method: :post, class: "form-horizontal" do
-  .form-group
-    .col-sm-12
-      = text_field_tag :name, params[:name], class: "form-control", placeholder: "Name"
+= render "layouts/menu2"
 
-  .form-group
-    .col-sm-12
-      = email_field_tag :email, params[:email], class: "form-control", placeholder: "Email"
+.page-box.last-box.d-flex.align-items-center
+  .container
+    %h1.small-caps Contact
 
-  .form-group
-    .col-sm-12
-      = text_area_tag :body, params[:body], class: "form-control", placeholder: "Message", rows: 10
+    = form_with url: submit_contact_path, method: :post, local: true, class: "form-horizontal" do |form|
+      .form-group
+        = text_field_tag :name, params[:name], class: "form-control", placeholder: "Name"
 
-  - if params[:action] == "submit_contact" && (params[:name].blank? || params[:email].blank? || params[:body].blank?)
-    .form-group
-      .col-sm-12
-        .alert.alert-danger
-          %button.close{ type: "button", data: { dismiss: "alert" }, aria: { label: "Close" } }
-            %span{ aria: { hidden: "true" } } &times;
-          Please fill in all fields.
+      .form-group
+        = email_field_tag :email, params[:email], class: "form-control", placeholder: "Email"
 
-  .form-group
-    .col-sm-12
-      %button.btn.btn-primary.small-caps{ type: "submit" } Send Message
-      %span.small-caps or give us a call at 617-262-1400.
+      .form-group
+        = text_area_tag :body, params[:body], class: "form-control", placeholder: "Message", rows: 10
+
+      - if params[:action] == "submit_contact" && (params[:name].blank? || params[:email].blank? || params[:body].blank?)
+        .form-group
+          .alert.alert-danger
+            %button.close{ type: "button", data: { dismiss: "alert" }, aria: { label: "Close" } }
+              %span{ aria: { hidden: "true" } } &times;
+            Please fill in all fields.
+
+      .form-group
+        %button.btn.btn-primary.small-caps{ type: "submit" } Send Message
+        %span.small-caps or give us a call at 617-262-1400.
