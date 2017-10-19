@@ -1,5 +1,8 @@
 ## 0.8.1
 
+### Bug Fix
+- Fixed a bug that prevented passwords from being reset
+
 ## 0.8.0 (April 22, 2017)
 
 ### Enhancements
