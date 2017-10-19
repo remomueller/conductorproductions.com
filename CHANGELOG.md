@@ -17,6 +17,11 @@
   - Updated to haml 5.0.3
   - Updated to simplecov 0.15.1
 
+## 0.8.1 (October 19, 2017)
+
+### Bug Fix
+- Fixed a bug that prevented passwords from being reset
+
 ## 0.8.0 (April 22, 2017)
 
 ### Enhancements
