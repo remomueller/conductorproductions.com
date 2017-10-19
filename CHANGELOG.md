@@ -1,4 +1,4 @@
-## 0.8.1
+## 0.8.1 (October 19, 2017)
 
 ### Bug Fix
 - Fixed a bug that prevented passwords from being reset

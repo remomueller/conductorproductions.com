@@ -5,8 +5,8 @@ module WwwConductorproductionsCom
     MAJOR = 0
     MINOR = 8
     TINY = 1
-    BUILD = "pre" # 'pre', 'beta1', 'beta2', 'rc', 'rc2', nil
+    BUILD = nil # "pre", "beta1", "beta2", "rc", "rc2", nil
 
-    STRING = [MAJOR, MINOR, TINY, BUILD].compact.join('.')
+    STRING = [MAJOR, MINOR, TINY, BUILD].compact.join(".")
   end
 end
