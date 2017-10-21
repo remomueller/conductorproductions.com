@@ -8,6 +8,9 @@
   - Updated to carrierwave 1.2.1
   - Updated to haml 5.0.4
 
+### Tests
+- Added tests to assure user passwords can be reset
+
 ## 0.9.0 (October 21, 2017)
 
 ### Enhancements
