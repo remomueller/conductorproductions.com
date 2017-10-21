@@ -1,4 +1,4 @@
-## Bootstrap 4
+## 10.0.0
 
 - **Gem Changes**
   - Updated to ruby 2.4.2

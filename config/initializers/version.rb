@@ -2,10 +2,10 @@
 
 module WwwConductorproductionsCom
   module VERSION #:nodoc:
-    MAJOR = 0
-    MINOR = 9
+    MAJOR = 10
+    MINOR = 0
     TINY = 0
-    BUILD = "bootstrap4" # "pre", "beta1", "beta2", "rc", "rc2", nil
+    BUILD = "pre" # "pre", "beta1", "beta2", "rc", "rc2", nil
 
     STRING = [MAJOR, MINOR, TINY, BUILD].compact.join(".")
   end
