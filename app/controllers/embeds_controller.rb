@@ -31,7 +31,7 @@ class EmbedsController < ApplicationController
 
   # POST /embeds
   def create
-    @embed = current_user.embeds.where(project_id: @project.id).new(embed_params)
+    @embed = @project.embeds.where(user: current_user).new(embed_params)
     if @embed.save
       redirect_to [@project, @embed], notice: 'Embed was successfully created.'
     else

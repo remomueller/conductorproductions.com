@@ -2,14 +2,14 @@
 
 one:
   project: one
-  category: one
+  category: concepts
   user: system_admin
   primary_document: test_01.pdf
   document_uploaded_at: 2015-06-21 12:22:19
 
 two:
   project: one
-  category: one
+  category: concepts
   user: system_admin
   primary_document: test_01.pdf
   document: test_01.doc

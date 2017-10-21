@@ -10,7 +10,7 @@ class Document < ApplicationRecord
   include Deletable
 
   # Model Validation
-  validates :project_id, :user_id, :category_id, :primary_document, presence: true
+  validates :primary_document, presence: true
 
   # Model Relationships
   belongs_to :project

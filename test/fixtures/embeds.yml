@@ -2,7 +2,7 @@
 
 one:
   project: one
-  category: one
+  category: concepts
   user: system_admin
   embed_url: MyText
   archived: false
@@ -10,7 +10,7 @@ one:
 
 two:
   project: one
-  category: one
+  category: concepts
   user: system_admin
   embed_url: MyText
   archived: false

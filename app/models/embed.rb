@@ -6,7 +6,7 @@ class Embed < ApplicationRecord
   include Deletable
 
   # Model Validation
-  validates :project_id, :user_id, :category_id, :embed_url, presence: true
+  validates :embed_url, presence: true
 
   # Model Relationships
   belongs_to :project

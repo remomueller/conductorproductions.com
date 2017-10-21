@@ -6,7 +6,6 @@ class GalleryPhoto < ApplicationRecord
   mount_uploader :photo, ResizableImageUploader
 
   # Model Validation
-  validates :project_id, :gallery_id, :user_id, presence: true
 
   # Model Relationships
   belongs_to :project

@@ -6,7 +6,7 @@ class Category < ApplicationRecord
   include Deletable
 
   # Model Validation
-  validates :top_level, :name, :slug, :project_id, :user_id, presence: true
+  validates :top_level, :name, :slug, presence: true
   validates :slug, uniqueness: { scope: [:project_id, :deleted] }
   validates :slug, format: { with: /\A[a-z][a-z0-9\-]*\Z/ }
 

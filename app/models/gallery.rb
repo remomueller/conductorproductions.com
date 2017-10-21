@@ -6,7 +6,7 @@ class Gallery < ApplicationRecord
   include Deletable
 
   # Model Validation
-  validates :project_id, :user_id, :category_id, :name, presence: true
+  validates :name, presence: true
   validates :slug, uniqueness: { scope: [:project_id, :deleted] }
   validates :slug, format: { with: /\A[a-z][a-z0-9\-]*\Z/ }
 

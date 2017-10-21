@@ -6,13 +6,12 @@ class ProjectUser < ApplicationRecord
   include Forkable
 
   # Model Validation
-  validates :creator_id, :project_id, presence: true
   validates :invite_token, uniqueness: true, allow_nil: true
 
   # Model Relationships
   belongs_to :creator, class_name: 'User', foreign_key: 'creator_id'
   belongs_to :project
-  belongs_to :user
+  belongs_to :user, optional: true
 
   def send_user_invited_email_in_background!
     set_invite_token

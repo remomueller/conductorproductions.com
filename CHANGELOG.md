@@ -1,6 +1,8 @@
 ## 10.0.0
 
+### Enhancements
 - **Gem Changes**
+  - Updated to rails 5.1 defaults
   - Updated to ruby 2.4.2
   - Updated to bootstrap 4.0.0.beta2
   - Updated to carrierwave 1.2.1
