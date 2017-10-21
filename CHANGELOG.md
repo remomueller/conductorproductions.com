@@ -17,6 +17,12 @@
   - Updated to haml 5.0.3
   - Updated to simplecov 0.15.1
 
+## 0.8.2 (October 21, 2017)
+
+### Enhancements
+- **Gem Changes**
+  - Updated to rails 5.0.6
+
 ## 0.8.1 (October 19, 2017)
 
 ### Bug Fix
