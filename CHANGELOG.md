@@ -1,4 +1,4 @@
-## 0.8.2
+## 0.8.2 (October 21, 2017)
 
 ### Enhancements
 - **Gem Changes**
