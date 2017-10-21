@@ -5,5 +5,5 @@ rvm:
 gemfile: "gems.rb"
 before_script:
   - "ruby lib/initial_setup.rb ../.travis_setup"
-  - "psql -c 'create database www_conductorproductions_com_test;' -U postgres"
+  - "psql -c 'create database conductor_test;' -U postgres"
   - "rails db:migrate"

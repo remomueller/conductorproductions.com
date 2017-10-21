@@ -18,7 +18,7 @@ require "rails/test_unit/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module WwwConductorproductionsCom
+module Conductor
   # Conductor provides videos, a client portal, and an administrative backend.
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module WwwConductorproductionsCom
+module Conductor
   module VERSION #:nodoc:
     MAJOR = 10
     MINOR = 0

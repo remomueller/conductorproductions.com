@@ -42,14 +42,14 @@ class ExternalControllerTest < ActionDispatch::IntegrationTest
   test "should get version as json" do
     get version_url(format: "json")
     version = JSON.parse(response.body)
-    assert_equal WwwConductorproductionsCom::VERSION::STRING, version["version"]["string"]
-    assert_equal WwwConductorproductionsCom::VERSION::MAJOR, version["version"]["major"]
-    assert_equal WwwConductorproductionsCom::VERSION::MINOR, version["version"]["minor"]
-    assert_equal WwwConductorproductionsCom::VERSION::TINY, version["version"]["tiny"]
-    if WwwConductorproductionsCom::VERSION::BUILD.nil?
+    assert_equal Conductor::VERSION::STRING, version["version"]["string"]
+    assert_equal Conductor::VERSION::MAJOR, version["version"]["major"]
+    assert_equal Conductor::VERSION::MINOR, version["version"]["minor"]
+    assert_equal Conductor::VERSION::TINY, version["version"]["tiny"]
+    if Conductor::VERSION::BUILD.nil?
       assert_nil version["version"]["build"]
     else
-      assert_equal WwwConductorproductionsCom::VERSION::BUILD, version["version"]["build"]
+      assert_equal Conductor::VERSION::BUILD, version["version"]["build"]
     end
     assert_response :success
   end

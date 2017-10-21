@@ -5,7 +5,7 @@ development:
   encoding: unicode
   pool: 5
   timeout: 5000
-  database: www_conductorproductions_com_development
+  database: conductor_development
   username: <%= print "Enter Database Username: "; u = gets.chomp(); u %>
   <%= print "Enter Database Password: "; p = gets.chomp(); if p == '' then p = '# password:' else p = "password: #{p}" end; p %>
   <%= print "Enter Database Socket: "; s = gets.chomp(); if s == '' then s = '# socket:' else s = "socket: #{s}" end; s %>
@@ -19,7 +19,7 @@ test:
   encoding: unicode
   pool: 5
   timeout: 5000
-  database: www_conductorproductions_com_test
+  database: conductor_test
   username: <%= u %>
   <%= p %>
   <%= s %>
@@ -30,7 +30,7 @@ production:
   encoding: unicode
   pool: 5
   timeout: 5000
-  database: www_conductorproductions_com_production
+  database: conductor_production
   username: <%= u %>
   <%= p %>
   <%= s %>
