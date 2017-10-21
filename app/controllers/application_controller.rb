@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def devise_login?
-    params[:controller] == 'sessions' && params[:action] == 'create'
+    params[:controller] == "sessions" && params[:action] == "create"
   end
 
   def configure_permitted_parameters
@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
 
   def check_system_admin
     return if current_user.system_admin?
-    redirect_to root_path, alert: 'You do not have sufficient privileges to access that page.'
+    redirect_to root_path, alert: "You do not have sufficient privileges to access that page."
   end
 
   def project_ids

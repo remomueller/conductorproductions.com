@@ -50,7 +50,7 @@ class DocumentsController < ApplicationController
     @document = current_user.documents.where(project_id: @project.id).new(document_params)
 
     if @document.save
-      redirect_to [@project, @document], notice: 'Document was successfully created.'
+      redirect_to [@project, @document], notice: "Document was successfully created."
     else
       render :new
     end
@@ -61,7 +61,7 @@ class DocumentsController < ApplicationController
   def update
     if @document.update(document_params)
       respond_to do |format|
-        format.html { redirect_to [@project, @document], notice: 'Document was successfully updated.' }
+        format.html { redirect_to [@project, @document], notice: "Document was successfully updated." }
         format.js
       end
     else
@@ -72,7 +72,7 @@ class DocumentsController < ApplicationController
   # DELETE /documents/1
   def destroy
     @document.destroy
-    redirect_to project_documents_path(@project), notice: 'Document was successfully deleted.'
+    redirect_to project_documents_path(@project), notice: "Document was successfully deleted."
   end
 
   private
@@ -86,7 +86,7 @@ class DocumentsController < ApplicationController
   end
 
   def document_params
-    params[:document] ||= { blank: '1' }
+    params[:document] ||= { blank: "1" }
     params[:document][:document_uploaded_at] = Time.zone.now if params[:document][:primary_document].present?
     params.require(:document).permit(
       :category_id, :primary_document, :primary_document_cache,

@@ -33,7 +33,7 @@ class EmbedsController < ApplicationController
   def create
     @embed = @project.embeds.where(user: current_user).new(embed_params)
     if @embed.save
-      redirect_to [@project, @embed], notice: 'Embed was successfully created.'
+      redirect_to [@project, @embed], notice: "Embed was successfully created."
     else
       render :new
     end
@@ -44,7 +44,7 @@ class EmbedsController < ApplicationController
   def update
     if @embed.update(embed_params)
       respond_to do |format|
-        format.html { redirect_to [@project, @embed], notice: 'Embed was successfully updated.' }
+        format.html { redirect_to [@project, @embed], notice: "Embed was successfully updated." }
         format.js
       end
     else
@@ -55,7 +55,7 @@ class EmbedsController < ApplicationController
   # DELETE /embeds/1
   def destroy
     @embed.destroy
-    redirect_to project_embeds_path(@project), notice: 'Embed was successfully deleted.'
+    redirect_to project_embeds_path(@project), notice: "Embed was successfully deleted."
   end
 
   private
