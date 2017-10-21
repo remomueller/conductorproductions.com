@@ -6,7 +6,7 @@
   - Updated to carrierwave 1.2.1
   - Updated to haml 5.0.4
 
-## 0.9.0
+## 0.9.0 (October 21, 2017)
 
 ### Enhancements
 - **General Changes**
@@ -24,6 +24,12 @@
   - Updated to carrierwave 1.1.0
   - Updated to haml 5.0.3
   - Updated to simplecov 0.15.1
+
+## 0.8.2 (October 21, 2017)
+
+### Enhancements
+- **Gem Changes**
+  - Updated to rails 5.0.6
 
 ## 0.8.1 (October 19, 2017)
 
