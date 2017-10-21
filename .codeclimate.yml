@@ -58,6 +58,5 @@ exclude_paths:
 - "CHANGELOG.md"
 - "config.ru"
 - COPYRIGHT
-- Gemfile
 - Rakefile
 - "README.md"
