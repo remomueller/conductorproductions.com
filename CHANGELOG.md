@@ -1,4 +1,4 @@
-## 0.9.0
+## 0.9.0 (October 21, 2017)
 
 ### Enhancements
 - **General Changes**
