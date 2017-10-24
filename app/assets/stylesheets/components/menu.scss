@@ -8,7 +8,7 @@
 
   &.navbar-conductor-invisible,
   &.navbar-conductor-invisible-offset {
-    transition: opacity .25s ease-out;
+    transition: opacity 250ms ease-in;
     opacity: 0;
 
     &.navbar-conductor-visible {
@@ -46,5 +46,15 @@
     overflow-y: hidden;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
+  }
+}
+
+
+.chevron-visible {
+  opacity: 0;
+
+  &.chevron-invisible {
+    transition: opacity 250ms ease-in;
+    opacity: 1;
   }
 }
