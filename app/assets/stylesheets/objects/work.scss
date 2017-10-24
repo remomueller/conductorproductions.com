@@ -27,9 +27,12 @@
   right: 0;
   bottom: 0;
   position: fixed;
+  padding-top: ($spacer * 3);
+  padding-bottom: ($spacer * 3);
   z-index: $zindex-modal;
   max-height: 100vh;
   max-width: 100vw;
+  background-color: $brand-black;
 }
 
 .full-video-frame-close {
@@ -42,6 +45,14 @@
   line-height: 1rem;
   padding: 1rem;
   color: $brand-white;
+
+  transition: transform 250ms ease-out;
+
+  @media (hover) {
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
 }
 
 .full-video-frame-caption {
