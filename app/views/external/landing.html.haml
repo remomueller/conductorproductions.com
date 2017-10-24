@@ -1,7 +1,8 @@
 %video.video-full-page-16x9{ autoplay: "true", loop: "false", muted: "true", plays_inline: "true" }
   %source{ src: "https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119", type: "video/mp4" }
 
-%div= render "external/landing_menu", text: "Flag with background video and transparent curtain followed by videos"
+- if false
+  %div= render "external/landing_menu", text: "Flag with background video and transparent curtain followed by videos"
 
 .page-box.d-flex.flex-column.justify-content-around.text-center.background-white-animated.overflow-hidden
   .container
@@ -15,10 +16,21 @@
     = link_to "#work", data: { object: "scroll-anchor" }, class: "scroll-down-arrow link-unstyled" do
       %i.fa.fa-chevron-down
 
-#work
 - @menu_invisible = false
 - @menu_transparent = true
-
+- @menu_invisible_offset = true
 = render "layouts/menu2"
+
+#work
+.page-box
+  .container
+  = link_to "#work2", data: { object: "scroll-anchor" }, class: "scroll-down-arrow link-unstyled" do
+    %i.fa.fa-chevron-down
+
+
+%div{ style: "position: relative;" }
+  #work2{ style: "position: absolute; top: -102px;" }
+
+
 
 = render "external/work_grid"

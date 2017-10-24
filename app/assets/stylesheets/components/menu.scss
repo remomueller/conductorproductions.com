@@ -6,7 +6,8 @@
     background-color: rgba($brand-white, .75);
   }
 
-  &.navbar-conductor-invisible {
+  &.navbar-conductor-invisible,
+  &.navbar-conductor-invisible-offset {
     transition: opacity .25s ease-out;
     opacity: 0;
 

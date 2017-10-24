@@ -1,5 +1,4 @@
 @onFinish2 = (id) ->
-  console.log ".full-video-frame.click()"
   $(".full-video-frame").click()
 
 $(document)
