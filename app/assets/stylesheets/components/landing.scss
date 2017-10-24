@@ -33,7 +33,8 @@
   }
 }
 
-.scroll-down-arrow {
+.scroll-down-arrow,
+.scroll-down-arrow-visible {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -43,11 +44,19 @@
   font-size: 2rem;
   text-align: center;
 
-  transition: transform .5s ease-out;
+  transition: transform .5s ease-out, opacity 250ms ease-in;
 
   @media (hover) {
     &:hover {
       transform: scale(1.2);
     }
+  }
+}
+
+.scroll-down-arrow-visible {
+  opacity: 0;
+
+  &.scroll-down-arrow-invisible {
+    opacity: 1;
   }
 }

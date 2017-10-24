@@ -4,16 +4,16 @@
 - if false
   %div= render "external/landing_menu", text: "Flag with background video and transparent curtain followed by videos"
 
-.page-box.d-flex.flex-column.justify-content-around.text-center.background-white-animated.overflow-hidden
+.page-box.overflow-hidden.d-flex.flex-column.justify-content-around.text-center.background-white-animated
   .container
     .mb-3
-      = link_to "#work", data: { object: "scroll-anchor" } do
+      = link_to "#curtain", data: { object: "scroll-anchor" } do
         = image_tag "conductor-productions-logo.png", size: "128x128", style: "border: 1px solid #000;border-radius: .25rem;"
     .small-caps
-      = link_to "#work", data: { object: "scroll-anchor" }, class: "link-unstyled" do
+      = link_to "#curtain", data: { object: "scroll-anchor" }, class: "link-unstyled" do
         Creative that Performs
 
-    = link_to "#work", data: { object: "scroll-anchor" }, class: "scroll-down-arrow link-unstyled" do
+    = link_to "#curtain", data: { object: "scroll-anchor" }, class: "scroll-down-arrow link-unstyled" do
       %i.fa.fa-chevron-down
 
 - @menu_invisible = false
@@ -21,15 +21,15 @@
 - @menu_invisible_offset = true
 = render "layouts/menu2"
 
-#work
-.page-box
+#curtain
+.page-box.overflow-hidden
   .container
-    = link_to "#work2", data: { object: "scroll-anchor" }, class: "scroll-down-arrow link-unstyled chevron-visible" do
+    = link_to "#videos", data: { object: "scroll-anchor" }, class: "scroll-down-arrow-visible link-unstyled" do
       %i.fa.fa-chevron-down.text-white
 
 
 %div{ style: "position: relative;" }
-  #work2{ style: "position: absolute; top: -102px;" }
+  #videos{ style: "position: absolute; top: -102px;" }
 
 
 

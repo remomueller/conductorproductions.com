@@ -15,12 +15,12 @@ $(window).on("scroll", ->
     else
       $(this).removeClass("navbar-conductor-visible")
 
-  $(".chevron-visible").each ->
+  $(".scroll-down-arrow-visible").each ->
     pos = $(this).offset().top
     if pos - (windowHeight * 1 / 3) <= winTop
-      $(this).removeClass("chevron-invisible")
+      $(this).removeClass("scroll-down-arrow-invisible")
     else
-      $(this).addClass("chevron-invisible")
+      $(this).addClass("scroll-down-arrow-invisible")
 )
 
 $(document)

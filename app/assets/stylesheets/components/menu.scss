@@ -48,13 +48,3 @@
     -webkit-overflow-scrolling: touch;
   }
 }
-
-
-.chevron-visible {
-  opacity: 0;
-
-  &.chevron-invisible {
-    transition: opacity 250ms ease-in;
-    opacity: 1;
-  }
-}
