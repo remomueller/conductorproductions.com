@@ -6,12 +6,17 @@
 
 .page-box.overflow-hidden.d-flex.flex-column.justify-content-around.text-center.background-white-animated
   .container
-    .mb-3
-      = link_to "#curtain", data: { object: "scroll-anchor" } do
-        = image_tag "conductor-productions-logo.png", size: "128x128", style: "border: 1px solid #000;border-radius: .25rem;"
-    .small-caps
-      = link_to "#curtain", data: { object: "scroll-anchor" }, class: "link-unstyled" do
-        Creative that Performs
+    = link_to "#curtain", data: { object: "scroll-anchor" } do
+      = image_tag "conductor-productions-logo.png", style: "border: 1px solid #000;border-radius: .25rem;", class: "landing-flag"
+    .landing-tagline
+      = link_to "#curtain", data: { object: "scroll-anchor" }, class: "link-unstyled", style: "position: relative;" do
+        - if true
+          CONDUCTOR PRODUCTIONS
+        - else
+          .revolve-a
+            CREATIVE THAT PERFORMS
+          .revolve-b
+            CONDUCTOR PRODUCTIONS
 
     = link_to "#curtain", data: { object: "scroll-anchor" }, class: "scroll-down-arrow link-unstyled" do
       %i.fa.fa-chevron-down

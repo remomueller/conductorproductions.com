@@ -60,3 +60,73 @@
     opacity: 1;
   }
 }
+
+.landing-flag {
+  width: 128px;
+  height: 128px;
+  margin-bottom: $spacer * 2;
+  transition: all 200ms;
+
+  @include media-breakpoint-up(md) {
+    width: 160px;
+    height: 160px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 192px;
+    height: 192px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: 256px;
+    height: 256px;
+    // margin-bottom: $spacer;
+  }
+}
+
+.landing-tagline {
+  font-weight: bold;
+
+  @include media-breakpoint-up(md) {
+    font-size: 1.25rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1.5rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 1.75rem;
+  }
+}
+
+@keyframes fade-in-and-out {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.revolve-a,
+.revolve-b {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  animation: fade-in-and-out 2s linear;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.revolve-a {
+  opacity: 0;
+}
+
+.revolve-b {
+  opacity: 0;
+  animation-delay: 2s;
+}
