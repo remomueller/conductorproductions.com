@@ -15,7 +15,8 @@ $(document)
     $(".full-video-frame").addClass("d-flex")
     url = $(this).data('video-src') || ""
     $(".full-video-frame iframe").attr('src', url)
-    $(".full-video-frame .full-video-frame-caption").text($(this).data("video-caption"))
+    $(".full-video-frame .full-video-frame-caption-top").text($(this).data("video-heading"))
+    $(".full-video-frame .full-video-frame-caption-bottom").text($(this).data("video-caption"))
 
     iframe = $(".full-video-frame iframe")[0]
     # player = $f(iframe)

@@ -17,7 +17,7 @@ $(window).on("scroll", ->
 
   $(".scroll-down-arrow-visible").each ->
     pos = $(this).offset().top
-    if pos - (windowHeight * 1 / 3) <= winTop
+    if pos - (windowHeight / 3) <= winTop
       $(this).removeClass("scroll-down-arrow-invisible")
     else
       $(this).addClass("scroll-down-arrow-invisible")
