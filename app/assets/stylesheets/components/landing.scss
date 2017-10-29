@@ -66,6 +66,12 @@
   height: 128px;
   margin-bottom: $spacer * 2;
   transition: all 200ms;
+  border: 1px solid $brand-black;
+  border-radius: .25rem;
+
+  &.landing-flag-circle {
+    border-radius: 128px;
+  }
 
   @include media-breakpoint-up(md) {
     width: 160px;
@@ -129,4 +135,68 @@
 .revolve-b {
   opacity: 0;
   animation-delay: 2s;
+}
+
+.landing-logo-shadow {
+  position: absolute;
+}
+
+$logo-background-shadow: rgba($brand-black, .9);
+
+.landing-logo-shadow-1,
+.landing-logo-shadow-2 {
+  right: -100vw;
+  left: calc(50vw + 1px);
+  height: 100px;
+  background-color: $logo-background-shadow;
+}
+
+.landing-logo-shadow-1 {
+  transform: rotate(-45deg);
+  transform-origin: left bottom;
+  top: calc(50vh - 100px);
+}
+
+.landing-logo-shadow-2 {
+  transform: rotate(45deg);
+  transform-origin: left top;
+  top: calc(50vh);
+}
+
+.landing-logo-shadow-3,
+.landing-logo-shadow-4 {
+  background-color: $logo-background-shadow;
+  right: 50vw;
+  left: 0;
+  right: calc(50vw + 70px);
+}
+
+.landing-logo-shadow-3 {
+  transform-origin: left bottom;
+  top: calc(50vh + 70px);
+  bottom: 0;
+}
+
+.landing-logo-shadow-4 {
+  transform-origin: left bottom;
+  bottom: calc(50vh + 70px);
+  top: 0;
+}
+
+.landing-logo-shadow-5,
+.landing-logo-shadow-6 {
+  left: calc(50vw - 70px);
+  width: 0;
+  height: 0;
+  border-top: 100vw solid transparent;
+  border-bottom: 100vw solid transparent;
+  border-left: 100vw solid $logo-background-shadow;
+}
+
+.landing-logo-shadow-5 {
+  bottom: calc(50vh + 70px);
+}
+
+.landing-logo-shadow-6 {
+  top: calc(50vh + 70px);
 }

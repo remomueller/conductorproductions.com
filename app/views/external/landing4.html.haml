@@ -1,10 +1,31 @@
-= render "external/landing_menu", text: "Just flag and opening paragraph."
+%video.video-full-page-16x9{ autoplay: "true", loop: "false", muted: "true", plays_inline: "true" }
+  %source{ src: "https://player.vimeo.com/external/239169746.hd.mp4?s=2ce411d31754af0c66b9543f0560190b8333b796&profile_id=174", type: "video/mp4" }
 
-.page-box.last-box.d-flex.flex-column.justify-content-around.text-center
+= link_to "#curtain", data: { object: "scroll-anchor" } do
+  .page-box.overflow-hidden.d-flex.flex-column.justify-content-around.text-center.background-white-2
+    .landing-logo-shadow.landing-logo-shadow-1
+    .landing-logo-shadow.landing-logo-shadow-2
+    .landing-logo-shadow.landing-logo-shadow-3
+    .landing-logo-shadow.landing-logo-shadow-4
+    .landing-logo-shadow.landing-logo-shadow-5
+    .landing-logo-shadow.landing-logo-shadow-6
+    .container
+      = link_to "#curtain", data: { object: "scroll-anchor" }, class: "scroll-down-arrow link-unstyled" do
+        %i.fa.fa-chevron-down
+
+- @menu_invisible = false
+- @menu_transparent = true
+- @menu_invisible_offset = true
+= render "layouts/menu2"
+
+#curtain
+.page-box.overflow-hidden
   .container
-    .mb-3
-      = link_to work_path do
-        = image_tag "conductor-productions-logo.png", size: "128x128", style: "border: 1px solid #000;border-radius: .25rem;"
-    .small-caps
-      Creative that
-      = link_to "Performs", work_path, class: "link-unstyled"
+    = link_to "#videos", data: { object: "scroll-anchor" }, class: "scroll-down-arrow-visible link-unstyled" do
+      %i.fa.fa-chevron-down.text-white
+
+
+%div{ style: "position: relative;" }
+  #videos{ style: "position: absolute; top: -102px;" }
+
+= render "external/work_grid"

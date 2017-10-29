@@ -1,13 +1,10 @@
 %video.video-full-page-16x9{ autoplay: "true", loop: "false", muted: "true", plays_inline: "true" }
   %source{ src: "https://player.vimeo.com/external/239169746.hd.mp4?s=2ce411d31754af0c66b9543f0560190b8333b796&profile_id=174", type: "video/mp4" }
 
-- if false
-  %div= render "external/landing_menu", text: "Flag with background video and transparent curtain followed by videos"
-
 .page-box.overflow-hidden.d-flex.flex-column.justify-content-around.text-center.background-white-animated
   .container
     = link_to "#curtain", data: { object: "scroll-anchor" } do
-      = image_tag "conductor-productions-logo.png", style: "border: 1px solid #000;border-radius: .25rem;", class: "landing-flag"
+      = image_tag "conductor-productions-logo.png", class: "landing-flag"
     .landing-tagline
       = link_to "#curtain", data: { object: "scroll-anchor" }, class: "link-unstyled", style: "position: relative;" do
         - if true
@@ -35,7 +32,5 @@
 
 %div{ style: "position: relative;" }
   #videos{ style: "position: absolute; top: -102px;" }
-
-
 
 = render "external/work_grid"

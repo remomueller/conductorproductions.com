@@ -1,20 +1,29 @@
-= render "external/landing_menu", text: "Background with transparent flag and videos below."
+%video.video-full-page-16x9{ autoplay: "true", loop: "false", muted: "true", plays_inline: "true" }
+  %source{ src: "https://player.vimeo.com/external/239169746.hd.mp4?s=2ce411d31754af0c66b9543f0560190b8333b796&profile_id=174", type: "video/mp4" }
 
-.page-box.d-flex.flex-column.justify-content-around.text-center.overflow-hidden
+.page-box.overflow-hidden.d-flex.flex-column.justify-content-around.text-center.background-white-animated
   .container
-    .mb-3
-      = link_to "#work", data: { object: "scroll-anchor" } do
-        = image_tag "conductor-productions-logo.png", size: "128x128", style: "border: 1px solid #000;border-radius: .25rem;"
-    .small-caps
-      = link_to "#work", data: { object: "scroll-anchor" }, class: "link-unstyled" do
-        Creative that Performs
+    %div{ style: "font-size: 0;" }
+      = image_tag "splash/top-left-no-footer.png"
+      = image_tag "splash/top-mid.png"
+      = image_tag "splash/top-right.png"
 
-    = link_to "#work", data: { object: "scroll-anchor" }, class: "scroll-down-arrow link-unstyled" do
+    = link_to "#curtain", data: { object: "scroll-anchor" }, class: "scroll-down-arrow link-unstyled" do
       %i.fa.fa-chevron-down
 
-#work
-- @menu_invisible = true
--# @menu_transparent = false
+- @menu_invisible = false
+- @menu_transparent = true
+- @menu_invisible_offset = true
 = render "layouts/menu2"
+
+#curtain
+.page-box.overflow-hidden
+  .container
+    = link_to "#videos", data: { object: "scroll-anchor" }, class: "scroll-down-arrow-visible link-unstyled" do
+      %i.fa.fa-chevron-down.text-white
+
+
+%div{ style: "position: relative;" }
+  #videos{ style: "position: absolute; top: -102px;" }
 
 = render "external/work_grid"
