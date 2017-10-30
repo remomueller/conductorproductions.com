@@ -18,10 +18,10 @@ body {
 }
 
 ::selection {
-  background-color: rgba($p200-blue, .99);
-  color: $body-color;
+  background-color: rgba($brand-black, .99);
+  color: $brand-white;
 }
 
 :focus {
-  outline-color: $p200-blue !important;
+  outline-color: $brand-black !important;
 }

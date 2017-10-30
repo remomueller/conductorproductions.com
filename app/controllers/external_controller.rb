@@ -59,7 +59,7 @@ class ExternalController < ApplicationController
   # GET /version
   # GET /version.json
   def version
-    render layout: "layouts/full_page"
+    render layout: "layouts/full_page_no_header_no_footer"
   end
 
   # GET /team/:slug
