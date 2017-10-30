@@ -143,10 +143,12 @@
 
 $logo-background-shadow: rgba($brand-black, .9);
 
+$adjacent-edge: 70.7106781187px;
+
 .landing-logo-shadow-1,
 .landing-logo-shadow-2 {
   right: -100vw;
-  left: calc(50vw + 1px);
+  left: calc(50% - 1px);
   height: 100px;
   background-color: $logo-background-shadow;
 }
@@ -154,38 +156,37 @@ $logo-background-shadow: rgba($brand-black, .9);
 .landing-logo-shadow-1 {
   transform: rotate(-45deg);
   transform-origin: left bottom;
-  top: calc(50vh - 100px);
+  top: calc(50% - 100px);
 }
 
 .landing-logo-shadow-2 {
   transform: rotate(45deg);
   transform-origin: left top;
-  top: calc(50vh);
+  top: 50%;
 }
 
 .landing-logo-shadow-3,
 .landing-logo-shadow-4 {
   background-color: $logo-background-shadow;
-  right: 50vw;
   left: 0;
-  right: calc(50vw + 70px);
+  right: calc(50% + #{$adjacent-edge});
 }
 
 .landing-logo-shadow-3 {
   transform-origin: left bottom;
-  top: calc(50vh + 70px);
+  top: calc(50vh + #{$adjacent-edge});
   bottom: 0;
 }
 
 .landing-logo-shadow-4 {
   transform-origin: left bottom;
-  bottom: calc(50vh + 70px);
+  bottom: calc(50vh + #{$adjacent-edge});
   top: 0;
 }
 
 .landing-logo-shadow-5,
 .landing-logo-shadow-6 {
-  left: calc(50vw - 70px);
+  left: calc(50% - #{$adjacent-edge});
   width: 0;
   height: 0;
   border-top: 100vw solid transparent;
@@ -194,9 +195,9 @@ $logo-background-shadow: rgba($brand-black, .9);
 }
 
 .landing-logo-shadow-5 {
-  bottom: calc(50vh + 70px);
+  bottom: calc(50vh + #{$adjacent-edge});
 }
 
 .landing-logo-shadow-6 {
-  top: calc(50vh + 70px);
+  top: calc(50vh + #{$adjacent-edge});
 }
