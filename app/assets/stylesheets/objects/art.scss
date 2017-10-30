@@ -6,8 +6,9 @@ $art-padding: 1px;
   .artwork {
     overflow: hidden;
     cursor: pointer;
-
     img {
+      @include ignore-selection;
+
       transition: transform .5s ease-out;
       width: 100%;
 

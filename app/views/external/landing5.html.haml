@@ -1,14 +1,36 @@
-%video.video-full-page-16x9{ autoplay: "true", loop: "true", muted: "true", plays_inline: "true" }
-  %source{ src: "https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119", type: "video/mp4" }
+%video.video-full-page-16x9{ autoplay: "true", loop: "false", muted: "true", plays_inline: "true" }
+  %source{ src: "https://player.vimeo.com/external/239169746.hd.mp4?s=2ce411d31754af0c66b9543f0560190b8333b796&profile_id=174", type: "video/mp4" }
 
-%div= render "external/landing_menu", text: "Flag with background video"
+= link_to "#curtain", data: { object: "scroll-anchor" }, class: "link-unstyled" do
+  .page-box.overflow-hidden.d-flex.flex-column.justify-content-around.text-center.background-white-2
+    .landing-logo-shadow.landing-logo-shadow-1
+    .landing-logo-shadow.landing-logo-shadow-2
+    .landing-logo-shadow.landing-logo-shadow-3
+    .landing-logo-shadow.landing-logo-shadow-4
+    .landing-logo-shadow.landing-logo-shadow-5
+    .landing-logo-shadow.landing-logo-shadow-6
+    .landing-logo-shadow.landing-logo-text.brand-bold
+      Conductor
+      %span.d-none.d-xl-inline Productions
+    .landing-logo-shadow.landing-logo-tagline.brand
+      Creative that Performs
+    .container
+      = link_to "#curtain", data: { object: "scroll-anchor" }, class: "scroll-down-arrow-visible link-unstyled" do
+        %i.fa.fa-chevron-down.animated-letter.animation-delay-1000
 
-.page-box.last-box.d-flex.flex-column.justify-content-around.text-center
+- @menu_invisible = false
+- @menu_transparent = true
+- @menu_invisible_offset = true
+= render "layouts/menu2"
 
+#curtain
+.page-box.overflow-hidden
   .container
-    .mb-3
-      = link_to work_path do
-        = image_tag "conductor-productions-logo.png", size: "128x128", style: "border: 1px solid #000;border-radius: .25rem;"
-    .small-caps
-      = link_to work_path, class: "link-unstyled" do
-        Creative that Performs
+    = link_to "#videos", data: { object: "scroll-anchor" }, class: "scroll-down-arrow-visible link-unstyled" do
+      %i.fa.fa-chevron-down.text-white
+
+%div{ style: "position: relative;" }
+  #videos{ style: "position: absolute; top: -102px;" }
+
+#videos
+= render "external/work_grid"

@@ -21,6 +21,12 @@ $(window).on("scroll", ->
       $(this).removeClass("scroll-down-arrow-invisible")
     else
       $(this).addClass("scroll-down-arrow-invisible")
+
+  # $(".video-full-page-16x9").each ->
+  #   if winTop > windowHeight
+  #     $(this).css("top", "calc(50% - #{winTop - windowHeight}px)");
+  #   else
+  #     $(this).css("top", "");
 )
 
 $(document)

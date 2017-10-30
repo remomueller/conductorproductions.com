@@ -203,13 +203,13 @@ $adjacent-edge: 70.7106781187px;
 }
 
 .landing-logo-text {
+  line-height: 0;
   margin-left: 2rem;
   margin-right: 2rem;
-  font-size: 40px;
-  top: calc(50vh - (#{$line-height-base} / 2));
+  top: calc(50%);
   left: 0;
   right: calc(50% + #{$adjacent-edge});
-
+  white-space: nowrap;
   font-size: 1.5rem;
 
   @include media-breakpoint-up(sm) {
@@ -218,5 +218,24 @@ $adjacent-edge: 70.7106781187px;
 
   @include media-breakpoint-up(md) {
     font-size: 2.5rem;
+  }
+}
+
+.landing-logo-tagline {
+  display: none;
+  line-height: 0;
+  margin-left: 1rem;
+  top: calc(50%);
+  left: calc(50%);
+  right: 0;
+  font-size: 1rem;
+  white-space: nowrap;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 1.5rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 2rem;
   }
 }

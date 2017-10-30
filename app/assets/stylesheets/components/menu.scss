@@ -28,6 +28,11 @@
     }
   }
 
+  a,
+  img {
+    @include ignore-selection;
+  }
+
   a {
     color: $body-color;
     transition: all .25s ease-out;
