@@ -1,0 +1,49 @@
+.member-close,
+.member-header {
+  color: $p400-grey;
+  line-height: initial;
+  font-size: 1.5rem;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 2rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 2.5rem;
+  }
+}
+
+.member-close {
+  top: 0;
+  right: 1rem;
+  position: absolute;
+  padding: $spacer;
+  transition: transform .25s ease-out;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $p300-grey;
+    text-decoration: none;
+    transform: scale(1.2);
+  }
+}
+
+.member-header {
+  // margin-bottom: 1rem;
+  padding: $spacer;
+}
+
+.member-name {
+  @include brand;
+  @include media-breakpoint-up(md) {
+    padding-right: $spacer;
+  }
+}
+
+.member-title {
+  @include brand-bold;
+  @include media-breakpoint-up(md) {
+    padding-left: $spacer;
+  }
+}

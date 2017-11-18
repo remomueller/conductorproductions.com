@@ -1,0 +1,40 @@
+- @title = @member.name
+
+= render "videos/full_frame_video"
+
+- videos = @member.videos.order(:position)
+- vimeo_url = "//player.vimeo.com/video/"
+- common_settings = "?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=ffffff"
+
+- video = videos.first
+- if video && false
+  - image_thumbnail = download_video_image_path(video)
+  = image_tag image_thumbnail
+
+.page-box.page-box-no-padding.last-box.background-brand-black.overflow-hidden{ style: "position: relative;" }
+  = link_to team_path, class: "member-close" do
+    &times;
+
+  .container-fluid
+    .member-header.d-flex.flex-column.flex-md-row.justify-content-center.align-items-center
+      .member-name= @member.name.upcase
+      .member-title
+        - if false
+          DIRECTOR
+        - else
+          = @member.title.upcase.to_s.split(" / ").first
+          =# @member.title.upcase
+
+  .container-fluid
+    .row
+      - video_count = videos.count
+      - videos.each_with_index do |video, index|
+        - vids_row = 2
+        - vids_sm_row = 3
+        - last_row = (index > (video_count / vids_row) * vids_row - 1)
+        - last_row_sm = (index > (video_count / vids_sm_row) * vids_sm_row - 1)
+        - video_link = "#{vimeo_url}#{video.vimeo_number}#{common_settings}"
+        .col-6.col-sm-4.art{ class: "art-#{index % 2 + 1} art-sm-#{index % 3 + 1} #{"last-row" if last_row} #{"last-row-sm" if last_row_sm}" }
+          .artwork{ data: { object: "launch-full-page-video", video_src: video_link, video_heading: "#{@member.name.upcase} &nbsp; #{@member.title.upcase}".html_safe } }
+            - image_thumbnail = download_video_image_path(video, size: "preview")
+            = image_tag image_thumbnail

@@ -51,3 +51,13 @@ $art-padding: 1px;
     padding-left: (2 * $art-padding / 3);
   }
 }
+
+.last-row {
+  display: none;
+}
+
+.last-row-sm {
+  @include media-breakpoint-up(sm) {
+    display: none;
+  }
+}

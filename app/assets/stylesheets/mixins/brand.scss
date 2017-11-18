@@ -1,0 +1,8 @@
+// Make sure images scale down their width to match the surrounding container
+@mixin brand {
+  font-family: 'directors_cut_proregular', serif;
+}
+
+@mixin brand-bold {
+  font-family: 'directors_cut_probold', serif;
+}

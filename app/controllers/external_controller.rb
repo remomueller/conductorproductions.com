@@ -2,7 +2,7 @@
 
 # Displays public pages.
 class ExternalController < ApplicationController
-  before_action :set_member, only: [:member, :photo_member]
+  before_action :set_member, only: [:member, :member2, :photo_member]
 
   # GET /art
   def art
@@ -64,7 +64,12 @@ class ExternalController < ApplicationController
 
   # GET /team/:slug
   def member
-    render layout: "layouts/full_page_custom_header"
+    render layout: "layouts/full_page_no_header_no_footer"
+  end
+
+  # GET /team/:slug/member2
+  def member2
+    render layout: "layouts/full_page_no_header_no_footer"
   end
 
   # GET /team/:slug/photo
