@@ -11,13 +11,13 @@
 .creator-name {
   color: $brand-white;
   transform: rotateX(0deg);
-  transform-origin: 0 10px -.5rem;
+  transform-origin: 0 .5em -.5em;
 }
 
 .creator-title {
   color: $brand-white;
   transform: rotateX(-120deg);
-  transform-origin: 0 10px -.5rem;
+  transform-origin: 0 .5em -.5em;
 }
 
 .creator {
@@ -26,7 +26,16 @@
   padding: 1rem 0;
   perspective: 1000px;
   position: relative;
-  height: 56px;
+  height: 2em;
+  font-size: 1rem;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 2rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 2.5rem;
+  }
 
   @media (hover) {
     &:hover {
