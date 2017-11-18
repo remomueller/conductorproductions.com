@@ -87,8 +87,8 @@ Rails.application.routes.draw do
   scope module: :external do
     get :landing_draft, path: "landing/draft"
     get :director, path: "director/:member", action: :member
-    get :member, path: "team/:member", as: :public_member
-    get :member2, path: "team/:member/member2", as: :public_member2
+    get :member, path: "team/:member/member2", as: :public_member
+    get :member2, path: "team/:member", as: :public_member2
     get :photo_member, path: "team/:member/photo"
     get "images/videos/:video_id", action: :download_video_image, as: :download_video_image
 
