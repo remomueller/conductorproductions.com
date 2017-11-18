@@ -53,7 +53,9 @@ $art-padding: 1px;
 }
 
 .last-row {
-  display: none;
+  @include media-breakpoint-only(xs) {
+    display: none;
+  }
 }
 
 .last-row-sm {

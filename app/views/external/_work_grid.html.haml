@@ -17,4 +17,4 @@
         .col-6.col-sm-4.art{ class: "art-#{index % vids_row + 1} art-sm-#{index % vids_sm_row + 1} #{"last-row" if last_row} #{"last-row-sm" if last_row_sm}" }
           .artwork{ data: { object: "launch-full-page-video", video_src: video_link, video_heading: video.client_name, video_caption: "Produced by CONDUCTOR" } }
             - image_thumbnail = download_video_image_path(video, size: "preview")
-            = image_tag image_thumbnail
+            = image_tag image_thumbnail, alt: ""
