@@ -2,7 +2,6 @@
   backface-visibility: hidden;
   transition: transform .5s ease-out;
   transform-style: preserve-3d;
-  transition-delay: .25s;
   position: absolute;
   text-align: center;
   left: 0;
@@ -10,11 +9,13 @@
 }
 
 .creator-name {
+  color: $brand-white;
   transform: rotateX(0deg);
   transform-origin: 0 10px -.5rem;
 }
 
 .creator-title {
+  color: $brand-white;
   transform: rotateX(-120deg);
   transform-origin: 0 10px -.5rem;
 }
@@ -36,60 +37,6 @@
       .creator-title {
         transform: rotateX(0deg);
       }
-    }
-  }
-}
-
-@media (hover) {
-  .creator-a:hover {
-    &::before {
-      position: absolute;
-      top: -100vh;
-      right: 0;
-      bottom: 56px;
-      left: 0;
-      background-color: rgba($brand-black, .8);
-      content: ' ';
-      pointer-events: none;
-      border-radius: 0 0 100vw 0;
-    }
-
-    &::after {
-      position: absolute;
-      top: 56px;
-      right: 0;
-      bottom: -100vh;
-      left: 0;
-      background-color: rgba($brand-black, .8);
-      content: ' ';
-      pointer-events: none;
-      border-radius: 0 100vw 0 0;
-    }
-  }
-
-  .creator-b:hover {
-    &::before {
-      position: absolute;
-      top: -100vh;
-      right: 0;
-      bottom: 56px;
-      left: 0;
-      background-color: rgba($brand-black, .8);
-      content: ' ';
-      pointer-events: none;
-      clip-path: polygon(0 0, 100vw 0, 100vw calc(100vh - 25vw), 75vw 100vh, 0 100vh);
-    }
-
-    &::after {
-      position: absolute;
-      top: 56px;
-      right: 0;
-      bottom: -100vh;
-      left: 0;
-      background-color: rgba($brand-black, .8);
-      content: ' ';
-      pointer-events: none;
-      clip-path: polygon(0 0, 75vw 0, 100vw 25vw, 100vw 100vh, 0 100vh)
     }
   }
 }

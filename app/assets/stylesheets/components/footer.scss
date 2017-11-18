@@ -28,4 +28,21 @@
   img {
     @include ignore-selection;
   }
+
+  &.footer-container-dark {
+    background-color: $brand-black;
+    color: $brand-white;
+
+    a {
+      color: $brand-white;
+
+      &:hover,
+      &:focus,
+      &:active {
+        opacity: .6;
+        color: $brand-white;
+        text-decoration: none;
+      }
+    }
+  }
 }

@@ -1,14 +1,15 @@
 - @title = "Creators"
 
 - @menu_transparent = false
+- @menu_dark = true
 
 = render "layouts/menu2"
 
-.page-box.last-box.d-flex.align-items-center.overflow-hidden
+.page-box.last-box.d-flex.align-items-center.overflow-hidden.background-brand-black
   .container-fluid.p-0
     .text-center
       - Member.current.where(archived: false).where.not(nickname: [nil, ""]).order(:position).each do |member|
-        = link_to public_member2_path(member), class: "link-unstyled creator creator-b" do
+        = link_to public_member2_path(member), class: "link-unstyled creator" do
           .creator-surface.creator-title
             %strong= member.title.titleize
           .creator-surface.creator-name= member.nickname
