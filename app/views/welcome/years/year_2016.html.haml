@@ -1,0 +1,175 @@
+- @title = "Year In Review: 2016"
+
+- vimeo_url = "//player.vimeo.com/video/"
+- common_settings = "?api=1&title=0&byline=0&portrait=0&color=ffffff&autoplay=1"
+
+.yir-banner
+  .container
+    = image_tag "newsletter/microsite-header-black.png", alt: "2016 A YEAR IN REVIEW"
+
+.container
+  .yir-callout
+    We have been steadily growing, and this year has been our best yet. In 2016,
+    we created and produced dozens of successful commercials and videos with
+    great clients from all over the country. (And, thankfully for us, they keep
+    coming back for more). Here are just a few samples of our recent work. For
+    the full line-up go to
+    = succeed "." do
+      = link_to "ConductorProductions.com", ENV["website_url"], class: "plain-link"
+    We hope to work with you in 2017. Have a excellent New Year!
+
+  #video-frame{ style: "width:100%;display:none;" }
+    .embed-responsive.embed-responsive-16by9{ style: "z-index:100" }
+      %iframe.embed-responsive-item{ src: "", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
+
+  .yir-highlights
+    .yir-highlight{ data: { object: "video-frame-container", position: 0 } }
+      .yir-video-frame-container
+        .embed-responsive.embed-responsive-16by9{ style: "z-index:100" }
+          %iframe.embed-responsive-item{ src: "", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
+
+      .yir-video-left
+        - vimeo_number = "195377823"
+        - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
+        - data = { object: "launch-newsletter-video", video_src: video_link, position: 0 }
+        .yir-video-title{ data: data } THUMBTACK
+        .yir-content
+          Conductor created and produced two campaigns for a total of 26
+          commercials for the San Francisco based
+          = succeed "." do
+            = link_to "Thumbtack.com", "https://www.thumbtack.com/", class: "white-link"
+        .yir-watch-here
+          = link_to "#", data: data, class: "white-link" do
+            WATCH HERE &raquo;
+      .yir-video-right
+        .yir-image.hidden-xs
+          - image_thumbnail = "newsletter/thumbtack-bar.png"
+          = image_tag image_thumbnail, class: "video-thumbnail", data: data, alt: ""
+        .yir-image.hidden-sm.hidden-md.hidden-lg.center
+          - image_thumbnail = "newsletter/thumbtack-plain.png"
+          = image_tag image_thumbnail, class: "video-thumbnail", data: data, alt: "", style: "max-width:100%"
+        .hidden-sm.hidden-md.hidden-lg.center{ style: "padding-top: 5px;" }
+          = link_to "#", data: data, class: "white-link" do
+            WATCH HERE
+
+    .yir-highlight{ data: { object: "video-frame-container", position: 1 } }
+      .yir-video-frame-container
+        .embed-responsive.embed-responsive-16by9{ style: "z-index:100" }
+          %iframe.embed-responsive-item{ src: "", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
+      .yir-video-left
+        - image_thumbnail = "videos/drtv/drtv-1800flowers-thumb.png"
+        - vimeo_number = "195307110"
+        - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
+        - data = { object: "launch-newsletter-video", video_src: video_link, position: 1 }
+        .yir-video-title{ data: data } REBAGG
+        .yir-content
+          We helped introduce New York based
+          = link_to "Rebagg.com", "https://rebagg.com/", class: "white-link"
+          to the market with two
+          successful national campaigns.
+        .yir-watch-here.yir-watch-here-indent
+          = link_to "#", data: data, class: "white-link" do
+            WATCH HERE &raquo;
+      .yir-video-right
+        .yir-image.hidden-xs
+          - image_thumbnail = "newsletter/rebagg-bar.png"
+          = image_tag image_thumbnail, class: "video-thumbnail", data: data, alt: ""
+        .yir-image.hidden-sm.hidden-md.hidden-lg.center
+          - image_thumbnail = "newsletter/rebagg-plain.png"
+          = image_tag image_thumbnail, class: "video-thumbnail", data: data, alt: "", style: "max-width:100%"
+        .hidden-sm.hidden-md.hidden-lg.center{ style: "padding-top: 5px;" }
+          = link_to "#", data: data, class: "white-link" do
+            WATCH HERE
+
+    .yir-highlight{ data: { object: "video-frame-container", position: 2 } }
+      .yir-video-frame-container
+        .embed-responsive.embed-responsive-16by9{ style: "z-index:100" }
+          %iframe.embed-responsive-item{ src: "", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
+      .yir-video-left
+        - vimeo_number = "185990535"
+        - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
+        - data = { object: "launch-newsletter-video", video_src: video_link, position: 2 }
+        .yir-video-title{ data: data } SHIELDS MRI
+        .yir-content
+          This year we began working with Bobby Farrelly. One of the spots he
+          directed with Conductor was for Shields MRI, featuring Tom Brady.
+        .yir-watch-here
+          = link_to "#", data: data, class: "white-link" do
+            WATCH HERE &raquo;
+      .yir-video-right
+        .yir-image.hidden-xs
+          - image_thumbnail = "newsletter/shields-bar.png"
+          = image_tag image_thumbnail, class: "video-thumbnail", data: data, alt: ""
+        .yir-image.hidden-sm.hidden-md.hidden-lg.center
+          - image_thumbnail = "newsletter/shields-plain.png"
+          = image_tag image_thumbnail, class: "video-thumbnail", data: data, alt: "", style: "max-width:100%"
+        .hidden-sm.hidden-md.hidden-lg.center{ style: "padding-top: 5px;" }
+          = link_to "#", data: data, class: "white-link" do
+            WATCH HERE
+
+    .yir-highlight{ data: { object: "video-frame-container", position: 3 } }
+      .yir-video-frame-container
+        .embed-responsive.embed-responsive-16by9{ style: "z-index:100" }
+          %iframe.embed-responsive-item{ src: "", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
+      .yir-video-left
+        - vimeo_number = "185988791"
+        - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
+        - data = { object: "launch-newsletter-video", video_src: video_link, position: 3 }
+        .yir-video-title{ data: data } SUN LIFE FINANCIAL
+        .yir-content
+          We've been busy shooting and editing mini-docs, including this one. We
+          sent a crew to Idaho to capture a true customer story for Sun Life
+          Financial.
+        .yir-watch-here.yir-watch-here-indent
+          = link_to "#", data: data, class: "white-link" do
+            WATCH HERE &raquo;
+      .yir-video-right
+        .yir-image.hidden-xs
+          - image_thumbnail = "newsletter/sun-life-bar.png"
+          = image_tag image_thumbnail, class: "video-thumbnail", data: data, alt: ""
+        .yir-image.hidden-sm.hidden-md.hidden-lg.center
+          - image_thumbnail = "newsletter/sun-life-plain.png"
+          = image_tag image_thumbnail, class: "video-thumbnail", data: data, alt: "", style: "max-width:100%"
+        .hidden-sm.hidden-md.hidden-lg.center{ style: "padding-top: 5px;" }
+          = link_to "#", data: data, class: "white-link" do
+            WATCH HERE
+
+  .yir-columns
+    .yir-column.yir-column-left
+      .yir-column-title
+        STAFF SPOTLIGHT
+      .yir-column-content
+        .yir-title JIM FERGUESON
+        = image_tag "newsletter/jim-fergueson.png", style: "width: 200px;margin-left: 20px;", class: "pull-right"
+        Our editor, Jim Fergueson, had his third film premiere at this year's
+        Short Film Corner at the Cannes Film Festival. Written and produced over
+        two years, his film "Overachiever" touches on the harsh realities that
+        recent graduates face. It follows one man's journey of realizing that we
+        are in a world that doesn't give handouts and "values unreachable
+        experience often without offering second chances."
+        = link_to "http://emag.imaginenews.com/755/01-04-2016#page/8" do
+          Read more in this article from Imagine Magazine.
+    .yir-column.yir-column-center
+    .yir-column.yir-column-right
+      .yir-column-title.yir-column-title-right
+        IN THE NEWS
+      .yir-column-content
+        Roll out the red carpet! Conductor Productions and media partner Mercury
+        Media were nominated for 3 Moxie Awards at the 2016 ERA convention in
+        Las Vegas. Quite the honor. The team was nominated in the category Best
+        Short Form Variety for Mobile Help and Best Short Form of the Year,
+        Brand Response for Stride Rite Snoot. We were happy to take home the
+        award for Best Health Show of the Year for Quell Wearable Pain Relief.
+        .center{ style: "margin-top: 30px;" }
+          = link_to "http://blog.retailing.org/era-reveals-2016-moxie-award-winners" do
+            = image_tag "newsletter/moxie-awards.png", style: "margin-right: 20px;max-width: 100%"
+
+.yir-footer
+  .yir-footer-address
+    .container
+      CONDUCTOR PRODUCTIONS | 142 Berkeley St Fl 2 Boston, MA 02116
+  .yir-footer-contact
+    .container
+      Contact us at
+      = mail_to "info@conductorproductions.com", "info@conductorproductions.com"
+      or 617.262.1400

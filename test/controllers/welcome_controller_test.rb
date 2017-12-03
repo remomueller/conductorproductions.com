@@ -123,6 +123,16 @@ class WelcomeControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test 'should get year in review 2016' do
+    get :year_2016
+    assert_response :success
+  end
+
+  test 'should get year in review 2017' do
+    get :year_2017
+    assert_response :success
+  end
+
   # Older versions
 
   # test 'should get about' do

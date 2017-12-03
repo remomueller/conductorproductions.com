@@ -1,0 +1,200 @@
+- @title = "Year In Review: 2017"
+
+- vimeo_url = "//player.vimeo.com/video/"
+- common_settings = "?api=1&title=0&byline=0&portrait=0&color=ffffff&autoplay=1"
+
+.yir-banner
+  .container
+    = image_tag "newsletter/2017/microsite-header-2017.png", alt: "2017 A YEAR IN REVIEW"
+
+.container
+  .yir-callout
+    Another year down and more great work to share with friends old and new! In
+    2017 we welcomed companies like Tempur Sealy, Gerber, Grammarly, Fidelity
+    Investments, WB Mason, Health IQ, Shark Ninja, and Tripping.com to the
+    Conductor family. Thanks to all of you who engaged with us to make it a year
+    for the books.  Here's to a rockin' new year!
+
+  #video-frame{ style: "width:100%;display:none;" }
+    .embed-responsive.embed-responsive-16by9{ style: "z-index:100" }
+      %iframe.embed-responsive-item{ src: "", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
+
+  .yir-highlights
+    .yir-highlight{ data: { object: "video-frame-container", position: 0 } }
+      .yir-video-frame-container
+        .embed-responsive.embed-responsive-16by9{ style: "z-index:100" }
+          %iframe.embed-responsive-item{ src: "", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
+
+      .yir-video-left
+        - vimeo_number = "215517573"
+        - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
+        - data = { object: "launch-newsletter-video", video_src: video_link, position: 0 }
+        .yir-video-title{ data: data } New England Baptist Hospital
+        .yir-content
+          Our studio production for NEBH featuring Avery Bradley is a 2017 company favorite. We love the blend of musicality, artistry, and athleticism that is depicted in this campaign, and working with Proper Villains Agency with the talented direction of Jeff Monahan and Patrick Ruth was a joy.
+        .yir-watch-here
+          = link_to "#", data: data, class: "white-link" do
+            WATCH HERE &raquo;
+      .yir-video-right
+        - image_thumbnail = "newsletter/2017/microsite-nebh.png"
+        .yir-image.yir-image-angle{ style: "background-image: url(\"#{asset_path(image_thumbnail)}\");", data: data }
+        .yir-image.yir-image-full
+          - image_thumbnail = "newsletter/2017/microsite-nebh.png"
+          = image_tag image_thumbnail, class: "video-thumbnail", data: data, alt: "", style: "max-width:100%"
+        .yir-watch-here-full
+          = link_to "#", data: data, class: "white-link" do
+            WATCH HERE
+
+    .yir-highlight{ data: { object: "video-frame-container", position: 1 } }
+      .yir-video-frame-container
+        .embed-responsive.embed-responsive-16by9{ style: "z-index:100" }
+          %iframe.embed-responsive-item{ src: "", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
+      .yir-video-left
+        - image_thumbnail = "videos/drtv/drtv-1800flowers-thumb.png"
+        - vimeo_number = "237944222"
+        - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
+        - data = { object: "launch-newsletter-video", video_src: video_link, position: 1 }
+        .yir-video-title{ data: data } Grammarly
+        .yir-content
+          Conductor's testimonial-driven DR spots are a style we have become
+          renown for... and these commercials we wrote, shot, and edited for
+          Grammarly prove just how well they produce results. Our client
+          reported 45 million organic YouTube views in one week. And that's
+          before even going to air!
+        .yir-watch-here.yir-watch-here-indent
+          = link_to "#", data: data, class: "white-link" do
+            WATCH HERE &raquo;
+      .yir-video-right
+        - image_thumbnail = "newsletter/2017/microsite-grammarly.png"
+        .yir-image.yir-image-angle{ style: "background-image: url(\"#{asset_path(image_thumbnail)}\");", data: data }
+        .yir-image.yir-image-full
+          - image_thumbnail = "newsletter/2017/microsite-grammarly.png"
+          = image_tag image_thumbnail, class: "video-thumbnail", data: data, alt: "", style: "max-width:100%"
+        .yir-watch-here-full
+          = link_to "#", data: data, class: "white-link" do
+            WATCH HERE
+
+    .yir-highlight{ data: { object: "video-frame-container", position: 2 } }
+      .yir-video-frame-container
+        .embed-responsive.embed-responsive-16by9{ style: "z-index:100" }
+          %iframe.embed-responsive-item{ src: "", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
+      .yir-video-left
+        - vimeo_number = "242617473"
+        - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
+        - data = { object: "launch-newsletter-video", video_src: video_link, position: 2 }
+        .yir-video-title{ data: data } WB Mason
+        .yir-content
+          Another highlight of the year was our video campaign for WB Mason,
+          spearheaded by producer-extraordinaire, Jenn Sargent. We shot six
+          unique comedic spots, one of which set in Santa's Workshop at the
+          North Pole. Christmas came quite early for us this year!
+        .yir-watch-here
+          = link_to "#", data: data, class: "white-link" do
+            WATCH HERE &raquo;
+      .yir-video-right
+        - image_thumbnail = "newsletter/2017/microsite-wb-mason.png"
+        .yir-image.yir-image-angle{ style: "background-image: url(\"#{asset_path(image_thumbnail)}\");", data: data }
+        .yir-image.yir-image-full
+          - image_thumbnail = "newsletter/2017/microsite-wb-mason.png"
+          = image_tag image_thumbnail, class: "video-thumbnail", data: data, alt: "", style: "max-width:100%"
+        .yir-watch-here-full
+          = link_to "#", data: data, class: "white-link" do
+            WATCH HERE
+
+    .yir-highlight{ data: { object: "video-frame-container", position: 3 } }
+      .yir-video-frame-container
+        .embed-responsive.embed-responsive-16by9{ style: "z-index:100" }
+          %iframe.embed-responsive-item{ src: "", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
+      .yir-video-left
+        - vimeo_number = "243740100"
+        - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
+        - data = { object: "launch-newsletter-video", video_src: video_link, position: 3 }
+        .yir-video-title{ data: data } Hunt A Killer
+        .yir-content
+          We really had a lot of fun launching into a completely different genre
+          for our newest broadcast client, Hunt A Killer. This past month has
+          been a wild ride exploring the psychological thriller world through
+          visual effects and sound design. Do you have what it takes to catch a
+          serial killer?
+        .yir-watch-here.yir-watch-here-indent
+          = link_to "#", data: data, class: "white-link" do
+            WATCH HERE &raquo;
+      .yir-video-right
+        - image_thumbnail = "newsletter/2017/microsite-huntakiller.png"
+        .yir-image.yir-image-angle{ style: "background-image: url(\"#{asset_path(image_thumbnail)}\");", data: data }
+        .yir-image.yir-image-full
+          - image_thumbnail = "newsletter/2017/microsite-huntakiller.png"
+          = image_tag image_thumbnail, class: "video-thumbnail", data: data, alt: "", style: "max-width:100%"
+        .yir-watch-here-full
+          = link_to "#", data: data, class: "white-link" do
+            WATCH HERE
+
+    .yir-highlight{ data: { object: "video-frame-container", position: 4 } }
+      .yir-video-frame-container
+        .embed-responsive.embed-responsive-16by9{ style: "z-index:100" }
+          %iframe.embed-responsive-item{ src: "", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
+      .yir-video-left
+        - vimeo_number = "237943632"
+        - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
+        - data = { object: "launch-newsletter-video", video_src: video_link, position: 4 }
+        .yir-video-title{ data: data } Adore Me
+        .yir-content
+          Great reports are coming in from this repeat client since teaming with
+          Conductor. The spots we've produced with Adore Me this year have been
+          outperforming all their previous TV creative and, in their own words,
+          they "couldn't be happier with Conductor's value, quality, and
+          results."
+        .yir-watch-here
+          = link_to "#", data: data, class: "white-link" do
+            WATCH HERE &raquo;
+      .yir-video-right
+        - image_thumbnail = "newsletter/2017/microsite-adore-me.png"
+        .yir-image.yir-image-angle{ style: "background-image: url(\"#{asset_path(image_thumbnail)}\");", data: data }
+        .yir-image.yir-image-full
+          - image_thumbnail = "newsletter/2017/microsite-adore-me.png"
+          = image_tag image_thumbnail, class: "video-thumbnail", data: data, alt: "", style: "max-width:100%"
+        .yir-watch-here-full
+          = link_to "#", data: data, class: "white-link" do
+            WATCH HERE
+
+  .yir-columns
+    .yir-column.yir-column-left
+      .yir-column-title
+        STAFF SPOTLIGHT
+      .yir-column-content
+        .yir-title MICHAEL KALIL
+        = image_tag "newsletter/2017/michael-kalil.png", style: "width: 200px;margin-left: 20px;", class: "pull-right"
+        Meet Michael Kalil. If you don't know him already, you definitely
+        should! Michael brings a great perspective and energy to the Conductor
+        team in his role of Executive Producer and Head of Business Development.
+        He comes from an entertainment and live event background with 25 years
+        of experience in client services on both coasts, including top talent
+        agencies and film studios. Give him a shout to get your next project off
+        the ground!
+
+    .yir-column.yir-column-center
+    .yir-column.yir-column-right
+      .yir-column-title.yir-column-title-right
+        TELLY TIME
+      .yir-column-content
+        We are excited to report that our recent work has been recognized with
+        three 2017 Telly Awards for our commercials for Eloquii, Adore Me, and
+        Thumbtack. The Telly Awards is a highly respected international
+        competition and received over 12,000 entries from all 50 states and 5
+        continents. Check out our award-winning spots
+        = succeed "!" do
+          = link_to "here", "https://ql.mediasilo.com/#ql/5a21ab3ae4b0b6517d38be9f"
+
+        .center{ style: "margin-top: 30px;" }
+          = link_to "https://ql.mediasilo.com/#ql/5a21ab3ae4b0b6517d38be9f" do
+            = image_tag "newsletter/2017/telly-awards.jpg", style: "margin-right: 20px;max-width: 100%"
+
+.yir-footer
+  .yir-footer-address
+    .container
+      CONDUCTOR PRODUCTIONS | 142 Berkeley St Fl 2 Boston, MA 02116
+  .yir-footer-contact
+    .container
+      Contact us at
+      = mail_to "info@conductorproductions.com", "info@conductorproductions.com"
+      or 617.262.1400

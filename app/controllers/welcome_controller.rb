@@ -47,4 +47,19 @@ class WelcomeController < ApplicationController
       head :ok
     end
   end
+
+  # GET /year-in-review
+  def year_in_review
+    render "welcome/years/year_2017"
+  end
+
+  # GET /2017
+  def year_2017
+    render "welcome/years/year_2017"
+  end
+
+  # GET /2016
+  def year_2016
+    render "welcome/years/year_2016"
+  end
 end
