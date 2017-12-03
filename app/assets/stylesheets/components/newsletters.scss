@@ -100,6 +100,7 @@ $brand-green-light: #f7f8f3;
 
           right: -150px;
           top: 10px;
+          z-index: 1030;
 
           &.yir-watch-here-indent {
             right: -150px;
@@ -124,12 +125,34 @@ $brand-green-light: #f7f8f3;
         .yir-image-angle {
           cursor: pointer;
           display: block;
+          position: relative;
           // background-attachment: fixed;
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
           height: 100%;
           width: 360px;
+          overflow: hidden;
+
+          &.yir-image-angle-even:before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            border-bottom: 360px solid $brand-black;
+            border-right: 360px solid transparent;
+            width: 0;
+            opacity: 0.5;
+          }
+
+          &.yir-image-angle-odd:before {
+            content: '';
+            position: absolute;
+            left: 0; bottom: 0;
+            border-top: 360px solid $brand-black;
+            border-right: 360px solid transparent;
+            width: 0;
+            opacity: 0.5;
+          }
         }
       }
     }
