@@ -141,7 +141,7 @@ $brand-green-light: #f7f8f3;
             border-bottom: 360px solid $brand-black;
             border-right: 360px solid transparent;
             width: 0;
-            opacity: 0.5;
+            // opacity: 0.5;
           }
 
           &.yir-image-angle-odd:before {
@@ -151,7 +151,7 @@ $brand-green-light: #f7f8f3;
             border-top: 360px solid $brand-black;
             border-right: 360px solid transparent;
             width: 0;
-            opacity: 0.5;
+            // opacity: 0.5;
           }
         }
       }

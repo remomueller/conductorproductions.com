@@ -50,7 +50,6 @@
         .embed-responsive.embed-responsive-16by9{ style: "z-index:100" }
           %iframe.embed-responsive-item{ src: "", webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true }
       .yir-video-left
-        - image_thumbnail = "videos/drtv/drtv-1800flowers-thumb.png"
         - vimeo_number = "237944222"
         - video_link = "#{vimeo_url}#{vimeo_number}#{common_settings}"
         - data = { object: "launch-newsletter-video", video_src: video_link, position: 1 }
@@ -68,7 +67,7 @@
         - image_thumbnail = "newsletter/2017/microsite-grammarly.png"
         .yir-image.yir-image-angle.yir-image-angle-even{ style: "background-image: url(\"#{asset_path(image_thumbnail)}\");", data: data }
         .yir-image.yir-image-full
-          - image_thumbnail = "newsletter/2017/microsite-grammarly.png"
+          - image_thumbnail = "newsletter/2017/microsite-grammarly-full.png"
           = image_tag image_thumbnail, class: "video-thumbnail", data: data, alt: "", style: "max-width:100%"
         .yir-watch-here-full
           = link_to "#", data: data, class: "white-link" do
@@ -95,7 +94,7 @@
         - image_thumbnail = "newsletter/2017/microsite-wb-mason.png"
         .yir-image.yir-image-angle.yir-image-angle-odd{ style: "background-image: url(\"#{asset_path(image_thumbnail)}\");", data: data }
         .yir-image.yir-image-full
-          - image_thumbnail = "newsletter/2017/microsite-wb-mason.png"
+          - image_thumbnail = "newsletter/2017/microsite-wb-mason-full.png"
           = image_tag image_thumbnail, class: "video-thumbnail", data: data, alt: "", style: "max-width:100%"
         .yir-watch-here-full
           = link_to "#", data: data, class: "white-link" do
