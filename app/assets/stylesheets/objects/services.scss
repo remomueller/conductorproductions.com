@@ -9,3 +9,70 @@
   color: $p500-grey;
   margin-left: 1rem;
 }
+
+.services-container {
+  padding: 0 $spacer ($spacer * .5);
+
+  @include media-breakpoint-up(sm) {
+    + .services-container {
+      border-left: 2px solid $brand-black;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    padding: 0 ($spacer * 3) ($spacer * .5);
+  }
+}
+
+.services-title {
+  @include brand;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: $spacer * 2;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 1.75rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 2rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 2.25rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 2.5rem;
+  }
+}
+
+.services-subheading {
+  @include brand-bold;
+  text-align: center;
+  margin-bottom: $spacer;
+}
+
+.services-list {
+  @include brand;
+
+  padding-left: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.services-statement {
+  @include brand;
+  text-align: center;
+  padding: $spacer;
+}
+
+.services-definition {
+  @include brand;
+  padding: $spacer;
+  font-size: 1.25rem;
+
+  @include media-breakpoint-up(sm) {
+    padding: $spacer * 3;
+  }
+}

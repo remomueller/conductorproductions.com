@@ -1,0 +1,116 @@
+$testimonial-width: 16rem;
+$triangle-size: 2rem;
+
+.testimonial-container {
+  margin-bottom: $spacer;
+}
+
+.testimonial-logo,
+.testimonial-quote {
+  height: $testimonial-width;
+  width: $testimonial-width;
+  align-items: center !important;
+  display: flex !important;
+  padding: $spacer;
+}
+
+.testimonial-quote {
+  @include brand;
+  line-height: 1.25;
+  font-style: italic;
+
+  @include media-breakpoint-only(xs) {
+    font-size: .875rem;
+  }
+}
+
+.testimonial-logo {
+  @include brand;
+  background-color: $brand-black;
+  color: $brand-white;
+  position: relative;
+  // padding: $spacer;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  &::after {
+    content: "";
+    border: $triangle-size solid transparent;
+    display: inline-block;
+    position: absolute;
+    top: ($testimonial-width / 2) - ($triangle-size);
+  }
+
+  &.extra-p5 {
+    padding: $spacer * 3;
+  }
+
+  &.extra-p4 {
+    padding: $spacer * 2;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .testimonial-right {
+    .testimonial-quote {
+      padding-left: $triangle-size + $spacer;
+    }
+
+    .testimonial-logo::after {
+      border-left-color: $brand-black;
+      right: -($triangle-size * 2);
+      left: auto;
+    }
+  }
+
+  .testimonial-left {
+    flex-direction: row-reverse !important;
+
+    .testimonial-quote {
+      padding-right: $triangle-size + $spacer;
+      text-align: right;
+    }
+
+    .testimonial-logo::after {
+      border-right-color: $brand-black;
+      left: -($triangle-size * 2);
+      right: auto;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .testimonial-quote {
+    font-size: 1.25rem;
+  }
+
+  .testimonial-lg-right {
+    .testimonial-quote {
+      padding-left: $triangle-size + $spacer;
+    }
+
+    .testimonial-logo::after {
+      border-left-color: $brand-black;
+      right: -($triangle-size * 2);
+      left: auto;
+    }
+  }
+
+  .testimonial-lg-left {
+    flex-direction: row-reverse !important;
+
+    .testimonial-quote {
+      padding-right: $triangle-size + $spacer;
+      text-align: right;
+    }
+
+    .testimonial-logo::after {
+      border-right-color: $brand-black;
+      left: -($triangle-size * 2);
+      right: auto;
+    }
+  }
+}

@@ -2,31 +2,100 @@
 
 = render "layouts/menu2"
 
-.page-box.last-box.d-flex.align-items-center
+%h1.services-title OUR SERVICES
+
+.d-flex.flex-column.flex-sm-row.justify-content-center
+  .services-container
+    .services-subheading
+      CREATIVE
+    %ul.services-list
+      %li Brand Research
+      %li Concept Development
+      %li Scriptwriting
+      %li Storyboarding & Design
+      %li Animatics
+      %li Budgeting
+      %li Scheduling
+      %li Creative Testing
+      %li Media Strategy/Buying*
+  .services-container
+    .services-subheading
+      PRODUCTION
+    %ul.services-list
+      %li Directing
+      %li Casting & Styling
+      %li Talent Managment
+      %li Location Scouting
+      %li Production Design
+      %li Custom Set Builds
+      %li Motion Rigs
+      %li Aerial Videography
+      %li Specialty Shots & Stunts
+  .services-container
+    .services-subheading
+      POST-PRODUCTION
+    %ul.services-list
+      %li Broadcast Edit Suites
+      %li Motion Graphics
+      %li 2D/3D Animation
+      %li Compositing
+      %li Visual Effects
+      %li Color Correction
+      %li Sound Design
+      %li Voiceover Recording
+      %li Original Music Scoring
+
+.services-statement
+  * We don’t actually do this part, but we work with great partners who love
+  media as much as we love production. We’ll introduce you.
+
+.background-brand-black.text-white
   .container
-    %ul.list-unstyled
-      %li.service.pb-2.mb-2
-        %i.fa.fa-check-square-o
-        Creative
-        .service-description
-          (Writing/Boarding)
-      %li.service.pb-2.mb-2
-        %i.fa.fa-check-square-o
-        Static and Animated Storyboards
-      %li.service.pb-2.mb-2
-        %i.fa.fa-check-square-o
-        Pre-Production, Production, Post-Production
-      %li.service.pb-2.mb-2
-        %i.fa.fa-check-square-o
-        Music Licensing
-      %li.service.pb-2.mb-2
-        %i.fa.fa-check-square-o
-        Talent Negotiating
-      %li.service.pb-2.mb-2
-        %i.fa.fa-check-square-o
-        Talent Tracking
-      %li.service.pb-2.mb-2
-        %i.fa.fa-check-square-o
-        Media Strategy and Buying*
-        .service-description
-          (*We don't actually do this part. But we work with great partners who love media as much as we love production. We'll introduce you)
+    .services-definition
+      .mb-1
+        %span.brand-bold CONDUCTOR
+        [kuh n-duhk-ter]
+      %div
+        One who conducts; a leader, guide, director, or manager. From the Latin root conducere, meaning
+        “bring together.” Conductor does just that.
+
+.background-brand-white
+  .container.p-5
+    .d-flex.flex-column.flex-lg-row.justify-content-around
+      .testimonial-container.testimonial-right.testimonial-lg-right.d-flex.flex-row
+        .testimonial-logo
+          = image_tag "testimonials/thumbtack-white.png", alt: "Thumbtack"
+        .testimonial-quote
+          “This was by far the easiest shoot I’ve attended, because your team did a great job of forcing the hard decisions to be made ahead of time, and of running a tight ship.”
+
+      .testimonial-container.testimonial-left.testimonial-lg-right.d-flex.flex-row.align-items-center
+        .testimonial-logo.extra-p5
+          = image_tag "testimonials/clarks-white.png", alt: "Clarks"
+        .testimonial-quote
+          “Everyone from the producers, directors, animators, editors, stylists, and camera crew are easy to work with and are excellent at adapting to change and direction.”
+
+    .d-flex.flex-column.flex-lg-row.justify-content-around
+      .testimonial-container.testimonial-right.testimonial-lg-left.d-flex.flex-row.align-items-center
+        .testimonial-logo.extra-p4
+          = image_tag "testimonials/stride-rite-white.png", alt: "stride rite"
+        .testimonial-quote
+          “The filmmakers at Conductor are creative, strategic, talented and fun to collaborate with. They took the time to understand our brand and helped us exceed our sales goals.”
+
+      .testimonial-container.testimonial-left.testimonial-lg-left.d-flex.flex-row.align-items-center
+        .testimonial-logo
+          = image_tag "testimonials/grammarly-white.png", alt: "grammarly"
+        .testimonial-quote
+          “We have over 45 million YouTube views on the testimonial ads and they’re killing it!”
+
+    .d-flex.flex-column.flex-lg-row.justify-content-around
+      .testimonial-container.testimonial-right.testimonial-lg-right.d-flex.flex-row.align-items-center
+        .testimonial-logo.extra-p5
+          = image_tag "testimonials/vda-white.png", alt: "VDA"
+        .testimonial-quote
+          “The event video went over really, really well. The comment on the reel was wow, you really used those screens to their full capacity. We’re thrilled.”
+
+      .testimonial-container.testimonial-left.testimonial-lg-right.d-flex.flex-row.align-items-center
+        .testimonial-logo
+          = image_tag "testimonials/hunt-a-killer-white.png", alt: "Hunt a Killer"
+        .testimonial-quote
+          “We have been getting rave reviews from everyone who has seen the TV spot!!! Congrats and thank you for an incredible creative deliverable!”
