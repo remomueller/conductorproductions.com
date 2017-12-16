@@ -15,7 +15,7 @@ class ExternalControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get landing page" do
-    get landing_page_url(page: 2)
+    get landing_page_url(page: 3)
     assert_response :success
   end
 

@@ -10,7 +10,7 @@ $(window).on("scroll", ->
       $(this).removeClass("navbar-conductor-visible")
 
   $(".navbar-conductor-invisible-offset").each ->
-    if windowHeight <= winTop
+    if windowHeight * 2 <= winTop
       $(this).addClass("navbar-conductor-visible")
     else
       $(this).removeClass("navbar-conductor-visible")

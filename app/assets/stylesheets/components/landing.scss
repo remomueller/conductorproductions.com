@@ -62,30 +62,24 @@
 }
 
 .landing-flag {
-  width: 128px;
-  height: 128px;
-  margin-bottom: $spacer * 2;
+  width: 96px;
+  height: 96px;
+  margin-bottom: $spacer *.5;
   transition: all 200ms;
-  border: 1px solid $brand-black;
-  border-radius: .25rem;
-
-  &.landing-flag-circle {
-    border-radius: 128px;
-  }
 
   @include media-breakpoint-up(md) {
-    width: 160px;
-    height: 160px;
+    width: 96px;
+    height: 96px;
   }
 
   @include media-breakpoint-up(lg) {
-    width: 192px;
-    height: 192px;
+    width: 96px;
+    height: 96px;
   }
 
   @include media-breakpoint-up(xl) {
-    width: 256px;
-    height: 256px;
+    width: 96px;
+    height: 96px;
     // margin-bottom: $spacer;
   }
 }
@@ -114,27 +108,6 @@
   100% {
     opacity: 1;
   }
-}
-
-.revolve-a,
-.revolve-b {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-  animation: fade-in-and-out 2s linear;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-}
-
-.revolve-a {
-  opacity: 0;
-}
-
-.revolve-b {
-  opacity: 0;
-  animation-delay: 2s;
 }
 
 .landing-logo-shadow {
@@ -237,5 +210,56 @@ $adjacent-edge: 70.7106781187px;
 
   @include media-breakpoint-up(md) {
     font-size: 2rem;
+  }
+}
+
+.landing-statement-sm,
+.landing-statement {
+  line-height: 1.25;
+  @include media-breakpoint-up(sm) {
+    margin-top: $spacer * 2;
+    margin-bottom: $spacer * 2;
+  }
+}
+
+.landing-statement-sm {
+  @include brand;
+  border-bottom: 2px solid $brand-black;
+  padding: $spacer;
+  text-align: center;
+
+  @include media-breakpoint-up(sm) {
+    padding: ($spacer * .5) ($spacer * 2);
+    border-right: 2px solid $brand-black;
+    border-bottom: 0;
+    text-align: right;
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-left: $spacer * 3;
+  }
+}
+
+.landing-statement {
+  @include brand-bold;
+  font-size: 1.15rem;
+  margin-top: $spacer;
+  margin-bottom: $spacer;
+  // padding: $spacer * 2;
+  padding: 0;
+  text-align: center;
+
+  @include media-breakpoint-up(sm) {
+    padding-left: $spacer * 2;
+    text-align: left;
+    font-size: 1.25rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 1.5rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1.75rem;
   }
 }

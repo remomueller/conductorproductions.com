@@ -4,22 +4,20 @@
 .page-box.overflow-hidden.d-flex.flex-column.justify-content-around.text-center.background-white-animated
   .container
     = link_to "#curtain", data: { object: "scroll-anchor" } do
-      = image_tag "conductor-productions-logo.png", class: "landing-flag"
-    .landing-tagline
+      = image_tag "logos/conductor-flag-circle.png", class: "landing-flag"
+    .landing-tagline.brand
       = link_to "#curtain", data: { object: "scroll-anchor" }, class: "link-unstyled", style: "position: relative;" do
-        - if true
-          CONDUCTOR PRODUCTIONS
-        - else
-          .revolve-a
-            CREATIVE THAT PERFORMS
-          .revolve-b
-            CONDUCTOR PRODUCTIONS
+        CONDUCTOR
+      .small
+        Performance-Driven Content for
+        %br.d-inline.d-md-none>
+        Broadcast and Digital Channels
 
     = link_to "#curtain", data: { object: "scroll-anchor" }, class: "scroll-down-arrow link-unstyled" do
-      %i.fa.fa-chevron-down
+      %i.fa.fa-angle-down.fa-2x
 
 - @menu_invisible = false
-- @menu_transparent = true
+- @menu_transparent = false
 - @menu_invisible_offset = true
 = render "layouts/menu2"
 
@@ -27,10 +25,21 @@
 .page-box.overflow-hidden
   .container
     = link_to "#videos", data: { object: "scroll-anchor" }, class: "scroll-down-arrow-visible link-unstyled" do
-      %i.fa.fa-chevron-down.text-white
+      %i.fa.fa-angle-down.fa-2x.text-white
 
 
 %div{ style: "position: relative;" }
   #videos{ style: "position: absolute; top: -102px;" }
+
+.background-brand-white{ style: "position: relative;" }
+  .row.flex-column.flex-sm-row.align-items-center.m-0
+    .col-12.col-sm-4.landing-statement-sm
+      In this highly competitive, data-driven, video-centric environment, you
+      need brand level commercials and videos that deliver significant ROI. In
+      short, you need great work, that works great. That's what we create.
+    .col-12.col-sm-8.landing-statement
+      WE DON’T JUST TELL STORIES.
+      %br
+      WE MAKE CREATIVE THAT PERFORMS.
 
 = render "external/work_grid"

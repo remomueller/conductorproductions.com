@@ -1,9 +1,9 @@
 %header.navbar.navbar-expand.flex-column.flex-row.sticky-top.navbar-conductor{ class: [(@menu_transparent == true ? "navbar-conductor-transparent" : nil), (@menu_invisible == true ? "navbar-conductor-invisible" : nil), (@menu_invisible_offset == true ? "navbar-conductor-invisible-offset" : nil), (@menu_dark == true ? "navbar-conductor-dark" : nil)] }
   %a.navbar-brand.mr-0.mr-md-2{ href: root_path, aria: { label: "Conductor" } }
     .d-block
-      = image_tag "conductor-productions-logo.png", size: "36x36", style: "border: 1px solid #000;border-radius: .125rem;"
+      = image_tag "logos/conductor-flag-circle.png", size: "36x36"
 
-  .navbar-nav-scroll
+  .navbar-nav-scroll.brand-bold
     %ul.navbar-nav.bd-navbar-nav.flex-row
       %li.nav-item= link_to "WORK", work_path, class: "nav-link"
       %li.nav-item= link_to "SERVICES", services_path, class: "nav-link"
