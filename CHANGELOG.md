@@ -2,8 +2,8 @@
 
 ### Enhancements
 - **Gem Changes**
+  - Updated to ruby 2.5.0-rc1
   - Updated to rails 5.1 defaults
-  - Updated to ruby 2.4.2
   - Updated to bootstrap 4.0.0.beta2
   - Updated to carrierwave 1.2.1
   - Updated to haml 5.0.4
@@ -55,7 +55,7 @@
 - **Video Changes**
   - System admins can now configure videos on the home page
 - **Gem Changes**
-  - Updated to Ruby 2.4.1
+  - Updated to ruby 2.4.1
   - Updated to rails 5.0.2
   - Updated to jquery-rails 4.3.1
   - Updated to carrierwave 1.0.0
@@ -118,7 +118,7 @@
     pages
   - Project main page layout has been updated while editing project
 - **Gem Changes**
-  - Updated to Ruby 2.3.1
+  - Updated to ruby 2.3.1
   - Updated to rails 5.0.0.1
   - Updated to coffee-rails 4.2
   - Updated to jbuilder 2.5
@@ -156,7 +156,7 @@
 - **General Changes**
   - Added a JSON API for the site version
 - **Gem Changes**
-  - Updated to Ruby 2.3.0
+  - Updated to ruby 2.3.0
   - Updated to rails 4.2.6
   - Updated to pg 0.18.4
   - Updated to devise 4.0.0
@@ -286,7 +286,7 @@
   - Updated to rails 4.2.1
   - Updated to pg 0.18.1
   - Using haml now for views
-  - Use of Ruby 2.2.2 is now recommended
+  - Use of ruby 2.2.2 is now recommended
   - Updated to simplecov 0.10.0
 
 ## 0.2.1
