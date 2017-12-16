@@ -1,6 +1,6 @@
-%h1 CLIENT LOGIN
+%h1.brand CLIENT LOGIN
 
-.row
+.row.brand
   .col-sm-6.col-md-4
     = form_for resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-vertical' } do |f|
       .form-group
@@ -11,4 +11,4 @@
         = f.label :password, nil, class: 'control-label'
         = f.password_field :password, autocomplete: 'off', class: 'form-control'
 
-      = submit_tag 'SUBMIT', class: 'btn btn-default'
+      = submit_tag 'SUBMIT', class: 'btn btn-dark'

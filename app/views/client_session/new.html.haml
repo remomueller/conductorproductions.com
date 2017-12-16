@@ -2,7 +2,7 @@
 
 = render "layouts/menu2"
 
-.page-box.last-box.d-flex.align-items-center
+.page-box.last-box.d-flex.align-items-center.brand
   .container
     .mx-auto{ style: "max-width: 400px;" }
       %h1.small-caps= @title
@@ -20,4 +20,4 @@
           = form.password_field :password, autocomplete: "off", class: "form-control"
 
         .form-group.mt-4
-          = form.submit "Submit", class: "btn btn-default small-caps"
+          = form.submit "Submit", class: "btn btn-dark small-caps"

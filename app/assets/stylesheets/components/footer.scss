@@ -1,4 +1,6 @@
 .footer-container {
+  @include brand;
+
   background-color: $brand-white;
   bottom: 0;
   height: $footer-height;

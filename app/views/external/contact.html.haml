@@ -2,9 +2,9 @@
 
 = render "layouts/menu2"
 
-.page-box.last-box.d-flex.align-items-center
+.page-box.last-box.d-flex.align-items-center.brand
   .container
-    %h1.small-caps Contact
+    %h1CONTACT
 
     = form_with url: submit_contact_path, method: :post, local: true, class: "form-horizontal" do |form|
       .form-group

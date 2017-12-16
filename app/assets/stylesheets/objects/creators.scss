@@ -21,6 +21,8 @@
 }
 
 .creator {
+  @include brand;
+
   display: block;
   font-variant: small-caps;
   padding: 1rem 0;
