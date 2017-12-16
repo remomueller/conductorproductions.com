@@ -57,6 +57,7 @@ $triangle-size: 2rem;
   .testimonial-right {
     .testimonial-quote {
       padding-left: $triangle-size + $spacer;
+      padding-right: 0;
     }
 
     .testimonial-logo::after {
@@ -71,6 +72,7 @@ $triangle-size: 2rem;
 
     .testimonial-quote {
       padding-right: $triangle-size + $spacer;
+      padding-left: 0;
       text-align: right;
     }
 
