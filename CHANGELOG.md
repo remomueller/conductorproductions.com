@@ -7,6 +7,7 @@
   - Updated to bootstrap 4.0.0.beta2
   - Updated to carrierwave 1.2.1
   - Updated to haml 5.0.4
+  - Updated to kaminari 1.1.1
 
 ### Tests
 - Added tests to assure user passwords can be reset
