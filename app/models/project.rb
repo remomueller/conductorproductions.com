@@ -82,7 +82,7 @@ class Project < ApplicationRecord
 
   # Model Relationships
   belongs_to :user
-  has_many :categories, -> { current.order(:top_level, 'position nulls last') }
+  has_many :categories, -> { current.order(:top_level, Arel.sql("position nulls last")) }
   has_many :documents, -> { current.order(:archived, document_uploaded_at: :desc) }
   has_many :embeds, -> { current.order(:archived, created_at: :desc) }
   has_many :galleries, -> { current.order(:archived, created_at: :desc) }
@@ -97,7 +97,7 @@ class Project < ApplicationRecord
   end
 
   def self.find_by_param(input)
-    where('projects.slug = ? or projects.id = ?', input.to_s, input.to_i).first
+    find_by("projects.slug = ? or projects.id = ?", input.to_s, input.to_i)
   end
 
   def grouped_categories_for_select

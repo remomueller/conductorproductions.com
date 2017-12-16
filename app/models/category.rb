@@ -17,14 +17,14 @@ class Category < ApplicationRecord
   # Category Methods
   has_many :documents, -> { current.order(:archived, document_uploaded_at: :desc) }
   has_many :embeds, -> { current.order(:archived) }
-  has_many :galleries, -> { current.order(:archived, 'position nulls last') }
+  has_many :galleries, -> { current.order(:archived, Arel.sql("position nulls last")) }
 
   def to_param
     slug.blank? ? id : slug
   end
 
   def self.find_by_param(input)
-    where('categories.slug = ? or categories.id = ?', input.to_s, input.to_i).first
+    find_by("categories.slug = ? or categories.id = ?", input.to_s, input.to_i)
   end
 
   def pdf_documents

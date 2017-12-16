@@ -14,7 +14,7 @@ class Gallery < ApplicationRecord
   belongs_to :project
   belongs_to :user
   belongs_to :category
-  has_many :gallery_photos, -> { order('position nulls last') }
+  has_many :gallery_photos, -> { order(Arel.sql("position nulls last")) }
 
   # Model Methods
 
@@ -23,6 +23,6 @@ class Gallery < ApplicationRecord
   end
 
   def self.find_by_param(input)
-    where("galleries.slug = ? or galleries.id = ?", input.to_s, input.to_i).first
+    find_by("galleries.slug = ? or galleries.id = ?", input.to_s, input.to_i)
   end
 end

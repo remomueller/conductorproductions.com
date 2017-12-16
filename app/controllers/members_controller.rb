@@ -8,7 +8,7 @@ class MembersController < ApplicationController
 
   # GET /members
   def index
-    @members = Member.current.order("position nulls last").page(params[:page]).per(20)
+    @members = Member.current.order(Arel.sql("position nulls last")).page(params[:page]).per(20)
   end
 
   # # GET /members/1
