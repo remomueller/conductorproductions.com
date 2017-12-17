@@ -5,7 +5,7 @@ class SessionsController < Devise::SessionsController
   before_action :invert, only: [:new, :create]
   prepend_before_action :sign_out_project, only: :destroy
 
-  # layout "application-login", only: [:new, :create]
+  layout "layouts/full_page", only: [:new, :create]
 
   # Overwrite devise to provide JSON responses as well
   def create

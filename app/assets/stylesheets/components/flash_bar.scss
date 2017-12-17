@@ -21,6 +21,7 @@
 }
 
 .flash-bar {
+  @include brand;
   visibility: hidden;
   background-color: $brand-black;
   color: $brand-white;

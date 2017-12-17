@@ -8,7 +8,7 @@ class ClientSessionController < ApplicationController
 
   # Show the client login page
   def new
-    render layout: "layouts/full_page_custom_header"
+    render layout: "layouts/full_page"
   end
 
   # Attempt to login the client
