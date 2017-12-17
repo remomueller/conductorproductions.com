@@ -14,10 +14,11 @@ class ClientProjectController < ApplicationController
   layout "layouts/full_page_sidebar", only: [:category, :document, :gallery_show, :gallery_photo]
 
   def root
-    render "menu"
+    render "menu", layout: "layouts/full_page_no_header_no_footer"
   end
 
   def menu
+    render layout: "layouts/full_page_no_header_no_footer"
   end
 
   def category
