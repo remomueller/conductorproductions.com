@@ -1,6 +1,11 @@
 ## 10.0.0
 
 ### Enhancements
+- **General Changes**
+  - Updated user interface across site
+  - Added new landing page
+  - Added new services page
+  - Added new creators page
 - **Gem Changes**
   - Updated to ruby 2.5.0-rc1
   - Updated to rails 5.1 defaults
