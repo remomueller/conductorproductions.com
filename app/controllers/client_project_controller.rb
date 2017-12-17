@@ -7,7 +7,6 @@ class ClientProjectController < ApplicationController
   before_action :set_project
   before_action :set_project_for_current_user
   before_action :redirect_without_project
-  before_action :invert,              only: [:category, :document, :gallery_show, :gallery_photo]
 
   # TODO: Redo sidebar for client projects
   # layout "application-sidebar", only: [:category, :document, :gallery_show, :gallery_photo]
@@ -122,9 +121,5 @@ class ClientProjectController < ApplicationController
 
   def redirect_without_project
     empty_response_or_root_path(client_login_path) unless @project
-  end
-
-  def invert
-    @invert = true
   end
 end
