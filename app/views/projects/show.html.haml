@@ -8,9 +8,9 @@
   = link_to 'Preview', client_project_root_path(@project), class: 'btn btn-lg btn-primary'
 
 - if false
-  = link_to 'View Categories', project_categories_path(@project), class: 'btn btn-xs btn-default'
-  = link_to 'View Documents', project_documents_path(@project), class: 'btn btn-xs btn-default'
-  = link_to 'View Embeds', project_embeds_path(@project), class: 'btn btn-xs btn-default'
+  = link_to 'View Categories', project_categories_path(@project), class: 'btn btn-sm btn-default'
+  = link_to 'View Documents', project_documents_path(@project), class: 'btn btn-sm btn-default'
+  = link_to 'View Embeds', project_embeds_path(@project), class: 'btn btn-sm btn-default'
 
 .row
   .col-xs-6.col-sm-8
@@ -42,7 +42,7 @@
                 - if embed_count > 0
                   = pluralize embed_count, 'Video'
         %div{ style: 'margin-left: 20px;margin-top: -10px;' }
-          = link_to new_project_category_path(@project, top_level: top_level), class: 'btn btn-xs btn-default' do
+          = link_to new_project_category_path(@project, top_level: top_level), class: 'btn btn-sm btn-default' do
             %span.glyphicon.glyphicon-plus
             Add Category
   .col-xs-6.col-sm-4
@@ -50,7 +50,7 @@
       %h2
         Settings
         - if @project.editable_by?(current_user)
-          = link_to edit_project_path(@project), class: 'btn btn-xs btn-default' do
+          = link_to edit_project_path(@project), class: 'btn btn-sm btn-default' do
             %span.glyphicon.glyphicon-cog
             Edit
       %div{ style: 'background-color: #ededed;display: inline-block;padding: 10px;' }
@@ -105,7 +105,7 @@
                   %li= user.nickname
           - if @project.editable_by?(current_user)
             %tr
-              %td{ colspan: 2 }= link_to 'Add Team Member', collaborators_project_path(@project), class: 'btn btn-xs btn-default btn-block'
+              %td{ colspan: 2 }= link_to 'Add Team Member', collaborators_project_path(@project), class: 'btn btn-sm btn-default btn-block'
 
 - if @project.agency_logo.size > 0
   .center{ style: 'width:100%' }

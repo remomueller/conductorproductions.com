@@ -1,7 +1,7 @@
 .container{ style: 'height: 80px;' }
   .company-logo
     .hidden-xs
-      .pull-right
+      .float-right
         .menu-links
           .triangle-right
           .triangle-right-white
@@ -31,7 +31,7 @@
 .container
   .visible-xs
     .menu-links
-      .pull-right{ style: 'margin-top: -54px;padding-right:40px;' }
+      .float-right{ style: 'margin-top: -54px;padding-right:40px;' }
         - if current_user
           = link_to current_user.first_name.upcase, dashboard_path
         - else

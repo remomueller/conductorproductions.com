@@ -1,18 +1,18 @@
 %h2
-  = link_to @project.name, client_project_root_path(@project), class: 'project-link'
-
-  %br
-  %small{ style: 'color:white' }
+  - if false
+    = link_to @project.name, client_project_root_path(@project), class: 'project-link'
+    %br
+  %small
     = link_to @gallery.category.name, client_project_category_path(@project, top_level: @gallery.category.top_level.downcase, category_id: @gallery.category)
     |
     = @gallery.name
 
-  %div{ style: 'margin-bottom: 20px' }
+  .mb-3
     = simple_format @gallery.address
 
 - @gallery.gallery_photos.in_groups_of(3, false).each do |gallery_photo_row|
   .row
     - gallery_photo_row.each do |gallery_photo|
-      .col-xs-4{ style: "margin-bottom:35px" }
-        = link_to client_project_gallery_photo_path(@project, @gallery.category.top_level.downcase, @gallery.category, @gallery, gallery_photo), style: 'cursor: pointer' do
-          = image_tag( client_project_download_gallery_photo_path(@project, gallery_photo, size: 'preview'), class: 'img-responsive white-background' )
+      .col-4.mb-3
+        = link_to client_project_gallery_photo_path(@project, @gallery.category.top_level.downcase, @gallery.category, @gallery, gallery_photo) do
+          = image_tag(client_project_download_gallery_photo_path(@project, gallery_photo, size: 'preview'), style: "max-width: 100%;")

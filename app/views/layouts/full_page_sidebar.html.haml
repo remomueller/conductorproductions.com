@@ -1,0 +1,22 @@
+!!!
+%html{ lang: "en" }
+  %head
+    = render "layouts/head"
+  %body#top.full-page-no-header-no-footer.brand{ class: yield(:body_class) }
+    #shade
+    = render "layouts/flash_bar"
+    = yield :header
+    .container-fluid
+      .row.flex-xl-nowrap
+        = render "client_project/side_drawer"
+        - if false
+          .d-none.d-xl-block.col-xl.sidebar-drawer
+            = yield :right_drawer
+          %main.col-12.col-md-9.col-xl-8.px-md-5.background-brand-black.text-white{ role: "main" }
+            .page-box.last-box
+              = yield
+        - else
+          %main.col.px-md-5.background-brand-black.text-white{ role: "main" }
+            .page-box.last-box
+              = yield
+    = yield :footer

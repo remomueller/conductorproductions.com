@@ -33,11 +33,11 @@
           %span{ style: 'cursor:pointer', data: { object: 'click-to-view', content: project.password_plain } }
             = '*' * project.password_plain.to_s.size if project.password_plain.present?
         %td
-          = link_to project, class: 'btn btn-default btn-xs' do
+          = link_to project, class: 'btn btn-default btn-sm' do
             %span.glyphicon.glyphicon-cog
         %td
           .dropdown
-            = link_to '#', class: 'btn btn-default btn-xs dropdown-toggle', data: { toggle: 'dropdown' } do
+            = link_to '#', class: 'btn btn-default btn-sm dropdown-toggle', data: { toggle: 'dropdown' } do
               Actions
               %strong.caret
 

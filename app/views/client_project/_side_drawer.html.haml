@@ -1,0 +1,38 @@
+.col-12.col-md-3.col-xl-2.sidebar-wrapper
+  .sidebar
+    .sidebar-header.d-flex.align-items-center.text-center
+      .mr-auto.mx-md-auto
+        .d-none.d-md-block
+          - if @project.client_logo.size > 0
+            = link_to client_project_root_path(@project), class: "link-unstyled" do
+              = image_tag client_project_client_logo_path(@project), class: "side-menu-logo"
+        .text-md-center= @project.name
+      %button.navbar-light.navbar-toggler.d-md-none{ type: "button", data: { toggle: "collapse", target: "#sidebar-nav-wrapper" }, aria: { controls: "sidebar-nav-wrapper", expanded: "false", label: "Toggle navigation" }, style: "border: 1px solid rgba(0, 0, 0, 0.5);" }
+        %span.navbar-toggler-icon
+
+    - groups = []
+    - Project::TOP_LEVELS.each do |top_level|
+      - non_empty_categories = @project.visible_top_level_categories(top_level)
+      - next if non_empty_categories.blank?
+
+      - pages = []
+      - @project.categories.where(top_level: top_level).each do |category|
+        - next unless category.show_menu?
+        - pages << { name: category.name, url: client_project_category_path(@project, top_level: top_level.downcase, category_id: category) }
+      - groups << { name: top_level, url: pages.first[:url], pages: pages, active: true }
+    #sidebar-nav-wrapper.sidebar-nav-wrapper.collapse
+      %nav.sidebar-nav
+        - groups.each do |group|
+          .sidebar-nav-group{ class: group.dig(:active) || current_page?(group.dig(:url)) ? "active" : nil }
+            = link_to group.dig(:url), class: "sidebar-nav-group-link" do
+              = group.dig(:icon)
+              = group.dig(:name)
+              - if group.dig(:count).present? && group.dig(:count).positive?
+                %span.badge.badge-primary= group.dig(:count)
+
+            - if group.dig(:pages).present?
+              %ul.nav.sidebar-nav-group-items
+                - group.dig(:pages).each do |page|
+                  %li{ class: page.dig(:active) || current_page?(page.dig(:url)) ? "active" : nil }
+                    = link_to page.dig(:url), class: "ml-4" do
+                      = page.dig(:name)

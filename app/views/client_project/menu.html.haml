@@ -1,11 +1,10 @@
-.pull-right.agency-logo-container
-  - if @project.agency_logo.size > 0
-    = image_tag client_project_agency_logo_path(@project), class: 'img-responsive agency-logo'
-
-%h1{ style: 'margin-top: 20px;margin-bottom:20px' }
+%h1.brand.mb-3
+  .float-right
+    - if @project.agency_logo.size > 0
+      = image_tag client_project_agency_logo_path(@project), style: "max-width: 100%;", class: "agency-logo"
   = @project.name
 
-.project-menu-plain
+.project-menu-plain.brand
   - Project::TOP_LEVELS.each do |top_level|
     - non_empty_categories = @project.visible_top_level_categories(top_level)
     - next if non_empty_categories.blank?
@@ -20,5 +19,5 @@
           = link_to category.name, client_project_category_path(@project, top_level: top_level.downcase, category_id: category)
 
 - if @project.client_logo.size > 0
-  .center
+  .text-center
     = image_tag client_project_client_logo_path(@project), style: 'max-height: 150px;margin-top:20px; max-width:100%;padding-left:40px;padding-right:20px'

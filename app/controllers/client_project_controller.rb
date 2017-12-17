@@ -11,7 +11,7 @@ class ClientProjectController < ApplicationController
 
   # TODO: Redo sidebar for client projects
   # layout "application-sidebar", only: [:category, :document, :gallery_show, :gallery_photo]
-  layout "layouts/full_page_no_header", only: [:category, :document, :gallery_show, :gallery_photo]
+  layout "layouts/full_page_sidebar", only: [:category, :document, :gallery_show, :gallery_photo]
 
   def root
     render "menu"

@@ -6,6 +6,6 @@
   = link_to @gallery.name, [@project, @gallery]
 
 - if @project.editable_by?(current_user)
-  = link_to 'Delete Photo', [@project, @gallery, @gallery_photo], method: :delete, class: 'btn btn-xs btn-danger', data: { confirm: 'Delete photo?' }
+  = link_to 'Delete Photo', [@project, @gallery, @gallery_photo], method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: 'Delete photo?' }
 
 = image_tag(download_project_gallery_gallery_photo_path(@project, @gallery, @gallery_photo), class: 'img-responsive')

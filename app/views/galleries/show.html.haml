@@ -7,8 +7,8 @@
   = @gallery.name
 
 - if @project.editable_by?(current_user)
-  = link_to 'Edit Gallery', edit_project_gallery_path(@project, @gallery), class: 'btn btn-xs btn-default'
-  = link_to 'Delete Gallery', [@project, @gallery], method: :delete, class: 'btn btn-xs btn-danger', data: { confirm: "Are you sure you want to delete Gallery #{@gallery.name}?" }
+  = link_to 'Edit Gallery', edit_project_gallery_path(@project, @gallery), class: 'btn btn-sm btn-default'
+  = link_to 'Delete Gallery', [@project, @gallery], method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: "Are you sure you want to delete Gallery #{@gallery.name}?" }
 
 %dl.dl-horizontal
   %dt

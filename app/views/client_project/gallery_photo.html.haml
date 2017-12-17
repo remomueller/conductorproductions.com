@@ -1,8 +1,28 @@
 %h2
-  = link_to @project.name, client_project_root_path(@project), class: 'project-link'
+  .float-right
+    = succeed " " do
+      - if @previous_photo = @gallery_photo.previous_photo
+        = link_to client_project_gallery_photo_path(@project, @gallery_photo.gallery.category.top_level.downcase, @gallery_photo.gallery.category, @gallery_photo.gallery, @previous_photo), class: "btn btn-sm btn-outline-light" do
+          %i.fa.fa-caret-left
+          %span.d-none.d-lg-inline Previous
+      - else
+        %span.btn.btn-sm.btn-outline-light.disabled
+          %i.fa.fa-caret-left
+          %span.d-none.d-lg-inline Previous
 
-  %br
-  %small{ style: 'color:white' }
+    - if @next_photo = @gallery_photo.next_photo
+      = link_to client_project_gallery_photo_path(@project, @gallery_photo.gallery.category.top_level.downcase, @gallery_photo.gallery.category, @gallery_photo.gallery, @next_photo), class: "btn btn-sm btn-outline-light" do
+        %span.d-none.d-lg-inline Next
+        %i.fa.fa-caret-right
+    - else
+      %span.btn.btn-sm.btn-outline-light.disabled
+        %span.d-none.d-lg-inline Next
+        %i.fa.fa-caret-right
+  - if false
+    = link_to @project.name, client_project_root_path(@project), class: "project-link"
+    %br
+
+  %small
     = link_to @gallery_photo.gallery.category.name, client_project_category_path(@project, top_level: @gallery_photo.gallery.category.top_level.downcase, category_id: @gallery_photo.gallery.category)
     |
     = link_to @gallery_photo.gallery.name, client_project_gallery_path(@project, @gallery_photo.gallery.category.top_level.downcase, @gallery_photo.gallery.category, @gallery_photo.gallery)
@@ -12,16 +32,5 @@
     of
     = @gallery_photo.gallery.gallery_photos.count
 
-.pull-right{ style: 'margin-top: -35px' }
-  - if @previous_photo = @gallery_photo.previous_photo
-    = link_to 'Previous Photo', client_project_gallery_photo_path(@project, @gallery_photo.gallery.category.top_level.downcase, @gallery_photo.gallery.category, @gallery_photo.gallery, @previous_photo), class: 'btn btn-xs btn-default'
-  - else
-    %span.btn.btn-xs.btn-default.disabled Previous Photo
-
-  - if @next_photo = @gallery_photo.next_photo
-    = link_to 'Next Photo', client_project_gallery_photo_path(@project, @gallery_photo.gallery.category.top_level.downcase, @gallery_photo.gallery.category, @gallery_photo.gallery, @next_photo), class: 'btn btn-xs btn-default'
-  - else
-    %span.btn.btn-xs.btn-default.disabled Next Photo
-
-.center{ style: 'margin-top:20px;margin-bottom:20px' }
-  = image_tag client_project_download_gallery_photo_path(@project, @gallery_photo), style: 'max-width: 100%; height: auto;', class: 'white-background'
+.text-center{ style: "margin-top:20px;margin-bottom:20px" }
+  = image_tag client_project_download_gallery_photo_path(@project, @gallery_photo), style: "max-width: 100%; height: auto;"

@@ -1,0 +1,30 @@
+.gallery-container {
+  margin-bottom: 40px;
+}
+
+.gallery-box {
+  margin-bottom: 5px;
+}
+
+.gallery-inner-box {
+  padding: 5px;
+  display: inline-block;
+}
+
+.gallery-color {
+  border-bottom: 2px solid #ededed;
+}
+
+.gallery-photos-list {
+  overflow: auto;
+  list-style: none;
+  padding-left: 18px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.gallery-photo-box {
+  float: left;
+  cursor: move;
+  margin-right: 2px;
+}

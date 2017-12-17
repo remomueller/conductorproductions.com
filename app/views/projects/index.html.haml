@@ -3,8 +3,8 @@
 %h1= @title
 
 - if current_user.system_admin?
-  = link_to 'New Project', new_project_path, class: 'btn btn-xs btn-default'
+  = link_to 'New Project', new_project_path, class: 'btn btn-sm btn-default'
 
-= link_to 'Archived Projects', archived_projects_path, class: 'btn btn-xs btn-default'
+= link_to 'Archived Projects', archived_projects_path, class: 'btn btn-sm btn-default'
 
 = render 'projects/projects'
