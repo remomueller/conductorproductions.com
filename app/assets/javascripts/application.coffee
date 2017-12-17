@@ -33,8 +33,6 @@
 # Extensions
 
 # Objects
-
-
 #= require categories
 #= require filedrag
 #= require directors
@@ -42,7 +40,6 @@
 #= require global
 #= require google_analytics
 #= require home
-#= require newsletter
 #= require projects
 #= require slides
 #= require slug

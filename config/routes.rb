@@ -69,15 +69,10 @@ Rails.application.routes.draw do
 
   get "invite/:invite_token" => "project_users#invite"
 
-  get "2016", to: redirect("year-in-review")
+  get "2017", to: redirect("year-in-review")
   # scope module: "welcome" do
   #   get :index
-  #   get :work
   #   get :drtv
-
-  #   get :contact
-  #   post :submit_contact
-  #   get :year_in_review, path: "year-in-review"
   #   # get :news
   #   # get :about
   #   # get :clients
@@ -102,6 +97,9 @@ Rails.application.routes.draw do
     get :creators
     get :team
     get :work
+    get :year_in_review, path: "year-in-review"
+    get :year_2016, path: "2016"
+    get :year_2017, path: "2017"
     get :version
   end
 

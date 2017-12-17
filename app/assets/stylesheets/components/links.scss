@@ -8,3 +8,25 @@
     text-decoration: none;
   }
 }
+
+.link-white {
+  color: $brand-white;
+
+  &:hover,
+  &:focus,
+  &:active {
+    // color: $body-color;
+    // text-decoration: none;
+  }
+}
+
+.link-blend {
+  color: $body-color;
+
+  &:hover,
+  &:focus,
+  &:active {
+    // color: $body-color;
+    // text-decoration: none;
+  }
+}

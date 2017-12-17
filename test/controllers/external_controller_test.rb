@@ -34,6 +34,21 @@ class ExternalControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get year in review" do
+    get year_in_review_url
+    assert_response :success
+  end
+
+  test "should get year in review 2016" do
+    get year_2016_url
+    assert_response :success
+  end
+
+  test "should get year in review 2017" do
+    get year_2017_url
+    assert_redirected_to year_in_review_url
+  end
+
   test "should get version" do
     get version_url
     assert_response :success

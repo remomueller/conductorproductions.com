@@ -93,6 +93,21 @@ class ExternalController < ApplicationController
     end
   end
 
+  # GET /year-in-review
+  def year_in_review
+    render "welcome/years/year_2017", layout: "layouts/full_page_no_header_no_footer"
+  end
+
+  # GET /2017
+  def year_2017
+    render "welcome/years/year_2017", layout: "layouts/full_page_no_header_no_footer"
+  end
+
+  # GET /2016
+  def year_2016
+    render "welcome/years/year_2016", layout: "layouts/full_page_no_header_no_footer"
+  end
+
   private
 
   def set_member
