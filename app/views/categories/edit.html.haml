@@ -1,9 +1,16 @@
-%h1
+- @title = "Edit Category: #{@category.name_was}"
+
+- content_for :container_class, "container-fluid"
+- content_for :sidebar, render("projects/sidebar")
+
+- content_for :header do
   = link_to @project.name, @project
   |
-  = link_to 'Categories', project_categories_path(@project)
+  = link_to "Categories", project_categories_path(@project)
   |
+  = link_to @category.name_was, [@project, @category]
+  %i.fa.fa-angle-right
   Edit
-  = link_to @category.name, [@project, @category]
 
-= render 'form'
+.dashboard-container
+  = render "form", category: @category

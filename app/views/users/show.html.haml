@@ -1,23 +1,27 @@
-%h1
-  = link_to 'Users', users_path
-  |
-  = @user.name
+- @title = @user.name
 
-= link_to 'Edit User', edit_user_path(@user), class: 'btn btn-sm btn-default'
+- content_for :container_class, "container-fluid"
+- content_for :sidebar, render("internal/sidebar")
 
-%dl.dl-horizontal
-  %dt
-    %strong Name
-  %dd
-    = @user.name
+- content_for :header do
+  .float-right
+    = render "layouts/edit_delete_dropdown_header", edit_url: edit_user_path(@user), delete_url: @user, delete_confirmation: "Delete #{@user.name}?"
+  = @title
 
-  %dt
-    %strong Email
-  %dd
-    = @user.email
+.dashboard-container
+  %dl.dl-horizontal
+    %dt
+      %strong Name
+    %dd
+      = @user.name
 
-  %dt
-    %strong System Admin
-  %dd
-    = @user.system_admin?
+    %dt
+      %strong Email
+    %dd
+      = @user.email
+
+    %dt
+      %strong System Admin
+    %dd
+      = simple_check @user.system_admin?
 

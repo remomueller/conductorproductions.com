@@ -1,38 +1,43 @@
-%h1
+- @title = "Categories"
+
+- content_for :container_class, "container-fluid"
+- content_for :sidebar, render("projects/sidebar")
+
+- content_for :header do
+  .float-right
+    - if @project.editable_by?(current_user)
+      = link_to "New Category", new_project_category_path(@project), class: "btn btn-sm btn-light"
   = link_to @project.name, @project
   |
-  Categories
+  = @title
 
-- if @project.editable_by?(current_user)
-  = link_to 'New Category', new_project_category_path(@project), class: 'btn btn-sm btn-dark'
-
-%table.table.table-striped
-  %thead
-    %tr
-      %th Top Level
-      %th Position
-      %th Name
-      %th Slug
-      %th Creator
-      - if @project.editable_by?(current_user)
-        %th{ colspan: "2" }
-
-  %tbody
-    - if @categories.count == 0
+.dashboard-container
+  %table.table.table-striped.table-borderless
+    %thead
       %tr
-        %td{ colspan: "7" }
-          .center.text-muted
-            No categories currently exist for this project. You may
-            = link_to 'create a new category', new_project_category_path(@project)
-            for this project.
-    - else
-      - @categories.each do |category|
+        %th Top Level
+        %th Position
+        %th Name
+        %th Slug
+        %th Creator
+        - if @project.editable_by?(current_user)
+          %th.text-center Actions
+
+    %tbody
+      - if @categories.count == 0
         %tr
-          %td= category.top_level
-          %td= category.position
-          %td= link_to category.name, [@project, category]
-          %td= category.slug
-          %td= category.user.name if category.user
-          - if @project.editable_by?(current_user)
-            %td= link_to 'Edit', edit_project_category_path(@project, category)
-            %td= link_to 'Destroy', [@project, category], method: :delete, data: { confirm: "Are you sure you want to delete Category #{category.name}?" }
+          %td{ colspan: "7" }
+            .text-center.text-muted
+              No categories currently exist for this project. You may
+              = link_to "create a new category", new_project_category_path(@project)
+              for this project.
+      - else
+        - @categories.each do |category|
+          %tr
+            %td= category.top_level
+            %td= category.position
+            %td= link_to category.name, [@project, category]
+            %td= category.slug
+            %td= category.user.name if category.user
+            - if @project.editable_by?(current_user)
+              %td.text-center= render "layouts/edit_delete_dropdown_header", edit_url: edit_project_category_path(@project, category), delete_url: [@project, category], delete_confirmation: "Delete #{category.name}?"

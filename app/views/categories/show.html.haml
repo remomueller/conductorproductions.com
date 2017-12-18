@@ -1,73 +1,78 @@
-%h1
+- @title = @category.name
+
+- content_for :container_class, "container-fluid"
+- content_for :sidebar, render("projects/sidebar")
+
+- content_for :header do
+  - if @project.editable_by?(current_user)
+    .float-right
+      = render "layouts/edit_delete_dropdown_header", edit_url: edit_project_category_path(@project, @category), delete_url: [@project, @category], delete_confirmation: "Delete #{@category.name}?"
   = link_to @project.name, @project
   |
-  = link_to 'Categories', project_categories_path(@project)
+  = link_to "Categories", project_categories_path(@project)
   |
-  = @category.name
+  = @title
 
-- if @project.editable_by?(current_user)
-  = link_to 'Edit Category', edit_project_category_path(@project, @category), class: 'btn btn-sm btn-default'
-  = link_to 'Delete Category', [@project, @category], method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: "Are you sure you want to delete Category #{@category.name}?" }
+.dashboard-container
+  %dl.dl-horizontal
+    %dt
+      %strong Top Level
+    %dd= @category.top_level
 
-%dl.dl-horizontal
-  %dt
-    %strong Top Level
-  %dd= @category.top_level
+    %dt
+      %strong Name
+    %dd= @category.name
 
-  %dt
-    %strong Name
-  %dd= @category.name
+    %dt
+      %strong Slug
+    %dd= @category.slug
 
-  %dt
-    %strong Slug
-  %dd= @category.slug
+    %dt
+      %strong Position
+    %dd= @category.position
 
-  %dt
-    %strong Position
-  %dd= @category.position
+    %dt
+      %strong User
+    %dd= link_to_if current_user.system_admin?, @category.user.name, @category.user if @category.user
 
-  %dt
-    %strong User
-  %dd= link_to_if current_user.system_admin?, @category.user.name, @category.user if @category.user
-
-- if @project.editable_by?(current_user)
-  %h2
-    Documents
-    = succeed ' ' do
-      = link_to new_project_document_path(@project, category_id: @category.id), class: 'btn btn-sm btn-default' do
-        %span.glyphicon.glyphicon-plus
-  %p
-    - @category.documents.each do |document|
-      = link_to document.name, [@project, document], style: document.archived? ? 'color: #777;' : nil
+  - if @project.editable_by?(current_user)
+    %h2
+      Documents
+      = succeed " " do
+        = link_to new_project_document_path(@project, category_id: @category.id), class: "btn btn-sm btn-light" do
+          %i.fa.fa-plus
+    %p
+      - @category.documents.each do |document|
+        = link_to document.name, [@project, document], style: document.archived? ? "color: #777;" : nil
 
 
-  %h2
-    Galleries
-    = succeed ' ' do
-      = link_to new_project_gallery_path(@project, category_id: @category.id), class: 'btn btn-sm btn-default' do
-        %span.glyphicon.glyphicon-plus
-    - if @category.galleries.where(archived: false).present?
-      %small Drag to reorder galleries and photos.
+    %h2
+      Galleries
+      = succeed " " do
+        = link_to new_project_gallery_path(@project, category_id: @category.id), class: "btn btn-sm btn-light" do
+          %i.fa.fa-plus
+      - if @category.galleries.where(archived: false).present?
+        %small Drag to reorder galleries and photos.
 
 
-  %div{ style: 'overflow: auto;', data: { object: 'galleries-sortable', project: @project.to_param, category: @category.to_param } }
-    - @category.galleries.where(archived: false).each do |gallery|
-      .gallery-box{ data: { gallery_id: gallery.id } }
-        .gallery-inner-box
-          .gallery-color
-            %span.glyphicon.glyphicon-move.handle
-            = link_to gallery.name, [@project, gallery]
-          - if gallery.gallery_photos.present?
-            %ul.gallery-photos-list{ data: { object: 'gallery-photos-sortable', project: @project.to_param, gallery: gallery.to_param } }
-              - gallery.gallery_photos.each do |gallery_photo|
-                %li.gallery-photo-box{ data: { gallery_photo_id: gallery_photo.id } }
-                  = image_tag(download_project_gallery_gallery_photo_path(@project, gallery, gallery_photo, size: 'thumb'), size: '32x32')
+    %div{ style: "overflow: auto;", data: { object: "galleries-sortable", project: @project.to_param, category: @category.to_param } }
+      - @category.galleries.where(archived: false).each do |gallery|
+        .gallery-box{ data: { gallery_id: gallery.id } }
+          .gallery-inner-box
+            .gallery-color
+              %span.glyphicon.glyphicon-move.handle
+              = link_to gallery.name, [@project, gallery]
+            - if gallery.gallery_photos.present?
+              %ul.gallery-photos-list{ data: { object: "gallery-photos-sortable", project: @project.to_param, gallery: gallery.to_param } }
+                - gallery.gallery_photos.each do |gallery_photo|
+                  %li.gallery-photo-box{ data: { gallery_photo_id: gallery_photo.id } }
+                    = image_tag(download_project_gallery_gallery_photo_path(@project, gallery, gallery_photo, size: "thumb"), size: "32x32")
 
-  %h2
-    Videos
-    = succeed ' ' do
-      = link_to new_project_embed_path(@project, category_id: @category.id), class: 'btn btn-sm btn-default' do
-        %span.glyphicon.glyphicon-plus
-  %p
-    - @category.embeds.each do |embed|
-      = link_to embed.id, [@project, embed], style: embed.archived? ? 'color: #777;' : nil
+    %h2
+      Videos
+      = succeed " " do
+        = link_to new_project_embed_path(@project, category_id: @category.id), class: "btn btn-sm btn-light" do
+          %i.fa.fa-plus
+    %p
+      - @category.embeds.each do |embed|
+        = link_to embed.id, [@project, embed], style: embed.archived? ? "color: #777;" : nil

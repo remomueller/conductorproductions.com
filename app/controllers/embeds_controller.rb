@@ -11,6 +11,8 @@ class EmbedsController < ApplicationController
   before_action :set_embed, only: [:show, :edit, :update, :destroy]
   before_action :redirect_without_embed, only: [:show, :edit, :update, :destroy]
 
+  layout "layouts/full_page_sidebar2"
+
   # GET /embeds
   def index
     @embeds = @project.embeds

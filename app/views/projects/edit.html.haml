@@ -1,4 +1,14 @@
-- @title = "Edit Project"
-%h1= @title
+- @title = "Edit Project: #{@project.name_was}"
 
-= render 'form'
+- content_for :container_class, "container-fluid"
+- content_for :sidebar, render("projects/sidebar")
+
+- content_for :header do
+  = link_to "Projects", projects_path
+  |
+  = link_to @project.name_was, @project
+  %i.fa.fa-angle-right
+  Edit
+
+.dashboard-container
+  = render "form", project: @project

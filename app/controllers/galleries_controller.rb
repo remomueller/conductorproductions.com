@@ -11,6 +11,8 @@ class GalleriesController < ApplicationController
     :show, :edit, :update, :destroy, :upload_photos, :save_photo_order
   ]
 
+  layout "layouts/full_page_sidebar2"
+
   # POST /galleries/1/save_photo_order.js
   def save_photo_order
     params[:gallery_photo_ids].each_with_index do |gallery_photo_id, index|

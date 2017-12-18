@@ -1,10 +1,16 @@
-%h1
+- @title = "Edit Document: #{@document.name}"
+
+- content_for :container_class, "container-fluid"
+- content_for :sidebar, render("projects/sidebar")
+
+- content_for :header do
   = link_to @project.name, @project
   |
-  = link_to 'Documents', project_documents_path(@project)
+  = link_to "Documents", project_documents_path(@project)
   |
-  Edit
-%h2
   = link_to @document.name, [@project, @document]
+  %i.fa.fa-angle-right
+  Edit
 
-= render 'form'
+.dashboard-container
+  = render "form", document: @document

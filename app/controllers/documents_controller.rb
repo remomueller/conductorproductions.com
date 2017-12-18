@@ -11,6 +11,8 @@ class DocumentsController < ApplicationController
   before_action :set_document, only: [:show, :download_primary, :download, :edit, :update, :destroy]
   before_action :redirect_without_document, only: [:show, :download_primary, :download, :edit, :update, :destroy]
 
+  layout "layouts/full_page_sidebar2"
+
   # GET /documents
   def index
     @documents = @project.documents

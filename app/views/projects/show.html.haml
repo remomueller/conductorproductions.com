@@ -1,56 +1,60 @@
-%h1
-  = link_to 'Projects', projects_path
+- @title = @project.name
+
+- content_for :container_class, "container-fluid"
+- content_for :sidebar, render("projects/sidebar")
+
+- content_for :header do
+  .float-right
+    = render "layouts/edit_delete_dropdown_header", edit_url: edit_project_path(@project), delete_url: @project, delete_confirmation: "Delete #{@project.name}?"
+  = link_to "Projects", projects_path
+  |
+  = @title
+  |
+  = link_to "Preview", client_project_root_path(@project), class: "btn btn-sm btn-primary"
   - if @project.archived?
     |
-    = link_to 'Archived', archived_projects_path
-  |
-  = @project.name
-  = link_to 'Preview', client_project_root_path(@project), class: 'btn btn-lg btn-primary'
-
-- if false
-  = link_to 'View Categories', project_categories_path(@project), class: 'btn btn-sm btn-default'
-  = link_to 'View Documents', project_documents_path(@project), class: 'btn btn-sm btn-default'
-  = link_to 'View Embeds', project_embeds_path(@project), class: 'btn btn-sm btn-default'
+    = link_to "Archived", archived_projects_path
 
 .row
   .col-xs-6.col-sm-8
-    - Project::TOP_LEVELS.each do |top_level|
-      %div{ style: 'margin-bottom: 20px;' }
-        - categories = @project.categories.where(top_level: top_level)
-        %h2{ style: categories.present? ? nil : 'text-muted' }= top_level
-        %ul.categories-list{ data: { object: 'categories-sortable', project: @project.to_param, top_level: top_level } }
-          - categories.each do |category|
-            %li.category-box{ data: { category_id: category.id } }
-              = link_to category.name, [@project, category], style: !category.show_menu? ? 'color: #777;' : nil
-              .category-box-inner
-                %small
-                - document_count = category.documents.count
-                - gallery_count = category.galleries.where(archived: false).count
-                - embed_count = category.embeds.where(archived: false).count
-                - if document_count > 0
-                  - if gallery_count + embed_count > 0
-                    = succeed ',' do
+    .dashboard-container
+      - Project::TOP_LEVELS.each do |top_level|
+        %div{ style: 'margin-bottom: 20px;' }
+          - categories = @project.categories.where(top_level: top_level)
+          %h2{ style: categories.present? ? nil : 'text-muted' }= top_level
+          %ul.categories-list{ data: { object: 'categories-sortable', project: @project.to_param, top_level: top_level } }
+            - categories.each do |category|
+              %li.category-box{ data: { category_id: category.id } }
+                = link_to category.name, [@project, category], style: !category.show_menu? ? 'color: #777;' : nil
+                .category-box-inner
+                  %small
+                  - document_count = category.documents.count
+                  - gallery_count = category.galleries.where(archived: false).count
+                  - embed_count = category.embeds.where(archived: false).count
+                  - if document_count > 0
+                    - if gallery_count + embed_count > 0
+                      = succeed ',' do
+                        = pluralize document_count, 'Document'
+                    - else
                       = pluralize document_count, 'Document'
-                  - else
-                    = pluralize document_count, 'Document'
-                - if gallery_count > 0
-                  - if embed_count > 0
-                    = succeed ',' do
+                  - if gallery_count > 0
+                    - if embed_count > 0
+                      = succeed ',' do
+                        = pluralize gallery_count, 'Gallery'
+                    - else
                       = pluralize gallery_count, 'Gallery'
-                  - else
-                    = pluralize gallery_count, 'Gallery'
-                - if embed_count > 0
-                  = pluralize embed_count, 'Video'
-        %div{ style: 'margin-left: 20px;margin-top: -10px;' }
-          = link_to new_project_category_path(@project, top_level: top_level), class: 'btn btn-sm btn-default' do
-            %span.glyphicon.glyphicon-plus
-            Add Category
+                  - if embed_count > 0
+                    = pluralize embed_count, 'Video'
+          %div{ style: 'margin-left: 20px;margin-top: -10px;' }
+            = link_to new_project_category_path(@project, top_level: top_level), class: 'btn btn-sm btn-light' do
+              %i.fa.fa-plus
+              Add Category
   .col-xs-6.col-sm-4
     .pull-right
-      %h2
+      %h2.text-white
         Settings
         - if @project.editable_by?(current_user)
-          = link_to edit_project_path(@project), class: 'btn btn-sm btn-default' do
+          = link_to edit_project_path(@project), class: 'btn btn-sm btn-light' do
             %span.glyphicon.glyphicon-cog
             Edit
       %div{ style: 'background-color: #ededed;display: inline-block;padding: 10px;' }
@@ -105,7 +109,7 @@
                   %li= user.nickname
           - if @project.editable_by?(current_user)
             %tr
-              %td{ colspan: 2 }= link_to 'Add Team Member', collaborators_project_path(@project), class: 'btn btn-sm btn-default btn-block'
+              %td{ colspan: 2 }= link_to 'Add Team Member', collaborators_project_path(@project), class: 'btn btn-sm btn-light btn-block'
 
 - if @project.agency_logo.size > 0
   .center{ style: 'width:100%' }

@@ -1,8 +1,14 @@
-%h1
+- @title = "New Document"
+
+- content_for :container_class, "container-fluid"
+- content_for :sidebar, render("projects/sidebar")
+
+- content_for :header do
   = link_to @project.name, @project
   |
-  = link_to 'Documents', project_documents_path(@project)
-  |
-  New Document
+  = link_to "Documents", project_documents_path(@project)
+  %i.fa.fa-angle-right
+  New
 
-= render 'form'
+.dashboard-container
+  = render "form", document: @document

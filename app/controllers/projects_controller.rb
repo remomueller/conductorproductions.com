@@ -12,7 +12,7 @@ class ProjectsController < ApplicationController
     :collaborators, :show, :agency_logo, :client_logo
   ]
 
-  layout 'application'
+  layout "layouts/full_page_sidebar2"
 
   # POST /projects/1/save_category_order.js
   def save_category_order

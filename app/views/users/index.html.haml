@@ -1,16 +1,21 @@
-%h1 Users
+- @title = "Users"
 
-%table.table.table-striped
-  %thead
-    %tr
-      %th Name
-      %th System Admin
-      %th{ colspan: "2" }
+- content_for :container_class, "container-fluid"
+- content_for :sidebar, render("internal/sidebar")
 
-  %tbody
-    - @users.each do |user|
+- content_for :header, @title
+
+.dashboard-container
+  %table.table.table-striped.table-borderless
+    %thead
       %tr
-        %td= link_to user.name, user
-        %td= user.system_admin?
-        %td= link_to 'Edit', edit_user_path(user)
-        %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
+        %th Name
+        %th Admin
+        %th.text-center Actions
+
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td= link_to user.name, user
+          %td= simple_check user.system_admin?
+          %td.text-center= render "layouts/edit_delete_dropdown_header", edit_url: edit_user_path(user), delete_url: user, delete_confirmation: "Delete #{user.name}?"

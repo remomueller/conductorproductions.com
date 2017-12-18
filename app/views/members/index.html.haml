@@ -2,7 +2,7 @@
 
 %h1= @title
 
-= link_to "New Member", new_member_path, class: "btn btn-sm btn-default"
+= link_to "New Member", new_member_path, class: "btn btn-sm btn-light"
 = render "layouts/per_page", per_page: 20, object_count: @members.total_count
 
 - if @members.present?
@@ -26,7 +26,7 @@
           %td= member.archived
           %td.center
             .dropdown
-              = link_to "#", class: "btn btn-default btn-sm dropdown-toggle", data: { toggle: "dropdown" } do
+              = link_to "#", class: "btn btn-light btn-sm dropdown-toggle", data: { toggle: "dropdown" } do
                 Actions
                 %strong.caret
 

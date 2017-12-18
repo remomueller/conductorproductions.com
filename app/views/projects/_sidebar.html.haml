@@ -1,0 +1,12 @@
+.col-12.col-md-3.col-xl-2.sidebar-wrapper{ style: "background-color: transparent;" }
+  .sidebar
+    #sidebar-nav-wrapper.sidebar-nav-wrapper.collapse{ style: "background-color: transparent;" }
+      .pt-3.mx-3.my-0.ml-md-3.mb-md-3.mr-md-0
+        %ul.sidebar-menu.sidebar-menu-shadow.mb-0{ style: "padding-top: 10px; padding-bottom: 10px;" }
+          %li.sidebar-menu-header= @project.name
+          %li= link_to "Overview", @project, class: params[:controller] == "projects" && params[:action] != "collaborators" ? "active" : nil
+          %li= link_to "Categories", project_categories_path(@project), class: params[:controller] == "categories" ? "active" : nil
+          %li= link_to "Documents", project_documents_path(@project), class: params[:controller] == "documents" ? "active" : nil
+          %li= link_to "Embeds", project_embeds_path(@project), class: params[:controller] == "embeds" ? "active" : nil
+          %li= link_to "Galleries", project_galleries_path(@project), class: params[:controller] == "galleries" ? "active" : nil
+          %li= link_to "Collaborators", collaborators_project_path(@project), class: current_page?(collaborators_project_path(@project)) ? "active" : nil

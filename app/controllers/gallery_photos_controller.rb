@@ -14,6 +14,8 @@ class GalleryPhotosController < ApplicationController
   before_action :set_gallery_photo,                        only: [:show, :download, :edit, :update, :destroy]
   before_action :redirect_without_gallery_gallery_photo,  only: [:show, :download, :edit, :update, :destroy]
 
+  layout "layouts/full_page_sidebar2"
+
   # # GET /gallery_photos
   # def index
   #   @gallery_photos = GalleryPhoto.all

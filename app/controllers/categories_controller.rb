@@ -7,6 +7,8 @@ class CategoriesController < ApplicationController
   before_action :find_editable_project_or_redirect, only: [:new, :create, :edit, :update, :destroy, :save_gallery_order]
   before_action :find_category_or_redirect, only: [:show, :edit, :update, :destroy, :save_gallery_order]
 
+  layout "layouts/full_page_sidebar2"
+
   # POST /categories/1/save_gallery_order.js
   def save_gallery_order
     params[:gallery_ids].each_with_index do |gallery_id, index|

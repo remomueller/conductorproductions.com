@@ -1,26 +1,30 @@
-%h1
-  = link_to 'Projects', projects_path
-  |
+- @title = "Collaborators"
+
+- content_for :container_class, "container-fluid"
+- content_for :sidebar, render("projects/sidebar")
+
+- content_for :header do
   = link_to @project.name, @project
   |
-  Collaborators
+  = @title
 
-- if @project.editable_by?(current_user)
-  %h2 Share with...
+.dashboard-container
+  - if @project.editable_by?(current_user)
+    %h2 Share with...
 
-  = form_tag invite_user_project_path(@project), method: :post, remote: true, class: 'form-inline' do
-    .form-group
-      = text_field_tag 'invite_email', '', autocomplete: "off", data: { object: 'typeahead', local: current_user.associated_users.collect{|user| "#{user.name} [#{user.email}]" }.to_json }, class: 'form-control', placeholder: 'Email Address'
+    = form_tag invite_user_project_path(@project), method: :post, remote: true, class: "form-inline" do
+      .form-group
+        = text_field_tag "invite_email", "", autocomplete: "off", data: { object: "typeahead", local: current_user.associated_users.collect{|user| "#{user.name} [#{user.email}]" }.to_json }, class: "form-control", placeholder: "Email Address"
 
-    .form-group
-      %label.btn.btn-default
-        = check_box_tag 'editor', '1', true
-        Editor
+      .form-group
+        %label.btn.btn-light
+          = check_box_tag "editor", "1", true
+          Editor
 
-    .form-group
-      = submit_tag 'Invite By Email', class: 'btn btn-primary'
+      .form-group
+        = submit_tag "Invite By Email", class: "btn btn-primary"
 
-  %hr.soften{ style: "margin: 54px 0px" }
+    %hr.soften{ style: "margin: 54px 0px" }
 
-#project-members
-  = render 'projects/collaborators'
+  #project-members
+    = render "projects/collaborators"

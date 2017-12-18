@@ -6,14 +6,14 @@
   - if @document
     .float-right
       - if @document.primary_document.size > 0
-        = link_to client_project_download_primary_document_path(@project, @document), class: 'btn btn-sm btn-default' do
+        = link_to client_project_download_primary_document_path(@project, @document), class: 'btn btn-sm btn-light' do
           %span.glyphicon.glyphicon-download
           %span.hidden-xs
             Download
           %span
             = @document.primary_extension
       - if @document.document.size > 0
-        = link_to client_project_download_document_path(@project, @document), class: 'btn btn-sm btn-default' do
+        = link_to client_project_download_document_path(@project, @document), class: 'btn btn-sm btn-light' do
           %span.glyphicon.glyphicon-download
           %span.hidden-xs
             Download
@@ -27,12 +27,12 @@
     .embed-responsive{ style: 'padding-bottom: 106.25%;' }
       %object.white-background{ data: client_project_download_primary_document_path(@project, @document, inline: '1'), type: 'application/pdf' }
         alt :
-        = link_to @document.name, client_project_download_primary_document_path(@project, @document), class: 'btn btn-sm btn-default'
+        = link_to @document.name, client_project_download_primary_document_path(@project, @document), class: 'btn btn-sm btn-light'
   - elsif @document.image?
     .text-center
       = image_tag client_project_download_primary_document_path(@project, @document, inline: '1'), class: 'white-background img-thumbnail'
   - else
-    = link_to client_project_download_document_path(@project, @document), class: 'btn btn-default' do
+    = link_to client_project_download_document_path(@project, @document), class: 'btn btn-light' do
       %span.glyphicon.glyphicon-download
       Download
       = @document.name

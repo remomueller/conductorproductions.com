@@ -6,6 +6,8 @@ class VideosController < ApplicationController
   before_action :check_system_admin
   before_action :find_video_or_redirect, only: [:show, :edit, :update, :destroy]
 
+  layout "layouts/full_page_sidebar2"
+
   # GET /videos
   def index
     @videos = Video.current.order(:archived, :video_page, :position).page(params[:page]).per(20)

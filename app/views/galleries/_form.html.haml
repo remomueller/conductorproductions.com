@@ -1,41 +1,41 @@
-= form_for [@project, @gallery], html: { class: 'form-horizontal', multipart: true } do |f|
-  - if @gallery.errors.any?
+= form_for [@project, gallery], html: { class: "form-horizontal", multipart: true } do |f|
+  - if gallery.errors.any?
     .panel.panel-danger
       .panel-heading
         %strong
-          = pluralize(@gallery.errors.count, "error")
+          = pluralize(gallery.errors.count, "error")
           prohibited this gallery from being saved:
 
       .panel-body
 
         %ul
-          - @gallery.errors.full_messages.each do |message|
+          - gallery.errors.full_messages.each do |message|
             %li= message
 
   .form-group
-    = f.label :category_id, nil, class: 'col-md-2 control-label'
+    = f.label :category_id, nil, class: "col-md-2 control-label"
     .col-md-10
-      = f.select :category_id, grouped_options_for_select(@project.grouped_categories_for_select, @gallery.category_id), {}, class: 'form-control'
+      = f.select :category_id, grouped_options_for_select(@project.grouped_categories_for_select, gallery.category_id), {}, class: "form-control"
 
   .form-group
-    = f.label :name, nil, class: 'col-md-2 control-label'
+    = f.label :name, nil, class: "col-md-2 control-label"
     .col-md-10
-      = f.text_field :name, class: 'form-control', data: { object: (@gallery.new_record? ? 'create-slug' : ''), target: '#gallery_slug' }
+      = f.text_field :name, class: "form-control", data: { object: (gallery.new_record? ? "create-slug" : ""), target: "#gallery_slug" }
 
   .form-group
-    = f.label :slug, 'URL Slug', class: 'col-md-2 control-label'
+    = f.label :slug, "URL Slug", class: "col-md-2 control-label"
     .col-md-10
-      = f.text_field :slug, class: 'form-control'
+      = f.text_field :slug, class: "form-control"
       .text-info
         Please only use lowercase letters, numbers, and dashes.
 
   .form-group
-    = f.label :address, nil, class: 'col-md-2 control-label'
+    = f.label :address, nil, class: "col-md-2 control-label"
     .col-md-10
-      = f.text_area :address, rows: 7, class: 'form-control'
+      = f.text_area :address, rows: 7, class: "form-control"
 
   .form-group
-    = f.label :archived, nil, class: 'col-md-2 control-label'
+    = f.label :archived, nil, class: "col-md-2 control-label"
     .col-md-10
       .checkbox
         %label
@@ -43,4 +43,4 @@
 
   .form-group
     .col-md-10.col-md-offset-2
-      = f.submit nil, class: 'btn btn-primary'
+      = f.submit nil, class: "btn btn-primary"

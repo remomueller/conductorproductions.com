@@ -1,21 +1,21 @@
-= form_for [@project, @embed], html: { class: 'form-horizontal', multipart: true } do |f|
-  - if @embed.errors.any?
+= form_for [@project, embed], html: { class: 'form-horizontal', multipart: true } do |f|
+  - if embed.errors.any?
     .panel.panel-danger
       .panel-heading
         %strong
-          = pluralize(@embed.errors.count, "error")
+          = pluralize(embed.errors.count, "error")
           prohibited this embed from being saved:
 
       .panel-body
 
         %ul
-          - @embed.errors.full_messages.each do |message|
+          - embed.errors.full_messages.each do |message|
             %li= message
 
   .form-group
     = f.label :category_id, nil, class: 'col-md-2 control-label'
     .col-md-10
-      = f.select :category_id, grouped_options_for_select(@project.grouped_categories_for_select, @embed.category_id), {}, class: 'form-control'
+      = f.select :category_id, grouped_options_for_select(@project.grouped_categories_for_select, embed.category_id), {}, class: 'form-control'
 
   .form-group
     = f.label :embed_url, 'Embed URL', class: 'col-md-2 control-label'

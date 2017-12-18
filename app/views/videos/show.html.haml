@@ -1,67 +1,72 @@
-%h1
-  = link_to 'Videos', videos_path
+- @title = "Video #{@video.vimeo_number}"
+
+- content_for :container_class, "container-fluid"
+- content_for :sidebar, render("internal/sidebar")
+
+- content_for :header do
+  .float-right
+    = render "layouts/edit_delete_dropdown_header", edit_url: edit_video_path(@video), delete_url: @video, delete_confirmation: "Delete #{@video.vimeo_number}?"
+  = link_to "Videos", videos_path
   |
   = @video.vimeo_number
 
-= link_to 'Delete Video', @video, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger pull-right'
-= link_to 'Edit Video', edit_video_path(@video), class: 'btn btn-sm btn-default'
+.dashboard-container
+  %dl.dl-horizontal
+    %dt
+      %strong Video Page
+    %dd
+      = @video.video_page_string
 
-%dl.dl-horizontal
-  %dt
-    %strong Video Page
-  %dd
-    = @video.video_page_string
+    %dt
+      %strong Vimeo Number
+    %dd
+      = @video.vimeo_number
 
-  %dt
-    %strong Vimeo Number
-  %dd
-    = @video.vimeo_number
+    %dt
+      %strong Client Name
+    %dd
+      = @video.client_name
 
-  %dt
-    %strong Client Name
-  %dd
-    = @video.client_name
+    %dt
+      %strong Agency Name
+    %dd
+      = @video.agency_name
 
-  %dt
-    %strong Agency Name
-  %dd
-    = @video.agency_name
+    %dt
+      %strong Photo
+    %dd
+      = @video.name
 
-  %dt
-    %strong Photo
-  %dd
-    = @video.name
+    %dt
+      %strong Position
+    %dd
+      = @video.position
 
-  %dt
-    %strong Position
-  %dd
-    = @video.position
+    %dt
+      %strong Archived
+    %dd
+      = simple_check @video.archived
 
-  %dt
-    %strong Archived
-  %dd
-    = @video.archived
-
-  %dt
-    %strong Creator
-  %dd
-    = @video.user.name if @video.user
+    %dt
+      %strong Creator
+    %dd
+      = @video.user.name if @video.user
 
 
-- if @video.photo.size > 0
-  .row
-    .col-xs-6.col-sm-4.col-sm-offset-4
-      .video-thumbnail
-        .video-caption
-          .inner
-            - if @video.client_name.blank? && @video.agency_name.blank?
-              %span.icon
-                %i.fa.fa-play
-            - else
-              - if @video.client_name.present?
-                %span.client-name= @video.client_name
-              - if @video.agency_name.present?
-                %span.agency-name
-                  Agency:
-                  = @video.agency_name
-        = image_tag download_video_image_path(@video, size: 'preview'), class: 'img-responsive', style: 'display:inline-block'
+  - if @video.photo.size > 0
+    .row
+      .col-xs-6.col-sm-4.col-sm-offset-4
+        .video-thumbnail
+          .video-caption
+            .inner
+              - if @video.client_name.blank? && @video.agency_name.blank?
+                %span.icon
+                  %i.fa.fa-play
+              - else
+                - if @video.client_name.present?
+                  %span.client-name= @video.client_name
+                - if @video.agency_name.present?
+                  %span.agency-name
+                    Agency:
+                    = @video.agency_name
+          = image_tag download_video_image_path(@video, size: 'preview'), class: 'img-responsive', style: 'display:inline-block'

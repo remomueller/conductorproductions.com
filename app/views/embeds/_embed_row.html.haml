@@ -1,29 +1,28 @@
 %td= embed.category.name if embed.category
 %td= link_to embed.name, [@project, embed]
-%td.hidden-xs= link_to_if current_user.system_admin?, embed.user.name, embed.user if embed.user
+%td.d-none.d-sm-table-cell= link_to_if current_user.system_admin?, embed.user.name, embed.user if embed.user
 %td.center= simple_check embed.archived
 - if @project.editable_by?(current_user)
   %td
     .dropdown
-      = link_to '#', class: 'btn btn-default btn-sm dropdown-toggle', data: { toggle: 'dropdown' } do
-        Actions
+      = link_to "#", class: "btn btn-light btn-sm dropdown-toggle", data: { toggle: "dropdown" } do
+        .d-inline-block.d-sm-none
+          %i.fa.fa-cog
+        .d-none.d-sm-inline-block Actions
         %strong.caret
 
-      %ul.dropdown-menu.dropdown-menu-right
-        %li
-          = link_to edit_project_embed_path(@project, embed) do
-            %span.glyphicon.glyphicon-edit
-            Edit Embed
-        %li
-          = link_to project_embed_path(@project, embed, embed: { archived: embed.archived? ? '0' : '1' }), method: :patch, remote: true do
-            %span.glyphicon.glyphicon-briefcase
-            - if embed.archived?
-              Restore
-            - else
-              Archive
-        %li.divider{ role: 'separator' }
-        %li
-          = link_to [@project, embed], method: :delete, data: { confirm: 'Delete embed?' } do
-            .text-danger
-              %span.glyphicon.glyphicon-trash
-              Delete
+      .dropdown-menu.dropdown-menu-right
+        = link_to edit_project_embed_path(@project, embed), class: "dropdown-item" do
+          %span.glyphicon.glyphicon-edit
+          Edit
+        = link_to project_embed_path(@project, embed, embed: { archived: embed.archived? ? "0" : "1" }), method: :patch, remote: true, class: "dropdown-item" do
+          %span.glyphicon.glyphicon-briefcase
+          - if embed.archived?
+            Restore
+          - else
+            Archive
+        .dropdown-divider
+        = link_to [@project, embed], method: :delete, data: { confirm: "Delete embed?" }, class: "dropdown-item" do
+          .text-danger
+            %span.glyphicon.glyphicon-trash
+            Delete

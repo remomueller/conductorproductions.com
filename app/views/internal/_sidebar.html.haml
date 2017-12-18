@@ -1,0 +1,9 @@
+.col-12.col-md-3.col-xl-2.sidebar-wrapper{ style: "background-color: transparent;" }
+  .sidebar
+    #sidebar-nav-wrapper.sidebar-nav-wrapper.collapse{ style: "background-color: transparent;" }
+      .pt-3.mx-3.my-0.ml-md-3.mb-md-3.mr-md-0
+        %ul.sidebar-menu.sidebar-menu-shadow.mb-0{ style: "padding-top: 10px; padding-bottom: 10px;" }
+          %li.sidebar-menu-header Conductor
+          %li= link_to "Projects", projects_path, class: params[:controller] == "projects" ? "active" : nil
+          %li= link_to "Users", users_path, class: params[:controller] == "users" ? "active" : nil
+          %li= link_to "Videos", videos_path, class: params[:controller] == "videos" ? "active" : nil

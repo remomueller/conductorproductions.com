@@ -1,10 +1,16 @@
-%h1
+- @title = "Edit Embed: #{@embed.name}"
+
+- content_for :container_class, "container-fluid"
+- content_for :sidebar, render("projects/sidebar")
+
+- content_for :header do
   = link_to @project.name, @project
   |
-  = link_to 'Embeds', project_embeds_path(@project)
+  = link_to "Embeds", project_embeds_path(@project)
   |
-  Edit
-%h2
   = link_to @embed.name, [@project, @embed]
+  %i.fa.fa-angle-right
+  Edit
 
-= render 'form'
+.dashboard-container
+  = render "form", embed: @embed

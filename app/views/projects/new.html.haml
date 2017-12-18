@@ -1,5 +1,11 @@
 - @title = "New Project"
 
-%h1= @title
+- content_for :container_class, "container-fluid"
+- content_for :sidebar, render("internal/sidebar")
+- content_for :header do
+  = link_to "Projects", projects_path
+  %i.fa.fa-angle-right
+  New
 
-= render "form"
+.dashboard-container
+  = render "form", project: @project

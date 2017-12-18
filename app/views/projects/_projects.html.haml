@@ -33,38 +33,37 @@
           %span{ style: 'cursor:pointer', data: { object: 'click-to-view', content: project.password_plain } }
             = '*' * project.password_plain.to_s.size if project.password_plain.present?
         %td
-          = link_to project, class: 'btn btn-default btn-sm' do
-            %span.glyphicon.glyphicon-cog
+          = link_to project, class: 'btn btn-light btn-sm' do
+            %i.fa.fa-pencil
         %td
           .dropdown
-            = link_to '#', class: 'btn btn-default btn-sm dropdown-toggle', data: { toggle: 'dropdown' } do
-              Actions
+            = link_to "#", class: "btn btn-light btn-sm dropdown-toggle", data: { toggle: "dropdown" } do
+              .d-inline-block.d-sm-none
+                %i.fa.fa-cog
+              .d-none.d-sm-inline-block Actions
               %strong.caret
 
-            %ul.dropdown-menu.dropdown-menu-right
-              %li
-                = link_to client_project_root_path(project) do
-                  %span.glyphicon.glyphicon-eye-open
-                  Preview
-              %li
-                = link_to project do
-                  %span.glyphicon.glyphicon-edit
-                  Edit Project
+            .dropdown-menu.dropdown-menu-right
+              = link_to client_project_root_path(project), class: "dropdown-item" do
+                %span.glyphicon.glyphicon-eye-open
+                Preview
+              = link_to project, class: "dropdown-item" do
+                %i.fa.fa-pencil
+                Edit
+
               - if project.editable_by?(current_user)
-                %li
-                  = link_to project_path(project, project: { archived: project.archived? ? '0' : '1' }), method: :patch do
-                    %span.glyphicon.glyphicon-briefcase
-                    - if project.archived?
-                      Restore
-                    - else
-                      Archive
+                = link_to project_path(project, project: { archived: project.archived? ? '0' : '1' }), method: :patch, class: "dropdown-item" do
+                  %span.glyphicon.glyphicon-briefcase
+                  - if project.archived?
+                    Restore
+                  - else
+                    Archive
               - if project.deletable_by?(current_user)
-                %li.divider{ role: 'separator' }
-                %li
-                  = link_to project, method: :delete, data: { confirm: 'Delete project?' } do
-                    .text-danger
-                      %span.glyphicon.glyphicon-trash
-                      Delete
+                .dropdown-divider
+                = link_to project, method: :delete, data: { confirm: "Delete #{project.name}?" }, class: "dropdown-item" do
+                  .text-danger
+                    %i.fa.fa-trash
+                    Delete
 
 
 .center= paginate @projects, theme: 'bootstrap'

@@ -1,21 +1,21 @@
-= form_for [@project, @document], html: { class: 'form-horizontal', multipart: true } do |f|
-  - if @document.errors.any?
+= form_for [@project, document], html: { class: 'form-horizontal', multipart: true } do |f|
+  - if document.errors.any?
     .panel.panel-danger
       .panel-heading
         %strong
-          = pluralize(@document.errors.count, "error")
+          = pluralize(document.errors.count, "error")
           prohibited this document from being saved:
 
       .panel-body
 
         %ul
-          - @document.errors.full_messages.each do |message|
+          - document.errors.full_messages.each do |message|
             %li= message
 
   .form-group
     = f.label :category_id, nil, class: 'col-md-2 control-label'
     .col-md-10
-      = f.select :category_id, grouped_options_for_select(@project.grouped_categories_for_select, @document.category_id), {}, class: 'form-control'
+      = f.select :category_id, grouped_options_for_select(@project.grouped_categories_for_select, document.category_id), {}, class: 'form-control'
 
   .form-group
     = f.label :primary_document, 'Primary Document (PDF, PNG)', class: 'col-md-2 control-label'

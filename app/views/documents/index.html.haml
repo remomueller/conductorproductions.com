@@ -1,39 +1,44 @@
-%h1
+- @title = "Documents"
+
+- content_for :container_class, "container-fluid"
+- content_for :sidebar, render("projects/sidebar")
+
+- content_for :header do
+  .float-right
+    - if @project.editable_by?(current_user)
+      = link_to "New Document", new_project_document_path(@project), class: "btn btn-sm btn-light"
   = link_to @project.name, @project
   |
-  Documents
+  = @title
 
-- if @project.editable_by?(current_user)
-  = link_to 'New Document', new_project_document_path(@project), class: 'btn btn-sm btn-default'
-
-
-%table.table.table-striped
-  %col
-  %col
-  %col.hidden-xs
-  %col.hidden-xs
-  %col
-  - if @project.editable_by?(current_user)
-    %col{ width: '1px' }
-  %thead
-    %tr
-      %th Category
-      %th Document
-      %th.hidden-xs Uploaded At
-      %th.hidden-xs Creator
-      %th.center Archived
-      - if @project.editable_by?(current_user)
-        %th Actions
-
-  %tbody
-    - if @documents.count == 0
+.dashboard-container
+  %table.table.table-striped.table-borderless
+    %col
+    %col
+    %col.hidden-xs
+    %col.hidden-xs
+    %col
+    - if @project.editable_by?(current_user)
+      %col{ width: '1px' }
+    %thead
       %tr
-        %td{ colspan: "6" }
-          .center.text-muted
-            No documents currently exist for this project. You may
-            = link_to 'upload a new document', new_project_document_path(@project)
-            for this project.
-    - else
-      - @documents.each do |document|
-        %tr{ id: "document-#{document.id}-container" }
-          = render 'documents/document_row', document: document
+        %th Category
+        %th Document
+        %th.hidden-xs Uploaded At
+        %th.hidden-xs Creator
+        %th.center Archived
+        - if @project.editable_by?(current_user)
+          %th Actions
+
+    %tbody
+      - if @documents.present?
+        - @documents.each do |document|
+          %tr{ id: "document-#{document.id}-container" }
+            = render 'documents/document_row', document: document
+      - else
+        %tr
+          %td{ colspan: "6" }
+            .center.text-muted
+              No documents currently exist for this project. You may
+              = link_to 'upload a new document', new_project_document_path(@project)
+              for this project.

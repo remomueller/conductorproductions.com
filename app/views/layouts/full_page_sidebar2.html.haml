@@ -1,0 +1,20 @@
+!!!
+%html{ lang: "en" }
+  %head
+    = render "layouts/head"
+  %body#top.full-page{ class: yield(:body_class), style: "background-color: #212121;" }
+    #shade
+    = render "layouts/flash_bar"
+    - @menu_dark = true
+    #top-menu.top-menu= render "layouts/menu2", nocontainer: true
+    .header-container
+      .container-fluid
+        %h1.page-heading
+          = yield :header
+          = render "sidebar/toggle"
+    .row.no-gutters.flex-xl-nowrap
+      = yield(:sidebar)
+      %main.col.p-3{ role: "main",  style: "overflow-x: scroll;" }
+        = yield
+    = yield :footer
+    = render "layouts/footer", container: yield(:container_class)

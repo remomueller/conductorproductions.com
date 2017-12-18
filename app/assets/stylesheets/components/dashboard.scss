@@ -1,0 +1,35 @@
+.dashboard-container {
+  @include remove-last-child-bottom-margin;
+  @include scale-images;
+  @include brand;
+
+  background-color: $brand-white;
+  border-radius: 3px;
+  box-shadow: 0 1px 5px $box-shadow-color;
+  color: $body-color;
+  margin-bottom: 40px;
+  padding: 10px;
+  position: relative;
+
+  > div,
+  > table {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  + .center > .pagination {
+    margin-top: 0;
+  }
+
+  &.dashboard-no-padding {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .dashboard-container {
+    padding: 30px;
+  }
+}
