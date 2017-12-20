@@ -1,5 +1,9 @@
 ## 0.9.2
 
+### Enhancement
+- **General Changes**
+  - Updated copy on A Year in Review 2017 page
+
 ## 0.9.1 (December 19, 2017)
 
 ### Enhancement
