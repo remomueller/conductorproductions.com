@@ -19,6 +19,12 @@
 ### Tests
 - Added tests to assure user passwords can be reset
 
+## 0.9.3 (December 20, 2017)
+
+### Enhancement
+- **General Changes**
+  - Tom Brady link now opens in another windo
+
 ## 0.9.2 (December 20, 2017)
 
 ### Enhancement
