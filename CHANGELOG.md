@@ -19,6 +19,12 @@
 ### Tests
 - Added tests to assure user passwords can be reset
 
+## 0.9.2 (December 20, 2017)
+
+### Enhancement
+- **General Changes**
+  - Updated copy on A Year in Review 2017 page
+
 ## 0.9.1 (December 19, 2017)
 
 ### Enhancement
