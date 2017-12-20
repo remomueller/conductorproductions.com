@@ -1,4 +1,4 @@
-## 0.9.3
+## 0.9.3 (December 20, 2017)
 
 - **General Changes**
   - Tom Brady link now opens in another window
