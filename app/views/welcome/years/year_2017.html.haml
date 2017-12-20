@@ -179,6 +179,7 @@
         - image_thumbnail = "newsletter/2017/microsite-skip-the-dishes.png"
         .yir-image.yir-image-angle.yir-image-angle-even{ style: "background-image: url(\"#{asset_path(image_thumbnail)}\");", data: data }
         .yir-image.yir-image-full
+          - image_thumbnail = "newsletter/2017/microsite-skip-the-dishes-full.png"
           = image_tag image_thumbnail, class: "video-thumbnail", data: data, alt: "", style: "max-width:100%"
         .yir-watch-here-full
           = link_to "#", data: data, class: "white-link" do
